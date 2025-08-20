@@ -101,7 +101,7 @@ When using this dataset:
   title={Luhya Multilingual Translation Dataset},
   author={[YOUR_NAME]},
   year={2024},
-  url={https://huggingface.co/datasets/[USERNAME]/luhya-multilingual-dataset},
+  url={https://huggingface.co/datasets/mamakobe/luhya-multilingual-dataset},
   note={Community-sourced Luhya language translations}
 }
 ```

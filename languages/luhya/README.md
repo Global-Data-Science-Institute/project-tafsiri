@@ -28,7 +28,7 @@ Our training dataset includes 26,000+ translation pairs from:
 - **Base**: Facebook M2M100 (418M parameters)
 - **Fine-tuning**: 8 epochs with cultural context integration
 - **Evaluation**: BLEU scores and cultural accuracy metrics
-- **HuggingFace**: Available at `[USERNAME]/luhya-multilingual-m2m100`
+- **HuggingFace**: Available at `mamakobe/luhya-multilingual-m2m100`
 
 ### Performance
 | Dialect | BLEU Score | Cultural Accuracy |

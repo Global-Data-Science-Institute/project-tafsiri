@@ -33,8 +33,8 @@ We're starting with **Luhya**, a Bantu language cluster spoken by over 6 million
 ## Resources
 
 ### HuggingFace Hub
-- **Dataset**: [luhya-multilingual-dataset](https://huggingface.co/datasets/[USERNAME]/luhya-multilingual-dataset) - 26K+ translation pairs
-- **Model**: [luhya-multilingual-m2m100](https://huggingface.co/[USERNAME]/luhya-multilingual-m2m100) - Fine-tuned M2M100 model
+- **Dataset**: [luhya-multilingual-dataset](https://huggingface.co/datasets/mamakobe/luhya-multilingual-dataset) - 26K+ translation pairs
+- **Model**: [luhya-multilingual-m2m100](https://huggingface.co/mamakobe/luhya-multilingual-m2m100) - Fine-tuned M2M100 model
 - **Checkpoints**: Private repository for training checkpoints
 
 ### Research & Development
@@ -47,7 +47,7 @@ We're starting with **Luhya**, a Bantu language cluster spoken by over 6 million
 
 ### Installation
 ```bash
-git clone https://github.com/[USERNAME]/project-tafsiri.git
+git clone https://github.com/Global-Data-Science-Institute/project-tafsiri.git
 cd project-tafsiri
 pip install -r requirements/base.txt
 ```
@@ -57,8 +57,8 @@ pip install -r requirements/base.txt
 from transformers import M2M100ForConditionalGeneration, M2M100Tokenizer
 
 # Load the model
-model = M2M100ForConditionalGeneration.from_pretrained("[USERNAME]/luhya-multilingual-m2m100")
-tokenizer = M2M100Tokenizer.from_pretrained("[USERNAME]/luhya-multilingual-m2m100")
+model = M2M100ForConditionalGeneration.from_pretrained("mamakobe/luhya-multilingual-m2m100")
+tokenizer = M2M100Tokenizer.from_pretrained("mamakobe/luhya-multilingual-m2m100")
 
 # Translate English to Bukusu
 text = "Hello, how are you?"
@@ -116,8 +116,8 @@ Project Tafsiri is built with and for African language communities. We prioritiz
 - **Transparent development** with open-source principles
 
 ### Get Involved
-- Join our [discussions](https://github.com/[USERNAME]/project-tafsiri/discussions)
-- Follow development on [GitHub](https://github.com/[USERNAME]/project-tafsiri)
+- Join our [discussions](https://github.com/Global-Data-Science-Institute/project-tafsiri/discussions)
+- Follow development on [GitHub](https://github.com/Global-Data-Science-Institute/project-tafsiri)
 - Connect with us on social media
 - Attend community workshops and presentations
 
@@ -165,7 +165,7 @@ If you use Project Tafsiri in your research or applications, please cite:
   title={Project Tafsiri: African Language AI Systems},
   author={[YOUR_NAME]},
   year={2024},
-  url={https://github.com/[USERNAME]/project-tafsiri},
+  url={https://github.com/Global-Data-Science-Institute/project-tafsiri},
   note={Open-source African language translation and AI tools}
 }
 ```

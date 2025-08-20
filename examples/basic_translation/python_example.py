@@ -11,7 +11,7 @@ import torch
 
 def main():
     # Load the trained Luhya model
-    model_name = "[USERNAME]/luhya-multilingual-m2m100"
+    model_name = "mamakobe/luhya-multilingual-m2m100"
     
     print("Loading Luhya translation model...")
     model = M2M100ForConditionalGeneration.from_pretrained(model_name)
