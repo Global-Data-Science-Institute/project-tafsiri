@@ -32,25 +32,25 @@ Project Tafsiri exists to democratize access to modern AI technology for African
 
 ## Long-term Goals
 
-### Phase 1: Foundation (2024)
+### Phase 1: Foundation
 - Establish Luhya as proof-of-concept
 - Develop community engagement framework
 - Create cultural validation processes
 - Build technical infrastructure
 
-### Phase 2: Expansion (2024-2025)
+### Phase 2: Expansion
 - Add major East African languages (Swahili, Amharic)
 - Develop West African language capabilities
 - Create educational applications
 - Establish academic research partnerships
 
-### Phase 3: Continental Scale (2025-2027)
+### Phase 3: Continental Scale 
 - Support 20+ African languages
 - Develop cross-language understanding
 - Create cultural preservation tools
 - Build pan-African language exchange platform
 
-### Phase 4: Global Impact (2027+)
+### Phase 4: Global Impact
 - Influence global AI development practices
 - Export community-centered AI model worldwide
 - Establish African languages in mainstream AI

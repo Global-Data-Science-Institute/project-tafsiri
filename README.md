@@ -123,20 +123,20 @@ Project Tafsiri is built with and for African language communities. We prioritiz
 
 ## Roadmap
 
-### Phase 1: Luhya Foundation (Current)
+### Phase 1: Luhya Foundation
 - ✅ Multi-dialect Luhya translation model
 - ✅ Cultural context integration
 - ✅ Community validation framework
 - 🔄 Enhanced chatbot capabilities
 - 🔄 Mobile application development
 
-### Phase 2: Expansion (2024-2025)
+### Phase 2: Expansion
 - Swahili integration and cross-language translation
 - Yoruba language implementation
 - Advanced cultural context understanding
 - Educational tool development
 
-### Phase 3: Pan-African (2025+)
+### Phase 3: Pan-African
 - Additional East African languages
 - West African language cluster
 - Southern African language support
