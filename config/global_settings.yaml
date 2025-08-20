@@ -1,0 +1,4 @@
+# Global Project Settings
+project_name: "Project Tafsiri"
+version: "0.1.0"
+default_model_type: "m2m100"

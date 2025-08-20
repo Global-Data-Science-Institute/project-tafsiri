@@ -1,0 +1,58 @@
+# Luhya Dialect Configuration
+
+dialects:
+  bukusu:
+    code: "luy_bukusu"
+    name: "Bukusu"
+    speakers: ~2000000
+    regions: ["Bungoma", "Trans Nzoia"]
+    alternate_names: ["Lubukusu", "Sikusu"]
+    
+  wanga:
+    code: "luy_wanga"
+    name: "Wanga"
+    speakers: ~1500000
+    regions: ["Kakamega", "Vihiga"]
+    alternate_names: ["Luwanga", "Oluwanga"]
+    
+  maragoli:
+    code: "luy_maragoli"
+    name: "Maragoli"
+    speakers: ~1000000
+    regions: ["Vihiga", "Kakamega"]
+    alternate_names: ["Lulogooli", "Logooli"]
+    
+  kisa:
+    code: "luy_kisa"
+    name: "Kisa"
+    speakers: ~500000
+    regions: ["Kakamega"]
+    alternate_names: ["Olushisa"]
+    
+  tachoni:
+    code: "luy_tachoni"
+    name: "Tachoni"
+    speakers: ~400000
+    regions: ["Kakamega", "Bungoma"]
+    alternate_names: ["Lutachoni"]
+    
+  kabras:
+    code: "luy_kabras"
+    name: "Kabras"
+    speakers: ~300000
+    regions: ["Kakamega"]
+    alternate_names: ["Lukabarasi", "Kabarasi"]
+
+# Cultural notes
+cultural_context:
+  greetings:
+    formal: "Age-based respect hierarchy important"
+    informal: "Time-of-day specific greetings"
+  
+  proverbs:
+    importance: "Central to traditional wisdom"
+    usage: "Context-dependent metaphorical meaning"
+    
+  respect_terms:
+    elders: "Specific honorifics required"
+    authority: "Traditional and modern leadership"
