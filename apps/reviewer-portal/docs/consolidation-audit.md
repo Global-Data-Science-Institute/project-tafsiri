@@ -1,6 +1,6 @@
 # Tafsiri Reviewer Portal consolidation audit
 
-Audited 2026-09-19. Scope: local reviewer portal, checked-in Supabase migrations and config, and the public GDSI home page. Supabase CLI confirmed the staging project and migrations. Vercel CLI requires a new login; no recovery email or designated test-reviewer mailbox was available. The staging hostname in the Vercel script remains a configured candidate, not a verified live URL.
+Audited 2026-09-19. Scope: local reviewer portal, checked-in Supabase migrations and config, and the public GDSI home page. Supabase CLI confirmed the staging project and migrations. Vercel CLI login is restored; no recovery email or designated test-reviewer mailbox was available. The staging hostname resolves to an existing Ready Preview deployment, but Vercel Authentication prevents anonymous content inspection.
 
 ## Current state
 
@@ -22,7 +22,7 @@ Audited 2026-09-19. Scope: local reviewer portal, checked-in Supabase migrations
 | Security | Browser secret exposure | WORKING (local source audit) | Secret key only read by server-side code/scripts |
 | Deployment | Vercel project and URL | PARTIAL | Project name `tafsiri-reviewer-portal`; staging URL candidate below, unreachable from audit environment |
 | Deployment | Supabase environment | PARTIAL | Local project host `gfhdwmqefotkljrltfnx.supabase.co`; remote project identity and Auth config unverified |
-| Deployment | Environment variables | PARTIAL | Local names inspected without disclosing values; Vercel remote values unverified |
+| Deployment | Environment variables | PARTIAL | Local names inspected without disclosing values; Preview variable names and staging public values verified; server secret was set through Vercel CLI and cannot be read back |
 | Deployment | Auth Site URL and Redirect URLs | PARTIAL | Local `supabase/config.toml` uses loopback; remote settings unverified |
 
 ## Recovery analysis
