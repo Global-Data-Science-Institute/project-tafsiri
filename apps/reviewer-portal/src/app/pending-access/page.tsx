@@ -1,0 +1,1 @@
+export default function Page(){return <main className="shell"><div className="card"><h1>Access is pending</h1><p>Your reviewer account has not been activated yet. If you accepted an invitation, complete onboarding or contact the research team.</p><p className="muted">Support: [Project Tafsiri research contact]</p></div></main>}

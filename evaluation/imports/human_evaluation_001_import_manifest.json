@@ -1,0 +1,1088 @@
+{
+  "adjudications_imported": 0,
+  "annotations_imported": 0,
+  "assignments_imported": 0,
+  "frozen_sample_sha256": "a3dfc269528ab8619a12556fd1b431721a675c3bbe516dc0a22ccfa449d1650a",
+  "generation_timestamp": "2026-08-13T06:15:05.780057+00:00",
+  "human_reviewer_data_imported": 0,
+  "importer_version": "study-import-001-v1",
+  "item_count": 150,
+  "items": [
+    {
+      "dictionary_entry_id": "b4631412-3d95-4c9e-b9c2-666effc7d80d",
+      "item_number": 1,
+      "pipeline_hash": "346e3a5546e82cb449c2fef5d233bf60a39a8ffeaff56bb4e15810c29e02a33a",
+      "sampling_group": "targeted_edge",
+      "source_hash": "29d51844a26084bb69b6243df51cfba6f86d1d7dc93df94d1a37bd9049bd814b"
+    },
+    {
+      "dictionary_entry_id": "1a8881ca-eecb-424f-94b6-5735c9b4f6d5",
+      "item_number": 2,
+      "pipeline_hash": "594fa1dc6677c04123745d29bc474343836207042ff22db860291095abeeca7e",
+      "sampling_group": "targeted_edge",
+      "source_hash": "5c2cae963052e7cc1c687bfebf70243cc5215a63a319f4a39c5723f486346af9"
+    },
+    {
+      "dictionary_entry_id": "9f08aa79-8dce-4315-a787-76770fb8c11c",
+      "item_number": 3,
+      "pipeline_hash": "437cfa75d4707c1fbb3dcfaf71b9ed397b84270e7500f60c7d97b41466d0094b",
+      "sampling_group": "targeted_edge",
+      "source_hash": "97d2d3c7a2321e12a2cd7175cc0e7b3603e6bebb7262fe2596170d1a8cb9a087"
+    },
+    {
+      "dictionary_entry_id": "b4f8f176-eafe-4ffc-b0bb-0fae40344451",
+      "item_number": 4,
+      "pipeline_hash": "3315a7ea0770c42cdd112e71066fec23ef83fd3d31446af784ce383bd4baebd4",
+      "sampling_group": "targeted_edge",
+      "source_hash": "cbb185f0f26e75c0f37ac22ba1fa15e23e1dcb46cc1db4d8f916696b1f6537e3"
+    },
+    {
+      "dictionary_entry_id": "d23caccb-7276-436f-ad32-5378c90afced",
+      "item_number": 5,
+      "pipeline_hash": "8895e834ecf046e791555f655510b4a2100d0e106193ba6470b1de803ad82d42",
+      "sampling_group": "targeted_edge",
+      "source_hash": "10466127b43e0b872ea85d29ce554d3f8955ca6fbd9c0f3fa05ae747f2432409"
+    },
+    {
+      "dictionary_entry_id": "86d14aa7-1fdc-425d-b312-54629d750ba3",
+      "item_number": 6,
+      "pipeline_hash": "6d040700c321dc565a1244c21e2876bdda8ad55a1d021aa05ef43933044a3a89",
+      "sampling_group": "targeted_edge",
+      "source_hash": "e904f05e4d204a03acec769055743aff48a931a2fa9181d3b7c7d682015207f0"
+    },
+    {
+      "dictionary_entry_id": "bae35351-9b2b-44ff-89d8-85f35849dbd0",
+      "item_number": 7,
+      "pipeline_hash": "d54880589256b5b4514ed796e5938bb905399ff2d0d4a896fcf5daa39e19b2c9",
+      "sampling_group": "targeted_edge",
+      "source_hash": "364664c620fd2e95c0b4abf09185e1681d215053f2dd16f600b6a78e7c9c508a"
+    },
+    {
+      "dictionary_entry_id": "4b619137-fd5c-4507-9816-a77f4f717275",
+      "item_number": 8,
+      "pipeline_hash": "f26def3dd2643b2b7e9e5b5ea57ee4e9aaa4ef6582a25132751fe54f329c76f3",
+      "sampling_group": "targeted_edge",
+      "source_hash": "5894643cd3453fd61fe3eaab05f866da07af815f7d7dae49ad73330e0add1f20"
+    },
+    {
+      "dictionary_entry_id": "c58fc4fc-e12c-4ab8-99ea-2a8badfa0c59",
+      "item_number": 9,
+      "pipeline_hash": "15a71da1654163ced78c564d5a83d4872c1ccbd882aa04611c9b581312f52bad",
+      "sampling_group": "targeted_edge",
+      "source_hash": "068a3c72b2bc9fd57c08c71270609ed0be42c8df62568dc5010a294ba2a6a778"
+    },
+    {
+      "dictionary_entry_id": "a774e12e-5fac-4abc-a467-d3d6d0d11a84",
+      "item_number": 10,
+      "pipeline_hash": "32bcca990c21049d90b0d71b6a92057d16a36aced6033afde9a2b72562f9d729",
+      "sampling_group": "targeted_edge",
+      "source_hash": "398425d6ebc7ddc2ed5daceb54420ce4cb9d47bdd6ae31355af525f3e486671b"
+    },
+    {
+      "dictionary_entry_id": "aa7d2483-d4bf-4fc0-a094-8d12bec97e5f",
+      "item_number": 11,
+      "pipeline_hash": "a10a580f94699d82c113eb7a468c1fa2ad990444f532bb8f71ade3c255c029df",
+      "sampling_group": "targeted_edge",
+      "source_hash": "d44ae61f053e8fdea2a3ed2d9c76e311688eab8e17e5bed7665e18c828ec1870"
+    },
+    {
+      "dictionary_entry_id": "43627e35-94c9-4d53-b3e0-169186b44bf7",
+      "item_number": 12,
+      "pipeline_hash": "4f5461d40492bf9dc609fcecfd7c040fea94c28c1a33ba4c9e6e1380c46f2a91",
+      "sampling_group": "targeted_edge",
+      "source_hash": "688374371ce72e9516c4d7172c305f28c21dc5320cd56ce4a6c4c37d2d16294e"
+    },
+    {
+      "dictionary_entry_id": "e5264646-de71-4364-b457-e8b01ab4857c",
+      "item_number": 13,
+      "pipeline_hash": "c2ae92390b6d5f416b085314dca5b06c18db61dc66daab31458f7f6bb854e96c",
+      "sampling_group": "targeted_edge",
+      "source_hash": "771d8f71542204f62333f60377eaec73d5e6b06cb015263002913df51624a809"
+    },
+    {
+      "dictionary_entry_id": "802eeb59-f5af-48a0-b836-98568df46ed2",
+      "item_number": 14,
+      "pipeline_hash": "f104b18f06071011fe0a233057082ca9ab5448fdb16d4eeaece890e7154865d2",
+      "sampling_group": "targeted_edge",
+      "source_hash": "7ae040a8bad25c9f4c5b1f31d0e6ade02a2e3b4f98e8a79fb7a82eea56e3c359"
+    },
+    {
+      "dictionary_entry_id": "9777393b-5815-430b-948a-9bd1d1c5f9c6",
+      "item_number": 15,
+      "pipeline_hash": "6ab48dfa202e78d487a0efc1952c46558a8034638dffc881a1ed604143d80f13",
+      "sampling_group": "targeted_edge",
+      "source_hash": "7266adbb4a3cd4abd36b85f7402cedb680ea94b4f0b4da240d4fd7316569a067"
+    },
+    {
+      "dictionary_entry_id": "e3e31f84-9cc7-480b-9426-51525e2d0928",
+      "item_number": 16,
+      "pipeline_hash": "0e570f25fa9634adadb9cf7afaa97325f9e93ffee846d47c07dbfefb87195f41",
+      "sampling_group": "targeted_edge",
+      "source_hash": "f3ede574cf1eda40bedb17495325d43c7a1b8ebd064e27576a266345a8b16e0e"
+    },
+    {
+      "dictionary_entry_id": "1b33613c-776b-4bd8-9187-8f6c803cf5d1",
+      "item_number": 17,
+      "pipeline_hash": "0ccb663a524c00f20c0c23d920373e5f08d67495af2c5ac18e5767e24e55736f",
+      "sampling_group": "targeted_edge",
+      "source_hash": "ff40cc168d99bc97ad7643c2e417bd5278a477f8b373c5acfa145d4b7b3f21b7"
+    },
+    {
+      "dictionary_entry_id": "028493c0-6fb1-401e-bfde-0aec56cef8c5",
+      "item_number": 18,
+      "pipeline_hash": "17b049fad774412c32518a1f25fa959281ebf2886973cd20a719edc54faec793",
+      "sampling_group": "targeted_edge",
+      "source_hash": "bbc08bc9aab028a66711cd25188e4849aeef88c91d227e651676a0db7dca2609"
+    },
+    {
+      "dictionary_entry_id": "002fc13b-6ddb-406f-9e29-4b83df8959cf",
+      "item_number": 19,
+      "pipeline_hash": "9c181b889a1ee52eb6fcd0ade8da399ba09a3d42e4428d6d35fccd290e4a72c9",
+      "sampling_group": "targeted_edge",
+      "source_hash": "3eb4eeb2a999af8c2639188200796c64287f5ff2542a7416ac3ccb04455e0f68"
+    },
+    {
+      "dictionary_entry_id": "034138f1-634d-451d-afd5-6a800eb5312c",
+      "item_number": 20,
+      "pipeline_hash": "0557a946d27ead9c86ff8a0a7236ddff2706f16d700296f5ffe6db58fbb4d37f",
+      "sampling_group": "targeted_edge",
+      "source_hash": "95cce5d169c94bb55c337a142bab9c0e4889e51e3896e83480c6e22aafcc41b7"
+    },
+    {
+      "dictionary_entry_id": "39bac743-999d-44b3-b19a-c9b2314c7351",
+      "item_number": 21,
+      "pipeline_hash": "9732b7de7d170c2f32939b106a0f77a0897c123d74143ca2e6625ecac2cec5bf",
+      "sampling_group": "bucket_A",
+      "source_hash": "d4160dee8d6b047bda35246afc0c6b1fd5813f96b46580361ea901412d2b6f61"
+    },
+    {
+      "dictionary_entry_id": "5a534f97-76b4-4e88-9f2b-f404ea9d4225",
+      "item_number": 22,
+      "pipeline_hash": "dd04b42a41b85e7e1d7cbe56d51c097a9a880ce96d4fa015a2c736b9ffefb5f1",
+      "sampling_group": "bucket_A",
+      "source_hash": "0a6c15b191438646537194a8bfd534cc047aec5c6447fc1ff51934fe2be3ef95"
+    },
+    {
+      "dictionary_entry_id": "b4290741-cb8d-47a5-a6a8-7eb4a25ed7c7",
+      "item_number": 23,
+      "pipeline_hash": "15eca98b3bca269478cea46f40fa6f422d27ee84d1155bda7975f860e89f89b7",
+      "sampling_group": "bucket_A",
+      "source_hash": "60aa2455f8233fbcebb9b5ebfb54f66c8171762e1d44cc2a6c9f24773a2f5647"
+    },
+    {
+      "dictionary_entry_id": "dfb6779f-60ad-4904-b5fc-bd15fd67059f",
+      "item_number": 24,
+      "pipeline_hash": "5db4305e4da245dae6cb4874c82656bf17ed524b97e794e25ad6ea67bf22a106",
+      "sampling_group": "bucket_A",
+      "source_hash": "2916967680955b22441f4aa886352c7b5a9b5be3f084f9823c63d6b23247f8d5"
+    },
+    {
+      "dictionary_entry_id": "946fcc5b-601f-42a0-b6f9-e3e7bf564ad0",
+      "item_number": 25,
+      "pipeline_hash": "7374e5e9d560ec67125eff87651c35aad128155af683ff40036f9912000e199a",
+      "sampling_group": "bucket_A",
+      "source_hash": "f45f4293d111fd9d934563ddbdde3f3f555d0ab495038f5d0ca9915712ee579b"
+    },
+    {
+      "dictionary_entry_id": "0f03ca2c-94cf-49e2-8c0e-2ed70bbfb499",
+      "item_number": 26,
+      "pipeline_hash": "2a59710d2a5d1d6d84eae1cccd3122d1a87536877d95b96fb5b4fc4253d599bf",
+      "sampling_group": "bucket_A",
+      "source_hash": "161aeecc6d8380a8176904b8d3f6ed3d035f06b97e4836d5e055afbffb89fc0b"
+    },
+    {
+      "dictionary_entry_id": "2ab9a200-5110-4427-bedb-3d7135e80012",
+      "item_number": 27,
+      "pipeline_hash": "1f06ae525f5bfbeb8bdf7f0fe5b3eaee4caf346ebd5b25f799830bfc8383d074",
+      "sampling_group": "bucket_A",
+      "source_hash": "81ab0f1a2da31e34fc8ca21c4d35874debae77f64019ea311ca537b9cf5fba85"
+    },
+    {
+      "dictionary_entry_id": "400f0637-61a6-4d8e-bd77-75ec32e472ee",
+      "item_number": 28,
+      "pipeline_hash": "59382ab1ecccfb9ba83ff7a692079912edbf44df1b10e87c8bded0151c5bbb9f",
+      "sampling_group": "bucket_A",
+      "source_hash": "3c6f6d1403324b25e99db7a21686569d758f20e7299a87df19f8f6ab6d0b95c9"
+    },
+    {
+      "dictionary_entry_id": "22c1d229-988b-4fab-8e9e-e6673e6e5055",
+      "item_number": 29,
+      "pipeline_hash": "b8a51441dc07dff261fad6747c37e84d751acb8c2761f69ca396c7d11727a19e",
+      "sampling_group": "bucket_A",
+      "source_hash": "f43eb8f5f672138588985d600fdbf162873e8f88de0bab78c415bf340fa5b457"
+    },
+    {
+      "dictionary_entry_id": "d2bd4d21-0076-4fcd-bfaf-62f148dc3ab4",
+      "item_number": 30,
+      "pipeline_hash": "4af70690c885c2509e552c8d2f8ecf8bfe5fa330b82b8080ceb98f51d24542d7",
+      "sampling_group": "bucket_A",
+      "source_hash": "6a4b82f0bbfec16c86d6e06301add932ec5f83d3223eb11ce616f24fc40dca54"
+    },
+    {
+      "dictionary_entry_id": "c2204078-209c-417c-8963-4a1a7fdff163",
+      "item_number": 31,
+      "pipeline_hash": "f877ec1fd56b0e81ed87bb9e64ac8439b6039fd0621140c4c8570f0c479239b4",
+      "sampling_group": "bucket_A",
+      "source_hash": "e75d8458bcba2212dbcefa4b186b588e5d6c1455e920867107ecd57686fb5d5a"
+    },
+    {
+      "dictionary_entry_id": "8cd77ee0-aeb2-4033-897f-1d44e7f54445",
+      "item_number": 32,
+      "pipeline_hash": "2f3a17a8724121175dd30e9862cd1883ed2fef60bdd19c59e5e80aca7d9ee71a",
+      "sampling_group": "bucket_A",
+      "source_hash": "c76b68f2cdb092f43b8a968c213b49dc751d4285ea18bc1ee10912f5e9e66472"
+    },
+    {
+      "dictionary_entry_id": "b5fae70e-4587-46ee-b644-8ced48c1500c",
+      "item_number": 33,
+      "pipeline_hash": "e4d5aac3c0613e2c6d1e79f6e7cf2205f6c5ae0fc5bcb20701501d390c92da31",
+      "sampling_group": "bucket_A",
+      "source_hash": "05fd3614bab67c1f584565cfc2d347bcd2cf2a7c2f3800f716baedc86c076411"
+    },
+    {
+      "dictionary_entry_id": "39f204c2-d1fb-4d93-add6-0e6937611553",
+      "item_number": 34,
+      "pipeline_hash": "b1ecf6fe099f741637ecef37629e2ba1d2f6db96d7b17f69d64fc4a1c36da474",
+      "sampling_group": "bucket_A",
+      "source_hash": "b170c97aa41ed2c92b463c3f8fd023c5dc50366b88d9b2fa564fa341167d3b2e"
+    },
+    {
+      "dictionary_entry_id": "ceb05f04-1a91-4dfb-8b1b-3f3e5733403e",
+      "item_number": 35,
+      "pipeline_hash": "9d88166fe823e087bd2a392be7496b1de352232f65b2520340f4187e3f239f29",
+      "sampling_group": "bucket_A",
+      "source_hash": "bc3e13aff74c9f4d4c00c6bab480826270a9a4f898906dc9eebc2f8118e69212"
+    },
+    {
+      "dictionary_entry_id": "ce92900d-f94c-4f2a-b0fe-9efbe80893e3",
+      "item_number": 36,
+      "pipeline_hash": "522df0889bb068a9a41731f88f9ffb02afe58d10ad142ef79f8ec4746ba9aa68",
+      "sampling_group": "bucket_A",
+      "source_hash": "ee5598f04eb5d86135b23c9855030d4ebe3b2fb9c96f7421256eb633faf4c5a7"
+    },
+    {
+      "dictionary_entry_id": "62a11d90-8be9-46a5-a0c4-973dfc3c0ac5",
+      "item_number": 37,
+      "pipeline_hash": "4f673c0f6b85714e0ed6e251e0eba6b31af5ddfbf1533f30b4d2cd41cfb01b18",
+      "sampling_group": "bucket_A",
+      "source_hash": "c7128175f0fcf083ce5f0ccb1df387d48d11a3cb747cc097b8c0ccf3c978249c"
+    },
+    {
+      "dictionary_entry_id": "25c77510-45ef-458e-b6d0-cb8980944dda",
+      "item_number": 38,
+      "pipeline_hash": "915f767e1a8ae2268326ad423a739c0e61ee87bd8dc5d90f19b7282865d0b975",
+      "sampling_group": "bucket_A",
+      "source_hash": "4de827ed52ea189a8feee982a6eea4c5fde507acb892edf130fdc4d402adbbc2"
+    },
+    {
+      "dictionary_entry_id": "b6913eed-cf41-4e79-a38a-6e5b0ce8d3f7",
+      "item_number": 39,
+      "pipeline_hash": "345e131c02c7eed0dd888f25934f6e9d90a00bac2bd51edf67d17fd5db7f1ddb",
+      "sampling_group": "bucket_A",
+      "source_hash": "cdd5f0a24e582769dd6583ac4076aab0081d7a4843518473f7dab6a5e759ee2c"
+    },
+    {
+      "dictionary_entry_id": "3fc79f95-4c65-445c-b994-b8f447c34128",
+      "item_number": 40,
+      "pipeline_hash": "ff716ea1e6c079bff7571ab9e2fceeed485be665c23e34da494e3f8f96fbdd82",
+      "sampling_group": "bucket_A",
+      "source_hash": "210e2916ea901a3b2bbc050b1852ba808f461a7b58078496e781a0f3ef7f0a07"
+    },
+    {
+      "dictionary_entry_id": "ff69983b-88e9-4367-95d5-458ce280a2b3",
+      "item_number": 41,
+      "pipeline_hash": "c4453b2b1fc58d6067fb127825279da93086d89b26bc0c096cfbaa1f74c52967",
+      "sampling_group": "bucket_A",
+      "source_hash": "42852d88c7cdc35c512ea9e84153b16779fcfc8aced67f0659f4f15d59a6a56f"
+    },
+    {
+      "dictionary_entry_id": "223b842d-0213-4374-9e3a-1002aa194f2b",
+      "item_number": 42,
+      "pipeline_hash": "c57f3fbb3dee6c9cc63fb878b63d212c1d278b2fbc3aacfcea35f92ee00a7515",
+      "sampling_group": "bucket_A",
+      "source_hash": "12d76517c95a5457355a26a0b0e994d138dc9a76d03fd737395b834675566758"
+    },
+    {
+      "dictionary_entry_id": "7837b6e0-b925-4185-9457-93c5cb6386ad",
+      "item_number": 43,
+      "pipeline_hash": "9622ce4a698f2ea4f220c4d2de0a495825fb08730f26174dd1b6bcd0eed12a14",
+      "sampling_group": "bucket_A",
+      "source_hash": "da0cb3cd18b25afc575c54be2c0b45c4bf126fb279e6d0121ee6acc5376601c8"
+    },
+    {
+      "dictionary_entry_id": "7f60b203-d142-4727-85b6-4cf13abbf7c7",
+      "item_number": 44,
+      "pipeline_hash": "3bd4df3bb21c41189b88e2f6951879207dd86bce2258c9645d7659d845888602",
+      "sampling_group": "bucket_A",
+      "source_hash": "bbb22febcee2c823006f5b2bc7df83f344b4e4074ac3abef3e31161d35d5ad9b"
+    },
+    {
+      "dictionary_entry_id": "513d9c65-d64a-46e9-b939-8da4db34c4a1",
+      "item_number": 45,
+      "pipeline_hash": "174f31ce86d3e1271ed0219e2b3f11a732ae139421918520577aa62066d79993",
+      "sampling_group": "bucket_A",
+      "source_hash": "424e00c1af5774a74e450dc39876a7677d885803a64baca596249eecea9a93fc"
+    },
+    {
+      "dictionary_entry_id": "0e19e0c5-3e2a-473d-baa7-993529c3a545",
+      "item_number": 46,
+      "pipeline_hash": "93eecfe82eb3094dc1d3770eb256fce274daf0919782b4a46236e8d253093eb8",
+      "sampling_group": "bucket_A",
+      "source_hash": "b3c77f3c43a4cc88b6c3a470a8bb59576824312ead2a50b430240b76ad878745"
+    },
+    {
+      "dictionary_entry_id": "0b9abbd3-16e1-497b-9a53-ebbfbdd08f31",
+      "item_number": 47,
+      "pipeline_hash": "27d6d256fcd2b3c3fbbd7459983694a7805d5ad711f5c39ca93753561d38abfc",
+      "sampling_group": "bucket_A",
+      "source_hash": "974cd06595d0cd19ab2077db6ef3d7cfbfa886ce0d04f336ffd755c848301d3f"
+    },
+    {
+      "dictionary_entry_id": "627b8fd4-9f18-45cc-8e1a-6e3bbeb5f321",
+      "item_number": 48,
+      "pipeline_hash": "5c084b3ada9760d8b6733231e6104c6fde8d60517d078e3eee9d30e506571010",
+      "sampling_group": "bucket_A",
+      "source_hash": "237c70c46d663f8f2b7ef8883ecce2399c79a1f806ed14dbf367f5c0ee9d94a3"
+    },
+    {
+      "dictionary_entry_id": "4b3a5907-4860-4adc-a0ad-0a0b093bcbb3",
+      "item_number": 49,
+      "pipeline_hash": "96e8d2cfeb8bbdec40aa7d6562b1c7a7ad325a1d822540ea06e9244f6b8f3d4d",
+      "sampling_group": "bucket_A",
+      "source_hash": "e5a0d0503533a57ef9768121438e78014bce4ae4a61fc3ef6c9f5ca1cc6f8031"
+    },
+    {
+      "dictionary_entry_id": "d55c5274-9180-4cd5-a35f-941e5376ada5",
+      "item_number": 50,
+      "pipeline_hash": "58096158d2519b3e7954d25a6d4fd0d6eae7690573932c0d23ff423371f0a9e6",
+      "sampling_group": "bucket_A",
+      "source_hash": "3b897e595c15cd7f1d24d840c63aa0f8dae0a19ac8e33b7953e8b7acf9526e08"
+    },
+    {
+      "dictionary_entry_id": "91d7108b-bd97-4c03-961c-9b47f5cdba35",
+      "item_number": 51,
+      "pipeline_hash": "c36fe9f8e352577ba5db36ceb8d583b1250937a6d928b899d0b314418facbf1c",
+      "sampling_group": "bucket_A",
+      "source_hash": "1300cbab390261fac97338fc9cdd01193cf51a1ea49e3ab1a74902971e031d75"
+    },
+    {
+      "dictionary_entry_id": "30446acc-8f2c-4f42-9937-6d106b7af54f",
+      "item_number": 52,
+      "pipeline_hash": "9fd0ed1bfb205c3e9edb2bfa99180d2cd48281172a7b15a22fc0daf2db4e4777",
+      "sampling_group": "bucket_A",
+      "source_hash": "a36e9580219ada34d8750cd6d156b7fcd0e90365d04c27c5d6ddfd9ed75c07a9"
+    },
+    {
+      "dictionary_entry_id": "e639636d-5500-4f0b-8665-ce867d32c140",
+      "item_number": 53,
+      "pipeline_hash": "6683bf8dbb1e5aeb33d3e2ea174e0599bfdceae7c637887aaf3b1a1d0a86ed0a",
+      "sampling_group": "bucket_A",
+      "source_hash": "26104a033c02b309663f66bea29ef93e766690b6ee0014e51e5d23a6fbf1e8d2"
+    },
+    {
+      "dictionary_entry_id": "86899301-0701-4166-8730-f63000fc2dad",
+      "item_number": 54,
+      "pipeline_hash": "b1b956a3be0485dad1e33e77a1e1c27c608fc549b4ccb2af4319b8992b98624a",
+      "sampling_group": "bucket_A",
+      "source_hash": "144bf77b3422d57bdfcf7bfed184623e090688627a0df38b1984e58382881fc9"
+    },
+    {
+      "dictionary_entry_id": "6237e8c9-0c32-4a0a-b792-1c98367c60b9",
+      "item_number": 55,
+      "pipeline_hash": "98a3bcbb20e4f4f8ce024754c466cca9ade59d2f901351a1b9c605a796b6bae9",
+      "sampling_group": "bucket_A",
+      "source_hash": "cfe229471e4b086f14ce1e696330a69e2bebbefa7db98ff269e91b2dd74dddf2"
+    },
+    {
+      "dictionary_entry_id": "9425dd5c-45ec-4510-900d-0a02b397005a",
+      "item_number": 56,
+      "pipeline_hash": "b78b7afbff7f411b35b5c27726f0a9d29893a4a34b7bbdd3b973e6436c0d2ae3",
+      "sampling_group": "bucket_A",
+      "source_hash": "6bfa49642da01fbfc082f084282bafd39f8e36f1258266f59913980982c97548"
+    },
+    {
+      "dictionary_entry_id": "744c806e-788f-4f19-868f-e329d8ff6621",
+      "item_number": 57,
+      "pipeline_hash": "6966782d5f561de32cf5dbb3bb771656116fb92b878c8121b71c79b8da4870dd",
+      "sampling_group": "bucket_A",
+      "source_hash": "5becc6e8b3081c575b10b52b4ec3f8789eb2cf1f45fcaa4b7de9fd51af926ac0"
+    },
+    {
+      "dictionary_entry_id": "7a10235d-a802-4354-b856-66081294f4af",
+      "item_number": 58,
+      "pipeline_hash": "b4c8021a201e702276aeb30ea33756c2043a8cd9415a7735aca36e21ee8b6776",
+      "sampling_group": "bucket_A",
+      "source_hash": "62365156ef62bd83ae7051d8b7a8114ea9825e9f9da1ec8108e2e4cf026e61b7"
+    },
+    {
+      "dictionary_entry_id": "fa79ed3f-b56d-40bd-b214-4b1d6033eb38",
+      "item_number": 59,
+      "pipeline_hash": "290e2e64154c7257cfb63c7a2b29660636182812493c83b23d9f2f7786c9dd13",
+      "sampling_group": "bucket_A",
+      "source_hash": "d28e226a2a00d69714467f0e01c700670c8d8fc896c08d6d88df8da19f7c3b0e"
+    },
+    {
+      "dictionary_entry_id": "2b914971-50f2-46d1-948a-c7aab470ff2e",
+      "item_number": 60,
+      "pipeline_hash": "cf78e2af1562219d567b0ef9752ef5b7bb65d6028801b8fdf2a16566d303240e",
+      "sampling_group": "bucket_A",
+      "source_hash": "89b553e38e6e686b31f55e58053dbd8c2c8abe0ba258b93331ac8d04a78dc242"
+    },
+    {
+      "dictionary_entry_id": "6ed034d5-1dee-4b33-a0ae-751f65c8d5bf",
+      "item_number": 61,
+      "pipeline_hash": "9b95eaeee0a89d8de77e6536e96a50517dcd9bcc6666547852160fac1994b315",
+      "sampling_group": "bucket_B",
+      "source_hash": "a089d15c5f9a011f2d662352208afc4fc91f2546b5ddfef0483a28d6da11e11f"
+    },
+    {
+      "dictionary_entry_id": "fdb5551c-7f94-4b41-8b9d-e0adb3b77b6a",
+      "item_number": 62,
+      "pipeline_hash": "30e38828690fe26b382b88d681f64e67da64999050556fa4db6b80b5545c0e64",
+      "sampling_group": "bucket_B",
+      "source_hash": "203271ec20c9c45a0c7f83e345fd0b2a0ad8b2a082848bb8f446854ccbcfcc92"
+    },
+    {
+      "dictionary_entry_id": "912fcc9b-5866-43f8-b77e-c6bf9d6fc4bf",
+      "item_number": 63,
+      "pipeline_hash": "dc367c2096dba8f27eb43922cfd5ef7428bd945c4d12d1e63c0efa38dbe95538",
+      "sampling_group": "bucket_B",
+      "source_hash": "c6ddcbf54f74ec905700c502aeda9af64177bf51e68b5ba243a41c5880a69a1c"
+    },
+    {
+      "dictionary_entry_id": "2f7081b3-26a7-4f51-86d3-9395dcf252af",
+      "item_number": 64,
+      "pipeline_hash": "21ac3c4b3e0686e29771fbebef2033624e116334e855196da29053ee405d5b2d",
+      "sampling_group": "bucket_B",
+      "source_hash": "4b7093cb00a98bdde9bb86b6b2c4c6d4da6ffa50b0cb6b7743488dc895698070"
+    },
+    {
+      "dictionary_entry_id": "ed6f98ce-84b1-437a-841e-b7d94b09b943",
+      "item_number": 65,
+      "pipeline_hash": "7e8b43d722954ec30db84b122f3317afb6659330043d0c8fc404c623dd0a4412",
+      "sampling_group": "bucket_B",
+      "source_hash": "e91bf276e88dbb9d4be24807f90d9fcb57fa7158215cd4f35e607044bcf86d12"
+    },
+    {
+      "dictionary_entry_id": "8b176ebc-138d-40bf-8184-f44ee3489975",
+      "item_number": 66,
+      "pipeline_hash": "0ef1a32c4618b0310961dadc7d4df91d01cc636a446bfd37ef6ae40c932d1bd8",
+      "sampling_group": "bucket_B",
+      "source_hash": "216227cfa0eb2c5f9cabbb005616cf9a0ebbb3311e2de6304e1e8d54484c4c5b"
+    },
+    {
+      "dictionary_entry_id": "ceca8954-1e9d-410e-80b9-0eae3881376d",
+      "item_number": 67,
+      "pipeline_hash": "edd2c2140b25d4db9ccc2c900b1f79ef7bfd7c7989e97171ecbb846693d69d1d",
+      "sampling_group": "bucket_B",
+      "source_hash": "03b1fcd442c4fe519600fddeed6ccb880c8b2151b9a0d7c2332a8e4d3576ac17"
+    },
+    {
+      "dictionary_entry_id": "ffcae4d4-84e7-4454-8c18-68e220addc5f",
+      "item_number": 68,
+      "pipeline_hash": "82dfb891f5bfd36d9e8a9688f677e2d5821fce1b570afa0bfa71813dbb7c59df",
+      "sampling_group": "bucket_B",
+      "source_hash": "9417c100e8430b36436dd3645cbc7aa10702d40da6d0d08e2ca98e64ef33aa85"
+    },
+    {
+      "dictionary_entry_id": "0e88a51f-477f-45a8-bb39-2e805896dab6",
+      "item_number": 69,
+      "pipeline_hash": "6ce23d936edc97edd555b5d3b4c83e13069f389bdcb593aaeccff4ffe45978d4",
+      "sampling_group": "bucket_B",
+      "source_hash": "ac90d77c4e0394568c8ba238f41185d23a9b746c2bfef5860a98ece09707ba4a"
+    },
+    {
+      "dictionary_entry_id": "d5df098a-9f95-4fa9-b328-297b0234f778",
+      "item_number": 70,
+      "pipeline_hash": "1452de73b6c26ddbfdb22a531b4c1d114e87249c469e2a927999b0831f85c09a",
+      "sampling_group": "bucket_B",
+      "source_hash": "50883e6ba0d5a511d13b711b7e81f0e9a5b97580eb8fb61fe880fc3b985c4227"
+    },
+    {
+      "dictionary_entry_id": "b06c2084-8849-40e2-9a95-8267b5fea6b7",
+      "item_number": 71,
+      "pipeline_hash": "5e253b27264646d2e6fc58ff84a72831ab4147946ee649f8930a73fef047b5df",
+      "sampling_group": "bucket_B",
+      "source_hash": "8a1986ad493cec21e7f47ee869e4f1bcedca1e36d19ac2478c1f20910eb63bf1"
+    },
+    {
+      "dictionary_entry_id": "6e826eda-ecd6-4c57-b0b3-4fee1734042d",
+      "item_number": 72,
+      "pipeline_hash": "8122db37ec00ddd0cc69c3a823b03cb0e799513d470e4fa169f296f4cdcb8fb4",
+      "sampling_group": "bucket_B",
+      "source_hash": "634b833a8c62a6591eee6abb4bad5cd17b59d9532adfb3058b0f32f988fc5ed7"
+    },
+    {
+      "dictionary_entry_id": "5ad41fcb-a2f2-4d76-bb48-167f71aa9245",
+      "item_number": 73,
+      "pipeline_hash": "0a67403cfbf8f74c8975c6a46076703ab249319e6003e23f3e3d48963cd34ccc",
+      "sampling_group": "bucket_B",
+      "source_hash": "7cc7cf5bd9bf633a2970b37f095dfad16f18a711575af03a3be64548802cc453"
+    },
+    {
+      "dictionary_entry_id": "d91dca7a-300c-4fe5-902b-7512d10540cf",
+      "item_number": 74,
+      "pipeline_hash": "fa7007dc77d83014bb76cb26b437d88f33e03491f54b65401a05a7f1d8d85499",
+      "sampling_group": "bucket_B",
+      "source_hash": "b43ecce724c8e84671d55647e3c390e6c510c43e8769c81864d2191ae993ae21"
+    },
+    {
+      "dictionary_entry_id": "12d9f96d-fd42-4f29-b00b-e534a923ab5d",
+      "item_number": 75,
+      "pipeline_hash": "a1286f12a740a28acbc2d077c5bf7e5e3d072d7602df96de428bde45c3fc227c",
+      "sampling_group": "bucket_B",
+      "source_hash": "9be687be9769247c6f8e3f962e77506e1efbd7fa3e351233a99f9c15ea1a63e3"
+    },
+    {
+      "dictionary_entry_id": "4a39be67-0c74-4d03-9315-62c961f97ea8",
+      "item_number": 76,
+      "pipeline_hash": "02f0476db547d433fc24b38ee04816dec737a269fd6f92caecee4843ba43ab06",
+      "sampling_group": "bucket_B",
+      "source_hash": "72ef8ccdd7f78ae2e976424a6e17d3b4ddc1007007097e081f588b47bf7a1704"
+    },
+    {
+      "dictionary_entry_id": "50161072-d056-4dba-8508-81153279fb8a",
+      "item_number": 77,
+      "pipeline_hash": "9a74200b7b2a08d9dee99bd1bb1dc9354b199f1a350009ad9b3b5245c6c1bb23",
+      "sampling_group": "bucket_B",
+      "source_hash": "fcac9f1abb8660b3d7f3e454095123eaf4a7a75c494c1ca32c072210485ed446"
+    },
+    {
+      "dictionary_entry_id": "6ec082bd-603e-4250-9e17-028167f0d7f1",
+      "item_number": 78,
+      "pipeline_hash": "789d433901d7a211c16f1ca1a5ed3fda6d2ae3fdce7ab04b1e21a97af35888f8",
+      "sampling_group": "bucket_B",
+      "source_hash": "939fa89b5c2278f522b7abdc3341599d87a4dad1f2b6d5724acf0f6c86ce3a56"
+    },
+    {
+      "dictionary_entry_id": "a0e22376-7fef-448e-8ff6-dcea3daad00f",
+      "item_number": 79,
+      "pipeline_hash": "36fb142921d130fad0100e00658950351c59ce2ec92e871c47e221227b352671",
+      "sampling_group": "bucket_B",
+      "source_hash": "ac980a5a6ac654a538da6ead8ece099c3364be7f80d579f604860a7d58621d85"
+    },
+    {
+      "dictionary_entry_id": "07230f8e-1f59-4736-9b5e-de6161d96831",
+      "item_number": 80,
+      "pipeline_hash": "337629c250a51063ddd847ac3b56fc9f636edc93b08bfa567e86cd565228bef2",
+      "sampling_group": "bucket_B",
+      "source_hash": "fa15ac8127c0d52971190908ce9770cb094887ebc3151818d3dde80ddcea0971"
+    },
+    {
+      "dictionary_entry_id": "f2f7e80c-bbde-486f-b63a-4ab66a0f6fd9",
+      "item_number": 81,
+      "pipeline_hash": "38c3595bf5f2cd3740f9bce0113a5486b74af1f72c49f861b5d8dd9df3fb7ddc",
+      "sampling_group": "bucket_B",
+      "source_hash": "e8999a6a98fd0843b51dd25272a743238113d369ec684852431b7923bbd0ad97"
+    },
+    {
+      "dictionary_entry_id": "6f9ef604-c3bf-48ea-8010-d7fdfc3c0bd7",
+      "item_number": 82,
+      "pipeline_hash": "02c696d8e108768e7744e7abf9d540b55e2573dd52760b588b902f4ddca39ba3",
+      "sampling_group": "bucket_B",
+      "source_hash": "da5227b54244c7c7c48ddd7e9e7ca268a6a2c117fa02625d9d399d32517afa27"
+    },
+    {
+      "dictionary_entry_id": "ca38241f-6e5e-4b9c-9f12-3c0d6a6ec446",
+      "item_number": 83,
+      "pipeline_hash": "76c02cd31a90672676c0602c1efeec764422ca8f66ddb30a135733989db11cdf",
+      "sampling_group": "bucket_B",
+      "source_hash": "6f662ed182ac8129b147560fee43249a82307e154971b43b3143257068cda540"
+    },
+    {
+      "dictionary_entry_id": "5891d3af-0b6f-494f-9ee6-74824087f684",
+      "item_number": 84,
+      "pipeline_hash": "d81d786a7c301b96dbff2a946f9010e9bb5d1d25434472a77bc43f27cd6eb458",
+      "sampling_group": "bucket_B",
+      "source_hash": "2d6a783d81247499b4ffe5cf37437e4f5fa10947c8a9de85bffce5c6d603c336"
+    },
+    {
+      "dictionary_entry_id": "2ccb3d06-6840-44a9-b297-d8462e675982",
+      "item_number": 85,
+      "pipeline_hash": "6f5cd38875f18299f8f22a4328c0aefc628fe2e069ce23ccb2bbf1bf9b5449fa",
+      "sampling_group": "bucket_B",
+      "source_hash": "db7731e32b5bd51e37252d1bf5deee6bb8926896ab063bc0d68982dfe3df7c9d"
+    },
+    {
+      "dictionary_entry_id": "9b12edf3-8ff9-4a33-80ca-a868060077eb",
+      "item_number": 86,
+      "pipeline_hash": "5b71d635bbae30f8b6f65df5588560b2959cf1c06781f6706d5803983db8a67a",
+      "sampling_group": "bucket_B",
+      "source_hash": "a723a4d7b7861edbe22b59702f2ce2a64c6cbb731d90ba00e94b2e9d6588c8f4"
+    },
+    {
+      "dictionary_entry_id": "cf184058-8bc1-4b41-bc83-f0276fd4d3dd",
+      "item_number": 87,
+      "pipeline_hash": "2e2e11eeb5d9cf6a5e462bfc33007e2e3d9a6b3cbc8ec96acfed0ceb3d6c697c",
+      "sampling_group": "bucket_B",
+      "source_hash": "ee6333238e61f28d11583522fa06befabfb92901ce749fb9ee7fd6ecc7f27981"
+    },
+    {
+      "dictionary_entry_id": "ffb05602-6961-41fa-9e89-0c06f26edecf",
+      "item_number": 88,
+      "pipeline_hash": "0e09fcdc0e5e17ef875d4856afff7e2c9d3e6ef54165d31e24d3d925da14fc33",
+      "sampling_group": "bucket_B",
+      "source_hash": "a3ee7677a2bec7fa476c89d440e8f8f787b73248ad5e87ba862aa64287d74dae"
+    },
+    {
+      "dictionary_entry_id": "f95d8612-866d-4a53-b87b-2b1cad8fe62e",
+      "item_number": 89,
+      "pipeline_hash": "f361362ad231c0357fd5d0edc29ca20c0d6b0e3302cabb628d1cfa0bdd86b703",
+      "sampling_group": "bucket_B",
+      "source_hash": "c9c699e7d9309edcc74a40b1fa6e77729a05852981659ebeec2d93e241497ef7"
+    },
+    {
+      "dictionary_entry_id": "03b2779a-3f02-476e-9f1a-dd0b13264365",
+      "item_number": 90,
+      "pipeline_hash": "d42c4a379fce4c94b1c09684f272a7e5e4d177179b6f0feb2ccf862fda5dede4",
+      "sampling_group": "bucket_B",
+      "source_hash": "8dc00e8b04536e63f0dc0a1ae1ce8e36f3ecb73fbb68e5e58d5463f1b473c254"
+    },
+    {
+      "dictionary_entry_id": "5b971516-6773-482c-8274-39cb88d1d5da",
+      "item_number": 91,
+      "pipeline_hash": "5c5ad27c5533ed920ed653fac97501a6048b74b0a2e80c84ede8f3499fafb5ce",
+      "sampling_group": "bucket_B",
+      "source_hash": "6aeab4129da79236dba0f7748826ca8cb66b3609497dece3c83e3be29d57031a"
+    },
+    {
+      "dictionary_entry_id": "559a7b31-af74-4cca-a13d-b0a705114f7f",
+      "item_number": 92,
+      "pipeline_hash": "076ebab80ae56ae96ae419594e4b0deefabbe22063352fcb31c14c12ce005e75",
+      "sampling_group": "bucket_B",
+      "source_hash": "ef6a8379ecbea71a456f627077dce06bae943a3ecdd531206b4994ea747fb11b"
+    },
+    {
+      "dictionary_entry_id": "1f3fdff0-1a4b-4e2d-bbe1-a646a04e3566",
+      "item_number": 93,
+      "pipeline_hash": "4655d0174bc5e561a85c5f33d3fcac1865345575da08c94d50e17bec8236dcfe",
+      "sampling_group": "bucket_B",
+      "source_hash": "659d098a34355a256a70615b5b908506c268e56d45e0040c0bdeadc7b34bfb9c"
+    },
+    {
+      "dictionary_entry_id": "ed7831a9-26bc-4a9e-b4f6-8f7cc273e43c",
+      "item_number": 94,
+      "pipeline_hash": "a0bfe77ddc84ae1b8886de6f2eb211bb7aefc8fd6a9f0e346d97caa6c0ba20bd",
+      "sampling_group": "bucket_B",
+      "source_hash": "2de5fd1cae38f546793a2275e59b92bb8863c562d303159c7149d5ff959c1683"
+    },
+    {
+      "dictionary_entry_id": "37411fc4-4fc5-4ae4-8a7b-664f5a358a98",
+      "item_number": 95,
+      "pipeline_hash": "c9c0c9ce101220b0216d595357a6014a69dccc2dceee3e0156014e5db6857dc9",
+      "sampling_group": "bucket_B",
+      "source_hash": "c246086bf9abd433942770f80f12d3f104d5ef0fd66c58831e4ef5fa875a6fbf"
+    },
+    {
+      "dictionary_entry_id": "95432aa1-acdd-4b2e-955b-7b9e9d7c6a3d",
+      "item_number": 96,
+      "pipeline_hash": "d63abbe0ba986ee12a06040e282a31198db86e88b2c64130946c8d2cb8f0ce4c",
+      "sampling_group": "bucket_B",
+      "source_hash": "d6b1d7fa4f9cc759866b6f5c213951b46000314f14f09ed8aba7c9638fdeee81"
+    },
+    {
+      "dictionary_entry_id": "a9a8d93a-e501-47ae-aa57-f4d1139fb10e",
+      "item_number": 97,
+      "pipeline_hash": "6b0097c250d6a500e1819fd7ed6c750469fc281e1f6d168c509d011832db0d0f",
+      "sampling_group": "bucket_B",
+      "source_hash": "2218ef1cd0e6126dcd9fb717d5dfd8fb9a05c6a777bf498172aeb7a6e5ed9066"
+    },
+    {
+      "dictionary_entry_id": "bba32b60-475e-4682-9072-8ff16c5e2860",
+      "item_number": 98,
+      "pipeline_hash": "b424897081a0d1588c67983fe650aac7f63ed605014a97a574428ea5692e50e1",
+      "sampling_group": "bucket_B",
+      "source_hash": "9ee70f8a05d7720557d0b5730870fab0eca03b7ec13c2e0acfee33e4b328ea91"
+    },
+    {
+      "dictionary_entry_id": "175c0200-b741-446c-a7a7-978e39fb5902",
+      "item_number": 99,
+      "pipeline_hash": "a3a25ff7877567223fd3e29576a058a2aaeb836f01d42bc8e4203df493d457b1",
+      "sampling_group": "bucket_B",
+      "source_hash": "b56b8a29b1492878494cc48f64289a3474cef7f64b51ebd398c7c68204fb68ec"
+    },
+    {
+      "dictionary_entry_id": "41c68845-e4cb-4d48-ab4c-98821edef945",
+      "item_number": 100,
+      "pipeline_hash": "6a8f2c9d74dfa9830c48a68c846581e09d40a2439a1be0ec419d8a6ca6e8f49e",
+      "sampling_group": "bucket_B",
+      "source_hash": "ba6056a02d8a74e6986a2293b933df57b904c30ae86d9aedf2551179ff13e73c"
+    },
+    {
+      "dictionary_entry_id": "bb57ffd6-2998-40d1-947e-7bb27a445617",
+      "item_number": 101,
+      "pipeline_hash": "8422ecd2d725a51f27475585180f6320a26a21bcb29be4df5a2a62611739c235",
+      "sampling_group": "bucket_C",
+      "source_hash": "2afbffc31eca7259fec1db6223e099422984c030fb7e140cd235ef0ede32f0fa"
+    },
+    {
+      "dictionary_entry_id": "04635ef5-2c5f-48fa-8cb6-40c7b5410aea",
+      "item_number": 102,
+      "pipeline_hash": "8d0fc77fc66dd2556a552816f1de544f6e362fd6b6499f3ed386e29118e51f9e",
+      "sampling_group": "bucket_C",
+      "source_hash": "ef559b0faa01b8b72695a0940e0d7176c8bcbe7a0fb171f47cff71b755c75db3"
+    },
+    {
+      "dictionary_entry_id": "26e9aded-f2b5-435e-8acb-c182a7b7f482",
+      "item_number": 103,
+      "pipeline_hash": "b890b7a39cc531f1cad37b5a4da8c09aab6c7a371a08d906b79ab8af19c588ba",
+      "sampling_group": "bucket_C",
+      "source_hash": "6e1f73ce8c46e3dc41e2bca17cfc0bda703bcaef6f776354d6440aa62774c7d6"
+    },
+    {
+      "dictionary_entry_id": "999d2634-100b-471c-aee8-9097e871af99",
+      "item_number": 104,
+      "pipeline_hash": "cea1ef55bf1fb129b3401d732e5e9f150b0fbc4317d09718969ae3a18df0ef06",
+      "sampling_group": "bucket_C",
+      "source_hash": "c1f6d57e242fd4494625e9ee7584d728c6152c61b59b4e62be184332c2424c50"
+    },
+    {
+      "dictionary_entry_id": "a556396f-9fb5-43a7-948c-6b5e22fc8044",
+      "item_number": 105,
+      "pipeline_hash": "9d030040144ae30111b62a4ae79fdc8ae4ce56ad6888be39262d877baa6f57ca",
+      "sampling_group": "bucket_C",
+      "source_hash": "9b5e0ae4bd61e32d39e76ee88fc63cf895a15fda304672bab5e5b9a023b8a3df"
+    },
+    {
+      "dictionary_entry_id": "aa479a88-e683-44dd-a117-d9b12948d468",
+      "item_number": 106,
+      "pipeline_hash": "6b72f528fd924dabd45c43818c233bb40efb5f5f327bff1b9f902dc26af9d732",
+      "sampling_group": "bucket_C",
+      "source_hash": "0edc5b9b24fc2df2647d8841c42d2bc977be620f4e3961e55537c290ee56c660"
+    },
+    {
+      "dictionary_entry_id": "24419151-976e-4ee3-995f-f2bbac3626e3",
+      "item_number": 107,
+      "pipeline_hash": "5ae0bce9356e1bcebfea81e1a85f4abd0904103963ee3176a8f99ed8c67aa72a",
+      "sampling_group": "bucket_C",
+      "source_hash": "1b0723b152072c2be7978e33306a8c56d43441ea05a4335048e13c9acbddf794"
+    },
+    {
+      "dictionary_entry_id": "03cd7fb8-841a-459a-b047-649468e70c9a",
+      "item_number": 108,
+      "pipeline_hash": "bc230966e9f475843d6300539c81a155f2d749b208a5a9e2a1cea6468dfa1e3a",
+      "sampling_group": "bucket_C",
+      "source_hash": "16a161ea3f4d0f2757bc18898d6182613747e2c880710789cd8def65404df14c"
+    },
+    {
+      "dictionary_entry_id": "f2617371-6dd4-43bf-bdf7-2e1a1abaec65",
+      "item_number": 109,
+      "pipeline_hash": "038340c032dc61c66b079dacf109c1c23488ba647f50c9e6ce88ad1886927e72",
+      "sampling_group": "bucket_C",
+      "source_hash": "c6d8b199843471d8138f29847b47ca227d144f9542374ce15489d49b9ef9cd6b"
+    },
+    {
+      "dictionary_entry_id": "721cf47c-572c-441a-9e29-7f9d60fff2e5",
+      "item_number": 110,
+      "pipeline_hash": "2903ef879bec317fa876d8c3b58c4af2c9113198dfeb1f4c822e0956f27f452d",
+      "sampling_group": "bucket_C",
+      "source_hash": "4dd914df4f89806e5d28dabb2bda4f2a602ccc72eddc9b47c478f3c089e70250"
+    },
+    {
+      "dictionary_entry_id": "5f68c811-fa76-496b-a02f-6939357ec7d7",
+      "item_number": 111,
+      "pipeline_hash": "e56f095519232bec747a6a9272c5118580054fe165749e099ca8c0a1d09a4f24",
+      "sampling_group": "bucket_C",
+      "source_hash": "80ecec374a404dba98f79084d40f60a1356756f85df98eb670350a8258abced7"
+    },
+    {
+      "dictionary_entry_id": "5e26f816-8644-4593-a614-d869a5d36350",
+      "item_number": 112,
+      "pipeline_hash": "d76f6c78933605219e7d7495561b1c3033249fa1409e701c0dcd66c435fc46dd",
+      "sampling_group": "bucket_C",
+      "source_hash": "4f6b9e483f933218101d033b8f3bedbe9a7192f98a0aaf30e46d5a93f3adeb28"
+    },
+    {
+      "dictionary_entry_id": "16ece5f2-3a5c-461f-b4b2-92707faefd3e",
+      "item_number": 113,
+      "pipeline_hash": "1a7d9aec7dfc2b68ba805720d0f6cbf31e5660cf27e62b3d2d806e5a7c100854",
+      "sampling_group": "bucket_C",
+      "source_hash": "a073b589a3142cba64528f386e15aea22210449ce1ce0e59c52b40326eb7fec4"
+    },
+    {
+      "dictionary_entry_id": "50a9f6ff-117b-4847-84cd-37d7965e8048",
+      "item_number": 114,
+      "pipeline_hash": "b6a560389ce835b3626de385702fc47fafcb91c319ba9109be42f30e6a43606a",
+      "sampling_group": "bucket_C",
+      "source_hash": "b7f3266d140d32ab71d4939f6ed163a9bdaafda1a8bdfb0ba5fe208dda6f12aa"
+    },
+    {
+      "dictionary_entry_id": "deef89fb-6154-4231-9bae-d634b65d43dc",
+      "item_number": 115,
+      "pipeline_hash": "c1be247109f969268fbeb920ef6c7e91796a2af79980322ffde5320699c87a0a",
+      "sampling_group": "bucket_C",
+      "source_hash": "827bf6406fd6b417a18515d1f58aae08885004f5220934e113e7a87769ce1040"
+    },
+    {
+      "dictionary_entry_id": "f44033b2-7341-41ec-a724-6dc75ba0cc88",
+      "item_number": 116,
+      "pipeline_hash": "764e9eb3786b60c2cff00941094568cea8b3e3b6fa11d0c68ed2d646025a1e74",
+      "sampling_group": "bucket_C",
+      "source_hash": "16e54abff8924dd61731f0d7a8efbf7d1e3fd73277495c4f89717fa60c82ab1f"
+    },
+    {
+      "dictionary_entry_id": "6cc9e687-78b7-495b-a540-8139dd94a20e",
+      "item_number": 117,
+      "pipeline_hash": "138ddc7f313df78fb86ef13bb831d1b9ff2b674637cc28122f896c038ff1c936",
+      "sampling_group": "bucket_C",
+      "source_hash": "d9e1712c1301de9b46b2b5a02c82cf8b7fa31f51b7d82dc52fcad5e6e255efaa"
+    },
+    {
+      "dictionary_entry_id": "747c857d-807a-432e-b0df-22f3dc9eb260",
+      "item_number": 118,
+      "pipeline_hash": "b820f9f45f0437d049132746df27cf6a485f0102fd37fce50486156ab8923b57",
+      "sampling_group": "bucket_C",
+      "source_hash": "d39e17ac7d1b2fb3a7b515fd1d5b6ab3754de7dacb6871df6f2afa75e4245135"
+    },
+    {
+      "dictionary_entry_id": "68c5b8fa-1d48-4fa1-8e1d-f7cf5f7d323c",
+      "item_number": 119,
+      "pipeline_hash": "816f7b8cb93b1c87cce05b346074781304cb639141f2587aeaa92d9b2d444061",
+      "sampling_group": "bucket_C",
+      "source_hash": "59b97ff39780f8d02f2140dab77e2f459c969a5af456a71eb8a83fdf4b3c3573"
+    },
+    {
+      "dictionary_entry_id": "93655ee1-692c-4b16-91c0-96dd5d06a19e",
+      "item_number": 120,
+      "pipeline_hash": "e8fb903a6d32b8ec00e385f5d784af46ec8064ad678550a9ed05ee0f557639ef",
+      "sampling_group": "bucket_C",
+      "source_hash": "0fe92f8129862b28f7c243f5b2e8ab5de3725f3841bf5da9f20c8729d545362a"
+    },
+    {
+      "dictionary_entry_id": "e048d08f-41c8-40be-b0aa-26201f6ad032",
+      "item_number": 121,
+      "pipeline_hash": "2e1d9ced1b7bb824e7be4f52275b36cd6825af650863eee90d4074f3fa7a0156",
+      "sampling_group": "bucket_C",
+      "source_hash": "6f4613e2b6cf07d2881560350b44b3853cb6846b746408ddfbe1d421329bda0f"
+    },
+    {
+      "dictionary_entry_id": "c72d0555-5caf-41b3-96a4-c0e5c3ff8a88",
+      "item_number": 122,
+      "pipeline_hash": "33e94eec625a779d6a4e57996d312ee52f59f2dffbe2ae390ce5054aa27f4d39",
+      "sampling_group": "bucket_C",
+      "source_hash": "15a641ac5dd77527d5c0ad87b04055d6cd54474fe819a760bf55f21e99f6d695"
+    },
+    {
+      "dictionary_entry_id": "d6c66fab-6c7d-4721-8654-7800abcb1aa5",
+      "item_number": 123,
+      "pipeline_hash": "799245bd57c8fcda2295692a7fa9ab3edf729be900c90302ad6d8d49c98a4857",
+      "sampling_group": "bucket_C",
+      "source_hash": "e040fae7d3e2fbb1f6cf456234d7f7d2029f5902797b200add4d24ee2b392ad8"
+    },
+    {
+      "dictionary_entry_id": "4186875f-4cdb-4783-84de-81c55dfc9505",
+      "item_number": 124,
+      "pipeline_hash": "d67e5fac2971555f9573cf57cd700ffaa2b3bafdbde27df0cba1844d2aaca106",
+      "sampling_group": "bucket_C",
+      "source_hash": "e7c37b6418ea1d498118a8d0a750ef7b734b1ee8ecf997ce1f56481e791d23bb"
+    },
+    {
+      "dictionary_entry_id": "a4c5f4c3-171a-4f66-a655-e50952fb2ba1",
+      "item_number": 125,
+      "pipeline_hash": "41cdfa57f553ddf8fa31789b81d13d958ae872e12c9a6a87d4685fc86fdc8848",
+      "sampling_group": "bucket_C",
+      "source_hash": "14655595b955ee98fe4a89c00b5929abaa1e4dc5ee6ff3abd91722f7bdf07804"
+    },
+    {
+      "dictionary_entry_id": "7930a448-5f04-4e5e-a64c-f64be6f71ea0",
+      "item_number": 126,
+      "pipeline_hash": "fad9358f1442834e898685761c650e5ac3ff4463b5fc8b6fa4a069abf5f9a9c7",
+      "sampling_group": "bucket_C",
+      "source_hash": "828dc1c2f921bd4d61be2ecd1768c18d4c2a226b772862ae38b6c028d063e527"
+    },
+    {
+      "dictionary_entry_id": "dd65d5c1-3d4f-47c7-b453-f5587349b1ce",
+      "item_number": 127,
+      "pipeline_hash": "b985acbbb1f259ac0d7596d858817d81dd2a21a5e2713d21bf322bd1b43b7527",
+      "sampling_group": "bucket_C",
+      "source_hash": "ad99f54de11a0e986db7df0aba22db4de3d5f25249f31ba02afae4c8b6862698"
+    },
+    {
+      "dictionary_entry_id": "c6a2bf2c-6795-4e74-bffd-60c0f852bd5d",
+      "item_number": 128,
+      "pipeline_hash": "4070b247d4c3ddd097fde32e5354a252b7417da8fc0764c5becdaece687ccb36",
+      "sampling_group": "bucket_C",
+      "source_hash": "f253a4164b918c227c7bbce33d6132c876ad12c51c86182b7230a1952f35547a"
+    },
+    {
+      "dictionary_entry_id": "dca78cea-2835-47ce-bf3e-99217d259316",
+      "item_number": 129,
+      "pipeline_hash": "269e50aab24d43af7d81f8e6ee0197b67aefdebf4063feff17e1718ce86e0300",
+      "sampling_group": "bucket_C",
+      "source_hash": "448a73b9cfd9cfd32edc523ab7082f005855ab359e6d098b381bdd3c4b1c0a4b"
+    },
+    {
+      "dictionary_entry_id": "cd1dfec8-c4f8-4724-bb11-ad3cb0453a83",
+      "item_number": 130,
+      "pipeline_hash": "6fe2882c9d18ba745211d641e371e7b69d7f9d87583df88bbcd4b3fbb7247365",
+      "sampling_group": "bucket_C",
+      "source_hash": "da0d8f3938611cfee24a67aeec07ca261086dd678186124586338b26401cd70a"
+    },
+    {
+      "dictionary_entry_id": "1fbae1e1-b48d-4031-96cc-8cdd9b1804cd",
+      "item_number": 131,
+      "pipeline_hash": "0e4c93d1874e9ab96e6d77823a65ed67473b50c6bc005bdcbdda920725049d0d",
+      "sampling_group": "bucket_C",
+      "source_hash": "753645cc4fbc8d629572ce2fe8a84c1059920b3777244ca6f036b370b6497809"
+    },
+    {
+      "dictionary_entry_id": "051375d7-b16a-4993-a04a-84edfc007fca",
+      "item_number": 132,
+      "pipeline_hash": "c712d5cd6c4d98608da475954b6d52288a0693703de76bbca294cf2a60f635d7",
+      "sampling_group": "bucket_C",
+      "source_hash": "5e4f39e671551f8c79196dcac16bb53436ed548a1371a89d4779fa7d2039b7bb"
+    },
+    {
+      "dictionary_entry_id": "99b35618-98c5-479d-9612-f4648ed94c16",
+      "item_number": 133,
+      "pipeline_hash": "8ac0cefef1a038a063527f4a0a1ebaee71517e75a0235dbe12f1e8cc42ac6409",
+      "sampling_group": "bucket_C",
+      "source_hash": "c3d19c05faa7041cea55205739d21f4e5e1c0472eb96d12c68b6724449fb0669"
+    },
+    {
+      "dictionary_entry_id": "0a0d8157-13f7-4de7-a214-76bd9af3c525",
+      "item_number": 134,
+      "pipeline_hash": "0c2b4732f09d704dfc2728ff587ffdd9161863de229ae92627d39efebe0a07b8",
+      "sampling_group": "bucket_C",
+      "source_hash": "3c5c3a86b27e1093fc50607c8575fc4375a18b8027cff7cbe93191de4f1eff08"
+    },
+    {
+      "dictionary_entry_id": "b7eea3a1-dbb1-4dd5-bad8-2ae58c2c1da0",
+      "item_number": 135,
+      "pipeline_hash": "91a5254f466ddcc1cdfe487ecba406afc517d1ac69d63eb87f52b75d6507ca9c",
+      "sampling_group": "bucket_C",
+      "source_hash": "f1ba28408c9619c1b1f7418ec8eb0a52113f0a094323bfd7d37be9335609dfea"
+    },
+    {
+      "dictionary_entry_id": "411cde68-6bbf-485f-b14e-17439f33c588",
+      "item_number": 136,
+      "pipeline_hash": "4135a524e138b0ff782c790dd922c6f6918fe58f0a50b0b0221698acc286fae0",
+      "sampling_group": "bucket_C",
+      "source_hash": "b26c8ebfe2dc58aceaa2dfc0d16076bb296eadd04a4af951e17f847803976325"
+    },
+    {
+      "dictionary_entry_id": "18169dee-49f6-472f-bf9f-de9a39978870",
+      "item_number": 137,
+      "pipeline_hash": "0ba490eaa5149a92c27ac7679944ec2d95f714717d347e43c37a7106d12abb56",
+      "sampling_group": "bucket_C",
+      "source_hash": "45f8c6f6c117572795be4c218b1da41587956f220cbd3fb66b1c1faff9c7b45b"
+    },
+    {
+      "dictionary_entry_id": "0dc4f79b-ef08-468a-b048-9ff667639994",
+      "item_number": 138,
+      "pipeline_hash": "52baea176f6ee84b729d1a90c3c53b07d641c233d3d6d01017f9eb153f938064",
+      "sampling_group": "bucket_C",
+      "source_hash": "3790d93587cceb2d159f08b1f1d3fe66d7b301293cc014a3459dae1fa8680140"
+    },
+    {
+      "dictionary_entry_id": "1655bc02-9f4a-413c-9275-ff6c5a92bca5",
+      "item_number": 139,
+      "pipeline_hash": "9cf6b80b11bf8771195c48f8fdd40ca88f0fc9e91a050947d8f19165bb94bbb0",
+      "sampling_group": "bucket_C",
+      "source_hash": "c2c113f31d9fcd5c66d504ef982d095ff32180a36f8914e0c8cc0a1c6833941a"
+    },
+    {
+      "dictionary_entry_id": "cb306b3a-4d1f-41c8-8fd8-0c4c22bef114",
+      "item_number": 140,
+      "pipeline_hash": "3b795cf3b548b0e35fac16bceb32aec9de21ad46d15cf61da14fc1bf78122ad8",
+      "sampling_group": "bucket_C",
+      "source_hash": "b6a271f4d683c26886d82dd9cabe58aaa7b4f68b759e3b088959899c6f777b9a"
+    },
+    {
+      "dictionary_entry_id": "583cb653-cd03-4e99-935b-6e021569607f",
+      "item_number": 141,
+      "pipeline_hash": "99028d070a4157fa02b150dc1140e47bdd1e7286b04fbdfba447213e05099ca7",
+      "sampling_group": "bucket_C",
+      "source_hash": "a791c51c7350a5869e847cf83afe2674119fba6f8b7447b842c3c57972650728"
+    },
+    {
+      "dictionary_entry_id": "bc5093e9-8278-4d63-9597-7fa39bbe0a0f",
+      "item_number": 142,
+      "pipeline_hash": "bafb909f8179f9c7bf94aa3e74784418357cbaef3d5ab7def32147d500eaa876",
+      "sampling_group": "bucket_C",
+      "source_hash": "d43c55564ab3f926bd73875cfdbe369ee6d354221fd7055c4e682fc2aeb9c353"
+    },
+    {
+      "dictionary_entry_id": "74891f02-3afc-4d48-bbdd-53c1b11e0130",
+      "item_number": 143,
+      "pipeline_hash": "1d0d7600d009ea682a144a7e7bc076f6d0440916e966374a127e541766554b35",
+      "sampling_group": "bucket_C",
+      "source_hash": "a018d672e0a0e2396473e86bdcd9e907e01cecd7bb77c265a60f61ba9b2f86f7"
+    },
+    {
+      "dictionary_entry_id": "4e1f0f8e-0820-434c-b1af-58dbf21955e4",
+      "item_number": 144,
+      "pipeline_hash": "8247d6f8959ef402a1e81342a1c97107afad634c03caea138960cbad6e864358",
+      "sampling_group": "bucket_C",
+      "source_hash": "bfe602a8111d8a24f419891f6b6350ae01de9368b4637b3d2f25b42cfbf6635f"
+    },
+    {
+      "dictionary_entry_id": "1a236345-8e2f-4a3d-bb9f-bf2d56b060e2",
+      "item_number": 145,
+      "pipeline_hash": "4f45af4e2ad44a5829dd19e399fb1b815a4131f4818e76bce934becb0d385bc4",
+      "sampling_group": "bucket_C",
+      "source_hash": "aed7f6c33cfd56ed1b2d8ed8f4da8d7676191e2c73e97a7d7ee4df4840aded80"
+    },
+    {
+      "dictionary_entry_id": "08d40fd3-de89-45e8-912d-613537e63cd6",
+      "item_number": 146,
+      "pipeline_hash": "b99eb49c4e96afa584e4f00ef96ec598ed642f624f8b39d4902226faa5252f20",
+      "sampling_group": "bucket_C",
+      "source_hash": "28778c15e8d59cf125992f2b8c008138ef038862636d839192b4414573a7e467"
+    },
+    {
+      "dictionary_entry_id": "c49670f3-a23f-40f3-993d-cae82d9a3779",
+      "item_number": 147,
+      "pipeline_hash": "c3648c08ee4925ca1ea9fc683a9ee9d1395fb8efd569e304f84ea5f411cedd7f",
+      "sampling_group": "bucket_C",
+      "source_hash": "656e75bba58055db5bdb7fe0d8ae1a3e0ab217ac23cc45f13dd5c510ac80ab41"
+    },
+    {
+      "dictionary_entry_id": "a98f4c41-f7a3-4d66-ba97-e07b0095b921",
+      "item_number": 148,
+      "pipeline_hash": "d17f49da30015ddf46a73dd91bd40ba7821aa4423aedae5398b96ef457a2557e",
+      "sampling_group": "bucket_C",
+      "source_hash": "0af46cb938f379640850d3a08bf798e39bb11303c8f8cfe0bcf75dfea04f5395"
+    },
+    {
+      "dictionary_entry_id": "2267f213-2083-4ba9-9e24-60a70b7f5ded",
+      "item_number": 149,
+      "pipeline_hash": "c732d4b6193c145aa3ab97c9ce369f9cfcc520702f6daacf9a68c708d9e482eb",
+      "sampling_group": "bucket_C",
+      "source_hash": "772180afbc680c9617297149e49729376835c21ed1eaedf889d94b1f6e29b5a2"
+    },
+    {
+      "dictionary_entry_id": "68cce867-6bc2-4b3c-ab13-0cb98a930013",
+      "item_number": 150,
+      "pipeline_hash": "8e0faee356bf03ac9904e50a7471d611fd2396876a4eb331b290ba071c8f1a80",
+      "sampling_group": "bucket_C",
+      "source_hash": "fe6c02b10cbc74f8ac3c440f3542d081a976cea8f90a5b85592ae4b7dbfc9c64"
+    }
+  ],
+  "pipeline_bucket_counts": {
+    "A": 43,
+    "B": 40,
+    "C": 67
+  },
+  "pipeline_snapshot_count": 150,
+  "pipeline_source_artifact_sha256": "9aa1a828067fde2b51e4edae42e32aee94901581a621a797ee7a6f7e2014daaf",
+  "reviewer_profiles_created": 0,
+  "sampling_group_counts": {
+    "bucket_A": 40,
+    "bucket_B": 40,
+    "bucket_C": 50,
+    "targeted_edge": 20
+  },
+  "study": {
+    "configuration_hash": "833081d75140ab6558112d1085c2c6eec419386fa831873605c2138823d7a20a",
+    "description": "Frozen 150-item Human Evaluation 001 study for independent Luwanga semantic review.",
+    "dialect": "Luwanga",
+    "evidence_schema_version": "pipeline-001-evidence-v1",
+    "initial_status": "draft",
+    "pipeline_version": "0.1.0",
+    "source_artifact_hash": "9aa1a828067fde2b51e4edae42e32aee94901581a621a797ee7a6f7e2014daaf",
+    "study_key": "HUMAN_EVALUATION_001_LUWANGA",
+    "title": "Human Evaluation 001 — Luwanga Semantic Review"
+  },
+  "zero_write_confirmation": true
+}

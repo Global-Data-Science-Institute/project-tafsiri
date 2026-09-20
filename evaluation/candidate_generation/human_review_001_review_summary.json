@@ -1,0 +1,30 @@
+{
+  "ambiguity_agreement_counts": {
+    "NO": 1,
+    "UNSURE": 99,
+    "YES": 50
+  },
+  "bucket_agreement_counts": {
+    "NO": 1,
+    "UNSURE": 99,
+    "YES": 50
+  },
+  "completed": 150,
+  "decision_counts": {
+    "ACCEPT_SIMPLE": 52,
+    "ACCEPT_VARIANT": 2,
+    "NEEDS_EXPERT": 79,
+    "SPLIT_SENSES": 17
+  },
+  "exported_at": "2026-08-13T04:13:50.584735+00:00",
+  "incomplete": 0,
+  "review_started_at": "2026-08-13T00:10:27.006322+00:00",
+  "reviewer_metadata": {
+    "code": "MA",
+    "date": "2026-08-12",
+    "dialect_expertise": "Tsotso",
+    "name": "Moody Amakobe",
+    "notes": ""
+  },
+  "total": 150
+}

@@ -1,0 +1,28 @@
+{
+  "configuration_hash": "833081d75140ab6558112d1085c2c6eec419386fa831873605c2138823d7a20a",
+  "evidence_schema_version": "pipeline-001-evidence-v1",
+  "generation_timestamp": "2026-08-12T22:42:49.910312+00:00",
+  "pipeline_version": "0.1.0",
+  "random_seed": 20260813,
+  "reviewer_decision_values": [
+    "ACCEPT_SIMPLE",
+    "ACCEPT_VARIANT",
+    "SPLIT_SENSES",
+    "NEEDS_EXPERT"
+  ],
+  "sample_counts_by_group": {
+    "bucket_A": 40,
+    "bucket_B": 40,
+    "bucket_C": 50,
+    "targeted_edge": 20
+  },
+  "sample_counts_by_pipeline_bucket": {
+    "A": 43,
+    "B": 40,
+    "C": 67
+  },
+  "sample_size": 150,
+  "source_artifact": "artifacts\\candidate_generation\\pipeline_001.jsonl",
+  "source_artifact_hash": "9aa1a828067fde2b51e4edae42e32aee94901581a621a797ee7a6f7e2014daaf",
+  "validation_errors": []
+}

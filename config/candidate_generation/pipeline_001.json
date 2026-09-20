@@ -1,0 +1,30 @@
+{
+  "version": "0.1.0",
+  "ambiguity": {
+    "long_definition_characters": 120
+  },
+  "bucket_a": {
+    "max_definition_characters": 40,
+    "max_definition_tokens": 3,
+    "broad_glosses": ["thing", "object", "place", "person", "animal", "plant", "action", "do", "make"]
+  },
+  "confidence": {
+    "version": "0.1",
+    "base": 0.35,
+    "components": {
+      "unique_normalized_form": 0.20,
+      "short_single_sense": 0.15,
+      "stable_pos": 0.10,
+      "curated_key_match": 0.10,
+      "unique_definition": 0.05,
+      "existing_concept_suggestion": 0.05,
+      "noun_class_evidence": 0.05,
+      "repeated_form_multiple_definitions": -0.35,
+      "sense_punctuation": -0.25,
+      "contextual_definition": -0.20,
+      "incompatible_pos": -0.20,
+      "definition_reused": -0.15,
+      "broad_gloss": -0.15
+    }
+  }
+}
