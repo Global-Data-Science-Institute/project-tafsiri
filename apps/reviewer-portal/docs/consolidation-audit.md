@@ -1,6 +1,6 @@
 # Tafsiri Reviewer Portal consolidation audit
 
-Audited 2026-09-19. Scope: local reviewer portal, checked-in Supabase migrations and config, and the public GDSI home page. Supabase CLI confirmed the staging project and migrations. Vercel CLI login is restored; no recovery email or designated test-reviewer mailbox was available. The staging hostname resolves to an existing Ready Preview deployment, but Vercel Authentication prevents anonymous content inspection.
+Audited 2026-09-19. This is a historical consolidation audit. Current deployment and recovery instructions are in `docs/repository-deployment.md` and `apps/reviewer-portal/docs/staging-auth-recovery.md`; the callback and email-template guidance below has been superseded.
 
 ## Current state
 
