@@ -1,0 +1,1 @@
+"""Deterministic source metadata registration."""

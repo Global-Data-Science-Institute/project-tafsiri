@@ -8,6 +8,7 @@ This directory documents the repository's current architecture, research control
 - [Project vision](project_vision.md)
 - [Language inclusion framework](language_inclusion_framework.md)
 - [Cultural guidelines](cultural_guidelines.md)
+- [Source Registration 001](source-registration-001.md)
 
 ## Operations
 
