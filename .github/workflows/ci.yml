@@ -36,7 +36,7 @@ jobs:
         with:
           python-version: '3.12'
       - run: python -m pip install pytest
-      - run: python -m pytest tests/candidate_generation tests/evaluation -q
+      - run: python -m pytest tests/candidate_generation tests/evaluation tests/source_registry -q
 
   database:
     runs-on: ubuntu-latest

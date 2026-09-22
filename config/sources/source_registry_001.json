@@ -1,0 +1,338 @@
+{
+  "registry_version": "source-registry-001-v1",
+  "policy_version": "SOURCE_REGISTRATION_001",
+  "project_provenance": "https://www.riskinfo.ai/post/project-tafsiri-bridging-indigenous-languages-and-ai",
+  "policy_profiles": {
+    "PUBLIC_CITED": [
+      {
+        "use_scope": "INTERNAL_RESEARCH",
+        "decision": "ALLOWED",
+        "policy_basis_reference": "Project Tafsiri SOURCE_REGISTRATION_001 policy: cited internal research with preserved provenance; public access does not imply open licensing."
+      },
+      {
+        "use_scope": "HUMAN_REVIEW",
+        "decision": "REVIEW_REQUIRED",
+        "policy_basis_reference": "Rights-holder terms must be reviewed before displaying source content to reviewers."
+      },
+      {
+        "use_scope": "REVIEWER_DISPLAY",
+        "decision": "REVIEW_REQUIRED",
+        "policy_basis_reference": "Rights-holder terms must be reviewed before displaying source content to reviewers."
+      },
+      {
+        "use_scope": "PUBLIC_DISPLAY",
+        "decision": "UNKNOWN"
+      },
+      {
+        "use_scope": "REDISTRIBUTION",
+        "decision": "UNKNOWN"
+      },
+      {
+        "use_scope": "MODEL_TRAINING",
+        "decision": "UNKNOWN"
+      },
+      {
+        "use_scope": "BENCHMARK_PUBLICATION",
+        "decision": "REVIEW_REQUIRED",
+        "policy_basis_reference": "Publication requires source-specific rights and citation review."
+      },
+      {
+        "use_scope": "COMMERCIAL_API",
+        "decision": "UNKNOWN"
+      }
+    ],
+    "RESTRICTED": [
+      {
+        "use_scope": "INTERNAL_RESEARCH",
+        "decision": "REVIEW_REQUIRED",
+        "policy_basis_reference": "Copyright-controlled source requires documented project review."
+      },
+      {
+        "use_scope": "HUMAN_REVIEW",
+        "decision": "REVIEW_REQUIRED",
+        "policy_basis_reference": "Copyright-controlled source requires documented project review."
+      },
+      {
+        "use_scope": "REVIEWER_DISPLAY",
+        "decision": "REVIEW_REQUIRED",
+        "policy_basis_reference": "Copyright-controlled source requires documented project review."
+      },
+      {
+        "use_scope": "PUBLIC_DISPLAY",
+        "decision": "DISALLOWED",
+        "policy_basis_reference": "No permission or open license is recorded."
+      },
+      {
+        "use_scope": "REDISTRIBUTION",
+        "decision": "DISALLOWED",
+        "policy_basis_reference": "No permission or open license is recorded."
+      },
+      {
+        "use_scope": "MODEL_TRAINING",
+        "decision": "REVIEW_REQUIRED",
+        "policy_basis_reference": "Training use requires separate rights review or permission."
+      },
+      {
+        "use_scope": "BENCHMARK_PUBLICATION",
+        "decision": "REVIEW_REQUIRED",
+        "policy_basis_reference": "Publication requires source-specific permission and citation review."
+      },
+      {
+        "use_scope": "COMMERCIAL_API",
+        "decision": "DISALLOWED",
+        "policy_basis_reference": "No permission or open license is recorded."
+      }
+    ],
+    "OPEN_CC_BY_4_0": [
+      {
+        "use_scope": "INTERNAL_RESEARCH",
+        "decision": "ALLOWED",
+        "policy_basis_reference": "CC-BY-4.0 with attribution and license notice."
+      },
+      {
+        "use_scope": "HUMAN_REVIEW",
+        "decision": "ALLOWED",
+        "policy_basis_reference": "CC-BY-4.0 with attribution and license notice."
+      },
+      {
+        "use_scope": "REVIEWER_DISPLAY",
+        "decision": "ALLOWED",
+        "policy_basis_reference": "CC-BY-4.0 with attribution and license notice."
+      },
+      {
+        "use_scope": "PUBLIC_DISPLAY",
+        "decision": "ALLOWED",
+        "policy_basis_reference": "CC-BY-4.0 with attribution and license notice."
+      },
+      {
+        "use_scope": "REDISTRIBUTION",
+        "decision": "ALLOWED",
+        "policy_basis_reference": "CC-BY-4.0 with attribution, license notice, and change indication."
+      },
+      {
+        "use_scope": "MODEL_TRAINING",
+        "decision": "ALLOWED",
+        "policy_basis_reference": "CC-BY-4.0 with attribution, license notice, and change indication."
+      },
+      {
+        "use_scope": "BENCHMARK_PUBLICATION",
+        "decision": "ALLOWED",
+        "policy_basis_reference": "CC-BY-4.0 with attribution and license notice."
+      },
+      {
+        "use_scope": "COMMERCIAL_API",
+        "decision": "ALLOWED",
+        "policy_basis_reference": "CC-BY-4.0 permits commercial reuse subject to attribution, license notice, and change indication."
+      }
+    ]
+  },
+  "sources": [
+    {
+      "source_key": "WANGA_ENGLISH_DICTIONARY_2008",
+      "source_type": "DICTIONARY",
+      "title": "Luwanga-English Dictionary",
+      "authors_or_contributors": "Alfred Anangwe; Michael R. Marlo",
+      "publication_year": 2008,
+      "citation": "Anangwe, Alfred and Michael R. Marlo. 2008. Luwanga-English Dictionary, preliminary draft.",
+      "primary_url": "https://abawanga.wordpress.com/",
+      "rights_holder": "Alfred Anangwe and Michael R. Marlo",
+      "notes": "Approximately 4,000 words is a project-description estimate. The draft says it was entered electronically by Anangwe and edited by Marlo in January 2008. Project provenance: https://www.riskinfo.ai/post/project-tafsiri-bridging-indigenous-languages-and-ai",
+      "versions": [
+        {
+          "version_key": "PRELIMINARY_DRAFT_2008",
+          "version_label": "preliminary draft, January 2008",
+          "canonical_url": "https://abawanga.wordpress.com/",
+          "notes": "The evidence supports January 2008 but not an exact day, so publication_date is intentionally unset.",
+          "rights": {
+            "rights_status": "PUBLICLY_ACCESSIBLE_CITED",
+            "rights_holder": "Alfred Anangwe and Michael R. Marlo",
+            "evidence_reference": "Public draft linked by the AbaWanga Kingdom site; no open license identified.",
+            "notes": "Public accessibility is not treated as permission for redistribution or training."
+          },
+          "use_policy_profile": "PUBLIC_CITED",
+          "dialect_mappings": [
+            {
+              "raw_dialect_label": "Wanga",
+              "canonical_dialect_name": "Luwanga",
+              "mapping_scope": "SOURCE_VERSION",
+              "authority": "Project Tafsiri candidate mapping",
+              "rationale": "The dictionary identifies its language as Luwanga and public supporting descriptions relate Wanga to Luwanga; formal linguistic authority review remains pending.",
+              "verification_status": "IN_REVIEW"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source_key": "LUBUKUSU_ENGLISH_DICTIONARY_2008",
+      "source_type": "DICTIONARY",
+      "title": "Lubukusu-English Dictionary",
+      "authors_or_contributors": "Michael R. Marlo; Adrian Sifuna; Aggrey Wasike",
+      "publication_year": 2008,
+      "citation": "Marlo, Michael R., Adrian Sifuna, and Aggrey Wasike. 2008. Lubukusu-English Dictionary, draft of 1 September 2008.",
+      "primary_url": "https://ikuweikuwe.com/wp-content/uploads/2020/06/Bukusu-English-Dictionary.pdf",
+      "rights_holder": "Michael R. Marlo, Adrian Sifuna, and Aggrey Wasike",
+      "notes": "The accessible draft is dated 2008-09-01; Glottolog also catalogs a 2007 manuscript. Approximately 6,200 words is a public project-description estimate.",
+      "versions": [
+        {
+          "version_key": "DRAFT_2008_09_01",
+          "version_label": "draft of 1 September 2008",
+          "publication_date": "2008-09-01",
+          "canonical_url": "https://ikuweikuwe.com/wp-content/uploads/2020/06/Bukusu-English-Dictionary.pdf",
+          "rights": {
+            "rights_status": "PUBLICLY_ACCESSIBLE_CITED",
+            "rights_holder": "Michael R. Marlo, Adrian Sifuna, and Aggrey Wasike",
+            "evidence_reference": "Publicly accessible 2008 draft; no open license identified.",
+            "notes": "Public accessibility is not treated as permission for redistribution or training."
+          },
+          "use_policy_profile": "PUBLIC_CITED",
+          "dialect_mappings": [
+            {
+              "raw_dialect_label": "Lubukusu",
+              "canonical_dialect_name": "Bukusu",
+              "mapping_scope": "SOURCE_VERSION",
+              "authority": "Project Tafsiri candidate mapping",
+              "rationale": "The source title uses Lubukusu while the production dialect registry uses Bukusu; formal linguistic authority review remains pending.",
+              "verification_status": "IN_REVIEW"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source_key": "MULEMBE_NATION_LUHYA_DICTIONARY",
+      "source_type": "WEBSITE",
+      "title": "Mulembe Nation Luhya-English Dictionary and Thesaurus",
+      "publisher_or_institution": "Mulembe Nation",
+      "citation": "Mulembe Nation. Luhya-English Dictionary and Thesaurus. Public website, accessed 2026.",
+      "primary_url": "https://mulembenation.co.ke/luhya-english-dictionary/",
+      "rights_holder": "Mulembe Nation",
+      "notes": "The site describes a growing work in progress spanning multiple Luhya dialects; no source-wide dialect mapping is asserted.",
+      "versions": [
+        {
+          "version_key": "CURRENT_PUBLIC_SITE_2026",
+          "version_label": "current public site observed in 2026",
+          "canonical_url": "https://mulembenation.co.ke/luhya-english-dictionary/",
+          "rights": {
+            "rights_status": "PUBLICLY_ACCESSIBLE_CITED",
+            "rights_holder": "Mulembe Nation",
+            "evidence_reference": "Public Mulembe Nation dictionary page; no explicit open license identified.",
+            "notes": "Public accessibility is not treated as permission for redistribution or training."
+          },
+          "use_policy_profile": "PUBLIC_CITED",
+          "dialect_mappings": []
+        }
+      ]
+    },
+    {
+      "source_key": "KENTRANS_2022",
+      "source_type": "CORPUS",
+      "title": "KenTrans: A Parallel Corpora for Swahili and local Kenyan Languages",
+      "authors_or_contributors": "Lilian D. A. Wanzare; Florence Indede; Owen McOnyango; Edward Ombui; Barack Wanjawa; Lawrence Muchemi",
+      "publisher_or_institution": "Kencorpus Dataverse; Harvard Dataverse",
+      "publication_year": 2022,
+      "citation": "Wanzare, Lilian D. A., et al. 2022. KenTrans: A Parallel Corpora for Swahili and local Kenyan Languages. Harvard Dataverse, V2. https://doi.org/10.7910/DVN/NOAT0W",
+      "primary_url": "https://doi.org/10.7910/DVN/NOAT0W",
+      "rights_holder": "Dataset authors",
+      "notes": "Classified as CORPUS because its primary content is aligned parallel language data for directional translation research, rather than a lexical dictionary.",
+      "versions": [
+        {
+          "version_key": "V2_2022",
+          "version_label": "V2",
+          "canonical_url": "https://doi.org/10.7910/DVN/NOAT0W",
+          "notes": "The Dataverse citation supports release year 2022 but an exact release date is not asserted.",
+          "rights": {
+            "rights_status": "OPEN_LICENSE",
+            "license_identifier": "CC-BY-4.0",
+            "license_text_or_summary": "Creative Commons Attribution 4.0 International; attribution, license notice, and indication of changes are required.",
+            "rights_holder": "Dataset authors",
+            "evidence_reference": "Harvard Dataverse DOI 10.7910/DVN/NOAT0W, V2 license metadata."
+          },
+          "use_policy_profile": "OPEN_CC_BY_4_0",
+          "dialect_mappings": []
+        }
+      ]
+    },
+    {
+      "source_key": "IBIBILIA_INDAKATIFU_2016",
+      "source_type": "BIBLE_EDITION",
+      "title": "Ibibilia Indakatifu (Oluluyia Bible)",
+      "publisher_or_institution": "Bible Society of Kenya",
+      "publication_year": 2016,
+      "citation": "Bible Society of Kenya. 2016. Ibibilia Indakatifu (Oluluyia Bible).",
+      "primary_url": "https://www.bible.com/versions/2656-olupr-ibibilia-indakatifu",
+      "rights_holder": "Bible Society of Kenya",
+      "default_register": "biblical",
+      "notes": "Bible Society of Kenya's 2016 annual report records the Oluluyia Bible launch in July 2016. Public catalog and YouVersion records identify the publisher. The previously supplied 2019 date was not substantiated.",
+      "versions": [
+        {
+          "version_key": "OLULUYIA_BIBLE_2016",
+          "version_label": "Oluluyia Bible launched July 2016",
+          "canonical_url": "https://www.bible.com/versions/2656-olupr-ibibilia-indakatifu",
+          "rights": {
+            "rights_status": "RESTRICTED",
+            "rights_holder": "Bible Society of Kenya",
+            "evidence_reference": "Bible Society of Kenya catalog/annual report and copyright-marked digital edition; no open license identified."
+          },
+          "use_policy_profile": "RESTRICTED",
+          "dialect_mappings": [],
+          "notes": "Bible Society of Kenya records a July 2016 launch; conflicting report lines give July 11 and July 23, so release_date is intentionally unset."
+        }
+      ]
+    },
+    {
+      "source_key": "NYALA_PROVERBS_OKUBO_2016",
+      "source_type": "PROVERB_COLLECTION",
+      "title": "Collection of 100 Nyala Proverbs",
+      "authors_or_contributors": "Kevin Namatsi Okubo",
+      "publisher_or_institution": "Africa Proverb Working Group, Nairobi, Kenya",
+      "publication_year": 2016,
+      "citation": "Okubo, Kevin Namatsi. 2016. Collection of 100 Nyala Proverbs. Nairobi: Africa Proverb Working Group.",
+      "primary_url": "https://afriprov.tangaza.ac.ke/wp-content/uploads/2008/11/ebooks_nyala.pdf",
+      "rights_holder": "Kevin Namatsi Okubo; Africa Proverb Working Group",
+      "notes": "Registered as source metadata only; no proverb identity, translation, meaning, lexical entry, or training example is created.",
+      "versions": [
+        {
+          "version_key": "APRIL_2016",
+          "version_label": "April 2016",
+          "canonical_url": "https://afriprov.tangaza.ac.ke/wp-content/uploads/2008/11/ebooks_nyala.pdf",
+          "notes": "The source supports April 2016 but not an exact day, so publication_date is intentionally unset.",
+          "rights": {
+            "rights_status": "PUBLICLY_ACCESSIBLE_CITED",
+            "rights_holder": "Kevin Namatsi Okubo; Africa Proverb Working Group",
+            "evidence_reference": "Public 47-page PDF identifying author, publisher, place, and month; no open license identified."
+          },
+          "use_policy_profile": "PUBLIC_CITED",
+          "dialect_mappings": []
+        }
+      ]
+    },
+    {
+      "source_key": "LUYIA_PROVERBS_WAMBUNYA_2005",
+      "source_type": "PROVERB_COLLECTION",
+      "title": "Luyia Proverbs from Kisa, Marama, Tsotso and Wanga",
+      "authors_or_contributors": "Tim Wambunya",
+      "publisher_or_institution": "Luyia Publishing Company, London",
+      "publication_year": 2005,
+      "citation": "Wambunya, Tim. 2005. Luyia Proverbs from Kisa, Marama, Tsotso and Wanga. London: Luyia Publishing Company. ISBN 996605009-4.",
+      "primary_url": "https://afriprov.tangaza.ac.ke/2008/02/21/luyia-proverbs/",
+      "rights_holder": "Tim Wambunya; Luyia Publishing Company",
+      "notes": "A review describes 605 proverbs across Kisa, Marama, Tsotso, and Wanga. Registered as source metadata only.",
+      "versions": [
+        {
+          "version_key": "PUBLICATION_2005",
+          "version_label": "2005 publication",
+          "canonical_url": "https://afriprov.tangaza.ac.ke/2008/02/21/luyia-proverbs/",
+          "notes": "The source supports publication year 2005 but not an exact date, so publication_date is intentionally unset.",
+          "rights": {
+            "rights_status": "RESTRICTED",
+            "rights_holder": "Tim Wambunya; Luyia Publishing Company",
+            "evidence_reference": "Bibliographic review records a commercially published 2005 book; no open license or reuse permission identified."
+          },
+          "use_policy_profile": "RESTRICTED",
+          "dialect_mappings": []
+        }
+      ]
+    }
+  ]
+}
