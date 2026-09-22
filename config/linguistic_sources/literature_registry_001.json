@@ -1,0 +1,2148 @@
+{
+  "generated_at": "2026-09-22",
+  "registry_version": "literature-registry-001-v1",
+  "source_count": 46,
+  "sources": [
+    {
+      "alternate_urls": [],
+      "artifact": null,
+      "authority_type": "DOCTORAL_DISSERTATION",
+      "authors": [
+        "Cheryl Lynn Austen"
+      ],
+      "availability": "METADATA_ONLY",
+      "candidate_tafsiri_dialects": [
+        "Lubukusu"
+      ],
+      "doi": null,
+      "downloadable_pdf": false,
+      "example_data_types": [
+        "isolated_lexical_forms",
+        "full_example_sentences"
+      ],
+      "grammar_value": "CRITICAL",
+      "isbn": null,
+      "license_status": "LICENSE_UNKNOWN",
+      "notation_types": [
+        "phonemic_slashes",
+        "tone_marks"
+      ],
+      "notes": "Verified through the Luyia Tone Melodies reference list and bibliographic catalog.",
+      "primary_url": "https://glottolog.org/resource/reference/id/319987",
+      "priority": "CRITICAL",
+      "pronunciation_value": "HIGH",
+      "publication": "Indiana University",
+      "relevance_tags": [
+        "PHONOLOGY",
+        "TONE",
+        "MORPHOLOGY",
+        "SYNTAX",
+        "EXAMPLE_SENTENCES"
+      ],
+      "source_key": "AUSTEN_1975_BUKUSU_SYNTAX_PHONOLOGY",
+      "source_reported_varieties": [
+        "Bukusu"
+      ],
+      "source_type": "DOCTORAL_DISSERTATION",
+      "title": "Aspects of Bukusu syntax and phonology",
+      "year": 1975
+    },
+    {
+      "alternate_urls": [
+        "https://www.jgluckman.com/uploads/9/4/6/4/9464781/bowler_gluckman-2017-intensifying_ideophones_in_three_luhya_languages-paper.pdf"
+      ],
+      "artifact": null,
+      "authority_type": "CONFERENCE_PROCEEDINGS",
+      "authors": [
+        "Margit Bowler",
+        "John Gluckman"
+      ],
+      "availability": "OPEN_FULL_TEXT",
+      "candidate_tafsiri_dialects": [
+        "Lulogooli",
+        "Lunyore",
+        "Lutiriki"
+      ],
+      "doi": null,
+      "downloadable_pdf": true,
+      "example_data_types": [
+        "isolated_lexical_forms",
+        "full_example_sentences",
+        "interlinear_glosses"
+      ],
+      "grammar_value": "HIGH",
+      "isbn": null,
+      "license_status": "LICENSE_UNKNOWN",
+      "notation_types": [
+        "orthographic_transcription_only"
+      ],
+      "notes": "Registry tag is corrected to IDEOPHONE during serialization.",
+      "primary_url": "https://publikationen.uni-tuebingen.de/xmlui/bitstream/handle/10900/83161/TripleA%204%202018.pdf?isAllowed=y&sequence=1",
+      "priority": "CRITICAL",
+      "pronunciation_value": "MEDIUM",
+      "publication": "Proceedings of TripleA 4, pp. 31â€“47",
+      "relevance_tags": [
+        "IDEOPHONE",
+        "SEMANTICS",
+        "PROSODY",
+        "MORPHOLOGY",
+        "DIALECTOLOGY",
+        "EXAMPLE_SENTENCES",
+        "INTERLINEAR_GLOSS",
+        "FIELD_DATA"
+      ],
+      "source_key": "BOWLER_GLUCKMAN_2017_IDEOPHONES",
+      "source_reported_varieties": [
+        "Llogoori",
+        "Lunyore",
+        "Lutiriki"
+      ],
+      "source_type": "CONFERENCE_PAPER",
+      "title": "Intensifying ideophones in three Luhya languages",
+      "year": 2017
+    },
+    {
+      "alternate_urls": [],
+      "artifact": null,
+      "authority_type": "MASTERS_THESIS",
+      "authors": [
+        "Stefan Bruckhaus"
+      ],
+      "availability": "METADATA_ONLY",
+      "candidate_tafsiri_dialects": [
+        "Lumarachi"
+      ],
+      "doi": null,
+      "downloadable_pdf": false,
+      "example_data_types": [
+        "isolated_lexical_forms",
+        "paradigms"
+      ],
+      "grammar_value": "HIGH",
+      "isbn": null,
+      "license_status": "LICENSE_UNKNOWN",
+      "notation_types": [
+        "tone_marks",
+        "H_L_notation",
+        "downstep_notation"
+      ],
+      "notes": "Citation-chain source for Marachi verbal tone.",
+      "primary_url": "https://glottolog.org/resource/reference/id/316770",
+      "priority": "CRITICAL",
+      "pronunciation_value": "CRITICAL",
+      "publication": "UniversitÃ¤t Hamburg",
+      "relevance_tags": [
+        "TONE",
+        "PROSODY",
+        "PHONOLOGY",
+        "MORPHOLOGY",
+        "INFLECTION",
+        "EXAMPLE_SENTENCES"
+      ],
+      "source_key": "BRUCKHAUS_2012_MARACHI_TONOLOGY",
+      "source_reported_varieties": [
+        "Marachi"
+      ],
+      "source_type": "MASTERS_THESIS",
+      "title": "Aspects of Marachi verbal tonology",
+      "year": 2012
+    },
+    {
+      "alternate_urls": [],
+      "artifact": null,
+      "authority_type": "PUBLISHED_BOOK_CHAPTER",
+      "authors": [
+        "Jeremy E. Chagas"
+      ],
+      "availability": "METADATA_ONLY",
+      "candidate_tafsiri_dialects": [
+        "Lusamia"
+      ],
+      "doi": null,
+      "downloadable_pdf": false,
+      "example_data_types": [
+        "isolated_lexical_forms",
+        "paradigms"
+      ],
+      "grammar_value": "MEDIUM",
+      "isbn": null,
+      "license_status": "LICENSE_UNKNOWN",
+      "notation_types": [
+        "tone_marks",
+        "H_L_notation"
+      ],
+      "notes": "Core historical Lusaamia tone source.",
+      "primary_url": "https://glottolog.org/resource/reference/id/111367",
+      "priority": "CRITICAL",
+      "pronunciation_value": "CRITICAL",
+      "publication": "Studies in Bantu Tonology, pp. 217â€“240",
+      "relevance_tags": [
+        "TONE",
+        "PROSODY",
+        "PHONOLOGY",
+        "MORPHOLOGY",
+        "EXAMPLE_SENTENCES"
+      ],
+      "source_key": "CHAGAS_1976_OLUSAMIA_TONE",
+      "source_reported_varieties": [
+        "Olusamia"
+      ],
+      "source_type": "BOOK_CHAPTER",
+      "title": "The tonal structure of Olusamia",
+      "year": 1976
+    },
+    {
+      "alternate_urls": [],
+      "artifact": null,
+      "authority_type": "PEER_REVIEWED",
+      "authors": [
+        "Gerard M. Dalgish"
+      ],
+      "availability": "OPEN_FULL_TEXT",
+      "candidate_tafsiri_dialects": [],
+      "doi": null,
+      "downloadable_pdf": true,
+      "example_data_types": [
+        "isolated_lexical_forms",
+        "paradigms"
+      ],
+      "grammar_value": "HIGH",
+      "isbn": null,
+      "license_status": "LICENSE_UNKNOWN",
+      "notation_types": [
+        "phonemic_slashes"
+      ],
+      "notes": "Family-level vowel reduction and morphophonology.",
+      "primary_url": "https://journals.linguisticsociety.org/elanguage/sal/article/view/1206.html",
+      "priority": "HIGH",
+      "pronunciation_value": "HIGH",
+      "publication": "Studies in African Linguistics 17, 155â€“176",
+      "relevance_tags": [
+        "PHONOLOGY",
+        "MORPHOPHONOLOGY",
+        "MORPHOLOGY",
+        "DIALECTOLOGY",
+        "EXAMPLE_SENTENCES"
+      ],
+      "source_key": "DALGISH_1986_A_REDUCTION_LUYIA",
+      "source_reported_varieties": [
+        "Luyia"
+      ],
+      "source_type": "JOURNAL_ARTICLE",
+      "title": "/-a-/ reduction phenomena in Luyia",
+      "year": 1986
+    },
+    {
+      "alternate_urls": [],
+      "artifact": null,
+      "authority_type": "UNKNOWN",
+      "authors": [
+        "Kornelis Frans de Blois"
+      ],
+      "availability": "METADATA_ONLY",
+      "candidate_tafsiri_dialects": [
+        "Lubukusu"
+      ],
+      "doi": null,
+      "downloadable_pdf": false,
+      "example_data_types": [
+        "isolated_lexical_forms",
+        "paradigms"
+      ],
+      "grammar_value": "HIGH",
+      "isbn": null,
+      "license_status": "LICENSE_UNKNOWN",
+      "notation_types": [
+        "IPA",
+        "phonemic_slashes",
+        "tone_marks",
+        "vowel_length_notation"
+      ],
+      "notes": "Foundational phonological source cited by later Luyia work.",
+      "primary_url": "https://glottolog.org/resource/reference/id/115580",
+      "priority": "CRITICAL",
+      "pronunciation_value": "CRITICAL",
+      "publication": "MusÃ©e royal de lâ€™Afrique Centrale",
+      "relevance_tags": [
+        "PHONOLOGY",
+        "MORPHOPHONOLOGY",
+        "MORPHOLOGY",
+        "HISTORICAL_LINGUISTICS",
+        "EXAMPLE_SENTENCES"
+      ],
+      "source_key": "DE_BLOIS_1975_BUKUSU_GENERATIVE_PHONOLOGY",
+      "source_reported_varieties": [
+        "Bukusu"
+      ],
+      "source_type": "BOOK",
+      "title": "Bukusu generative phonology and aspects of Bantu structure",
+      "year": 1975
+    },
+    {
+      "alternate_urls": [],
+      "artifact": null,
+      "authority_type": "DOCTORAL_DISSERTATION",
+      "authors": [
+        "Kristopher J. Ebarb"
+      ],
+      "availability": "ABSTRACT_ONLY",
+      "candidate_tafsiri_dialects": [
+        "Lwidakho"
+      ],
+      "doi": null,
+      "downloadable_pdf": false,
+      "example_data_types": [
+        "isolated_lexical_forms",
+        "full_example_sentences",
+        "paradigms",
+        "audio"
+      ],
+      "grammar_value": "HIGH",
+      "isbn": null,
+      "license_status": "COPYRIGHT_RESTRICTED",
+      "notation_types": [
+        "tone_marks",
+        "H_L_notation",
+        "downstep_notation",
+        "vowel_length_notation"
+      ],
+      "notes": "Core Idakho tone and speaker variation dissertation.",
+      "primary_url": "https://www.proquest.com/openview/caf9423829220aaece7e244d27ecea91/1?cbl=18750&diss=y&pq-origsite=gscholar",
+      "priority": "CRITICAL",
+      "pronunciation_value": "CRITICAL",
+      "publication": "Indiana University",
+      "relevance_tags": [
+        "TONE",
+        "PROSODY",
+        "PHONOLOGY",
+        "MORPHOLOGY",
+        "DIALECTOLOGY",
+        "EXAMPLE_SENTENCES",
+        "FIELD_DATA"
+      ],
+      "source_key": "EBARB_2014_IDAKHO_TONE_VARIATION",
+      "source_reported_varieties": [
+        "Idakho",
+        "other Luhya varieties"
+      ],
+      "source_type": "DOCTORAL_DISSERTATION",
+      "title": "Tone and variation in Idakho and other Luhya varieties",
+      "year": 2014
+    },
+    {
+      "alternate_urls": [],
+      "artifact": null,
+      "authority_type": "PEER_REVIEWED",
+      "authors": [
+        "Kristopher Ebarb",
+        "Christopher Green",
+        "Michael R. Marlo"
+      ],
+      "availability": "OPEN_FULL_TEXT",
+      "candidate_tafsiri_dialects": [
+        "Lwidakho",
+        "Luwanga",
+        "Tachoni"
+      ],
+      "doi": null,
+      "downloadable_pdf": true,
+      "example_data_types": [
+        "isolated_lexical_forms",
+        "full_example_sentences",
+        "paradigms"
+      ],
+      "grammar_value": "CRITICAL",
+      "isbn": null,
+      "license_status": "LICENSE_UNKNOWN",
+      "notation_types": [
+        "tone_marks",
+        "H_L_notation",
+        "downstep_notation",
+        "vowel_length_notation"
+      ],
+      "notes": "Comparative verbal tone melodies and extensive citation chain.",
+      "primary_url": "https://par.nsf.gov/servlets/purl/10015922",
+      "priority": "CRITICAL",
+      "pronunciation_value": "CRITICAL",
+      "publication": "Africana Linguistica 20",
+      "relevance_tags": [
+        "TONE",
+        "PROSODY",
+        "PHONOLOGY",
+        "MORPHOLOGY",
+        "INFLECTION",
+        "DIALECTOLOGY",
+        "EXAMPLE_SENTENCES"
+      ],
+      "source_key": "EBARB_GREEN_MARLO_LUYIA_TONE_MELODIES",
+      "source_reported_varieties": [
+        "Idakho",
+        "Wanga",
+        "Tachoni",
+        "Luyia"
+      ],
+      "source_type": "JOURNAL_ARTICLE",
+      "title": "Luyia Tone Melodies",
+      "year": 2014
+    },
+    {
+      "alternate_urls": [],
+      "artifact": null,
+      "authority_type": "WORKING_PAPER",
+      "authors": [
+        "Kristopher J. Ebarb",
+        "Michael R. Marlo"
+      ],
+      "availability": "OPEN_FULL_TEXT",
+      "candidate_tafsiri_dialects": [
+        "Lunyala"
+      ],
+      "doi": null,
+      "downloadable_pdf": true,
+      "example_data_types": [
+        "isolated_lexical_forms",
+        "paradigms"
+      ],
+      "grammar_value": "HIGH",
+      "isbn": null,
+      "license_status": "LICENSE_UNKNOWN",
+      "notation_types": [
+        "tone_marks",
+        "H_L_notation",
+        "downstep_notation"
+      ],
+      "notes": "Nyala-West verbal tone; canonical full text not located in sweep.",
+      "primary_url": "https://scholarworks.iu.edu/journals/index.php/iulcwp/article/view/25986",
+      "priority": "CRITICAL",
+      "pronunciation_value": "CRITICAL",
+      "publication": "Indiana University Working Papers in Linguistics 8, 85â€“107",
+      "relevance_tags": [
+        "TONE",
+        "PROSODY",
+        "PHONOLOGY",
+        "MORPHOLOGY",
+        "INFLECTION",
+        "EXAMPLE_SENTENCES"
+      ],
+      "source_key": "EBARB_MARLO_2010_NYALA_WEST_TONE",
+      "source_reported_varieties": [
+        "Nyala-West"
+      ],
+      "source_type": "JOURNAL_ARTICLE",
+      "title": "Conditioning factors in the realization of tone: Nyala-West verbs",
+      "year": 2010
+    },
+    {
+      "alternate_urls": [],
+      "artifact": null,
+      "authority_type": "MASTERS_THESIS",
+      "authors": [
+        "Aurah V. Eshitemi"
+      ],
+      "availability": "OPEN_FULL_TEXT",
+      "candidate_tafsiri_dialects": [
+        "Luwanga",
+        "Lulogooli",
+        "Lubukusu"
+      ],
+      "doi": null,
+      "downloadable_pdf": true,
+      "example_data_types": [
+        "isolated_lexical_forms"
+      ],
+      "grammar_value": "LOW",
+      "isbn": null,
+      "license_status": "LICENSE_UNKNOWN",
+      "notation_types": [
+        "phonemic_slashes"
+      ],
+      "notes": "Inventories, basic vocabulary, cognates, and sound correspondences.",
+      "primary_url": "https://erepository.uonbi.ac.ke/items/6170ab00-5f20-4966-b2d9-98cd253cafe8",
+      "priority": "HIGH",
+      "pronunciation_value": "HIGH",
+      "publication": "University of Nairobi",
+      "relevance_tags": [
+        "PHONETICS",
+        "PHONOLOGY",
+        "DIALECTOLOGY",
+        "HISTORICAL_LINGUISTICS",
+        "LEXICON"
+      ],
+      "source_key": "ESHITEMI_2007_GLOTTOCHRONOLOGY",
+      "source_reported_varieties": [
+        "Luwanga",
+        "Lulogooli",
+        "Lubukusu"
+      ],
+      "source_type": "MASTERS_THESIS",
+      "title": "A Glottochronology of Luyia Dialects: Luwanga, Lulogooli and Lubukusu",
+      "year": 2007
+    },
+    {
+      "alternate_urls": [],
+      "artifact": null,
+      "authority_type": "PEER_REVIEWED",
+      "authors": [
+        "John Gluckman",
+        "Margit Bowler"
+      ],
+      "availability": "OPEN_FULL_TEXT",
+      "candidate_tafsiri_dialects": [
+        "Lulogooli"
+      ],
+      "doi": "10.1515/jall-2020-2010",
+      "downloadable_pdf": true,
+      "example_data_types": [
+        "full_example_sentences",
+        "interlinear_glosses"
+      ],
+      "grammar_value": "CRITICAL",
+      "isbn": null,
+      "license_status": "LICENSE_UNKNOWN",
+      "notation_types": [
+        "orthographic_transcription_only"
+      ],
+      "notes": "Detailed semantics and morphosyntax of modality.",
+      "primary_url": "https://www.degruyterbrill.com/document/doi/10.1515/jall-2020-2010/html",
+      "priority": "CRITICAL",
+      "pronunciation_value": "LOW",
+      "publication": "Journal of African Languages and Linguistics 41(2), 195â€“238",
+      "relevance_tags": [
+        "SEMANTICS",
+        "PRAGMATICS",
+        "MORPHOLOGY",
+        "SYNTAX",
+        "EXAMPLE_SENTENCES",
+        "INTERLINEAR_GLOSS",
+        "FIELD_DATA"
+      ],
+      "source_key": "GLUCKMAN_BOWLER_2020_LOGOORI_MODALITY",
+      "source_reported_varieties": [
+        "Logoori"
+      ],
+      "source_type": "JOURNAL_ARTICLE",
+      "title": "The expression of modality in Logoori",
+      "year": 2020
+    },
+    {
+      "alternate_urls": [],
+      "artifact": null,
+      "authority_type": "WORKING_PAPER",
+      "authors": [
+        "John Gluckman",
+        "Margit Bowler",
+        "Maurice Sifuna",
+        "Kelvin Alulu",
+        "Michael Diercks"
+      ],
+      "availability": "PUBLIC_FULL_TEXT_UNCLEAR_LICENSE",
+      "candidate_tafsiri_dialects": [
+        "Lulogooli",
+        "Lubukusu",
+        "Lunyore",
+        "Lusamia",
+        "Lutiriki",
+        "Luwanga"
+      ],
+      "doi": null,
+      "downloadable_pdf": true,
+      "example_data_types": [
+        "full_example_sentences",
+        "interlinear_glosses"
+      ],
+      "grammar_value": "HIGH",
+      "isbn": null,
+      "license_status": "LICENSE_UNKNOWN",
+      "notation_types": [
+        "orthographic_transcription_only"
+      ],
+      "notes": "Six-variety fieldwork comparison of modal systems.",
+      "primary_url": "https://www.jgluckman.com/uploads/9/4/6/4/9464781/acal_48_modality_handout__3_.pdf",
+      "priority": "CRITICAL",
+      "pronunciation_value": "LOW",
+      "publication": "ACAL 48",
+      "relevance_tags": [
+        "SEMANTICS",
+        "PRAGMATICS",
+        "MORPHOLOGY",
+        "SYNTAX",
+        "DIALECTOLOGY",
+        "EXAMPLE_SENTENCES",
+        "FIELD_DATA"
+      ],
+      "source_key": "GLUCKMAN_ETAL_2017_LUYIA_MODALITY",
+      "source_reported_varieties": [
+        "Llogoori",
+        "Lubukusu",
+        "Lunyore",
+        "Lusaamia",
+        "Lutiriki",
+        "Luwanga"
+      ],
+      "source_type": "CONFERENCE_PAPER",
+      "title": "A typological study of modality in Luhya languages",
+      "year": 2017
+    },
+    {
+      "alternate_urls": [],
+      "artifact": null,
+      "authority_type": "CONFERENCE_PROCEEDINGS",
+      "authors": [
+        "Christopher R. Green",
+        "Michael R. Marlo"
+      ],
+      "availability": "METADATA_ONLY",
+      "candidate_tafsiri_dialects": [
+        "Luwanga"
+      ],
+      "doi": null,
+      "downloadable_pdf": true,
+      "example_data_types": [
+        "isolated_lexical_forms",
+        "paradigms"
+      ],
+      "grammar_value": "HIGH",
+      "isbn": null,
+      "license_status": "LICENSE_UNKNOWN",
+      "notation_types": [
+        "IPA",
+        "phonemic_slashes",
+        "tone_marks",
+        "H_L_notation",
+        "downstep_notation",
+        "vowel_length_notation"
+      ],
+      "notes": "Conference record and author publication list verify Wanga noun-tone research; full paper metadata remains to be located.",
+      "primary_url": "https://acal50.linguistics.ubc.ca/files/2019/05/ACAL50_program_2019_05_24_v16.pdf",
+      "priority": "CRITICAL",
+      "pronunciation_value": "CRITICAL",
+      "publication": "50th Annual Conference on African Linguistics",
+      "relevance_tags": [
+        "PHONETICS",
+        "PHONOLOGY",
+        "TONE",
+        "PROSODY",
+        "MORPHOLOGY",
+        "NOUN_CLASS",
+        "EXAMPLE_SENTENCES",
+        "FIELD_DATA"
+      ],
+      "source_key": "GREEN_MARLO_2019_WANGA_NOUN_TONE",
+      "source_reported_varieties": [
+        "Wanga"
+      ],
+      "source_type": "CONFERENCE_PAPER",
+      "title": "Something old, something new, something borrowed, plus a few: On the origin of Wanga noun tone melodies",
+      "year": 2019
+    },
+    {
+      "alternate_urls": [],
+      "artifact": null,
+      "authority_type": "MASTERS_THESIS",
+      "authors": [
+        "Annet A. Khachula"
+      ],
+      "availability": "OPEN_FULL_TEXT",
+      "candidate_tafsiri_dialects": [
+        "Lumarama"
+      ],
+      "doi": null,
+      "downloadable_pdf": true,
+      "example_data_types": [
+        "isolated_lexical_forms",
+        "full_example_sentences"
+      ],
+      "grammar_value": "HIGH",
+      "isbn": null,
+      "license_status": "LICENSE_UNKNOWN",
+      "notation_types": [
+        "orthographic_transcription_only"
+      ],
+      "notes": "Lexical semantic change and contextual interpretation.",
+      "primary_url": "https://erepository.uonbi.ac.ke/items/3a59232e-779d-4b39-bbce-cd2d2d23e6d2/full",
+      "priority": "HIGH",
+      "pronunciation_value": "NONE",
+      "publication": "University of Nairobi",
+      "relevance_tags": [
+        "SEMANTICS",
+        "PRAGMATICS",
+        "LEXICON",
+        "EXAMPLE_SENTENCES",
+        "FIELD_DATA"
+      ],
+      "source_key": "KHACHULA_2013_LUMARAMA_SEMANTIC_SHIFT",
+      "source_reported_varieties": [
+        "Lumarama"
+      ],
+      "source_type": "MASTERS_THESIS",
+      "title": "Semantic Shift in Lumarama: a Lexical Pragmatics Approach",
+      "year": 2013
+    },
+    {
+      "alternate_urls": [],
+      "artifact": null,
+      "authority_type": "MASTERS_THESIS",
+      "authors": [
+        "Unknown"
+      ],
+      "availability": "OPEN_FULL_TEXT",
+      "candidate_tafsiri_dialects": [
+        "Lulogooli",
+        "Lwidakho"
+      ],
+      "doi": null,
+      "downloadable_pdf": true,
+      "example_data_types": [
+        "isolated_lexical_forms",
+        "full_example_sentences"
+      ],
+      "grammar_value": "HIGH",
+      "isbn": null,
+      "license_status": "LICENSE_UNKNOWN",
+      "notation_types": [
+        "phonemic_slashes"
+      ],
+      "notes": "Direct comparative coverage; author metadata follow-up needed.",
+      "primary_url": "https://ir-library.ku.ac.ke/items/4a828c50-ff4d-438d-99f9-9bb79b64f688",
+      "priority": "HIGH",
+      "pronunciation_value": "HIGH",
+      "publication": "Kenyatta University",
+      "relevance_tags": [
+        "PHONOLOGY",
+        "MORPHOLOGY",
+        "SYNTAX",
+        "LEXICON",
+        "DIALECTOLOGY",
+        "EXAMPLE_SENTENCES"
+      ],
+      "source_key": "KIMANI_COMPARATIVE_EKEGUSII_LULOGOOLI_LWITAKHO",
+      "source_reported_varieties": [
+        "Lulogooli",
+        "Lwitakho"
+      ],
+      "source_type": "MASTERS_THESIS",
+      "title": "A comparative study of Ekegusii, Lulogooli and Lwitakho: phonological, lexical and morphosyntactic structures",
+      "year": 2012
+    },
+    {
+      "alternate_urls": [],
+      "artifact": null,
+      "authority_type": "PUBLISHED_BOOK_CHAPTER",
+      "authors": [
+        "Kang Franco Liu"
+      ],
+      "availability": "OPEN_FULL_TEXT",
+      "candidate_tafsiri_dialects": [
+        "Lutiriki"
+      ],
+      "doi": "10.5281/zenodo.11210470",
+      "downloadable_pdf": true,
+      "example_data_types": [
+        "full_example_sentences",
+        "interlinear_glosses"
+      ],
+      "grammar_value": "CRITICAL",
+      "isbn": null,
+      "license_status": "CC_BY_4_0",
+      "notation_types": [
+        "orthographic_transcription_only"
+      ],
+      "notes": "Double object constructions, object marking, passivization, wh-clefting, and relativization.",
+      "primary_url": "https://langsci-press.org/catalog/book/438",
+      "priority": "CRITICAL",
+      "pronunciation_value": "LOW",
+      "publication": "ACAL in SoCAL: Selected papers from the 53rd Annual Conference on African Linguistics, pp. 395–423",
+      "relevance_tags": [
+        "MORPHOLOGY",
+        "AGREEMENT",
+        "DERIVATION",
+        "SYNTAX",
+        "EXAMPLE_SENTENCES",
+        "INTERLINEAR_GLOSS",
+        "FIELD_DATA"
+      ],
+      "source_key": "LIU_2024_TIRIKI_DOUBLE_OBJECTS",
+      "source_reported_varieties": [
+        "Tiriki"
+      ],
+      "source_type": "BOOK_CHAPTER",
+      "title": "(A)symmetry in double object constructions in Tiriki",
+      "year": 2024
+    },
+    {
+      "alternate_urls": [],
+      "artifact": null,
+      "authority_type": "PEER_REVIEWED",
+      "authors": [
+        "Unknown"
+      ],
+      "availability": "OPEN_FULL_TEXT",
+      "candidate_tafsiri_dialects": [
+        "Lubukusu"
+      ],
+      "doi": "10.53555/sshr.v5i8.3797",
+      "downloadable_pdf": true,
+      "example_data_types": [
+        "full_example_sentences"
+      ],
+      "grammar_value": "HIGH",
+      "isbn": null,
+      "license_status": "LICENSE_UNKNOWN",
+      "notation_types": [
+        "orthographic_transcription_only"
+      ],
+      "notes": "Locative clitic morphosyntax.",
+      "primary_url": "https://www.ijrdo.org/index.php/sshr/article/view/3797",
+      "priority": "MEDIUM",
+      "pronunciation_value": "LOW",
+      "publication": "IJRDO Journal of Social Science and Humanities Research 5(8), 51â€“65",
+      "relevance_tags": [
+        "PHONOLOGY",
+        "MORPHOLOGY",
+        "SYNTAX",
+        "EXAMPLE_SENTENCES"
+      ],
+      "source_key": "LUBUKUSU_LOCATIVE_CLITICS_2020",
+      "source_reported_varieties": [
+        "Lubukusu"
+      ],
+      "source_type": "JOURNAL_ARTICLE",
+      "title": "Morphological and Syntactic Behaviour of Lubukusu Locative Clitics among Native Speakers of Bungoma County, Kenya",
+      "year": 2020
+    },
+    {
+      "alternate_urls": [],
+      "artifact": null,
+      "authority_type": "MASTERS_THESIS",
+      "authors": [
+        "Unknown"
+      ],
+      "availability": "OPEN_FULL_TEXT",
+      "candidate_tafsiri_dialects": [
+        "Lutsotso"
+      ],
+      "doi": null,
+      "downloadable_pdf": true,
+      "example_data_types": [
+        "full_example_sentences",
+        "paradigms"
+      ],
+      "grammar_value": "CRITICAL",
+      "isbn": null,
+      "license_status": "LICENSE_UNKNOWN",
+      "notation_types": [
+        "orthographic_transcription_only"
+      ],
+      "notes": "Verb inflection, tense, and aspect; author metadata follow-up needed.",
+      "primary_url": "https://ir-library.mmust.ac.ke/xmlui/bitstream/handle/123456789/2572/A%20MORPHO-SYNTACTIC%20ANALYSIS%20OF%20TENSE%20AND%20ASPECT%20IN%20%20%20LUTSOTSO.pdf?isAllowed=y&sequence=1",
+      "priority": "CRITICAL",
+      "pronunciation_value": "LOW",
+      "publication": "Masinde Muliro University of Science and Technology",
+      "relevance_tags": [
+        "MORPHOLOGY",
+        "INFLECTION",
+        "SYNTAX",
+        "EXAMPLE_SENTENCES"
+      ],
+      "source_key": "LUTSOTSO_TENSE_ASPECT",
+      "source_reported_varieties": [
+        "Lutsotso"
+      ],
+      "source_type": "MASTERS_THESIS",
+      "title": "A Morpho-syntactic Analysis of Tense and Aspect in Lutsotso",
+      "year": 2022
+    },
+    {
+      "alternate_urls": [],
+      "artifact": null,
+      "authority_type": "MASTERS_THESIS",
+      "authors": [
+        "Unknown"
+      ],
+      "availability": "OPEN_FULL_TEXT",
+      "candidate_tafsiri_dialects": [
+        "Luwanga"
+      ],
+      "doi": null,
+      "downloadable_pdf": true,
+      "example_data_types": [
+        "isolated_lexical_forms",
+        "paradigms"
+      ],
+      "grammar_value": "CRITICAL",
+      "isbn": null,
+      "license_status": "LICENSE_UNKNOWN",
+      "notation_types": [
+        "phonemic_slashes"
+      ],
+      "notes": "Modern Luwanga noun and verb analysis; metadata follow-up needed.",
+      "primary_url": "https://erepository.uonbi.ac.ke/server/api/core/bitstreams/984cf572-bbbf-444a-baa0-02f663b95b7a/content",
+      "priority": "HIGH",
+      "pronunciation_value": "HIGH",
+      "publication": "University of Nairobi",
+      "relevance_tags": [
+        "PHONOLOGY",
+        "MORPHOPHONOLOGY",
+        "MORPHOLOGY",
+        "NOUN_CLASS",
+        "INFLECTION",
+        "EXAMPLE_SENTENCES"
+      ],
+      "source_key": "LUWANGA_NOUNS_VERBS_MORPHOPHONOLOGY",
+      "source_reported_varieties": [
+        "Luwanga"
+      ],
+      "source_type": "MASTERS_THESIS",
+      "title": "A Morpho-phonological Analysis of Luwanga Nouns and Verbs",
+      "year": 2023
+    },
+    {
+      "alternate_urls": [],
+      "artifact": null,
+      "authority_type": "MASTERS_THESIS",
+      "authors": [
+        "Unknown"
+      ],
+      "availability": "OPEN_FULL_TEXT",
+      "candidate_tafsiri_dialects": [
+        "Lubukusu"
+      ],
+      "doi": null,
+      "downloadable_pdf": true,
+      "example_data_types": [
+        "isolated_lexical_forms",
+        "full_example_sentences"
+      ],
+      "grammar_value": "LOW",
+      "isbn": null,
+      "license_status": "LICENSE_UNKNOWN",
+      "notation_types": [
+        "phonemic_slashes",
+        "tone_marks"
+      ],
+      "notes": "Author/year require metadata follow-up; sound inventory and lexical/grammatical tone are described.",
+      "primary_url": "https://erepository.uonbi.ac.ke/items/ff709ccf-a383-42ee-8404-37b6051b3ae0",
+      "priority": "CRITICAL",
+      "pronunciation_value": "CRITICAL",
+      "publication": "University of Nairobi",
+      "relevance_tags": [
+        "PHONOLOGY",
+        "TONE",
+        "DIALECTOLOGY",
+        "PRONUNCIATION",
+        "EXAMPLE_SENTENCES"
+      ],
+      "source_key": "MAKOKHA_LUBUKUSU_PHONOLOGICAL_VARIATION",
+      "source_reported_varieties": [
+        "Lubukusu"
+      ],
+      "source_type": "MASTERS_THESIS",
+      "title": "Phonological variations of Lubukusu language using the natural generative phonology theory",
+      "year": null
+    },
+    {
+      "alternate_urls": [],
+      "artifact": null,
+      "authority_type": "PEER_REVIEWED",
+      "authors": [
+        "Michael R. Marlo"
+      ],
+      "availability": "PAYWALLED",
+      "candidate_tafsiri_dialects": [
+        "Tachoni"
+      ],
+      "doi": null,
+      "downloadable_pdf": false,
+      "example_data_types": [
+        "isolated_lexical_forms",
+        "full_example_sentences",
+        "paradigms"
+      ],
+      "grammar_value": "CRITICAL",
+      "isbn": null,
+      "license_status": "COPYRIGHT_RESTRICTED",
+      "notation_types": [
+        "tone_marks",
+        "H_L_notation",
+        "downstep_notation"
+      ],
+      "notes": "Core Tachoni verbal tone source.",
+      "primary_url": "https://www.sciencedirect.com/science/article/abs/pii/S0388000108000491",
+      "priority": "CRITICAL",
+      "pronunciation_value": "CRITICAL",
+      "publication": "Lingua",
+      "relevance_tags": [
+        "TONE",
+        "PROSODY",
+        "PHONOLOGY",
+        "MORPHOLOGY",
+        "INFLECTION",
+        "EXAMPLE_SENTENCES"
+      ],
+      "source_key": "MARLO_2008_TACHONI_TONOLOGY",
+      "source_reported_varieties": [
+        "Tachoni"
+      ],
+      "source_type": "JOURNAL_ARTICLE",
+      "title": "Tachoni verbal tonology",
+      "year": 2008
+    },
+    {
+      "alternate_urls": [],
+      "artifact": null,
+      "authority_type": "PEER_REVIEWED",
+      "authors": [
+        "Michael R. Marlo"
+      ],
+      "availability": "OPEN_FULL_TEXT",
+      "candidate_tafsiri_dialects": [
+        "Khayo"
+      ],
+      "doi": "10.3406/aflin.2009.1003",
+      "downloadable_pdf": true,
+      "example_data_types": [
+        "isolated_lexical_forms",
+        "full_example_sentences",
+        "paradigms"
+      ],
+      "grammar_value": "CRITICAL",
+      "isbn": null,
+      "license_status": "LICENSE_UNKNOWN",
+      "notation_types": [
+        "IPA",
+        "tone_marks",
+        "H_L_notation",
+        "downstep_notation",
+        "vowel_length_notation"
+      ],
+      "notes": "Core Khayo verbal tone analysis.",
+      "primary_url": "https://www.persee.fr/doc/aflin_2033-8732_2009_num_15_1_1003",
+      "priority": "CRITICAL",
+      "pronunciation_value": "CRITICAL",
+      "publication": "Africana Linguistica 15, 77â€“129",
+      "relevance_tags": [
+        "TONE",
+        "PROSODY",
+        "PHONOLOGY",
+        "MORPHOLOGY",
+        "INFLECTION",
+        "EXAMPLE_SENTENCES"
+      ],
+      "source_key": "MARLO_2009_KHAYO_TONOLOGY",
+      "source_reported_varieties": [
+        "Khayo"
+      ],
+      "source_type": "JOURNAL_ARTICLE",
+      "title": "Khayo verbal tonology",
+      "year": 2009
+    },
+    {
+      "alternate_urls": [],
+      "artifact": null,
+      "authority_type": "MASTERS_THESIS",
+      "authors": [
+        "Akidah"
+      ],
+      "availability": "OPEN_FULL_TEXT",
+      "candidate_tafsiri_dialects": [
+        "Luwanga"
+      ],
+      "doi": null,
+      "downloadable_pdf": true,
+      "example_data_types": [
+        "isolated_lexical_forms",
+        "paradigms"
+      ],
+      "grammar_value": "HIGH",
+      "isbn": null,
+      "license_status": "LICENSE_UNKNOWN",
+      "notation_types": [
+        "IPA",
+        "phonemic_slashes"
+      ],
+      "notes": "Repository metadata abbreviated author; verify full name before evidence extraction.",
+      "primary_url": "https://erepository.uonbi.ac.ke/items/1dc6935e-50cd-4733-a04a-6c7c6ab0a0e2",
+      "priority": "CRITICAL",
+      "pronunciation_value": "CRITICAL",
+      "publication": "University of Nairobi",
+      "relevance_tags": [
+        "PHONOLOGY",
+        "MORPHOPHONOLOGY",
+        "MORPHOLOGY",
+        "NOUN_CLASS",
+        "INFLECTION",
+        "EXAMPLE_SENTENCES"
+      ],
+      "source_key": "MARLO_AKIDAH_1999_LUWANGA_MORPHOPHONEMICS",
+      "source_reported_varieties": [
+        "Luwanga"
+      ],
+      "source_type": "MASTERS_THESIS",
+      "title": "Luwanga morphophonemics: a Natural Generative Phonology approach",
+      "year": 1999
+    },
+    {
+      "alternate_urls": [],
+      "artifact": null,
+      "authority_type": "WORKING_PAPER",
+      "authors": [
+        "Michael R. Marlo",
+        "A. Brown"
+      ],
+      "availability": "PUBLIC_FULL_TEXT_UNCLEAR_LICENSE",
+      "candidate_tafsiri_dialects": [
+        "Lusamia"
+      ],
+      "doi": null,
+      "downloadable_pdf": true,
+      "example_data_types": [
+        "isolated_lexical_forms",
+        "acoustic_data",
+        "audio"
+      ],
+      "grammar_value": "LOW",
+      "isbn": null,
+      "license_status": "LICENSE_UNKNOWN",
+      "notation_types": [
+        "IPA",
+        "phonetic_brackets",
+        "vowel_length_notation"
+      ],
+      "notes": "Acoustic segment-duration measurements.",
+      "primary_url": "https://citeseerx.ist.psu.edu/document?doi=88cd9a15d2ca3016204a974c0c9b858b10bf5197&repid=rep1&type=pdf",
+      "priority": "CRITICAL",
+      "pronunciation_value": "CRITICAL",
+      "publication": "Indiana University unpublished manuscript",
+      "relevance_tags": [
+        "PHONETICS",
+        "PHONOLOGY",
+        "PRONUNCIATION",
+        "GRAPHEME_TO_PHONEME",
+        "SPEECH_AUDIO",
+        "FIELD_DATA"
+      ],
+      "source_key": "MARLO_BROWN_2003_LUSAAMIA_DURATION",
+      "source_reported_varieties": [
+        "Lusaamia"
+      ],
+      "source_type": "TECHNICAL_REPORT",
+      "title": "Segmental duration in Lusaamia: a phonetic study",
+      "year": 2003
+    },
+    {
+      "alternate_urls": [],
+      "artifact": null,
+      "authority_type": "MASTERS_THESIS",
+      "authors": [
+        "Mary Nasambu Masika"
+      ],
+      "availability": "PUBLIC_FULL_TEXT_UNCLEAR_LICENSE",
+      "candidate_tafsiri_dialects": [
+        "Lubukusu"
+      ],
+      "doi": null,
+      "downloadable_pdf": true,
+      "example_data_types": [
+        "translated_words",
+        "phrases",
+        "full_example_sentences",
+        "audio"
+      ],
+      "grammar_value": "MEDIUM",
+      "isbn": null,
+      "license_status": "LICENSE_UNKNOWN",
+      "notation_types": [
+        "IPA",
+        "phonemic_slashes"
+      ],
+      "notes": "Medical terminology, lexical gaps, interpreting strategies, and recorded consultations.",
+      "primary_url": "https://ir-library.mmust.ac.ke/xmlui/handle/123456789/2623",
+      "priority": "CRITICAL",
+      "pronunciation_value": "MEDIUM",
+      "publication": "Masinde Muliro University of Science and Technology",
+      "relevance_tags": [
+        "TERMINOLOGY",
+        "TRANSLATION",
+        "SEMANTICS",
+        "PRAGMATICS",
+        "EXAMPLE_SENTENCES",
+        "SPEECH_AUDIO",
+        "FIELD_DATA"
+      ],
+      "source_key": "MASIKA_2023_LUBUKUSU_MEDICAL",
+      "source_reported_varieties": [
+        "Lubukusu"
+      ],
+      "source_type": "MASTERS_THESIS",
+      "title": "Interpretation of English-Lubukusu Medical Discourse in Bungoma County Hospitals - Kenya",
+      "year": 2023
+    },
+    {
+      "alternate_urls": [],
+      "artifact": null,
+      "authority_type": "PEER_REVIEWED",
+      "authors": [
+        "Mary Nasambu Masika",
+        "David Barasa",
+        "Benard Mudogo"
+      ],
+      "availability": "PUBLIC_FULL_TEXT_UNCLEAR_LICENSE",
+      "candidate_tafsiri_dialects": [
+        "Lubukusu"
+      ],
+      "doi": "10.58256/njhs.v7i2.1114",
+      "downloadable_pdf": true,
+      "example_data_types": [
+        "translated_words",
+        "full_example_sentences"
+      ],
+      "grammar_value": "MEDIUM",
+      "isbn": null,
+      "license_status": "LICENSE_UNKNOWN",
+      "notation_types": [
+        "orthographic_transcription_only"
+      ],
+      "notes": "Medical lexical gaps and meaning loss.",
+      "primary_url": "https://ir-library.mmust.ac.ke/xmlui/handle/123456789/2382?show=full",
+      "priority": "HIGH",
+      "pronunciation_value": "LOW",
+      "publication": "Nairobi Journal of Humanities and Social Sciences 7(2)",
+      "relevance_tags": [
+        "TERMINOLOGY",
+        "TRANSLATION",
+        "SEMANTICS",
+        "PRAGMATICS",
+        "EXAMPLE_SENTENCES"
+      ],
+      "source_key": "MASIKA_ETAL_2023_MEANING_LOSS",
+      "source_reported_varieties": [
+        "Lubukusu"
+      ],
+      "source_type": "JOURNAL_ARTICLE",
+      "title": "Meaning loss in English-Lubukusu medical interpretation",
+      "year": 2023
+    },
+    {
+      "alternate_urls": [],
+      "artifact": null,
+      "authority_type": "DOCTORAL_DISSERTATION",
+      "authors": [
+        "Martin Mould"
+      ],
+      "availability": "OPEN_FULL_TEXT",
+      "candidate_tafsiri_dialects": [
+        "Lusamia",
+        "Luwanga",
+        "Lubukusu",
+        "Lulogooli"
+      ],
+      "doi": null,
+      "downloadable_pdf": true,
+      "example_data_types": [
+        "isolated_lexical_forms",
+        "paradigms"
+      ],
+      "grammar_value": "HIGH",
+      "isbn": null,
+      "license_status": "LICENSE_UNKNOWN",
+      "notation_types": [
+        "phonemic_slashes"
+      ],
+      "notes": "Comparative grammar and subclassification.",
+      "primary_url": "https://erepository.uonbi.ac.ke/items/a9ba27f2-8ada-43dd-8d42-bd02baee8186",
+      "priority": "HIGH",
+      "pronunciation_value": "HIGH",
+      "publication": "Unknown institution; University of Nairobi repository copy",
+      "relevance_tags": [
+        "PHONOLOGY",
+        "MORPHOLOGY",
+        "SYNTAX",
+        "DIALECTOLOGY",
+        "HISTORICAL_LINGUISTICS",
+        "LEXICON"
+      ],
+      "source_key": "MOULD_1976_NORTH_VICTORIAN_BANTU",
+      "source_reported_varieties": [
+        "Saamia",
+        "Wanga",
+        "Bukusu",
+        "Maragoli"
+      ],
+      "source_type": "DOCTORAL_DISSERTATION",
+      "title": "Comparative grammar reconstruction and language sub-classification: The North Victorian Bantu",
+      "year": 1976
+    },
+    {
+      "alternate_urls": [],
+      "artifact": null,
+      "authority_type": "DOCTORAL_DISSERTATION",
+      "authors": [
+        "Benard Angatia Mudogo"
+      ],
+      "availability": "PUBLIC_FULL_TEXT_UNCLEAR_LICENSE",
+      "candidate_tafsiri_dialects": [
+        "Lwisukha",
+        "Luwanga",
+        "Khayo"
+      ],
+      "doi": "10.13140/RG.2.2.27062.61769",
+      "downloadable_pdf": false,
+      "example_data_types": [
+        "translated_words",
+        "phrases",
+        "full_example_sentences"
+      ],
+      "grammar_value": "MEDIUM",
+      "isbn": null,
+      "license_status": "COPYRIGHT_RESTRICTED",
+      "notation_types": [
+        "orthographic_transcription_only"
+      ],
+      "notes": "Word-level non-equivalence, loanword-plus-explanation, substitution, and cross-dialect newscast translation.",
+      "primary_url": "https://afribary.com/works/word-level-strategies-used-to-attain-functional-lukabras-equivalence-in-the-translation-of-mulembe-fm-luhya-newscasts/read",
+      "priority": "CRITICAL",
+      "pronunciation_value": "NONE",
+      "publication": "Maseno University",
+      "relevance_tags": [
+        "SEMANTICS",
+        "PRAGMATICS",
+        "LEXICON",
+        "TERMINOLOGY",
+        "TRANSLATION",
+        "DIALECTOLOGY",
+        "EXAMPLE_SENTENCES",
+        "FIELD_DATA"
+      ],
+      "source_key": "MUDOGO_2017_LUKABRAS_TRANSLATION",
+      "source_reported_varieties": [
+        "Lukabras",
+        "Lwisukha",
+        "Luwanga",
+        "Lukhayo"
+      ],
+      "source_type": "DOCTORAL_DISSERTATION",
+      "title": "Word Level Strategies Used to Attain Functional Lukabras Equivalence in the Translation of Mulembe FM Luhya Newscasts",
+      "year": 2017
+    },
+    {
+      "alternate_urls": [],
+      "artifact": null,
+      "authority_type": "MASTERS_THESIS",
+      "authors": [
+        "George Nanjira Mulama"
+      ],
+      "availability": "OPEN_FULL_TEXT",
+      "candidate_tafsiri_dialects": [
+        "Lumarama"
+      ],
+      "doi": null,
+      "downloadable_pdf": true,
+      "example_data_types": [
+        "isolated_lexical_forms",
+        "paradigms"
+      ],
+      "grammar_value": "MEDIUM",
+      "isbn": null,
+      "license_status": "LICENSE_UNKNOWN",
+      "notation_types": [
+        "IPA",
+        "phonemic_slashes"
+      ],
+      "notes": "NC effects, hiatus, syllable structure, and alternations.",
+      "primary_url": "https://ir-library.ku.ac.ke/items/7f2b87a8-1ff1-4d16-ae62-1bbaf0849442",
+      "priority": "CRITICAL",
+      "pronunciation_value": "CRITICAL",
+      "publication": "Kenyatta University",
+      "relevance_tags": [
+        "PHONOLOGY",
+        "MORPHOPHONOLOGY",
+        "PRONUNCIATION",
+        "GRAPHEME_TO_PHONEME",
+        "EXAMPLE_SENTENCES"
+      ],
+      "source_key": "MULAMA_2019_OLUMARAMA_PHONOLOGY",
+      "source_reported_varieties": [
+        "Olumarama"
+      ],
+      "source_type": "MASTERS_THESIS",
+      "title": "The Phonological Processes in Olumarama: NC Effects and Vowel Hiatus",
+      "year": 2019
+    },
+    {
+      "alternate_urls": [],
+      "artifact": null,
+      "authority_type": "DOCTORAL_DISSERTATION",
+      "authors": [
+        "Nasiombe Mutonyi"
+      ],
+      "availability": "OPEN_FULL_TEXT",
+      "candidate_tafsiri_dialects": [
+        "Lubukusu"
+      ],
+      "doi": null,
+      "downloadable_pdf": true,
+      "example_data_types": [
+        "isolated_lexical_forms",
+        "full_example_sentences",
+        "paradigms"
+      ],
+      "grammar_value": "CRITICAL",
+      "isbn": null,
+      "license_status": "COPYRIGHT_RESTRICTED",
+      "notation_types": [
+        "IPA",
+        "phonemic_slashes",
+        "tone_marks",
+        "vowel_length_notation"
+      ],
+      "notes": "Foundational Bukusu dissertation.",
+      "primary_url": "https://etd.ohiolink.edu/acprod/odb_etd/etd/r/1501/10?clear=10&p10_accession_num=osu1488203552780873",
+      "priority": "CRITICAL",
+      "pronunciation_value": "CRITICAL",
+      "publication": "Ohio State University",
+      "relevance_tags": [
+        "PHONETICS",
+        "PHONOLOGY",
+        "TONE",
+        "MORPHOLOGY",
+        "MORPHOPHONOLOGY",
+        "NOUN_CLASS",
+        "INFLECTION",
+        "DERIVATION",
+        "SYNTAX",
+        "EXAMPLE_SENTENCES"
+      ],
+      "source_key": "MUTONYI_2000_BUKUSU_MORPHOPHONOLOGY",
+      "source_reported_varieties": [
+        "Bukusu"
+      ],
+      "source_type": "DOCTORAL_DISSERTATION",
+      "title": "Aspects of Bukusu Morphology and Phonology",
+      "year": 2000
+    },
+    {
+      "alternate_urls": [],
+      "artifact": null,
+      "authority_type": "DOCTORAL_DISSERTATION",
+      "authors": [
+        "Sussy Khaadi Nandama"
+      ],
+      "availability": "OPEN_FULL_TEXT",
+      "candidate_tafsiri_dialects": [
+        "Lwisukha"
+      ],
+      "doi": null,
+      "downloadable_pdf": true,
+      "example_data_types": [
+        "isolated_lexical_forms",
+        "phrases",
+        "full_example_sentences",
+        "paradigms",
+        "audio"
+      ],
+      "grammar_value": "HIGH",
+      "isbn": null,
+      "license_status": "CC_BY_NC",
+      "notation_types": [
+        "tone_marks",
+        "H_L_notation",
+        "downstep_notation"
+      ],
+      "notes": "Explicit noun tone patterns and contextual tonal rules; repository states CC BY-NC-ND 3.0.",
+      "primary_url": "https://erepository.uonbi.ac.ke/items/ac1d8f96-6be2-4bfb-b0f3-c14930f1dd08",
+      "priority": "CRITICAL",
+      "pronunciation_value": "CRITICAL",
+      "publication": "University of Nairobi",
+      "relevance_tags": [
+        "TONE",
+        "PROSODY",
+        "PHONOLOGY",
+        "NOUN_CLASS",
+        "PRAGMATICS",
+        "EXAMPLE_SENTENCES",
+        "FIELD_DATA"
+      ],
+      "source_key": "NANDAMA_2022_LWISUKHA_TONE",
+      "source_reported_varieties": [
+        "Lwisukha"
+      ],
+      "source_type": "DOCTORAL_DISSERTATION",
+      "title": "A Study of the Tone System of Lwisukha Nouns",
+      "year": 2022
+    },
+    {
+      "alternate_urls": [],
+      "artifact": null,
+      "authority_type": "DOCTORAL_DISSERTATION",
+      "authors": [
+        "Henry Simiyu Nandelenga"
+      ],
+      "availability": "OPEN_FULL_TEXT",
+      "candidate_tafsiri_dialects": [
+        "Lubukusu"
+      ],
+      "doi": null,
+      "downloadable_pdf": true,
+      "example_data_types": [
+        "isolated_lexical_forms",
+        "paradigms"
+      ],
+      "grammar_value": "MEDIUM",
+      "isbn": null,
+      "license_status": "LICENSE_UNKNOWN",
+      "notation_types": [
+        "IPA",
+        "phonemic_slashes",
+        "phonetic_brackets"
+      ],
+      "notes": "Syllable structure and phonological processes.",
+      "primary_url": "https://ir-library.ku.ac.ke/items/d98512c0-8746-4f83-a770-e1ff7c7cc6be",
+      "priority": "CRITICAL",
+      "pronunciation_value": "CRITICAL",
+      "publication": "Kenyatta University",
+      "relevance_tags": [
+        "PHONOLOGY",
+        "MORPHOPHONOLOGY",
+        "PRONUNCIATION",
+        "GRAPHEME_TO_PHONEME",
+        "EXAMPLE_SENTENCES"
+      ],
+      "source_key": "NANDELENGA_2014_LUBUKUSU_SYLLABLE",
+      "source_reported_varieties": [
+        "Lubukusu"
+      ],
+      "source_type": "DOCTORAL_DISSERTATION",
+      "title": "Constraint Interaction in the Syllabic Phonology of Lubukusu: an Optimality Theory Account",
+      "year": 2014
+    },
+    {
+      "alternate_urls": [],
+      "artifact": null,
+      "authority_type": "DOCTORAL_DISSERTATION",
+      "authors": [
+        "Yvonne E. Ochwaya-Oluoch"
+      ],
+      "availability": "METADATA_ONLY",
+      "candidate_tafsiri_dialects": [
+        "Lunyala"
+      ],
+      "doi": null,
+      "downloadable_pdf": false,
+      "example_data_types": [
+        "isolated_lexical_forms",
+        "full_example_sentences",
+        "paradigms"
+      ],
+      "grammar_value": "CRITICAL",
+      "isbn": null,
+      "license_status": "COPYRIGHT_RESTRICTED",
+      "notation_types": [
+        "IPA",
+        "phonemic_slashes",
+        "tone_marks",
+        "vowel_length_notation"
+      ],
+      "notes": "Comprehensive phonology, tone, nouns, verbs, extensions, and concord.",
+      "primary_url": "https://etheses.whiterose.ac.uk/id/eprint/14586/",
+      "priority": "CRITICAL",
+      "pronunciation_value": "CRITICAL",
+      "publication": "University of Sheffield",
+      "relevance_tags": [
+        "PHONETICS",
+        "PHONOLOGY",
+        "TONE",
+        "MORPHOLOGY",
+        "MORPHOPHONOLOGY",
+        "NOUN_CLASS",
+        "AGREEMENT",
+        "INFLECTION",
+        "DERIVATION",
+        "EXAMPLE_SENTENCES"
+      ],
+      "source_key": "OCHWAYA_OLUOCH_2003_LUNYALA",
+      "source_reported_varieties": [
+        "Lunyala"
+      ],
+      "source_type": "DOCTORAL_DISSERTATION",
+      "title": "A study of the phonology and morphology of Lunyala",
+      "year": 2003
+    },
+    {
+      "alternate_urls": [],
+      "artifact": null,
+      "authority_type": "MASTERS_THESIS",
+      "authors": [
+        "Hellen Selah Odera"
+      ],
+      "availability": "OPEN_FULL_TEXT",
+      "candidate_tafsiri_dialects": [
+        "Lutsotso"
+      ],
+      "doi": null,
+      "downloadable_pdf": true,
+      "example_data_types": [
+        "full_example_sentences"
+      ],
+      "grammar_value": "HIGH",
+      "isbn": null,
+      "license_status": "LICENSE_UNKNOWN",
+      "notation_types": [
+        "orthographic_transcription_only"
+      ],
+      "notes": "Anaphora and discourse coherence.",
+      "primary_url": "https://ir-library.mmust.ac.ke/xmlui/handle/123456789/3482",
+      "priority": "HIGH",
+      "pronunciation_value": "NONE",
+      "publication": "Masinde Muliro University of Science and Technology",
+      "relevance_tags": [
+        "MORPHOLOGY",
+        "SYNTAX",
+        "PRAGMATICS",
+        "EXAMPLE_SENTENCES"
+      ],
+      "source_key": "ODERA_2025_LUTSOTSO_ANAPHORA",
+      "source_reported_varieties": [
+        "Lutsotso"
+      ],
+      "source_type": "MASTERS_THESIS",
+      "title": "A Morpho-pragmatic Analysis of Anaphora Relations in Lutsotso",
+      "year": 2025
+    },
+    {
+      "alternate_urls": [],
+      "artifact": null,
+      "authority_type": "PEER_REVIEWED",
+      "authors": [
+        "Hellen Odera",
+        "Evaline Osore"
+      ],
+      "availability": "PUBLIC_FULL_TEXT_UNCLEAR_LICENSE",
+      "candidate_tafsiri_dialects": [
+        "Lutsotso"
+      ],
+      "doi": null,
+      "downloadable_pdf": true,
+      "example_data_types": [
+        "isolated_lexical_forms",
+        "full_example_sentences",
+        "paradigms"
+      ],
+      "grammar_value": "CRITICAL",
+      "isbn": null,
+      "license_status": "LICENSE_UNKNOWN",
+      "notation_types": [
+        "orthographic_transcription_only"
+      ],
+      "notes": "Documents 21 noun classes and agreement morphology.",
+      "primary_url": "https://ir-library.mmust.ac.ke/xmlui/handle/123456789/2202",
+      "priority": "CRITICAL",
+      "pronunciation_value": "LOW",
+      "publication": "Masinde Muliro University repository",
+      "relevance_tags": [
+        "NOUN_CLASS",
+        "AGREEMENT",
+        "MORPHOLOGY",
+        "SYNTAX",
+        "SEMANTICS",
+        "EXAMPLE_SENTENCES"
+      ],
+      "source_key": "ODERA_OSORE_2023_LUTSOTSO_NOUN_CLASSES",
+      "source_reported_varieties": [
+        "Lutsotso"
+      ],
+      "source_type": "JOURNAL_ARTICLE",
+      "title": "Noun Classes and Agreement in Lutsotso",
+      "year": 2023
+    },
+    {
+      "alternate_urls": [],
+      "artifact": null,
+      "authority_type": "MASTERS_THESIS",
+      "authors": [
+        "Unknown"
+      ],
+      "availability": "OPEN_FULL_TEXT",
+      "candidate_tafsiri_dialects": [
+        "Lunyala"
+      ],
+      "doi": null,
+      "downloadable_pdf": true,
+      "example_data_types": [
+        "isolated_lexical_forms"
+      ],
+      "grammar_value": "LOW",
+      "isbn": null,
+      "license_status": "LICENSE_UNKNOWN",
+      "notation_types": [
+        "IPA",
+        "phonemic_slashes"
+      ],
+      "notes": "Syllable structure; exact Lunyala regional variety requires review.",
+      "primary_url": "https://ir-library.ku.ac.ke/items/a289c109-3c43-4fb2-9e0c-7295d687d0f3",
+      "priority": "HIGH",
+      "pronunciation_value": "CRITICAL",
+      "publication": "Kenyatta University",
+      "relevance_tags": [
+        "PHONOLOGY",
+        "MORPHOPHONOLOGY",
+        "PRONUNCIATION",
+        "GRAPHEME_TO_PHONEME"
+      ],
+      "source_key": "OLUNYALA_SYLLABLE_CONSTRAINTS",
+      "source_reported_varieties": [
+        "Olunyala"
+      ],
+      "source_type": "MASTERS_THESIS",
+      "title": "A phonological analysis of the constraints on the syllable structures of Olunyala",
+      "year": 2011
+    },
+    {
+      "alternate_urls": [],
+      "artifact": null,
+      "authority_type": "DOCTORAL_DISSERTATION",
+      "authors": [
+        "Emily Ondondo"
+      ],
+      "availability": "OPEN_FULL_TEXT",
+      "candidate_tafsiri_dialects": [
+        "Lukisa"
+      ],
+      "doi": null,
+      "downloadable_pdf": true,
+      "example_data_types": [
+        "isolated_lexical_forms",
+        "full_example_sentences",
+        "paradigms"
+      ],
+      "grammar_value": "CRITICAL",
+      "isbn": null,
+      "license_status": "LICENSE_UNKNOWN",
+      "notation_types": [
+        "IPA",
+        "phonemic_slashes"
+      ],
+      "notes": "Comprehensive word structure, inventory, syllables, nouns, verbs, and hiatus.",
+      "primary_url": "https://dissertation.com/abstract/1036325",
+      "priority": "CRITICAL",
+      "pronunciation_value": "CRITICAL",
+      "publication": "University of Newcastle",
+      "relevance_tags": [
+        "PHONETICS",
+        "PHONOLOGY",
+        "MORPHOLOGY",
+        "MORPHOPHONOLOGY",
+        "NOUN_CLASS",
+        "INFLECTION",
+        "SYNTAX",
+        "EXAMPLE_SENTENCES"
+      ],
+      "source_key": "OND0NDO_2013_KISA_WORD_STRUCTURE",
+      "source_reported_varieties": [
+        "Kisa"
+      ],
+      "source_type": "DOCTORAL_DISSERTATION",
+      "title": "Word structure in Kisa",
+      "year": 2013
+    },
+    {
+      "alternate_urls": [],
+      "artifact": null,
+      "authority_type": "PEER_REVIEWED",
+      "authors": [
+        "Emily Ondondo"
+      ],
+      "availability": "PUBLIC_FULL_TEXT_UNCLEAR_LICENSE",
+      "candidate_tafsiri_dialects": [
+        "Lukisa"
+      ],
+      "doi": null,
+      "downloadable_pdf": true,
+      "example_data_types": [
+        "full_example_sentences",
+        "paradigms"
+      ],
+      "grammar_value": "HIGH",
+      "isbn": null,
+      "license_status": "LICENSE_UNKNOWN",
+      "notation_types": [
+        "orthographic_transcription_only"
+      ],
+      "notes": "Noun phrase structure and relations; canonical publication metadata needs follow-up.",
+      "primary_url": "https://www.researchgate.net/publication/311625683_The_Kisa_Noun_Phrase",
+      "priority": "HIGH",
+      "pronunciation_value": "LOW",
+      "publication": "Unknown journal",
+      "relevance_tags": [
+        "NOUN_CLASS",
+        "AGREEMENT",
+        "MORPHOLOGY",
+        "SYNTAX",
+        "EXAMPLE_SENTENCES"
+      ],
+      "source_key": "OND0NDO_KISA_NOUN_PHRASE",
+      "source_reported_varieties": [
+        "Kisa"
+      ],
+      "source_type": "JOURNAL_ARTICLE",
+      "title": "The Kisa Noun Phrase",
+      "year": 2015
+    },
+    {
+      "alternate_urls": [],
+      "artifact": null,
+      "authority_type": "PEER_REVIEWED",
+      "authors": [
+        "Emily Ondondo"
+      ],
+      "availability": "PUBLIC_FULL_TEXT_UNCLEAR_LICENSE",
+      "candidate_tafsiri_dialects": [
+        "Lukisa"
+      ],
+      "doi": null,
+      "downloadable_pdf": true,
+      "example_data_types": [
+        "isolated_lexical_forms",
+        "full_example_sentences"
+      ],
+      "grammar_value": "HIGH",
+      "isbn": null,
+      "license_status": "LICENSE_UNKNOWN",
+      "notation_types": [
+        "phonemic_slashes"
+      ],
+      "notes": "Morphology-syntax-phonology interaction and vowel hiatus.",
+      "primary_url": "https://ir.jooust.ac.ke/items/f5ee8468-4e31-491d-9d75-251f94c4a165/full",
+      "priority": "HIGH",
+      "pronunciation_value": "HIGH",
+      "publication": "Jaramogi Oginga Odinga University repository",
+      "relevance_tags": [
+        "PROSODY",
+        "PHONOLOGY",
+        "MORPHOPHONOLOGY",
+        "SYNTAX",
+        "EXAMPLE_SENTENCES"
+      ],
+      "source_key": "OND0NDO_KISA_PROSODIC_DOMAINS",
+      "source_reported_varieties": [
+        "Kisa"
+      ],
+      "source_type": "JOURNAL_ARTICLE",
+      "title": "Prosodic Domains in Kisa",
+      "year": 2020
+    },
+    {
+      "alternate_urls": [],
+      "artifact": null,
+      "authority_type": "MASTERS_THESIS",
+      "authors": [
+        "Bridgit Ouma"
+      ],
+      "availability": "OPEN_FULL_TEXT",
+      "candidate_tafsiri_dialects": [
+        "Lumarachi"
+      ],
+      "doi": null,
+      "downloadable_pdf": true,
+      "example_data_types": [
+        "isolated_lexical_forms",
+        "full_example_sentences"
+      ],
+      "grammar_value": "HIGH",
+      "isbn": null,
+      "license_status": "LICENSE_UNKNOWN",
+      "notation_types": [
+        "IPA",
+        "phonemic_slashes"
+      ],
+      "notes": "Includes consonants, vowels, processes, nouns, verbs, and reduplication.",
+      "primary_url": "https://erepository.uonbi.ac.ke/items/248432b5-676f-4539-84e9-2ef2fb39164b",
+      "priority": "HIGH",
+      "pronunciation_value": "HIGH",
+      "publication": "University of Nairobi",
+      "relevance_tags": [
+        "PHONETICS",
+        "PHONOLOGY",
+        "MORPHOPHONOLOGY",
+        "MORPHOLOGY",
+        "PRONUNCIATION",
+        "EXAMPLE_SENTENCES"
+      ],
+      "source_key": "OUMA_2015_LUMARACHI_INTERFERENCE",
+      "source_reported_varieties": [
+        "Lumarachi"
+      ],
+      "source_type": "MASTERS_THESIS",
+      "title": "A study of mother tongue interference in the learning of English by Lumarachi native speakers",
+      "year": 2015
+    },
+    {
+      "alternate_urls": [],
+      "artifact": null,
+      "authority_type": "MASTERS_THESIS",
+      "authors": [
+        "Unknown"
+      ],
+      "availability": "OPEN_FULL_TEXT",
+      "candidate_tafsiri_dialects": [],
+      "doi": null,
+      "downloadable_pdf": true,
+      "example_data_types": [
+        "isolated_lexical_forms",
+        "paradigms"
+      ],
+      "grammar_value": "MEDIUM",
+      "isbn": null,
+      "license_status": "LICENSE_UNKNOWN",
+      "notation_types": [
+        "IPA",
+        "phonemic_slashes"
+      ],
+      "notes": "Comparative sound correspondences; author metadata follow-up needed.",
+      "primary_url": "https://erepository.uonbi.ac.ke/items/443f03c0-2957-4341-817a-8f714475c562",
+      "priority": "CRITICAL",
+      "pronunciation_value": "CRITICAL",
+      "publication": "University of Nairobi",
+      "relevance_tags": [
+        "PHONOLOGY",
+        "DIALECTOLOGY",
+        "HISTORICAL_LINGUISTICS",
+        "LEXICON",
+        "GRAPHEME_TO_PHONEME"
+      ],
+      "source_key": "PROTO_LUYIA_SYSTEMATIC_RECONSTRUCTION",
+      "source_reported_varieties": [
+        "Proto-Luyia",
+        "Luyia dialects"
+      ],
+      "source_type": "MASTERS_THESIS",
+      "title": "A Systematic Reconstruction of the Phonology of Proto-Luyia: A Comparative Analysis",
+      "year": 2019
+    },
+    {
+      "alternate_urls": [],
+      "artifact": null,
+      "authority_type": "MASTERS_THESIS",
+      "authors": [
+        "Morand S. Shidiavai"
+      ],
+      "availability": "OPEN_FULL_TEXT",
+      "candidate_tafsiri_dialects": [
+        "Lwidakho"
+      ],
+      "doi": null,
+      "downloadable_pdf": true,
+      "example_data_types": [
+        "isolated_lexical_forms",
+        "translated_words",
+        "paradigms"
+      ],
+      "grammar_value": "MEDIUM",
+      "isbn": null,
+      "license_status": "LICENSE_UNKNOWN",
+      "notation_types": [
+        "IPA",
+        "phonemic_slashes",
+        "phonetic_brackets"
+      ],
+      "notes": "Sound inventory and systematic loanword adaptation.",
+      "primary_url": "https://erepository.uonbi.ac.ke/items/650135fa-f88b-4c2f-b24c-21ada6306c6b",
+      "priority": "CRITICAL",
+      "pronunciation_value": "CRITICAL",
+      "publication": "University of Nairobi",
+      "relevance_tags": [
+        "PHONETICS",
+        "PHONOLOGY",
+        "MORPHOPHONOLOGY",
+        "LOANWORDS",
+        "TERMINOLOGY",
+        "GRAPHEME_TO_PHONEME",
+        "EXAMPLE_SENTENCES"
+      ],
+      "source_key": "SHIDIAVAI_2015_LWIDAKHO_LOANWORDS",
+      "source_reported_varieties": [
+        "Lwidakho"
+      ],
+      "source_type": "MASTERS_THESIS",
+      "title": "A Phonological Analysis of Lwidakho Loanwords From Kiswahili and English",
+      "year": 2015
+    },
+    {
+      "alternate_urls": [],
+      "artifact": null,
+      "authority_type": "MASTERS_THESIS",
+      "authors": [
+        "Vincent O. Wabwire"
+      ],
+      "availability": "OPEN_FULL_TEXT",
+      "candidate_tafsiri_dialects": [
+        "Khayo"
+      ],
+      "doi": null,
+      "downloadable_pdf": true,
+      "example_data_types": [
+        "full_example_sentences"
+      ],
+      "grammar_value": "CRITICAL",
+      "isbn": null,
+      "license_status": "LICENSE_UNKNOWN",
+      "notation_types": [
+        "orthographic_transcription_only"
+      ],
+      "notes": "NP structure and syntactic functions from narratives and compositions.",
+      "primary_url": "https://ir-library.ku.ac.ke/items/d11eab54-a8ce-4c0d-93d5-3b1ba71bcd7d",
+      "priority": "HIGH",
+      "pronunciation_value": "LOW",
+      "publication": "Kenyatta University",
+      "relevance_tags": [
+        "NOUN_CLASS",
+        "AGREEMENT",
+        "MORPHOLOGY",
+        "SYNTAX",
+        "EXAMPLE_SENTENCES",
+        "FIELD_DATA"
+      ],
+      "source_key": "WABWIRE_2013_OLUKHAYO_NP",
+      "source_reported_varieties": [
+        "Olukhayo"
+      ],
+      "source_type": "MASTERS_THESIS",
+      "title": "The Structure and Function of the Olukhayo Noun Phrase: An X-Bar Perspective",
+      "year": 2013
+    },
+    {
+      "alternate_urls": [],
+      "artifact": null,
+      "authority_type": "PEER_REVIEWED",
+      "authors": [
+        "Wakhome J. Wanyama"
+      ],
+      "availability": "OPEN_FULL_TEXT",
+      "candidate_tafsiri_dialects": [
+        "Lubukusu"
+      ],
+      "doi": null,
+      "downloadable_pdf": true,
+      "example_data_types": [
+        "isolated_lexical_forms",
+        "full_example_sentences",
+        "paradigms"
+      ],
+      "grammar_value": "CRITICAL",
+      "isbn": null,
+      "license_status": "OTHER_OPEN_LICENSE",
+      "notation_types": [
+        "orthographic_transcription_only"
+      ],
+      "notes": "Ten-slot Lubukusu verb template; repository states CC BY-NC-ND 3.0.",
+      "primary_url": "https://erepository.uonbi.ac.ke/items/247519da-9d74-4be6-bd85-d8feefed91f4/full",
+      "priority": "HIGH",
+      "pronunciation_value": "LOW",
+      "publication": "University of Nairobi Journal of Language and Linguistics 9, 86â€“113",
+      "relevance_tags": [
+        "MORPHOLOGY",
+        "INFLECTION",
+        "DERIVATION",
+        "SYNTAX",
+        "EXAMPLE_SENTENCES"
+      ],
+      "source_key": "WANYAMA_2022_LUBUKUSU_VERB",
+      "source_reported_varieties": [
+        "Lubukusu"
+      ],
+      "source_type": "JOURNAL_ARTICLE",
+      "title": "What Can a Single Lubukusu Verb Form Contain",
+      "year": 2022
+    },
+    {
+      "alternate_urls": [],
+      "artifact": null,
+      "authority_type": "MASTERS_THESIS",
+      "authors": [
+        "John W. Wakhome Wanyama"
+      ],
+      "availability": "OPEN_FULL_TEXT",
+      "candidate_tafsiri_dialects": [
+        "Lubukusu"
+      ],
+      "doi": null,
+      "downloadable_pdf": true,
+      "example_data_types": [
+        "full_example_sentences",
+        "paradigms"
+      ],
+      "grammar_value": "CRITICAL",
+      "isbn": null,
+      "license_status": "OTHER_OPEN_LICENSE",
+      "notation_types": [
+        "orthographic_transcription_only"
+      ],
+      "notes": "Argument structure and verbal features; CC BY-NC-ND 3.0 stated.",
+      "primary_url": "https://erepository.uonbi.ac.ke/items/b393902c-182a-4db6-bfb7-319f2ebe5eab/full",
+      "priority": "HIGH",
+      "pronunciation_value": "LOW",
+      "publication": "University of Nairobi",
+      "relevance_tags": [
+        "MORPHOLOGY",
+        "DERIVATION",
+        "SYNTAX",
+        "EXAMPLE_SENTENCES"
+      ],
+      "source_key": "WANYAMA_2022_LUBUKUSU_VP_SHELLS",
+      "source_reported_varieties": [
+        "Lubukusu"
+      ],
+      "source_type": "MASTERS_THESIS",
+      "title": "VP Shells and Argument Structure in Lubukusu",
+      "year": 2022
+    },
+    {
+      "alternate_urls": [],
+      "artifact": null,
+      "authority_type": "PUBLISHED_BOOK_CHAPTER",
+      "authors": [
+        "Aggrey Wasike"
+      ],
+      "availability": "OPEN_FULL_TEXT",
+      "candidate_tafsiri_dialects": [
+        "Lubukusu"
+      ],
+      "doi": null,
+      "downloadable_pdf": true,
+      "example_data_types": [
+        "isolated_lexical_forms",
+        "full_example_sentences",
+        "interlinear_glosses",
+        "paradigms"
+      ],
+      "grammar_value": "CRITICAL",
+      "isbn": null,
+      "license_status": "CC_BY_4_0",
+      "notation_types": [
+        "phonemic_slashes",
+        "orthographic_transcription_only"
+      ],
+      "notes": "Seed source; adjective formation and agreement.",
+      "primary_url": "https://langsci-press.org/catalog/view/120/1329/1107-2",
+      "priority": "CRITICAL",
+      "pronunciation_value": "HIGH",
+      "publication": "African linguistics on the prairie, Language Science Press",
+      "relevance_tags": [
+        "PHONOLOGY",
+        "MORPHOLOGY",
+        "NOUN_CLASS",
+        "AGREEMENT",
+        "DERIVATION",
+        "SYNTAX",
+        "EXAMPLE_SENTENCES",
+        "INTERLINEAR_GLOSS"
+      ],
+      "source_key": "WASIKE_2017_ADJECTIVES_LUBUKUSU",
+      "source_reported_varieties": [
+        "Lubukusu"
+      ],
+      "source_type": "BOOK_CHAPTER",
+      "title": "Adjectives in Lubukusu",
+      "year": 2017
+    }
+  ]
+}
