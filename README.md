@@ -1,39 +1,49 @@
 # Project Tafsiri
 
-Project Tafsiri develops dialect-aware language technology and research resources for Luhya languages. Human-verified linguistic evidence takes precedence over machine-generated suggestions. Keep dialects distinct and preserve provenance.
+## Mission
 
-## Active applications
+Project Tafsiri develops dialect-aware AI and language infrastructure for Luhya languages and dialects, supporting research toward English-Luhya and Swahili-Luhya systems.
 
-- **Reviewer Portal:** `apps/reviewer-portal/` is the Next.js application for invited language reviewers and research administrators. Its setup and workflow are described in `apps/reviewer-portal/README.md`.
+## Current architecture
 
-## Data and research components
+The project follows an evidence-first path:
 
-- `supabase/` contains the local Supabase configuration and versioned database migrations. Review the existing schema before proposing a new migration; never rewrite applied migration files.
-- `scripts/candidate_generation/` and `config/candidate_generation/` contain Pipeline 001 and related candidate-generation tools and settings. Pipeline output is preliminary evidence, not verified linguistic data.
-- `evaluation/` contains frozen human-evaluation packages, manifests, hashes, and research artifacts. Keep their content and provenance intact.
-- `tests/` contains database and research regression checks.
-- `docs/`, `training/`, and `artifacts/` contain project documentation and research material.
+**source evidence -> human review -> canonical corpus -> derived datasets and retrieval -> models and runtime**
+
+Each stage must retain provenance. Machine-generated candidates remain proposals until qualified human reviewers verify them.
+
+## Current implemented systems
+
+- **Canonical concept foundation:** versioned Supabase schema for concepts, terms, dialects, relationships, and review state.
+- **Source and provenance foundation:** Migration 006 defines source, version, rights, policy, contact, import, entry, and dialect-mapping records. It is prepared for release and contains no backfill.
+- **Pipeline 001:** deterministic candidate-generation scripts, configuration, and artifacts for research review.
+- **Human Evaluation 001:** frozen evaluation packages and import tooling with manifests and hashes.
+- **Reviewer Portal:** a Next.js research application for invited reviewers and administrators, backed by Supabase Auth and row-level security.
+
+The public translation runtime has not been released. Model training is not the current production architecture. The Reviewer Portal is a research tool, not the public Tafsiri application.
 
 ## Repository layout
 
-This is a monorepo. The Reviewer Portal is an application within it; database schema, research code, evaluation data, and tests remain at the repository root.
+- `.github/` - continuous integration
+- `apps/reviewer-portal/` - current review application
+- `artifacts/candidate_generation/` - Pipeline 001 outputs
+- `config/candidate_generation/` - Pipeline 001 configuration
+- `docs/` - current architecture, governance, and operations
+- `evaluation/` - frozen Human Evaluation 001 evidence and import tooling
+- `scripts/candidate_generation/` and `scripts/evaluation/` - research tooling
+- `supabase/migrations/` - authoritative, versioned database history
+- `tests/` - candidate-generation, evaluation, and database regression tests
 
-## Local development
+## Dialect principle
 
-From `apps/reviewer-portal/`, copy `.env.example` to `.env.local` and set values for the intended development environment. Run `npm ci`, then `npm run dev`. Quality checks are `npm run typecheck`, `npm run lint`, `npm test`, and `npm run build`. Root tooling uses `package.json` and `package-lock.json`; Python regression tests are under `tests/`.
+Lutsotso, Bukusu, Luwanga, Maragoli, Isukha, and other varieties remain first-class dialects. Do not create an artificial generalized vocabulary by blending dialects. Use a verified native equivalent when one exists, use an established borrowing when documented, and otherwise preserve the source term with a natural explanation. Do not guess.
 
-## Database migration workflow
+## Data governance
 
-Inspect the existing schema and migration sequence in `supabase/migrations/` first. Implement schema changes as new, versioned migrations and test against a non-production Supabase environment before applying them elsewhere. Never drop existing Tafsiri tables or rewrite applied migrations without explicit approval.
+Human-verified data outranks generated data. Every accepted lexical assertion should retain its source, rights, import, and review provenance. Generated material cannot automatically become verified training data. Database changes are additive, versioned migrations; applied migrations and reviewed production data are never rewritten during routine development.
 
-## Staging and production
+## Development
 
-Staging and production must use separate Supabase projects and environment variables. The Vercel Root Directory for the portal must be `apps/reviewer-portal`; only the verified staging branch/Preview environment should receive staging Supabase credentials. Keep invitations in mock mode until hosted Auth tests pass. Verify Vercel project, Git connection, branch mapping, and Supabase project identity before any deployment or Auth configuration change.
+The [documentation index](docs/README.md), [technical architecture](docs/technical_architecture.md), and [contribution guide](CONTRIBUTING.md) describe current work. Portal setup is in [apps/reviewer-portal/README.md](apps/reviewer-portal/README.md). Deployment and environment facts are recorded in [docs/repository-deployment.md](docs/repository-deployment.md).
 
-## Production safety
-
-Do not commit `.env` files, service keys, database credentials, or Vercel tokens. Do not modify Pipeline 001 semantics, canonical linguistic data, or frozen evaluation artifacts as part of portal or repository housekeeping. Do not delete reviewer or evaluation data. Follow `AGENTS.md` for language and database rules.
-
-## Verified staging database
-
-Supabase CLI identifies project ref `gfhdwmqefotkljrltfnx` as **Project Tafsiri Staging**. Six local migration versions match its remote migration history as of 2026-09-19. Production is a different Supabase project. This does not confirm the Vercel environment variables or hosted Auth settings.
+The staging Vercel project tracks `staging` with Root Directory `apps/reviewer-portal`. Staging and production use separate Supabase projects. Keep credentials in ignored local files or provider-managed environment variables.
