@@ -1,30 +1,106 @@
 {
-  "reconciliation_version": "import-reconciliation-001-v1",
+  "reconciliation_version": "lubukusu-lineage-resolution-002-v1",
   "production_project_ref": "ydkookidvipqrwuilqeu",
   "production_access_mode": "SELECT_ONLY",
-  "production_snapshot": {"luhya_dict_rows": 7656, "wanga_rows": 3721, "lubukusu_rows": 3935, "dictionary_entries_luwanga_rows": 3837, "mulembe_legacy_rows": 1655},
+  "production_snapshot": {
+    "luhya_dict_rows": 7656,
+    "wanga_rows": 3721,
+    "lubukusu_rows": 3935,
+    "dictionary_entries_luwanga_rows": 3837,
+    "mulembe_legacy_rows": 1655
+  },
   "crosswalks": {
-    "wanga_luhya_dict": {"path": "artifacts/source_reconciliation/wanga_luhya_dict_crosswalk.jsonl", "rows": 3721, "sha256": "2966d2c2a403e952db59555b4d6be667e127b5026949847cacf0141c25b3a3a8"},
-    "wanga_dictionary_entries": {"path": "artifacts/source_reconciliation/wanga_dictionary_entries_crosswalk.jsonl", "rows": 3837, "sha256": "1e4bf85e861d3454dfdd96d185e1329dd7d08ad53dad7e7a6f8fd0ba04672d27"},
-    "lubukusu_luhya_dict": {"path": "artifacts/source_reconciliation/lubukusu_luhya_dict_crosswalk.jsonl", "rows": 3935, "sha256": "527bf6645c06dceed118089252c6b97a4c51c5338da0834cec8ded3b5b1d8cef"}
+    "wanga_luhya_dict": {
+      "path": "artifacts/source_reconciliation/wanga_luhya_dict_crosswalk.jsonl",
+      "rows": 3721,
+      "sha256": "2966d2c2a403e952db59555b4d6be667e127b5026949847cacf0141c25b3a3a8"
+    },
+    "wanga_dictionary_entries": {
+      "path": "artifacts/source_reconciliation/wanga_dictionary_entries_crosswalk.jsonl",
+      "rows": 3837,
+      "sha256": "1e4bf85e861d3454dfdd96d185e1329dd7d08ad53dad7e7a6f8fd0ba04672d27"
+    },
+    "lubukusu_luhya_dict": {
+      "path": "artifacts/source_reconciliation/lubukusu_luhya_dict_crosswalk.jsonl",
+      "rows": 3935,
+      "sha256": "7dd1295003ce3720fe93dea9f333bd488afe98c2df2441205bfa50ab0d4f1604"
+    }
   },
   "sources": [
     {
       "source_key": "WANGA_ENGLISH_DICTIONARY_2008",
       "source_version": "PRELIMINARY_DRAFT_2008",
-      "artifact": {"filename": "luwanga-dictionary.pdf", "reference": "https://abawanga.wordpress.com/wp-content/uploads/2012/04/luwanga-dictionary.pdf", "classification": "AUTHORITATIVE_SOURCE_ARTIFACT", "byte_size": 395256, "sha256": "848eff65d09a352feb85ba80439bbfd0107a69dcfbccf8a835670dce1ef6888f", "committed": false, "parsed_entry_count": 3884},
+      "artifact": {
+        "filename": "luwanga-dictionary.pdf",
+        "reference": "https://abawanga.wordpress.com/wp-content/uploads/2012/04/luwanga-dictionary.pdf",
+        "classification": "AUTHORITATIVE_SOURCE_ARTIFACT",
+        "byte_size": 395256,
+        "sha256": "848eff65d09a352feb85ba80439bbfd0107a69dcfbccf8a835670dce1ef6888f",
+        "committed": false,
+        "parsed_entry_count": 3884
+      },
       "importer_tool_evidence": null,
       "corresponding_legacy_tables": [
-        {"table": "luhya_dict", "legacy_row_count": 3721, "form_matches": 3288, "form_gloss_matches": 2260, "form_gloss_pos_matches": 2251, "match_classes": {"EXACT": 936, "NORMALIZATION_ONLY": 0, "PUNCTUATION_FORMATTING": 19, "GLOSS_FORMATTING": 66, "POS_NORMALIZATION": 1232, "POSSIBLE_TRANSFORMATION": 1013, "NO_SOURCE_MATCH": 411, "AMBIGUOUS_MATCH": 44}},
-        {"table": "dictionary_entries", "legacy_row_count": 3837, "form_matches": 3758, "form_gloss_matches": 2789, "form_gloss_pos_matches": 2789, "match_classes": {"EXACT": 2727, "NORMALIZATION_ONLY": 0, "PUNCTUATION_FORMATTING": 0, "GLOSS_FORMATTING": 62, "POS_NORMALIZATION": 0, "POSSIBLE_TRANSFORMATION": 939, "NO_SOURCE_MATCH": 73, "AMBIGUOUS_MATCH": 36}}
+        {
+          "table": "luhya_dict",
+          "legacy_row_count": 3721,
+          "form_matches": 3288,
+          "form_gloss_matches": 2260,
+          "form_gloss_pos_matches": 2251,
+          "match_classes": {
+            "EXACT": 936,
+            "NORMALIZATION_ONLY": 0,
+            "PUNCTUATION_FORMATTING": 19,
+            "GLOSS_FORMATTING": 66,
+            "POS_NORMALIZATION": 1232,
+            "POSSIBLE_TRANSFORMATION": 1013,
+            "NO_SOURCE_MATCH": 411,
+            "AMBIGUOUS_MATCH": 44
+          }
+        },
+        {
+          "table": "dictionary_entries",
+          "legacy_row_count": 3837,
+          "form_matches": 3758,
+          "form_gloss_matches": 2789,
+          "form_gloss_pos_matches": 2789,
+          "match_classes": {
+            "EXACT": 2727,
+            "NORMALIZATION_ONLY": 0,
+            "PUNCTUATION_FORMATTING": 0,
+            "GLOSS_FORMATTING": 62,
+            "POS_NORMALIZATION": 0,
+            "POSSIBLE_TRANSFORMATION": 939,
+            "NO_SOURCE_MATCH": 73,
+            "AMBIGUOUS_MATCH": 36
+          }
+        }
       ],
       "transformation_findings": [
-        {"step": "Appleby vocabulary retranslated into Luwanga in summer 2006", "certainty": "CONFIRMED"},
-        {"step": "Electronic entry by Alfred Anangwe and editing by Michael Marlo in January 2008", "certainty": "CONFIRMED"},
-        {"step": "PDF text extraction joins wrapped gloss lines", "certainty": "CONFIRMED"},
-        {"step": "Legacy luhya_dict gloss and POS punctuation normalization", "certainty": "STRONGLY_INFERRED"},
-        {"step": "dictionary_entries likely derives from the identified PDF or a close electronic antecedent", "certainty": "STRONGLY_INFERRED"},
-        {"step": "Original Tafsiri importer, filtering, and row rejection rules", "certainty": "UNKNOWN"}
+        {
+          "step": "Appleby vocabulary retranslated into Luwanga in summer 2006",
+          "certainty": "CONFIRMED"
+        },
+        {
+          "step": "Electronic entry by Alfred Anangwe and editing by Michael Marlo in January 2008",
+          "certainty": "CONFIRMED"
+        },
+        {
+          "step": "PDF text extraction joins wrapped gloss lines",
+          "certainty": "CONFIRMED"
+        },
+        {
+          "step": "Legacy luhya_dict gloss and POS punctuation normalization",
+          "certainty": "STRONGLY_INFERRED"
+        },
+        {
+          "step": "dictionary_entries likely derives from the identified PDF or a close electronic antecedent",
+          "certainty": "STRONGLY_INFERRED"
+        },
+        {
+          "step": "Original Tafsiri importer, filtering, and row rejection rules",
+          "certainty": "UNKNOWN"
+        }
       ],
       "proposed_batch_key": "WANGA_2008_RECONCILED_BATCH_001",
       "readiness": "NOT_READY",
@@ -33,18 +109,91 @@
     {
       "source_key": "LUBUKUSU_ENGLISH_DICTIONARY_2008",
       "source_version": "DRAFT_2008_09_01",
-      "artifact": {"filename": "Bukusu-English-Dictionary.pdf", "reference": "https://ikuweikuwe.com/wp-content/uploads/2020/06/Bukusu-English-Dictionary.pdf", "classification": "AUTHORITATIVE_SOURCE_ARTIFACT", "byte_size": null, "sha256": null, "committed": false, "parsed_entry_count": null, "retrieval_status": "Public content and bibliographic evidence were available, but the cited host repeatedly failed TLS artifact download during reconciliation."},
+      "artifact": {
+        "filename": "Lubukusu_English_dictionary.pdf",
+        "reference": "https://www.academia.edu/1901981/Lubukusu_English_dictionary",
+        "classification": "AUTHORITATIVE_SOURCE_ARTIFACT",
+        "byte_size": 857700,
+        "sha256": "34426921c2cf2f6dd61a738a343fdda4b2d74f5c479b7c7c4bbd6cb677f49b82",
+        "page_count": 107,
+        "retrieval_date": "2026-09-22",
+        "committed": false,
+        "parsed_entry_count": 6116,
+        "retrieval_status": "Manual download from the verified Academia document page; binary retained outside Git."
+      },
       "importer_tool_evidence": null,
-      "corresponding_legacy_tables": [{"table": "luhya_dict", "legacy_row_count": 3935, "match_classes": {"NO_SOURCE_MATCH": 3935}}],
+      "corresponding_legacy_tables": [
+        {
+          "table": "luhya_dict",
+          "legacy_row_count": 3935,
+          "exact_form_matches": 1939,
+          "transcription_normalized_form_matches": 1941,
+          "secondary_search_form_matches": 2968,
+          "exact_form_gloss_matches": 1821,
+          "normalized_form_gloss_pos_matches": 1836,
+          "match_classes": {
+            "EXACT": 1820,
+            "GLOSS_FORMATTING": 1,
+            "PUNCTUATION_FORMATTING": 15,
+            "POSSIBLE_TRANSFORMATION": 105,
+            "TONE_DIACRITIC_DIFFERENCE": 992,
+            "AMBIGUOUS_MATCH": 35,
+            "NO_SOURCE_MATCH": 967
+          }
+        }
+      ],
       "transformation_findings": [
-        {"step": "Appleby 1943 electronic vocabulary used as a source", "certainty": "CONFIRMED"},
-        {"step": "KWL 1998, Mutonyi 2000, and de Blois 1975 material combined", "certainty": "CONFIRMED"},
-        {"step": "Sifuna retranslation, Wasike verification/tone marking, and Marlo editing", "certainty": "CONFIRMED"},
-        {"step": "Historical Tafsiri PDF parsing, filtering, and row rejection", "certainty": "UNKNOWN"}
+        {
+          "step": "Source combines Appleby 1943, KWL 1998, Mutonyi 2000, and de Blois 1975 material",
+          "certainty": "CONFIRMED"
+        },
+        {
+          "step": "Sifuna retranslation, Wasike verification and tone marking, and Marlo editing/deduplication",
+          "certainty": "CONFIRMED"
+        },
+        {
+          "step": "Tafsiri import removed tone/diacritics from a substantial subset",
+          "certainty": "STRONGLY_INFERRED"
+        },
+        {
+          "step": "Tafsiri import normalized selected punctuation, gloss formatting, and POS values",
+          "certainty": "STRONGLY_INFERRED"
+        },
+        {
+          "step": "Historical Tafsiri PDF parser, filtering, merging, and row rejection rules",
+          "certainty": "UNKNOWN"
+        }
       ],
       "proposed_batch_key": "LUBUKUSU_2008_RECONCILED_BATCH_001",
       "readiness": "NOT_READY",
-      "readiness_reason": "No locally checksumable authoritative artifact or historical importer was recovered, so the 3935 production rows cannot yet be compared reproducibly."
+      "readiness_reason": "The artifact and deterministic parser are established, but 967 production rows have no source-form match and 35 remain ambiguous. OCR boundary review and historical filtering rules are not yet sufficient for batch registration.",
+      "author_associated_references": [
+        "https://missouri.academia.edu/MichaelMarlo",
+        "https://utoronto.academia.edu/AggreyWasike"
+      ],
+      "alternate_copy_comparison": {
+        "classification": "UNCERTAIN",
+        "reason": "The textual public mirror matches the title, editors, date, and front matter, but its PDF binary was not retrievable for checksum comparison."
+      },
+      "parser": {
+        "tool": "scripts/source_reconciliation/lubukusu_pdf.py",
+        "version": "lubukusu-pdf-ocr-v1",
+        "config": "artifacts/source_reconciliation/lubukusu_parser_config.json",
+        "config_sha256": "27e59e78b9f2f9e5b7c5b20d38b6c3745b2eec8a8594d842135d36216f79003e",
+        "parsed_entry_count": 6116
+      },
+      "proposed_batch": {
+        "source_version": "DRAFT_2008_09_01",
+        "artifact_sha256": "34426921c2cf2f6dd61a738a343fdda4b2d74f5c479b7c7c4bbd6cb677f49b82",
+        "parser_tool": "scripts/source_reconciliation/lubukusu_pdf.py",
+        "parser_version": "lubukusu-pdf-ocr-v1",
+        "transformation_config_sha256": "27e59e78b9f2f9e5b7c5b20d38b6c3745b2eec8a8594d842135d36216f79003e",
+        "normalization_version": "transcription-preserving-v1/secondary-search-v1",
+        "source_row_count": 6116,
+        "expected_reconciled_rows": 2933,
+        "exception_count": 1002,
+        "registered": false
+      }
     }
   ],
   "deferred_sources": {

@@ -5,6 +5,7 @@ from scripts.source_reconciliation.reconcile import (
     classify_pair,
     encoding_findings,
     reconcile_entries,
+    secondary_search_form,
     sha256_file,
     write_json,
 )
@@ -23,6 +24,12 @@ def test_exact_and_formatting_classification() -> None:
 
 def test_pos_normalization() -> None:
     assert classify_pair(Entry("a", "word", "gloss", "n."), Entry("1", "word", "gloss", "noun")) == "POS_NORMALIZATION"
+
+
+def test_tone_preserving_and_secondary_comparison() -> None:
+    assert classify_pair(Entry("p", "khúúkholá", "do", "v"), Entry("1", "khuukhola", "do", "v")) == "TONE_DIACRITIC_DIFFERENCE"
+    assert secondary_search_form("khúúkholá") == "khuukhola"
+    assert Entry("p", "khúúkholá").form == "khúúkholá"
 
 
 def test_ambiguous_row_matching_and_duplicate_detection() -> None:
@@ -66,6 +73,8 @@ def test_deterministic_output(tmp_path: Path) -> None:
 
 
 def test_has_no_database_write_capability() -> None:
-    source = Path("scripts/source_reconciliation/reconcile.py").read_text(encoding="utf-8").casefold()
+    source = "\n".join(Path(path).read_text(encoding="utf-8").casefold() for path in (
+        "scripts/source_reconciliation/reconcile.py", "scripts/source_reconciliation/lubukusu_pdf.py"
+    ))
     for verb in ("insert into", "update public.", "delete from", "requests.post", "requests.patch"):
         assert verb not in source

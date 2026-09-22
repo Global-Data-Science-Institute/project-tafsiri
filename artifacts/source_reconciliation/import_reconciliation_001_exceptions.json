@@ -1,7 +1,34 @@
 {
-  "reconciliation_version": "import-reconciliation-001-v1",
-  "wanga_luhya_dict": {"artifact_entries_absent_or_unassigned": 638, "database_rows_without_source_form_match": 411, "ambiguous_database_rows": 44, "artifact_duplicate_form_excess": 103, "legacy_duplicate_form_excess": 109, "possible_transformations": 1013, "malformed_encoding_markers": 0},
-  "wanga_dictionary_entries": {"artifact_entries_absent_or_unassigned": 162, "database_rows_without_source_form_match": 73, "ambiguous_database_rows": 36, "artifact_duplicate_form_excess": 103, "legacy_duplicate_form_excess": 102, "possible_transformations": 939, "malformed_encoding_markers": 0},
-  "lubukusu_luhya_dict": {"database_rows_not_compared": 3935, "legacy_duplicate_form_excess": 35, "reason": "The authoritative PDF could not be retrieved as a checksumable local artifact."},
-  "resolution_requirement": "Resolve or explicitly document each unmatched, ambiguous, duplicate, and possible-transformation case before bulk source_entries creation."
+  "reconciliation_version": "lubukusu-lineage-resolution-002-v1",
+  "wanga_luhya_dict": {
+    "artifact_entries_absent_or_unassigned": 638,
+    "database_rows_without_source_form_match": 411,
+    "ambiguous_database_rows": 44,
+    "artifact_duplicate_form_excess": 103,
+    "legacy_duplicate_form_excess": 109,
+    "possible_transformations": 1013,
+    "malformed_encoding_markers": 0
+  },
+  "wanga_dictionary_entries": {
+    "artifact_entries_absent_or_unassigned": 162,
+    "database_rows_without_source_form_match": 73,
+    "ambiguous_database_rows": 36,
+    "artifact_duplicate_form_excess": 103,
+    "legacy_duplicate_form_excess": 102,
+    "possible_transformations": 939,
+    "malformed_encoding_markers": 0
+  },
+  "lubukusu_luhya_dict": {
+    "parsed_artifact_entries": 6116,
+    "artifact_entries_absent_or_unassigned": 3204,
+    "database_rows_without_source_form_match": 967,
+    "ambiguous_database_rows": 35,
+    "tone_or_diacritic_differences": 992,
+    "possible_transformations": 105,
+    "artifact_duplicate_form_excess": 1,
+    "source_uncertainty_entries": 421,
+    "unresolved_exception_total": 1002,
+    "classification": "UNCERTAIN_PENDING_ENTRY_LEVEL_REVIEW"
+  },
+  "resolution_requirement": "Review the 967 unmatched and 35 ambiguous Lubukusu rows, including OCR entry boundaries and historical filtering, before batch registration or bulk source_entries creation."
 }

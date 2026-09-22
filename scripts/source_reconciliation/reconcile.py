@@ -24,6 +24,7 @@ MATCH_CLASSES = (
     "PUNCTUATION_FORMATTING",
     "GLOSS_FORMATTING",
     "POS_NORMALIZATION",
+    "TONE_DIACRITIC_DIFFERENCE",
     "POSSIBLE_TRANSFORMATION",
     "NO_SOURCE_MATCH",
     "AMBIGUOUS_MATCH",
@@ -97,6 +98,12 @@ def normalize_form(value: object) -> str:
     return normalize_punctuation(value).casefold()
 
 
+def secondary_search_form(value: object) -> str:
+    """Accent-insensitive lookup key that leaves the source value untouched."""
+    decomposed = unicodedata.normalize("NFD", normalize_form(value))
+    return unicodedata.normalize("NFC", "".join(ch for ch in decomposed if not unicodedata.combining(ch)))
+
+
 def normalize_pos(value: object) -> str:
     text = normalize_text(value).casefold()
     return POS_EQUIVALENTS.get(text, text.rstrip("."))
@@ -137,6 +144,8 @@ def classify_pair(artifact: Entry, legacy: Entry) -> str:
                 if normalize_text(artifact.pos) != normalize_text(legacy.pos):
                     return "POS_NORMALIZATION"
         return "POSSIBLE_TRANSFORMATION"
+    if secondary_search_form(artifact.form) == secondary_search_form(legacy.form):
+        return "TONE_DIACRITIC_DIFFERENCE"
     return "NO_SOURCE_MATCH"
 
 
@@ -149,14 +158,18 @@ def reconcile_entries(
     source_version: str,
 ) -> Reconciliation:
     by_form: dict[str, list[int]] = defaultdict(list)
+    by_secondary_form: dict[str, list[int]] = defaultdict(list)
     for index, entry in enumerate(artifacts):
         by_form[normalize_form(entry.form)].append(index)
+        by_secondary_form[secondary_search_form(entry.form)].append(index)
     duplicate_count = sum(len(indexes) - 1 for indexes in by_form.values() if len(indexes) > 1)
     used: set[int] = set()
     result = Reconciliation(duplicate_artifact_keys=duplicate_count)
 
     for legacy in sorted(legacy_rows, key=lambda row: row.locator):
         candidates = by_form.get(normalize_form(legacy.form), [])
+        if not candidates:
+            candidates = by_secondary_form.get(secondary_search_form(legacy.form), [])
         if not candidates:
             match_class = "NO_SOURCE_MATCH"
             candidate = None
