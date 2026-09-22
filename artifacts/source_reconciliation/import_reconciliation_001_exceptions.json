@@ -1,0 +1,7 @@
+{
+  "reconciliation_version": "import-reconciliation-001-v1",
+  "wanga_luhya_dict": {"artifact_entries_absent_or_unassigned": 638, "database_rows_without_source_form_match": 411, "ambiguous_database_rows": 44, "artifact_duplicate_form_excess": 103, "legacy_duplicate_form_excess": 109, "possible_transformations": 1013, "malformed_encoding_markers": 0},
+  "wanga_dictionary_entries": {"artifact_entries_absent_or_unassigned": 162, "database_rows_without_source_form_match": 73, "ambiguous_database_rows": 36, "artifact_duplicate_form_excess": 103, "legacy_duplicate_form_excess": 102, "possible_transformations": 939, "malformed_encoding_markers": 0},
+  "lubukusu_luhya_dict": {"database_rows_not_compared": 3935, "legacy_duplicate_form_excess": 35, "reason": "The authoritative PDF could not be retrieved as a checksumable local artifact."},
+  "resolution_requirement": "Resolve or explicitly document each unmatched, ambiguous, duplicate, and possible-transformation case before bulk source_entries creation."
+}
