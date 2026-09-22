@@ -1,62 +1,29 @@
 # Contributing to Project Tafsiri
 
-Thank you for your interest in contributing to Project Tafsiri! This project aims to create culturally-aware AI systems for African languages.
+Project Tafsiri accepts software, research, documentation, and expert language-review contributions.
 
-## Ways to Contribute
+## Before making a change
 
-### 1. Code Contributions
-- Improve existing models and algorithms
-- Add support for new languages
-- Enhance training infrastructure
-- Fix bugs and improve performance
+- Read `AGENTS.md` and the relevant design document in `docs/`.
+- Inspect the current database migrations before proposing schema changes.
+- Do not invent translations or merge dialect vocabularies.
+- Keep generated candidates separate from human-verified data.
+- Do not commit credentials, local environment files, or participant data.
 
-### 2. Language and Cultural Expertise
-- Validate translations for accuracy
-- Provide cultural context and guidance
-- Review content for cultural appropriateness
-- Connect us with language communities
+## Development workflow
 
-### 3. Community Outreach
-- Help connect with African language communities
-- Organize workshops and educational events
-- Create educational materials
-- Advocate for the project
+1. Create a focused branch from the intended base branch.
+2. Make a small, reviewable change and update its documentation.
+3. Add meaningful tests for behavior or schema changes.
+4. Run the relevant portal, Python, and database checks.
+5. Submit a pull request describing the evidence, risks, and migration impact.
 
-### 4. Research Contributions
-- Contribute to academic research
-- Develop new evaluation metrics
-- Conduct linguistic analysis
-- Publish research papers
+Portal commands are documented in `apps/reviewer-portal/README.md`. Database changes must be new files in `supabase/migrations/`; never rewrite an applied migration. Research outputs must retain their inputs, configuration, provenance, and review status.
 
-## Getting Started
+## Language contributions
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
+State the dialect, source, collection method, and reviewer qualifications. Flag uncertainty explicitly. A contribution becomes verified only through the project's human review process.
 
-## Cultural Guidelines
+## Conduct
 
-Project Tafsiri is committed to respectful engagement with African language communities:
-
-- Always involve native speakers in validation
-- Respect traditional knowledge and cultural practices
-- Acknowledge community contributions
-- Prioritize community benefit over technical convenience
-
-## Code Style
-
-- Follow PEP 8 for Python code
-- Include comprehensive docstrings
-- Add unit tests for new features
-- Use meaningful variable names
-
-## Community Standards
-
-- Be respectful and inclusive
-- Welcome newcomers and diverse perspectives
-- Focus on constructive feedback
-- Maintain cultural sensitivity
-
-For detailed guidelines, see our [Code of Conduct](CODE_OF_CONDUCT.md).
+Follow [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) and [docs/cultural_guidelines.md](docs/cultural_guidelines.md).

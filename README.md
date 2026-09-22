@@ -1,182 +1,49 @@
 # Project Tafsiri
 
-**Bridging African Languages and Modern AI Technology**
+## Mission
 
-Project Tafsiri (Swahili for "translation") is an open-source initiative to create comprehensive, culturally-aware AI systems for African languages. We're building translation models, chatbots, and language tools that understand cultural context, preserve traditional knowledge, and empower communities to access modern technology without abandoning their linguistic heritage.
+Project Tafsiri develops dialect-aware AI and language infrastructure for Luhya languages and dialects, supporting research toward English-Luhya and Swahili-Luhya systems.
 
-## Vision
+## Current architecture
 
-The vision of Project Tafsiri extends beyond simple translation. We are creating AI systems that:
-- **Understand cultural context** and linguistic nuances
-- **Preserve traditional knowledge** embedded in oral traditions
-- **Empower communities** to engage with technology in their native languages
-- **Maintain cultural authenticity** through community involvement
-- **Support linguistic diversity** across the African continent
+The project follows an evidence-first path:
 
-## Current Status: LuhyaAI
+**source evidence -> human review -> canonical corpus -> derived datasets and retrieval -> models and runtime**
 
-We're starting with **Luhya**, a Bantu language cluster spoken by over 6 million people across Kenya, Uganda, and Tanzania. Luhya provides an ideal foundation with:
+Each stage must retain provenance. Machine-generated candidates remain proposals until qualified human reviewers verify them.
 
-- **Significant speaker population** (6+ million native speakers)
-- **Rich dialect diversity** (Bukusu, Maragoli, Wanga, Tsotso, Kisa, and others)
-- **Cultural richness** with extensive oral traditions and proverbs
-- **Community engagement** ensuring linguistic and cultural accuracy
+## Current implemented systems
 
-### Supported Luhya Dialects
-- Bukusu (luy_bukusu)
-- Wanga (luy_wanga)
-- Kisa (luy_kisa)
-- Maragoli (luy_maragoli)
-- Tachoni (luy_tachoni)
-- Kabras (luy_kabras)
+- **Canonical concept foundation:** versioned Supabase schema for concepts, terms, dialects, relationships, and review state.
+- **Source and provenance foundation:** Migration 006 defines source, version, rights, policy, contact, import, entry, and dialect-mapping records. It is prepared for release and contains no backfill.
+- **Pipeline 001:** deterministic candidate-generation scripts, configuration, and artifacts for research review.
+- **Human Evaluation 001:** frozen evaluation packages and import tooling with manifests and hashes.
+- **Reviewer Portal:** a Next.js research application for invited reviewers and administrators, backed by Supabase Auth and row-level security.
 
-## Resources
+The public translation runtime has not been released. Model training is not the current production architecture. The Reviewer Portal is a research tool, not the public Tafsiri application.
 
-### HuggingFace Hub
-- **Dataset**: [luhya-multilingual-dataset](https://huggingface.co/datasets/mamakobe/luhya-multilingual-dataset) - 26K+ translation pairs
-- **Model**: [luhya-multilingual-m2m100](https://huggingface.co/mamakobe/luhya-multilingual-m2m100) - Fine-tuned M2M100 model
-- **Checkpoints**: Private repository for training checkpoints
+## Repository layout
 
-### Research & Development
-- Translation model based on Facebook's M2M100
-- Cultural context integration
-- Dialect-specific adaptations
-- Community validation framework
+- `.github/` - continuous integration
+- `apps/reviewer-portal/` - current review application
+- `artifacts/candidate_generation/` - Pipeline 001 outputs
+- `config/candidate_generation/` - Pipeline 001 configuration
+- `docs/` - current architecture, governance, and operations
+- `evaluation/` - frozen Human Evaluation 001 evidence and import tooling
+- `scripts/candidate_generation/` and `scripts/evaluation/` - research tooling
+- `supabase/migrations/` - authoritative, versioned database history
+- `tests/` - candidate-generation, evaluation, and database regression tests
 
-## Quick Start
+## Dialect principle
 
-### Installation
-```bash
-git clone https://github.com/Global-Data-Science-Institute/project-tafsiri.git
-cd project-tafsiri
-pip install -r requirements/base.txt
-```
+Lutsotso, Bukusu, Luwanga, Maragoli, Isukha, and other varieties remain first-class dialects. Do not create an artificial generalized vocabulary by blending dialects. Use a verified native equivalent when one exists, use an established borrowing when documented, and otherwise preserve the source term with a natural explanation. Do not guess.
 
-### Basic Translation
-```python
-from transformers import M2M100ForConditionalGeneration, M2M100Tokenizer
+## Data governance
 
-# Load the model
-model = M2M100ForConditionalGeneration.from_pretrained("mamakobe/luhya-multilingual-m2m100")
-tokenizer = M2M100Tokenizer.from_pretrained("mamakobe/luhya-multilingual-m2m100")
+Human-verified data outranks generated data. Every accepted lexical assertion should retain its source, rights, import, and review provenance. Generated material cannot automatically become verified training data. Database changes are additive, versioned migrations; applied migrations and reviewed production data are never rewritten during routine development.
 
-# Translate English to Bukusu
-text = "Hello, how are you?"
-inputs = tokenizer(text, return_tensors="pt")
-outputs = model.generate(**inputs, forced_bos_token_id=tokenizer.convert_tokens_to_ids("<luy_bukusu>"))
-translation = tokenizer.decode(outputs[0], skip_special_tokens=True)
-print(translation)  # <luy_bukusu> Murachi mulahi?
-```
+## Development
 
-### API Usage
-```bash
-# Start the translation API
-cd api/translation_api
-uvicorn app:app --reload
+The [documentation index](docs/README.md), [technical architecture](docs/technical_architecture.md), and [contribution guide](CONTRIBUTING.md) describe current work. Portal setup is in [apps/reviewer-portal/README.md](apps/reviewer-portal/README.md). Deployment and environment facts are recorded in [docs/repository-deployment.md](docs/repository-deployment.md).
 
-# Translate via API
-curl -X POST "http://localhost:8000/translate" \
-  -H "Content-Type: application/json" \
-  -d '{"text": "Good morning", "source_lang": "en", "target_dialect": "luy_bukusu"}'
-```
-
-## Project Structure
-
-```
-project-tafsiri/
-├── languages/           # Language-specific implementations
-│   ├── luhya/          # Primary Luhya implementation
-│   ├── swahili/        # Future: Swahili support
-│   └── template/       # Template for new languages
-├── core/               # Shared infrastructure
-├── tools/              # Development and deployment tools
-├── api/                # REST API and web services
-├── community/          # Community engagement
-├── research/           # Academic research and benchmarks
-└── examples/           # Usage examples and demos
-```
-
-## Contributing
-
-We welcome contributions from developers, linguists, cultural experts, and community members. See our [Contributing Guidelines](CONTRIBUTING.md) and [Cultural Guidelines](docs/cultural_guidelines.md).
-
-### How to Contribute
-1. **Code contributions**: Improve models, add features, fix bugs
-2. **Language expertise**: Validate translations, provide cultural context
-3. **Community outreach**: Help connect with language communities
-4. **Research**: Contribute to academic research and benchmarks
-5. **Documentation**: Improve guides and examples
-
-## Community
-
-Project Tafsiri is built with and for African language communities. We prioritize:
-- **Community involvement** in all development decisions
-- **Cultural authenticity** over technical convenience  
-- **Respectful engagement** with traditional knowledge
-- **Transparent development** with open-source principles
-
-### Get Involved
-- Join our [discussions](https://github.com/Global-Data-Science-Institute/project-tafsiri/discussions)
-- Follow development on [GitHub](https://github.com/Global-Data-Science-Institute/project-tafsiri)
-- Connect with us on social media
-- Attend community workshops and presentations
-
-## Roadmap
-
-### Phase 1: Luhya Foundation
-- ✅ Multi-dialect Luhya translation model
-- ✅ Cultural context integration
-- ✅ Community validation framework
-- 🔄 Enhanced chatbot capabilities
-- 🔄 Mobile application development
-
-### Phase 2: Expansion
-- Swahili integration and cross-language translation
-- Yoruba language implementation
-- Advanced cultural context understanding
-- Educational tool development
-
-### Phase 3: Pan-African
-- Additional East African languages
-- West African language cluster
-- Southern African language support
-- Continental language exchange platform
-
-## Academic & Research
-
-Project Tafsiri welcomes academic collaboration and research partnerships. Our work contributes to:
-- Low-resource language AI research
-- Cultural context in machine translation
-- Community-driven AI development
-- African language preservation technology
-
-See our [Research section](research/) for papers, benchmarks, and academic resources.
-
-## License
-
-This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
-
-## Citation
-
-If you use Project Tafsiri in your research or applications, please cite:
-
-```bibtex
-@software{project_tafsiri_2024,
-  title={Project Tafsiri: African Language AI Systems},
-  author={[YOUR_NAME]},
-  year={2024},
-  url={https://github.com/Global-Data-Science-Institute/project-tafsiri},
-  note={Open-source African language translation and AI tools}
-}
-```
-
-## Acknowledgments
-
-- Luhya language communities for cultural guidance and validation
-- Facebook AI Research for the M2M100 base model
-- HuggingFace for model hosting and community platform
-- All contributors and community members
-
----
-
-**Project Tafsiri** - *Empowering African voices in the digital age*
+The staging Vercel project tracks `staging` with Root Directory `apps/reviewer-portal`. Staging and production use separate Supabase projects. Keep credentials in ignored local files or provider-managed environment variables.

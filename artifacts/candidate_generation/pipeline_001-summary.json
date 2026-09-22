@@ -1,0 +1,40 @@
+{
+  "ambiguity_flags": {
+    "compound_part_of_speech": 149,
+    "contextual_language": 711,
+    "incompatible_pos_reuse": 25,
+    "long_commentary_definition": 109,
+    "repeated_form_multiple_definitions": 201,
+    "semicolon_segments": 1922,
+    "slash_segments": 10,
+    "standalone_or": 318
+  },
+  "bucket_counts": {
+    "A": 813,
+    "B": 470,
+    "C": 2554
+  },
+  "confidence_bands": {
+    "0.50-0.74": 874,
+    "0.75-0.89": 734,
+    "0.90-0.99": 12,
+    "below_0.50": 2217
+  },
+  "existing_concept_match_count": 0,
+  "metadata": {
+    "config_hash": "833081d75140ab6558112d1085c2c6eec419386fa831873605c2138823d7a20a",
+    "evidence_schema_version": "pipeline-001-evidence-v1",
+    "extraction_timestamp": "2026-08-12T22:29:05.316610+00:00",
+    "input_row_count": 3837,
+    "pipeline_version": "0.1.0"
+  },
+  "proposed_concept_key_count": 4,
+  "records_without_safe_concept_keys": 3833,
+  "repeated_form_groups": 99,
+  "status_counts": {
+    "needs_split": 2554,
+    "proposed": 1283
+  },
+  "total_records": 3837,
+  "validation_errors": []
+}

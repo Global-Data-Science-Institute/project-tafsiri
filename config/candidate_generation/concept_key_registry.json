@@ -1,0 +1,8 @@
+{
+  "version": "0.1.0",
+  "entries": {
+    "teeth": {"concept_key": "BODY_TEETH", "domain": "body", "compatible_pos": ["noun"]},
+    "water": {"concept_key": "NATURE_WATER", "domain": "nature", "compatible_pos": ["noun"]},
+    "millet": {"concept_key": "FOOD_MILLET", "domain": "food", "compatible_pos": ["noun"]}
+  }
+}

@@ -1,110 +1,20 @@
-# Project Tafsiri Vision
+# Project Tafsiri vision
 
-## Mission Statement
+Project Tafsiri builds trustworthy language resources and tools for English-Luhya and Swahili-Luhya work, with each Luhya variety represented as a first-class dialect.
 
-Project Tafsiri exists to democratize access to modern AI technology for African language speakers while preserving and celebrating the rich linguistic and cultural heritage of the African continent.
+## Principles
 
-## Core Principles
+- Native-speaker and expert review determines linguistic validity.
+- Human-verified evidence outranks machine-generated material.
+- Dialects remain distinct; the project does not manufacture a generalized vocabulary by mixing them.
+- Every lexical assertion should retain enough source and review provenance to be audited.
+- When no verified or established borrowed term exists, preserve the source term and explain it naturally. Do not guess.
+- Sensitive and community-contributed material must retain consent, attribution, and access controls.
 
-### 1. Community-Centered Development
-- All development decisions prioritize community benefit
-- Native speakers and cultural experts lead validation processes
-- Communities maintain ownership of their cultural contributions
-- Technology serves community needs, not the reverse
+## Current focus
 
-### 2. Cultural Authenticity
-- Preserve traditional knowledge and cultural context
-- Maintain respect for cultural practices and protocols
-- Acknowledge and attribute community contributions
-- Ensure culturally appropriate representation
+The current architecture supports a canonical lexical core, source provenance, candidate generation, frozen evaluation evidence, and independent review through the Reviewer Portal. Claims about translation quality, trained models, language coverage, or public availability require supporting evidence and are not implied by the repository structure.
 
-### 3. Linguistic Diversity
-- Support multiple dialects within language families
-- Preserve linguistic variation and regional differences
-- Avoid linguistic homogenization
-- Celebrate the richness of African linguistic diversity
+## Measures of progress
 
-### 4. Open Innovation
-- Transparent, open-source development
-- Collaborative research and knowledge sharing
-- Accessible technology for all communities
-- Democratic participation in technological advancement
-
-## Long-term Goals
-
-### Phase 1: Foundation
-- Establish Luhya as proof-of-concept
-- Develop community engagement framework
-- Create cultural validation processes
-- Build technical infrastructure
-
-### Phase 2: Expansion
-- Add major East African languages (Swahili, Amharic)
-- Develop West African language capabilities
-- Create educational applications
-- Establish academic research partnerships
-
-### Phase 3: Continental Scale 
-- Support 20+ African languages
-- Develop cross-language understanding
-- Create cultural preservation tools
-- Build pan-African language exchange platform
-
-### Phase 4: Global Impact
-- Influence global AI development practices
-- Export community-centered AI model worldwide
-- Establish African languages in mainstream AI
-- Create sustainable community benefit systems
-
-## Success Metrics
-
-### Technical Metrics
-- Translation accuracy and cultural appropriateness
-- Model performance across dialects
-- System reliability and accessibility
-- Community adoption rates
-
-### Cultural Metrics
-- Community satisfaction and feedback
-- Cultural accuracy validation scores
-- Traditional knowledge preservation
-- Cultural expert endorsement
-
-### Impact Metrics
-- Educational application usage
-- Community empowerment outcomes
-- Economic opportunities created
-- Linguistic vitality preservation
-
-## Ethical Framework
-
-### Community Consent
-- Free, prior, and informed consent for all cultural content
-- Community ownership of traditional knowledge
-- Transparent benefit-sharing agreements
-- Respect for community protocols
-
-### Cultural Sensitivity
-- Ongoing cultural competency training for all contributors
-- Regular community feedback integration
-- Culturally appropriate technology design
-- Respect for sacred or sensitive content
-
-### Sustainable Development
-- Long-term community benefit prioritization
-- Capacity building within communities
-- Technology transfer and knowledge sharing
-- Economic sustainability for communities
-
-## Call to Action
-
-Project Tafsiri represents more than technological advancement—it's a movement toward digital equity, cultural preservation, and community empowerment. We invite:
-
-- **Technologists** to contribute skills and innovation
-- **Linguists** to provide expertise and validation
-- **Cultural leaders** to guide appropriate development
-- **Communities** to shape the future of their digital representation
-- **Researchers** to advance understanding of cultural AI
-- **Advocates** to promote linguistic rights and digital inclusion
-
-Together, we can ensure that the future of AI reflects the full spectrum of human linguistic and cultural diversity, with African voices at the forefront of this transformation.
+Progress is measured through traceable sources, independent human review, dialect coverage, reproducible evaluation, data safety, and reliable operation of the review workflow.

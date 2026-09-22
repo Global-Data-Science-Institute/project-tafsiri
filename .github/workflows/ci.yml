@@ -1,40 +1,59 @@
-name: CI
+﻿name: Tafsiri CI
 
 on:
   push:
-    branches: [ main, develop ]
+    branches: [main, staging, 'chore/**']
   pull_request:
-    branches: [ main ]
+    branches: [main, staging]
 
 jobs:
-  test:
+  portal:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: [3.8, 3.9, '3.10']
-
+    defaults:
+      run:
+        working-directory: apps/reviewer-portal
     steps:
-    - uses: actions/checkout@v3
-    
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v4
-      with:
-        python-version: ${{ matrix.python-version }}
-        
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements/base.txt
-        pip install -r requirements/development.txt
-        
-    - name: Run tests
-      run: |
-        python -m pytest tests/ -v
-        
-    - name: Run linting
-      run: |
-        flake8 core/ languages/ tools/
-        
-    - name: Check cultural validation
-      run: |
-        python tools/evaluation/cultural_validation.py
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: apps/reviewer-portal/package-lock.json
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run lint
+      - run: npm test
+      - run: npm run build
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: https://example.supabase.co
+          NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: ci-placeholder
+
+  research:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install pytest
+      - run: python -m pytest tests/candidate_generation tests/evaluation -q
+
+  database:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npx supabase start
+      - run: npx supabase db reset --local
+      - name: Run database smoke tests
+        shell: bash
+        run: |
+          docker exec -i supabase_db_project-tafsiri psql -U postgres -d postgres -v ON_ERROR_STOP=1 < tests/database/portal_implementation_002_smoke.sql
+          docker exec -i supabase_db_project-tafsiri psql -U postgres -d postgres -v ON_ERROR_STOP=1 < tests/database/source_provenance_foundation_smoke.sql
+      - run: npx supabase db lint --local --level error
+      - if: always()
+        run: npx supabase stop --no-backup
