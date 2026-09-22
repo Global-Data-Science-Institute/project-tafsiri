@@ -52,7 +52,7 @@ jobs:
       - name: Run database smoke tests
         shell: bash
         run: |
-          docker exec -i supabase_db_project-tafsiri psql -U postgres -d postgres -v ON_ERROR_STOP=1 < tests/database/reviewer_portal_smoke.sql
+          docker exec -i supabase_db_project-tafsiri psql -U postgres -d postgres -v ON_ERROR_STOP=1 < tests/database/portal_implementation_002_smoke.sql
           docker exec -i supabase_db_project-tafsiri psql -U postgres -d postgres -v ON_ERROR_STOP=1 < tests/database/source_provenance_foundation_smoke.sql
       - run: npx supabase db lint --local --level error
       - if: always()
