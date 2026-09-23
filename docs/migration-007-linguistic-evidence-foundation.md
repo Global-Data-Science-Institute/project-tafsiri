@@ -2,9 +2,9 @@
 
 ## Status
 
-Migration 007 is implemented on `staging` and is ready for production deployment review. It has not been deployed to production.
+Migration 007 was deployed and verified on production project `ydkookidvipqrwuilqeu` on 2026-09-23.
 
-The production-linked dry run against project `ydkookidvipqrwuilqeu` identified only this migration as pending. The CLI link was then restored to staging project `gfhdwmqefotkljrltfnx`. Production has Migration 006 applied; staging currently does not. This known environment divergence was not changed during Migration 007 validation.
+The final production-linked dry run identified only this migration as pending. After deployment, local and production migration histories matched through Migration 007. The CLI link was then restored to staging project `gfhdwmqefotkljrltfnx`, whose migration history still stops at Migration 005. This known environment divergence was not changed during Migration 007 deployment.
 
 ## Migration
 
