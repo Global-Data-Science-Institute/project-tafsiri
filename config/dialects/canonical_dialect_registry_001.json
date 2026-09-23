@@ -1,0 +1,32 @@
+{
+  "registry_version": "canonical-dialect-registry-001-v1",
+  "environment_policy": {
+    "gfhdwmqefotkljrltfnx": "Staging Luhya",
+    "ydkookidvipqrwuilqeu": "Luhya"
+  },
+  "notes": "Reference aliases support lookup only and do not verify source-specific linguistic equivalence.",
+  "canonical_dialects": [
+    "Bukusu", "General / Not sure", "Idakho", "Isukha", "Kabras", "Khayo",
+    "Kisa", "Lunyore", "Luwanga", "Marachi", "Maragoli", "Marama",
+    "Nyala", "Samia", "Tachoni", "Tiriki", "Tsotso", "Wanga"
+  ],
+  "aliases": [
+    {"name": "Lubukusu", "canonical_target": "Bukusu"},
+    {"name": "Lukisa", "canonical_target": "Kisa"},
+    {"name": "Lulogooli", "canonical_target": "Maragoli"},
+    {"name": "Llogoori", "canonical_target": "Maragoli"},
+    {"name": "Logooli", "canonical_target": "Maragoli"},
+    {"name": "Lumarachi", "canonical_target": "Marachi"},
+    {"name": "Lumarama", "canonical_target": "Marama"},
+    {"name": "Lunyala", "canonical_target": "Nyala"},
+    {"name": "Lusamia", "canonical_target": "Samia"},
+    {"name": "Lusaamia", "canonical_target": "Samia"},
+    {"name": "Olusamia", "canonical_target": "Samia"},
+    {"name": "Lutiriki", "canonical_target": "Tiriki"},
+    {"name": "Lutsotso", "canonical_target": "Tsotso"},
+    {"name": "Lwidakho", "canonical_target": "Idakho"},
+    {"name": "Lwisukha", "canonical_target": "Isukha"},
+    {"name": "Olukhayo", "canonical_target": "Khayo"},
+    {"name": "Olunyore", "canonical_target": "Lunyore"}
+  ]
+}
