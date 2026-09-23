@@ -55,6 +55,7 @@ jobs:
           docker exec -i supabase_db_project-tafsiri psql -U postgres -d postgres -v ON_ERROR_STOP=1 < tests/database/portal_implementation_002_smoke.sql
           docker exec -i supabase_db_project-tafsiri psql -U postgres -d postgres -v ON_ERROR_STOP=1 < tests/database/source_provenance_foundation_smoke.sql
           docker exec -i supabase_db_project-tafsiri psql -U postgres -d postgres -v ON_ERROR_STOP=1 < tests/database/linguistic_evidence_foundation_smoke.sql
+          docker exec -i supabase_db_project-tafsiri psql -U postgres -d postgres -v ON_ERROR_STOP=1 < tests/database/scholarly_book_source_type_smoke.sql
       - run: npx supabase db lint --local --level error
       - if: always()
         run: npx supabase stop --no-backup
