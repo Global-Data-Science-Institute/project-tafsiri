@@ -12,6 +12,10 @@ Project Tafsiri is a monorepo for dialect-aware lexical research and human revie
 
 Supabase is the schema authority. Applied migrations define canonical tables, constraints, access policies, and role grants. Schema work must be additive and versioned. Migration 006 introduces the source and provenance foundation; it contains no data backfill.
 
+The approved migration sequence now reserves Migration 007 for the **Linguistic Literature & Evidence Foundation**, moves the **Canonical Lexical Core** to Migration 008, and reserves Migration 009 for **Evidence Promotion & Linguistic Rule Governance**. The detailed design is recorded in [Linguistic Evidence Architecture 001](research/linguistic-evidence-architecture-001.md).
+
+Scholarly publications remain source records under the Migration 006 provenance foundation. A citable source version may support one or more located linguistic-evidence assertions. Human verification confirms that an assertion accurately represents its source; it does not promote the assertion into a canonical Tafsiri rule. Canonical promotion requires a later, explicit governance workflow.
+
 Human verification outranks generated suggestions. Generated candidates cannot become verified data without an explicit review action. Dialect identity is stored explicitly and must not be inferred by blending varieties.
 
 ### Candidate generation

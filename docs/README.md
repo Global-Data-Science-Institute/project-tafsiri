@@ -9,6 +9,7 @@ This directory documents the repository's current architecture, research control
 - [Language inclusion framework](language_inclusion_framework.md)
 - [Cultural guidelines](cultural_guidelines.md)
 - [Source Registration 001](source-registration-001.md)
+- [Import Reconciliation 001](import-reconciliation-001.md)
 
 ## Operations
 

@@ -1,0 +1,21 @@
+{
+  "parser_version": "lubukusu-pdf-ocr-v1",
+  "render_scale": 3.0,
+  "reading_order": ["page", "column", "vertical_position", "horizontal_position"],
+  "entry_start_rule": "headword + controlled POS abbreviation + optional gloss",
+  "minimum_lexical_page": 4,
+  "normalization": {
+    "stored_source_text": "Unicode NFC with OCR spacing only; tone and vowel length retained",
+    "exact_comparison": "Unicode NFC, whitespace and punctuation repair only",
+    "secondary_search": "casefold plus canonical decomposition and combining-mark removal"
+  },
+  "tools": {
+    "rapidocr": "3.9.2",
+    "onnxruntime": "1.30.0",
+    "pymupdf": "1.28.2"
+  },
+  "models": {
+    "PP-OCRv6_det_small.onnx_sha256": "090f04abcd9d9a7498bc4ebf677e4cb9bdce1fe4197ddb7e529f1ef44e1ff94f",
+    "PP-OCRv6_rec_small.onnx_sha256": "6f327246b50388f3c176ae304bd95767ea6dc0c9ae92153ef8cbe210b3c14884"
+  }
+}
