@@ -14,7 +14,10 @@ BEGIN
     'linguistic_evidence_notations','grapheme_phoneme_evidence','linguistic_examples',
     'linguistic_example_tiers','linguistic_evidence_relations'
   )) <> 12 THEN RAISE EXCEPTION 'Migration 007 tables missing'; END IF;
-  IF to_regclass('public.linguistic_rules') IS NOT NULL THEN RAISE EXCEPTION 'canonical rules table exists'; END IF;
+  -- Migration 009 may provide the separate canonical governance layer, but Migration 007
+  -- must never populate it as a side effect of evidence creation.
+  IF to_regclass('public.linguistic_rules') IS NOT NULL AND (SELECT count(*) FROM public.linguistic_rules) <> 0
+  THEN RAISE EXCEPTION 'Migration 007 inserted canonical rules'; END IF;
   IF (SELECT count(*) FROM public.linguistic_evidence) <> 0
     OR (SELECT count(*) FROM public.grapheme_phoneme_evidence) <> 0
     OR (SELECT count(*) FROM public.linguistic_examples) <> 0
