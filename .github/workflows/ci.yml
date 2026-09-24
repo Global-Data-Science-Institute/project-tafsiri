@@ -36,7 +36,7 @@ jobs:
         with:
           python-version: '3.12'
       - run: python -m pip install pytest
-      - run: python -m pytest tests/candidate_generation tests/evaluation tests/source_registry tests/source_reconciliation -q
+      - run: python -m pytest tests/candidate_generation tests/evaluation tests/linguistic_rules tests/source_registry tests/source_reconciliation -q
 
   database:
     runs-on: ubuntu-latest
@@ -56,6 +56,7 @@ jobs:
           docker exec -i supabase_db_project-tafsiri psql -U postgres -d postgres -v ON_ERROR_STOP=1 < tests/database/source_provenance_foundation_smoke.sql
           docker exec -i supabase_db_project-tafsiri psql -U postgres -d postgres -v ON_ERROR_STOP=1 < tests/database/linguistic_evidence_foundation_smoke.sql
           docker exec -i supabase_db_project-tafsiri psql -U postgres -d postgres -v ON_ERROR_STOP=1 < tests/database/scholarly_book_source_type_smoke.sql
+          docker exec -i supabase_db_project-tafsiri psql -U postgres -d postgres -v ON_ERROR_STOP=1 < tests/database/canonical_linguistic_rule_governance_smoke.sql
       - run: npx supabase db lint --local --level error
       - if: always()
         run: npx supabase stop --no-backup
