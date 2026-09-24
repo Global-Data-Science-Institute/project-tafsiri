@@ -1,0 +1,16 @@
+{
+  "completed_review_csv_sha256": "a5e14162e8a2c0bbea6d63cd185dd58b239fb1e3c89adadc360cbc218ad7ca78",
+  "decision_summary": "All 110 Extraction 001 evidence records were checked against their cited scholarly source locators and accepted.",
+  "extraction_batch_key": "TAFSIRI_LINGUISTIC_EVIDENCE_EXTRACTION_001",
+  "provenance_preservation": "Verification changes review status and reviewer metadata only. MACHINE_GENERATED provenance and LLM_ASSISTED extraction method remain unchanged.",
+  "review_batch_key": "TAFSIRI_HUMAN_SCHOLARLY_REVIEW_001",
+  "review_completed_at": "2026-09-24T00:11:59Z",
+  "review_csv_sha256": "0ac6c021db973aa03c3ab8f04875fa4a5f73eee6537fda3a5f343e4d3567ad33",
+  "review_decision": "VERIFIED",
+  "reviewed_evidence_count": 110,
+  "reviewer": {
+    "email": "moody.amakobe@gdsi.institute",
+    "name": "Dr. Moody Amakobe"
+  },
+  "source_extraction_manifest_sha256": "9b0ec11e794b2007d2c514e05a05454d886c5803543684c5f0ac08b3d907aa3f"
+}
