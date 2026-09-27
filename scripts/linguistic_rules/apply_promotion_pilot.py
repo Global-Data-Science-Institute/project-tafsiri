@@ -23,6 +23,8 @@ ROOT = Path(__file__).resolve().parents[2]
 MANIFEST_PATH = ROOT / "artifacts/linguistic_rules/canonical_promotion_pilot_001.json"
 EXTRACTION_PATH = ROOT / "artifacts/linguistic_evidence/extraction_001.jsonl"
 REVIEW_PATH = ROOT / "artifacts/linguistic_rules/canonical_promotion_pilot_001_review.csv"
+COMPLETED_REVIEW_PATH = ROOT / "artifacts/linguistic_rules/canonical_promotion_pilot_001_review_completed.csv"
+HUMAN_REVIEW_PATH = ROOT / "artifacts/linguistic_rules/canonical_promotion_pilot_001_human_review.json"
 NAMESPACE = uuid.UUID("fa5f131a-59ea-4ba4-b92b-09a6bc54f922")
 
 
@@ -48,7 +50,39 @@ def sql_literal(value: Any) -> str:
     return "'" + str(value).replace("'", "''") + "'"
 
 
-def load_and_validate() -> dict[str, Any]:
+def file_checksum(path: Path) -> str:
+    normalized = path.read_text(encoding="utf-8-sig").replace("\r\n", "\n")
+    return hashlib.sha256(normalized.encode("utf-8")).hexdigest()
+
+
+def validate_human_review(manifest: dict[str, Any]) -> dict[str, Any]:
+    if not HUMAN_REVIEW_PATH.exists() or not COMPLETED_REVIEW_PATH.exists():
+        raise PilotError("completed human canonical review artifacts are required for production")
+    review = json.loads(HUMAN_REVIEW_PATH.read_text(encoding="utf-8-sig"))
+    expected_keys = {candidate["rule_key"] for candidate in manifest["candidates"]}
+    checks = (
+        review.get("review_batch_key") == "TAFSIRI_CANONICAL_REVIEW_PILOT_001",
+        review.get("pilot") == manifest.get("pilot_key"),
+        review.get("reviewer") == "Dr. Moody Amakobe",
+        review.get("approved_rule_count") == 4,
+        review.get("decision") == "APPROVED_FOR_PROVISIONAL_CANONICAL_PROMOTION",
+        review.get("runtime_approval") is False,
+        review.get("production_promotion_approved") is True,
+        set(review.get("approved_rule_keys", [])) == expected_keys,
+        review.get("manifest_sha256") == file_checksum(MANIFEST_PATH),
+        review.get("review_csv_sha256") == file_checksum(REVIEW_PATH),
+        review.get("completed_review_csv_sha256") == file_checksum(COMPLETED_REVIEW_PATH),
+    )
+    with COMPLETED_REVIEW_PATH.open(encoding="utf-8-sig", newline="") as handle:
+        completed = list(csv.DictReader(handle))
+    if not all(checks) or len(completed) != 4 or {row["rule_key"] for row in completed} != expected_keys:
+        raise PilotError("human canonical review artifact does not match the immutable pilot inputs")
+    if any(row["review_decision"] != "APPROVE_PROVISIONAL" for row in completed):
+        raise PilotError("all four completed review rows must approve provisional promotion")
+    return review
+
+
+def load_and_validate(require_human_review: bool = False) -> dict[str, Any]:
     manifest = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
     extracted = {
         row["evidence_key"]: row
@@ -92,6 +126,8 @@ def load_and_validate() -> dict[str, Any]:
             errors.append("review CSV must contain exactly four candidates")
     if errors:
         raise PilotError("; ".join(errors))
+    if require_human_review:
+        validate_human_review(manifest)
     return manifest
 
 
@@ -145,6 +181,7 @@ select jsonb_build_object(
   'roles',(select count(*) from public.contributor_roles),
   'evidence_total',(select count(*) from public.linguistic_evidence),
   'evidence_verified',(select count(*) from public.linguistic_evidence where verification_status='VERIFIED'),
+  'sources',(select count(*) from public.sources),
   'pilot_promotions',(select coalesce(jsonb_agg(jsonb_build_object('promotion_key',promotion_key,'idempotency_key',idempotency_key,'status',status,'checksum',evidence_set_checksum,'statement',proposed_statement)), '[]'::jsonb) from public.linguistic_rule_promotions where promotion_key like 'PILOT001_%'),
   'pilot_roles',(select count(*) from public.contributor_roles cr join public.contributor_role_types rt on rt.id=cr.role_type_id where rt.role_type_key='CANONICAL_APPROVER' and cr.domain='CANONICAL_PROMOTION_PILOT_001')
 ) as state;
@@ -162,13 +199,25 @@ def plan(manifest: dict[str, Any], state: dict[str, Any]) -> dict[str, int]:
         elif any((found["idempotency_key"] != candidate["idempotency_key"], found["checksum"] != candidate["evidence_set_checksum"], found["statement"] != candidate["canonical_statement"])):
             conflicts += 1
     conditions = sum(len(c["conditions"]) for c in manifest["candidates"] if c["promotion_key"] not in existing)
-    return {
+    result = {
         "rules": creates, "revisions": creates, "dialect_links": creates,
         "evidence_links": creates, "conditions": conditions, "promotions": creates,
         "outputs": creates * 4 + conditions,
         "contributor_roles": 0 if state.get("pilot_roles") else 1,
         "conflicts": conflicts,
     }
+    if creates == 0 and len(existing) == 4 and conflicts == 0:
+        result.update({
+            "rules_reused": 4,
+            "revisions_reused": 4,
+            "dialect_links_reused": 4,
+            "evidence_links_reused": 4,
+            "conditions_reused": state.get("conditions", 0),
+            "promotions_reused": 4,
+            "outputs_reused": state.get("outputs", 0),
+            "contributor_roles_reused": state.get("pilot_roles", 0),
+        })
+    return result
 
 
 def print_table(manifest: dict[str, Any]) -> None:
@@ -183,16 +232,25 @@ def print_table(manifest: dict[str, Any]) -> None:
             print("  ".join("-" * width for width in widths))
 
 
-def execution_sql(manifest: dict[str, Any]) -> str:
-    authority = manifest["authority"]
-    contributor_id = "96cc0709-359a-4683-9d26-bac6e49ff7f8"
+def execution_sql(manifest: dict[str, Any], production: bool = False, human_review: dict[str, Any] | None = None) -> str:
+    authority = dict(manifest["authority"])
+    rationale = None
+    if production:
+        if human_review is None:
+            raise PilotError("production SQL requires the verified human review artifact")
+        authority["valid_from"] = human_review["reviewed_at"]
+        authority["notes"] = (
+            "Bounded project-governance bootstrap for Canonical Promotion Pilot 001 production replication. "
+            "Pilot 001 was verified in staging; supporting evidence is human VERIFIED; four statements were manually reviewed; "
+            "all rules remain PROVISIONAL; no runtime approval is granted; this is not a blanket production promotion policy."
+        )
+        rationale = authority["notes"]
     authority_id = stable_id("authority", manifest["pilot_key"])
     blocks: list[str] = ["BEGIN;", f"""
 DO $$
 DECLARE v_contributor uuid; v_role_type uuid;
 BEGIN
   SELECT id INTO STRICT v_contributor FROM public.contributors WHERE lower(name)=lower({sql_literal(authority['contributor_name'])}) AND lower(email)=lower({sql_literal(authority['contributor_email'])});
-  IF v_contributor <> {sql_literal(contributor_id)}::uuid THEN RAISE EXCEPTION 'resolved contributor identity changed'; END IF;
   SELECT id INTO STRICT v_role_type FROM public.contributor_role_types WHERE role_type_key='CANONICAL_APPROVER' AND is_active;
   IF EXISTS (SELECT 1 FROM public.contributor_roles WHERE id={sql_literal(authority_id)}::uuid) THEN
     IF NOT EXISTS (SELECT 1 FROM public.contributor_roles WHERE id={sql_literal(authority_id)}::uuid AND contributor_id=v_contributor AND role_type_id=v_role_type AND dialect_id IS NULL AND domain={sql_literal(authority['domain'])} AND valid_from={sql_literal(authority['valid_from'])}::timestamptz AND valid_until={sql_literal(authority['valid_until'])}::timestamptz AND revoked_at IS NULL) THEN RAISE EXCEPTION 'CONFLICT: pilot authority identity has changed semantic content'; END IF;
@@ -217,18 +275,18 @@ BEGIN
   SELECT id INTO STRICT v_type FROM public.linguistic_rule_types WHERE rule_type_key={sql_literal(candidate['canonical_rule_type'])} AND is_active;
   SELECT id INTO STRICT v_dialect FROM public.dialects WHERE name={sql_literal(candidate['canonical_dialect'])};
   SELECT id INTO STRICT v_contributor FROM public.contributors WHERE lower(name)=lower({sql_literal(authority['contributor_name'])}) AND lower(email)=lower({sql_literal(authority['contributor_email'])});
-  SELECT id INTO STRICT v_evidence FROM public.linguistic_evidence WHERE notes={sql_literal('Extraction 001 key: ' + candidate['evidence_keys'][0])} AND verification_status='VERIFIED';
+  SELECT id INTO STRICT v_evidence FROM public.linguistic_evidence WHERE notes={sql_literal('Extraction 001 key: ' + candidate['evidence_keys'][0])} AND verification_status='VERIFIED' AND summary={sql_literal(json.loads(next(line for line in EXTRACTION_PATH.read_text(encoding='utf-8').splitlines() if candidate['evidence_keys'][0] in line))['summary'])} AND source_locator={sql_literal(json.loads(next(line for line in EXTRACTION_PATH.read_text(encoding='utf-8').splitlines() if candidate['evidence_keys'][0] in line))['source_locator'])} AND provenance_origin='MACHINE_GENERATED' AND extraction_method='LLM_ASSISTED';
   IF EXISTS (SELECT 1 FROM public.linguistic_rule_promotions WHERE id={sql_literal(promo_id)}::uuid OR promotion_key={sql_literal(candidate['promotion_key'])} OR idempotency_key={sql_literal(candidate['idempotency_key'])}) THEN
     IF NOT EXISTS (SELECT 1 FROM public.linguistic_rule_promotions WHERE id={sql_literal(promo_id)}::uuid AND promotion_key={sql_literal(candidate['promotion_key'])} AND idempotency_key={sql_literal(candidate['idempotency_key'])} AND action='CREATE_RULE' AND status='APPLIED' AND proposed_rule_type_id=v_type AND proposed_scope='DIALECT' AND proposed_statement={sql_literal(candidate['canonical_statement'])} AND evidence_set_checksum={sql_literal(candidate['evidence_set_checksum'])} AND authority_policy='SINGLE_RESEARCHER_ALLOWED' AND target_rule_id={sql_literal(rule_id)}::uuid) THEN RAISE EXCEPTION 'CONFLICT: promotion identity reused with changed semantic content: %', {sql_literal(candidate['promotion_key'])}; END IF;
   ELSE
     v_new := true;
     INSERT INTO public.linguistic_rule_promotions(id,promotion_key,action,status,proposed_rule_type_id,proposed_scope,proposed_statement,evidence_set_checksum,policy_version,risk_class,authority_policy,requested_by,requested_at,reason,idempotency_key)
-    VALUES({sql_literal(promo_id)}::uuid,{sql_literal(candidate['promotion_key'])},'CREATE_RULE','DRAFT',v_type,'DIALECT',{sql_literal(candidate['canonical_statement'])},{sql_literal(candidate['evidence_set_checksum'])},{sql_literal(manifest['policy_version'])},{sql_literal(candidate['risk_class'])},'SINGLE_RESEARCHER_ALLOWED',v_contributor,{sql_literal(authority['valid_from'])}::timestamptz,{sql_literal(candidate['rationale'])},{sql_literal(candidate['idempotency_key'])});
+    VALUES({sql_literal(promo_id)}::uuid,{sql_literal(candidate['promotion_key'])},'CREATE_RULE','DRAFT',v_type,'DIALECT',{sql_literal(candidate['canonical_statement'])},{sql_literal(candidate['evidence_set_checksum'])},{sql_literal(manifest['policy_version'])},{sql_literal(candidate['risk_class'])},'SINGLE_RESEARCHER_ALLOWED',v_contributor,{sql_literal(authority['valid_from'])}::timestamptz,{sql_literal(rationale or candidate['rationale'])},{sql_literal(candidate['idempotency_key'])});
     UPDATE public.linguistic_rule_promotions SET status='READY_FOR_REVIEW' WHERE id={sql_literal(promo_id)}::uuid;
     UPDATE public.linguistic_rule_promotions SET status='APPROVED',approved_by=v_contributor,approved_at={sql_literal(authority['valid_from'])}::timestamptz WHERE id={sql_literal(promo_id)}::uuid;
     INSERT INTO public.linguistic_rules(id,rule_key,rule_type_id,lifecycle_status,created_by_promotion_id) VALUES({sql_literal(rule_id)}::uuid,{sql_literal(key)},v_type,'PROVISIONAL',{sql_literal(promo_id)}::uuid);
     UPDATE public.linguistic_rule_promotions SET target_rule_id={sql_literal(rule_id)}::uuid WHERE id={sql_literal(promo_id)}::uuid;
-    INSERT INTO public.linguistic_rule_revisions(id,rule_id,revision_number,canonical_statement,scope,conditions_summary,reason,policy_version,created_by_promotion_id,effective_at) VALUES({sql_literal(revision_id)}::uuid,{sql_literal(rule_id)}::uuid,1,{sql_literal(candidate['canonical_statement'])},'DIALECT',{sql_literal(conditions_summary)},{sql_literal(candidate['rationale'])},{sql_literal(manifest['policy_version'])},{sql_literal(promo_id)}::uuid,{sql_literal(authority['valid_from'])}::timestamptz);
+    INSERT INTO public.linguistic_rule_revisions(id,rule_id,revision_number,canonical_statement,scope,conditions_summary,reason,policy_version,created_by_promotion_id,effective_at) VALUES({sql_literal(revision_id)}::uuid,{sql_literal(rule_id)}::uuid,1,{sql_literal(candidate['canonical_statement'])},'DIALECT',{sql_literal(conditions_summary)},{sql_literal(rationale or candidate['rationale'])},{sql_literal(manifest['policy_version'])},{sql_literal(promo_id)}::uuid,{sql_literal(authority['valid_from'])}::timestamptz);
     INSERT INTO public.linguistic_rule_dialects(id,rule_revision_id,dialect_id,role,notes) VALUES({sql_literal(dialect_link_id)}::uuid,{sql_literal(revision_id)}::uuid,v_dialect,'APPLIES_TO','Canonical dialect scope for Pilot 001.');
     INSERT INTO public.linguistic_rule_evidence(id,rule_revision_id,evidence_id,evidence_role,notes) VALUES({sql_literal(evidence_link_id)}::uuid,{sql_literal(revision_id)}::uuid,v_evidence,'SUPPORTS',{sql_literal('Approved evidence key: ' + candidate['evidence_keys'][0])});
 """)
@@ -241,7 +299,7 @@ BEGIN
         for idx, (otype, column, target_id) in enumerate(outputs):
             blocks.append(f"    INSERT INTO public.linguistic_rule_promotion_outputs(id,promotion_id,output_type,output_action,{column},order_index) VALUES({sql_literal(stable_id('output', candidate['promotion_key'] + ':' + str(idx)))}::uuid,{sql_literal(promo_id)}::uuid,'{otype}','CREATED',{sql_literal(target_id)}::uuid,{idx});\n")
         blocks.append(f"""    UPDATE public.linguistic_rules SET current_revision_id={sql_literal(revision_id)}::uuid WHERE id={sql_literal(rule_id)}::uuid;
-    UPDATE public.linguistic_rule_promotions SET status='APPLIED',applied_at={sql_literal(authority['valid_from'])}::timestamptz,transaction_reference='DRAFT -> READY_FOR_REVIEW -> APPROVED -> APPLIED; atomic Pilot 001 transaction' WHERE id={sql_literal(promo_id)}::uuid;
+    UPDATE public.linguistic_rule_promotions SET status='APPLIED',applied_at={sql_literal(authority['valid_from'])}::timestamptz,transaction_reference={sql_literal('DRAFT -> READY_FOR_REVIEW -> APPROVED -> APPLIED; atomic Pilot 001 ' + ('production' if production else 'staging') + ' transaction')} WHERE id={sql_literal(promo_id)}::uuid;
   END IF;
   IF NOT EXISTS (SELECT 1 FROM public.linguistic_rules r JOIN public.linguistic_rule_revisions rv ON rv.id=r.current_revision_id AND rv.rule_id=r.id JOIN public.linguistic_rule_dialects d ON d.rule_revision_id=rv.id AND d.role='APPLIES_TO' JOIN public.linguistic_rule_evidence e ON e.rule_revision_id=rv.id AND e.evidence_role='SUPPORTS' WHERE r.id={sql_literal(rule_id)}::uuid AND r.lifecycle_status='PROVISIONAL' AND rv.revision_number=1 AND d.dialect_id=v_dialect AND e.evidence_id=v_evidence) THEN RAISE EXCEPTION 'Pilot output traceability mismatch: %', {sql_literal(key)}; END IF;
 END $$;
@@ -259,17 +317,26 @@ def main(argv: list[str] | None = None) -> int:
     modes.add_argument("--dry-run", action="store_true")
     modes.add_argument("--execute", action="store_true")
     parser.add_argument("--confirm-project-ref")
+    parser.add_argument("--production-approved-pilot-001", action="store_true")
     args = parser.parse_args(argv)
-    manifest = load_and_validate()
+    manifest = load_and_validate(require_human_review=args.production_approved_pilot_001)
     if args.validate:
         print(json.dumps({"status": "VALID", "candidates": 4, "evidence_links": 4, "conditions": 2, "outputs": 18}, sort_keys=True))
         return 0
     ref = linked_ref()
-    if ref != STAGING_REF:
-        raise PilotError(f"Pilot 001 is staging-only; linked project {ref!r} is refused")
-    if args.execute and args.confirm_project_ref != STAGING_REF:
-        raise PilotError(f"--execute requires --confirm-project-ref {STAGING_REF}")
+    production = args.production_approved_pilot_001
+    required_ref = PRODUCTION_REF if production else STAGING_REF
+    if ref != required_ref:
+        raise PilotError(f"Pilot 001 mode requires linked project {required_ref}; linked project {ref!r} is refused")
+    if (args.execute or production) and args.confirm_project_ref != required_ref:
+        raise PilotError(f"this mode requires --confirm-project-ref {required_ref}")
     state = run_sql(inspection_sql()).get("state", {})
+    if production:
+        if state.get("evidence_total") != 110 or state.get("evidence_verified") != 110 or state.get("sources") != 53:
+            raise PilotError("production scholarly evidence/source baseline differs from Pilot 001 requirements")
+        governance_keys = ("rules", "revisions", "dialect_links", "conditions", "evidence_links", "promotions", "outputs", "supersessions", "roles")
+        if not state.get("pilot_promotions") and any(state.get(key) != 0 for key in governance_keys):
+            raise PilotError("unexpected production canonical governance content exists")
     planned = plan(manifest, state)
     print_table(manifest)
     print(json.dumps({"project_ref": ref, "mode": "EXECUTE" if args.execute else "DRY_RUN", "planned_changes": planned}, sort_keys=True))
@@ -277,7 +344,8 @@ def main(argv: list[str] | None = None) -> int:
         raise PilotError("CONFLICT: an existing promotion identity has changed semantic content")
     if not args.execute:
         return 0
-    result = run_sql(execution_sql(manifest))
+    review = validate_human_review(manifest) if production else None
+    result = run_sql(execution_sql(manifest, production=production, human_review=review))
     print(json.dumps(result, sort_keys=True))
     return 0
 
