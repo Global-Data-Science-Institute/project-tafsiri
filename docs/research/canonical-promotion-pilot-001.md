@@ -36,3 +36,11 @@ Pilot 001 was applied to staging on 2026-09-24. The verified result contains fou
 A post-application dry run reported zero creates and zero conflicts for every governed object type. Live negative tests rejected changed semantic content under an existing idempotency key, mutation of an applied revision, a `SUPPORTS` link to non-verified evidence, and both zero and multiple `APPLIES_TO` links when activating a `DIALECT` rule. Test fixtures were removed in the same database statement.
 
 Evidence remained at 110 total and 110 `VERIFIED`, with all provenance and extraction counts unchanged. Sources remained at 53 and use policies at 424. Reviewer and Auth counts remained unchanged. The pilot introduced no runtime table, serving projection, public view, grant, policy, function, or production record. A production read-only check confirmed zero canonical rules, promotions, and contributor-role assignments. The CLI link was restored to staging after that check.
+
+## Human review and production promotion
+
+Dr. Moody Amakobe approved all four statements, dialect scopes, evidence links, and conditions for provisional canonical promotion on 2026-09-27. The durable decision is recorded in `canonical_promotion_pilot_001_human_review.json`; the completed row-level review is recorded in `canonical_promotion_pilot_001_review_completed.csv`. Both artifacts are checksum-bound to the original manifest and review CSV using UTF-8 text normalized to LF line endings.
+
+The same four-rule transaction was then applied to production with a separate production flag and exact project-ref confirmation. Production contains four `PROVISIONAL` rules, four revision-1 records, four `APPLIES_TO` links, four `SUPPORTS` links, two conditions, four `APPLIED` promotions, eighteen outputs, and one bounded `CANONICAL_APPROVER` assignment. Staging and production normalized semantic digests match when environment UUIDs and audit dates are excluded.
+
+Production evidence remains at 110 total and 110 verified, sources remain at 53, and all reviewer, evaluation, Auth, dictionary, translation, concept, rights, and use-policy baseline counts are unchanged. No runtime eligibility, serving projection, public API, grant, policy, RPC, or security-definer function was added. The four rules remain non-executable canonical knowledge pending separate governance and evaluation.

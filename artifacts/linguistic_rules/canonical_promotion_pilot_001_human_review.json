@@ -1,0 +1,20 @@
+﻿{
+  "review_batch_key": "TAFSIRI_CANONICAL_REVIEW_PILOT_001",
+  "pilot": "CANONICAL_PROMOTION_PILOT_001",
+  "reviewer": "Dr. Moody Amakobe",
+  "reviewer_email": "moody.amakobe@gdsi.institute",
+  "reviewed_at": "2026-09-27T23:11:11Z",
+  "manifest_sha256": "2471c30bafeea9f5276176b4fd5066399f6c923f91e2894b0760890ee57a1f30",
+  "review_csv_sha256": "3f6ed32f5b8b787ea3aa8a6da9725dfffd64ea6e17f8053c91f7c69871517c5d",
+  "completed_review_csv_sha256": "6267ff064f09ec8ca3924904fdb809c7c227b32bc1bae2535bb6a7c154799926",
+  "approved_rule_count": 4,
+  "decision": "APPROVED_FOR_PROVISIONAL_CANONICAL_PROMOTION",
+  "runtime_approval": false,
+  "production_promotion_approved": true,
+  "approved_rule_keys": [
+    "BUKUSU_G2P_KH_001",
+    "BUKUSU_ALLOPHONY_B_001",
+    "LUWANGA_MORPHOPHONOLOGY_A_A_COALESCENCE_001",
+    "BUKUSU_ADJECTIVE_NOUN_CLASS_AGREEMENT_001"
+  ]
+}
