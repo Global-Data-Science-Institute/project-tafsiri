@@ -35,6 +35,14 @@ def test_architecture_requires_global_content_identity_and_no_speculative_backfi
     assert "two acquisition rows" in text
 
 
-def test_migration_010_has_not_been_created() -> None:
-    migrations = list((ROOT / "supabase" / "migrations").glob("*.sql"))
-    assert not any("artifact" in path.stem.lower() for path in migrations)
+def test_migration_010_implements_the_approved_minimum_without_seeding() -> None:
+    migrations = list((ROOT / "supabase" / "migrations").glob("*create_source_artifact_foundation.sql"))
+    assert len(migrations) == 1
+    sql = migrations[0].read_text(encoding="utf-8")
+    for table in (
+        "source_artifacts", "source_version_artifacts", "source_artifact_acquisitions",
+        "source_artifact_locations", "source_artifact_sets", "source_artifact_set_members",
+    ):
+        assert f"CREATE TABLE public.{table}" in sql
+    assert "ADD COLUMN source_artifact_id uuid" in sql
+    assert "INSERT INTO" not in sql.upper()
