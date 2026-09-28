@@ -1,0 +1,1309 @@
+{
+  "registration_key": "MARLO_SOURCE_REGISTRATION_001",
+  "schema_version": 1,
+  "intake_manifest": "config/sources/marlo_source_intake_001.json",
+  "provider_strategy": "USE_PROVIDER_NAME_FOR_NOW",
+  "contributor_recommendation": "USE_PROVIDER_NAME_FOR_NOW",
+  "acquisition_group_key": "MARLO_SOURCE_PACKAGE_2026_001",
+  "source_actions": [
+    {
+      "source_key": "LUBUKUSU_ENGLISH_DICTIONARY_2008",
+      "action": "REUSE",
+      "source_type": "DICTIONARY",
+      "title": "Lubukusu-English Dictionary"
+    },
+    {
+      "source_key": "WANGA_ENGLISH_DICTIONARY_2008",
+      "action": "REUSE",
+      "source_type": "DICTIONARY",
+      "title": "Luwanga-English Dictionary"
+    },
+    {
+      "source_key": "APPLEBY_1943_LULUHYA_ENGLISH_VOCABULARY",
+      "action": "CREATE",
+      "source_type": "LEXICON",
+      "title": "A Luluhya-English Vocabulary",
+      "authors_or_contributors": "L. L. Appleby",
+      "publisher_or_institution": "C. M. S., Maseno, Kenya",
+      "publication_year": 1943,
+      "citation": "Appleby, L. L. 1943. A Luluhya-English Vocabulary. C. M. S., Maseno, Kenya.",
+      "notes": "Historical vocabulary associated primarily with the Hanga grouping. Preserve its tentative scope and unresolved long-vowel, i/y, and u/w orthographic conventions; it is not generic modern pan-Luhya canonical truth.",
+      "id": "efe3529d-6a75-5d86-ae4a-6010b143adac"
+    },
+    {
+      "source_key": "FRIENDS_AFRICA_MISSION_1940_LURAGOLI_ENGLISH_VOCABULARY",
+      "action": "CREATE",
+      "source_type": "LEXICON",
+      "title": "Luragoli-English Vocabulary",
+      "publisher_or_institution": "Friends Africa Mission Press",
+      "publication_year": 1940,
+      "citation": "Friends Africa Mission Press. 1940. Luragoli-English Vocabulary.",
+      "notes": "Historical Luragoli-English vocabulary. Preserve the source's raw historical spelling and terminology; inspected front matter does not identify an individual author.",
+      "id": "eaefa7b1-b0b0-5031-b77b-0bb33b90da70"
+    },
+    {
+      "source_key": "NDANYI_NDANYI_2005_LULOGOOLI_DICTIONARY",
+      "action": "CREATE",
+      "source_type": "DICTIONARY",
+      "title": "Amang’ana go Lulimi lwo Lulogooli",
+      "authors_or_contributors": "Elisha Ugaada Ndanyi; Joseph Olindo Ndanyi",
+      "publication_year": 2005,
+      "citation": "Ndanyi, Elisha Ugaada and Joseph Olindo Ndanyi. 2005. Amang’ana go Lulimi lwo Lulogooli. ISBN 9966-7090-0-2.",
+      "notes": "One intellectual work represented by five ordered scan components. Raw label Lulogooli is preserved; canonical Maragoli mapping remains unresolved pending expert confirmation.",
+      "id": "6ef879fc-2185-5b6c-9a65-93993c230a11"
+    },
+    {
+      "source_key": "MARLO_LUYIA_COMPARATIVE_DICTIONARY_WORKBOOK",
+      "action": "CREATE",
+      "source_type": "DATASET",
+      "title": "Luyia Comparative Dictionary Workbook",
+      "authors_or_contributors": "Michael R. Marlo; Jacinta B. G. Marlo",
+      "citation": "Marlo, Michael R. and Jacinta B. G. Marlo. Luyia comparative dictionary workbook. Working dataset, modified 2010-01-24.",
+      "notes": "Source-provided cross-variety correspondences are not canonical equivalence assertions. Preserve raw labels Appleby, Kisa, Tsotso, Wanga, and Bukusu.",
+      "id": "6c3c415a-4125-5545-9fe7-cbd606532b5b"
+    },
+    {
+      "source_key": "MARLO_IDAKHO_COMPARATIVE_WORKBOOK",
+      "action": "CREATE",
+      "source_type": "DATASET",
+      "title": "Idakho Comparative Workbook",
+      "authors_or_contributors": "Michael R. Marlo; Jacinta B. G. Marlo",
+      "citation": "Marlo, Michael R. and Jacinta B. G. Marlo. Idakho comparative workbook. Working dataset, modified 2010-01-24.",
+      "notes": "Preserve Idakho_1 and Idakho_2 as distinct raw columns. Their intended linguistic distinction remains unresolved.",
+      "id": "8323d317-f249-58c5-9f33-37b33069f65b"
+    },
+    {
+      "source_key": "MARLO_TURA_LUTURA_COMPARATIVE_WORKBOOK",
+      "action": "CREATE",
+      "source_type": "DATASET",
+      "title": "Tura/Lutura Comparative Workbook",
+      "authors_or_contributors": "Jacinta B. G. Marlo",
+      "citation": "Marlo, Jacinta B. G. Tura/Lutura comparative workbook. Working dataset, modified 2010-01-24.",
+      "notes": "Preserve Tura and Lutura as raw labels. Their canonical linguistic classification remains unresolved pending expert confirmation.",
+      "id": "2e3a7053-55d6-594f-b423-5045f4b92532"
+    }
+  ],
+  "version_actions": [
+    {
+      "action": "REUSE",
+      "source_key": "LUBUKUSU_ENGLISH_DICTIONARY_2008",
+      "version_key": "DRAFT_2008_09_01",
+      "checksum": null,
+      "checksum_algorithm": null,
+      "notes": "Exact binary identity is represented by Migration 010 artifacts; legacy source-version checksum fields remain NULL."
+    },
+    {
+      "action": "REUSE",
+      "source_key": "WANGA_ENGLISH_DICTIONARY_2008",
+      "version_key": "PRELIMINARY_DRAFT_2008",
+      "checksum": null,
+      "checksum_algorithm": null,
+      "notes": "Exact binary identity is represented by Migration 010 artifacts; legacy source-version checksum fields remain NULL."
+    },
+    {
+      "action": "CREATE",
+      "source_key": "APPLEBY_1943_LULUHYA_ENGLISH_VOCABULARY",
+      "version_key": "PUBLICATION_1943_SCAN",
+      "id": "8033475c-d293-5d4d-900d-424d6ec371ac",
+      "checksum": null,
+      "checksum_algorithm": null,
+      "notes": "Exact binary identity is represented by Migration 010 artifacts; legacy source-version checksum fields remain NULL."
+    },
+    {
+      "action": "CREATE",
+      "source_key": "FRIENDS_AFRICA_MISSION_1940_LURAGOLI_ENGLISH_VOCABULARY",
+      "version_key": "PUBLICATION_1940_SCAN",
+      "id": "196d7b2e-e80d-5057-a6af-70f9373eb39d",
+      "checksum": null,
+      "checksum_algorithm": null,
+      "notes": "Exact binary identity is represented by Migration 010 artifacts; legacy source-version checksum fields remain NULL."
+    },
+    {
+      "action": "CREATE",
+      "source_key": "NDANYI_NDANYI_2005_LULOGOOLI_DICTIONARY",
+      "version_key": "PUBLICATION_2005_FIVE_PART_SCAN",
+      "id": "39ccb0f7-4504-5205-8310-7a4eff6afc1a",
+      "checksum": null,
+      "checksum_algorithm": null,
+      "notes": "Exact binary identity is represented by Migration 010 artifacts; legacy source-version checksum fields remain NULL."
+    },
+    {
+      "action": "CREATE",
+      "source_key": "MARLO_LUYIA_COMPARATIVE_DICTIONARY_WORKBOOK",
+      "version_key": "WORKBOOK_MODIFIED_2010_01_24",
+      "id": "776bfd9f-c6ca-55b1-b7b2-3f1bd7717744",
+      "checksum": null,
+      "checksum_algorithm": null,
+      "notes": "Exact binary identity is represented by Migration 010 artifacts; legacy source-version checksum fields remain NULL."
+    },
+    {
+      "action": "CREATE",
+      "source_key": "MARLO_IDAKHO_COMPARATIVE_WORKBOOK",
+      "version_key": "WORKBOOK_MODIFIED_2010_01_24",
+      "id": "d0591157-0f1c-5d2b-8e75-e5222e9518de",
+      "checksum": null,
+      "checksum_algorithm": null,
+      "notes": "Exact binary identity is represented by Migration 010 artifacts; legacy source-version checksum fields remain NULL."
+    },
+    {
+      "action": "CREATE",
+      "source_key": "MARLO_TURA_LUTURA_COMPARATIVE_WORKBOOK",
+      "version_key": "WORKBOOK_MODIFIED_2010_01_24",
+      "id": "ddc376a0-547e-58cb-8fdf-c5d7bb927284",
+      "checksum": null,
+      "checksum_algorithm": null,
+      "notes": "Exact binary identity is represented by Migration 010 artifacts; legacy source-version checksum fields remain NULL."
+    }
+  ],
+  "artifact_actions": [
+    {
+      "action": "CREATE",
+      "id": "0b3e0978-511c-56ce-b952-98ce10fd7a67",
+      "artifact_key": "ART_SHA256_17049B6F0EEB5ACEE8A05347",
+      "checksum_algorithm": "SHA256",
+      "checksum": "17049b6f0eeb5acee8a05347614a4c4fc8089b17ea94bddd1798ae156a22a31d",
+      "byte_size": 816378,
+      "media_type": "application/pdf",
+      "artifact_kind": "SOURCE_REPRESENTATION",
+      "artifact_status": "REGISTERED",
+      "page_count": 107,
+      "workbook_sheet_count": null,
+      "notes": "Exact bytes received in Michael Marlo Source Intake 001; registration does not establish copyright permission."
+    },
+    {
+      "action": "CREATE",
+      "id": "d75290bf-320d-5c71-a966-1c866d2cd011",
+      "artifact_key": "ART_SHA256_BFEF4E5C916BDA08E76E876F",
+      "checksum_algorithm": "SHA256",
+      "checksum": "bfef4e5c916bda08e76e876ff3d52ff7f63f7893b28537f1191c4ecc1ee5e603",
+      "byte_size": 8385409,
+      "media_type": "application/pdf",
+      "artifact_kind": "SOURCE_REPRESENTATION",
+      "artifact_status": "REGISTERED",
+      "page_count": 110,
+      "workbook_sheet_count": null,
+      "notes": "Exact bytes received in Michael Marlo Source Intake 001; registration does not establish copyright permission."
+    },
+    {
+      "action": "CREATE",
+      "id": "8b276f1d-4a25-5731-855b-80352106b86b",
+      "artifact_key": "ART_SHA256_FFF3D3D949A5D6C0ECC8D465",
+      "checksum_algorithm": "SHA256",
+      "checksum": "fff3d3d949a5d6c0ecc8d4656b0ae69f08a60f972aded00b50c8b6f3b80e28d8",
+      "byte_size": 3870213,
+      "media_type": "application/pdf",
+      "artifact_kind": "SOURCE_REPRESENTATION",
+      "artifact_status": "REGISTERED",
+      "page_count": 30,
+      "workbook_sheet_count": null,
+      "notes": "Exact bytes received in Michael Marlo Source Intake 001; registration does not establish copyright permission."
+    },
+    {
+      "action": "CREATE",
+      "id": "14c47c95-495b-50c5-aef1-5710e2d7fec7",
+      "artifact_key": "ART_SHA256_8BEDFDBC9A3CD8D207D19D5A",
+      "checksum_algorithm": "SHA256",
+      "checksum": "8bedfdbc9a3cd8d207d19d5a7f32251dba3270a9152683d7243a815b7623d6ea",
+      "byte_size": 5418838,
+      "media_type": "application/pdf",
+      "artifact_kind": "SOURCE_REPRESENTATION",
+      "artifact_status": "REGISTERED",
+      "page_count": 30,
+      "workbook_sheet_count": null,
+      "notes": "Exact bytes received in Michael Marlo Source Intake 001; registration does not establish copyright permission."
+    },
+    {
+      "action": "CREATE",
+      "id": "109a45f9-aa78-57d7-a25d-eb69bf6da14e",
+      "artifact_key": "ART_SHA256_0CF31B00FFDD353D436AE394",
+      "checksum_algorithm": "SHA256",
+      "checksum": "0cf31b00ffdd353d436ae3945debd79b1cc0e04e676baddcbcda37a32918117a",
+      "byte_size": 5185084,
+      "media_type": "application/pdf",
+      "artifact_kind": "SOURCE_REPRESENTATION",
+      "artifact_status": "REGISTERED",
+      "page_count": 30,
+      "workbook_sheet_count": null,
+      "notes": "Exact bytes received in Michael Marlo Source Intake 001; registration does not establish copyright permission."
+    },
+    {
+      "action": "CREATE",
+      "id": "81fd5bf6-130d-5773-862b-5a8938ee6bd6",
+      "artifact_key": "ART_SHA256_D1DCF87234C1F27CAE0B0010",
+      "checksum_algorithm": "SHA256",
+      "checksum": "d1dcf87234c1f27cae0b0010b6f1a3f3ee93875f0125b660052cf100e273da51",
+      "byte_size": 5520660,
+      "media_type": "application/pdf",
+      "artifact_kind": "SOURCE_REPRESENTATION",
+      "artifact_status": "REGISTERED",
+      "page_count": 30,
+      "workbook_sheet_count": null,
+      "notes": "Exact bytes received in Michael Marlo Source Intake 001; registration does not establish copyright permission."
+    },
+    {
+      "action": "CREATE",
+      "id": "9c0a4c2b-7b4a-520b-99eb-0c92ce0954ab",
+      "artifact_key": "ART_SHA256_3DCD2BCA00136ED6FBDAD0B4",
+      "checksum_algorithm": "SHA256",
+      "checksum": "3dcd2bca00136ed6fbdad0b40f9fd031ff849d5a6616d42407ee6fc3d555f404",
+      "byte_size": 3543154,
+      "media_type": "application/pdf",
+      "artifact_kind": "SOURCE_REPRESENTATION",
+      "artifact_status": "REGISTERED",
+      "page_count": 21,
+      "workbook_sheet_count": null,
+      "notes": "Exact bytes received in Michael Marlo Source Intake 001; registration does not establish copyright permission."
+    },
+    {
+      "action": "CREATE",
+      "id": "4356563a-4a60-5d61-8b4f-632cfb7392f6",
+      "artifact_key": "ART_SHA256_727C59A413D1521A910A0F46",
+      "checksum_algorithm": "SHA256",
+      "checksum": "727c59a413d1521a910a0f46d0e9d91b1544cab500444c19f5aee3fef381ecb4",
+      "byte_size": 876590,
+      "media_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "artifact_kind": "SOURCE_REPRESENTATION",
+      "artifact_status": "REGISTERED",
+      "page_count": null,
+      "workbook_sheet_count": 2,
+      "notes": "Exact bytes received in Michael Marlo Source Intake 001; registration does not establish copyright permission."
+    },
+    {
+      "action": "CREATE",
+      "id": "895338ab-b8bb-527a-bd0e-6943c4753fc2",
+      "artifact_key": "ART_SHA256_6E7E0DE9189AF133B3557032",
+      "checksum_algorithm": "SHA256",
+      "checksum": "6e7e0de9189af133b3557032639cb24a8f32b5fd8612e097b607cc1485b8d02c",
+      "byte_size": 353686,
+      "media_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "artifact_kind": "SOURCE_REPRESENTATION",
+      "artifact_status": "REGISTERED",
+      "page_count": null,
+      "workbook_sheet_count": 3,
+      "notes": "Exact bytes received in Michael Marlo Source Intake 001; registration does not establish copyright permission."
+    },
+    {
+      "action": "CREATE",
+      "id": "ea42c0ed-e7fc-5464-9f0a-2168f566725c",
+      "artifact_key": "ART_SHA256_0483DE7C6CCDBDCC7206A38D",
+      "checksum_algorithm": "SHA256",
+      "checksum": "0483de7c6ccdbdcc7206a38dd39e2d74f01908010e1bf7a1b197959f76c1311d",
+      "byte_size": 560154,
+      "media_type": "application/pdf",
+      "artifact_kind": "SOURCE_REPRESENTATION",
+      "artifact_status": "REGISTERED",
+      "page_count": 77,
+      "workbook_sheet_count": null,
+      "notes": "Exact bytes received in Michael Marlo Source Intake 001; registration does not establish copyright permission."
+    },
+    {
+      "action": "CREATE",
+      "id": "477cc129-9daa-5533-9a55-02c1d3d55019",
+      "artifact_key": "ART_SHA256_CEF46056B2CBEB488C81D6FA",
+      "checksum_algorithm": "SHA256",
+      "checksum": "cef46056b2cbeb488c81d6fa8793d349b00c6f8be98ef577f949a0f0c0e9f6ba",
+      "byte_size": 2782492,
+      "media_type": "application/pdf",
+      "artifact_kind": "SOURCE_REPRESENTATION",
+      "artifact_status": "REGISTERED",
+      "page_count": 123,
+      "workbook_sheet_count": null,
+      "notes": "Exact bytes received in Michael Marlo Source Intake 001; registration does not establish copyright permission."
+    },
+    {
+      "action": "CREATE",
+      "id": "ace82bd5-fe56-5fc0-bcda-fd4449556416",
+      "artifact_key": "ART_SHA256_13A23808A219C74FC284B48C",
+      "checksum_algorithm": "SHA256",
+      "checksum": "13a23808a219c74fc284b48c264f17c068f23f7e8d64667e754c599a70f98445",
+      "byte_size": 321698,
+      "media_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "artifact_kind": "SOURCE_REPRESENTATION",
+      "artifact_status": "REGISTERED",
+      "page_count": null,
+      "workbook_sheet_count": 3,
+      "notes": "Exact bytes received in Michael Marlo Source Intake 001; registration does not establish copyright permission."
+    }
+  ],
+  "association_actions": [
+    {
+      "action": "CREATE",
+      "id": "fd29e283-af22-5740-bcb7-794bb19d18a6",
+      "source_key": "LUBUKUSU_ENGLISH_DICTIONARY_2008",
+      "version_key": "DRAFT_2008_09_01",
+      "artifact_key": "ART_SHA256_17049B6F0EEB5ACEE8A05347",
+      "artifact_role": "RECEIVED_COPY",
+      "is_preferred": true,
+      "notes": "Preferred means Tafsiri processing/reference representation only; it conveys no linguistic or legal authority."
+    },
+    {
+      "action": "CREATE",
+      "id": "11a306c7-177e-5ba7-83ed-a187df58a778",
+      "source_key": "FRIENDS_AFRICA_MISSION_1940_LURAGOLI_ENGLISH_VOCABULARY",
+      "version_key": "PUBLICATION_1940_SCAN",
+      "artifact_key": "ART_SHA256_BFEF4E5C916BDA08E76E876F",
+      "artifact_role": "RECEIVED_COPY",
+      "is_preferred": true,
+      "notes": "Preferred means Tafsiri processing/reference representation only; it conveys no linguistic or legal authority."
+    },
+    {
+      "action": "CREATE",
+      "id": "34d2c917-934c-5b25-9b31-f6477e8f8d9c",
+      "source_key": "NDANYI_NDANYI_2005_LULOGOOLI_DICTIONARY",
+      "version_key": "PUBLICATION_2005_FIVE_PART_SCAN",
+      "artifact_key": "ART_SHA256_FFF3D3D949A5D6C0ECC8D465",
+      "artifact_role": "RECEIVED_COPY",
+      "is_preferred": false,
+      "notes": "Multipart component represented through the ordered artifact set; no single component is preferred for the version."
+    },
+    {
+      "action": "CREATE",
+      "id": "04a5c0d4-8fdf-55fd-a104-5ac988b66a86",
+      "source_key": "NDANYI_NDANYI_2005_LULOGOOLI_DICTIONARY",
+      "version_key": "PUBLICATION_2005_FIVE_PART_SCAN",
+      "artifact_key": "ART_SHA256_8BEDFDBC9A3CD8D207D19D5A",
+      "artifact_role": "RECEIVED_COPY",
+      "is_preferred": false,
+      "notes": "Multipart component represented through the ordered artifact set; no single component is preferred for the version."
+    },
+    {
+      "action": "CREATE",
+      "id": "8f395a7e-b4c1-5cdf-8095-a4191556b96c",
+      "source_key": "NDANYI_NDANYI_2005_LULOGOOLI_DICTIONARY",
+      "version_key": "PUBLICATION_2005_FIVE_PART_SCAN",
+      "artifact_key": "ART_SHA256_0CF31B00FFDD353D436AE394",
+      "artifact_role": "RECEIVED_COPY",
+      "is_preferred": false,
+      "notes": "Multipart component represented through the ordered artifact set; no single component is preferred for the version."
+    },
+    {
+      "action": "CREATE",
+      "id": "c67f6b0b-2060-5a8b-a098-2a9ccab27621",
+      "source_key": "NDANYI_NDANYI_2005_LULOGOOLI_DICTIONARY",
+      "version_key": "PUBLICATION_2005_FIVE_PART_SCAN",
+      "artifact_key": "ART_SHA256_D1DCF87234C1F27CAE0B0010",
+      "artifact_role": "RECEIVED_COPY",
+      "is_preferred": false,
+      "notes": "Multipart component represented through the ordered artifact set; no single component is preferred for the version."
+    },
+    {
+      "action": "CREATE",
+      "id": "bd49f8ab-4c1f-549c-bbec-0db5c16269b4",
+      "source_key": "NDANYI_NDANYI_2005_LULOGOOLI_DICTIONARY",
+      "version_key": "PUBLICATION_2005_FIVE_PART_SCAN",
+      "artifact_key": "ART_SHA256_3DCD2BCA00136ED6FBDAD0B4",
+      "artifact_role": "RECEIVED_COPY",
+      "is_preferred": false,
+      "notes": "Multipart component represented through the ordered artifact set; no single component is preferred for the version."
+    },
+    {
+      "action": "CREATE",
+      "id": "03868691-5e95-594d-ac96-29681a861bd2",
+      "source_key": "MARLO_LUYIA_COMPARATIVE_DICTIONARY_WORKBOOK",
+      "version_key": "WORKBOOK_MODIFIED_2010_01_24",
+      "artifact_key": "ART_SHA256_727C59A413D1521A910A0F46",
+      "artifact_role": "RECEIVED_COPY",
+      "is_preferred": true,
+      "notes": "Preferred means Tafsiri processing/reference representation only; it conveys no linguistic or legal authority."
+    },
+    {
+      "action": "CREATE",
+      "id": "dd60e91f-86da-5461-bd91-bad82ad586be",
+      "source_key": "MARLO_IDAKHO_COMPARATIVE_WORKBOOK",
+      "version_key": "WORKBOOK_MODIFIED_2010_01_24",
+      "artifact_key": "ART_SHA256_6E7E0DE9189AF133B3557032",
+      "artifact_role": "RECEIVED_COPY",
+      "is_preferred": true,
+      "notes": "Preferred means Tafsiri processing/reference representation only; it conveys no linguistic or legal authority."
+    },
+    {
+      "action": "CREATE",
+      "id": "e28091b1-7030-5b98-b553-cd23213f959b",
+      "source_key": "WANGA_ENGLISH_DICTIONARY_2008",
+      "version_key": "PRELIMINARY_DRAFT_2008",
+      "artifact_key": "ART_SHA256_0483DE7C6CCDBDCC7206A38D",
+      "artifact_role": "RECEIVED_COPY",
+      "is_preferred": true,
+      "notes": "Preferred means Tafsiri processing/reference representation only; it conveys no linguistic or legal authority."
+    },
+    {
+      "action": "CREATE",
+      "id": "0b4ec91b-54ce-5fe6-adc7-47be7706d4cf",
+      "source_key": "APPLEBY_1943_LULUHYA_ENGLISH_VOCABULARY",
+      "version_key": "PUBLICATION_1943_SCAN",
+      "artifact_key": "ART_SHA256_CEF46056B2CBEB488C81D6FA",
+      "artifact_role": "RECEIVED_COPY",
+      "is_preferred": true,
+      "notes": "Preferred means Tafsiri processing/reference representation only; it conveys no linguistic or legal authority."
+    },
+    {
+      "action": "CREATE",
+      "id": "f397052b-4fb6-56ad-8171-79885af7d140",
+      "source_key": "MARLO_TURA_LUTURA_COMPARATIVE_WORKBOOK",
+      "version_key": "WORKBOOK_MODIFIED_2010_01_24",
+      "artifact_key": "ART_SHA256_13A23808A219C74FC284B48C",
+      "artifact_role": "RECEIVED_COPY",
+      "is_preferred": true,
+      "notes": "Preferred means Tafsiri processing/reference representation only; it conveys no linguistic or legal authority."
+    }
+  ],
+  "acquisition_actions": [
+    {
+      "action": "CREATE",
+      "id": "d90263b1-a14d-5e9d-9e0f-aa64460439d7",
+      "acquisition_key": "ACQ_MARLO001_17049B6F0EEB5ACE_975D85E2F8",
+      "artifact_key": "ART_SHA256_17049B6F0EEB5ACEE8A05347",
+      "acquisition_type": "DIRECT_RESEARCHER_PROVISION",
+      "acquired_at": "2026-04-14T00:00:00Z",
+      "original_filename": "BukusuDictionary09012008.pdf",
+      "provider_contributor_id": null,
+      "provider_name": "Professor Michael R. Marlo",
+      "acquisition_channel": "EMAIL",
+      "acquisition_group_key": "MARLO_SOURCE_PACKAGE_2026_001",
+      "evidence_reference": "PRIVATE_CORRESPONDENCE_REVIEWED_NOT_COMMITTED",
+      "notes": "Physical file receipt provenance only; private email contents are not stored."
+    },
+    {
+      "action": "CREATE",
+      "id": "b7ede121-ecb6-5eb1-8289-934403d61b0f",
+      "acquisition_key": "ACQ_MARLO001_BFEF4E5C916BDA08_48F177716F",
+      "artifact_key": "ART_SHA256_BFEF4E5C916BDA08E76E876F",
+      "acquisition_type": "DIRECT_RESEARCHER_PROVISION",
+      "acquired_at": "2026-04-14T00:00:00Z",
+      "original_filename": "Friends1940LuragoliEnglishVocabulary.pdf",
+      "provider_contributor_id": null,
+      "provider_name": "Professor Michael R. Marlo",
+      "acquisition_channel": "EMAIL",
+      "acquisition_group_key": "MARLO_SOURCE_PACKAGE_2026_001",
+      "evidence_reference": "PRIVATE_CORRESPONDENCE_REVIEWED_NOT_COMMITTED",
+      "notes": "Physical file receipt provenance only; private email contents are not stored."
+    },
+    {
+      "action": "CREATE",
+      "id": "0cf6c9b3-8b2e-52ae-b176-d894f0a55a4e",
+      "acquisition_key": "ACQ_MARLO001_FFF3D3D949A5D6C0_D6A52716EF",
+      "artifact_key": "ART_SHA256_FFF3D3D949A5D6C0ECC8D465",
+      "acquisition_type": "DIRECT_RESEARCHER_PROVISION",
+      "acquired_at": "2026-04-14T00:00:00Z",
+      "original_filename": "Ndanyi&Ndanyi2005LogooriDictionary_small_Part1.pdf",
+      "provider_contributor_id": null,
+      "provider_name": "Professor Michael R. Marlo",
+      "acquisition_channel": "EMAIL",
+      "acquisition_group_key": "MARLO_SOURCE_PACKAGE_2026_001",
+      "evidence_reference": "PRIVATE_CORRESPONDENCE_REVIEWED_NOT_COMMITTED",
+      "notes": "Physical file receipt provenance only; private email contents are not stored."
+    },
+    {
+      "action": "CREATE",
+      "id": "496b75c1-19fc-5e5b-a996-ebcbbdf71ea0",
+      "acquisition_key": "ACQ_MARLO001_8BEDFDBC9A3CD8D2_F052A020B3",
+      "artifact_key": "ART_SHA256_8BEDFDBC9A3CD8D207D19D5A",
+      "acquisition_type": "DIRECT_RESEARCHER_PROVISION",
+      "acquired_at": "2026-04-14T00:00:00Z",
+      "original_filename": "Ndanyi&Ndanyi2005LogooriDictionary_small_Part2.pdf",
+      "provider_contributor_id": null,
+      "provider_name": "Professor Michael R. Marlo",
+      "acquisition_channel": "EMAIL",
+      "acquisition_group_key": "MARLO_SOURCE_PACKAGE_2026_001",
+      "evidence_reference": "PRIVATE_CORRESPONDENCE_REVIEWED_NOT_COMMITTED",
+      "notes": "Physical file receipt provenance only; private email contents are not stored."
+    },
+    {
+      "action": "CREATE",
+      "id": "ffb991e1-0c6a-52c8-b447-252116b10372",
+      "acquisition_key": "ACQ_MARLO001_0CF31B00FFDD353D_F87925B802",
+      "artifact_key": "ART_SHA256_0CF31B00FFDD353D436AE394",
+      "acquisition_type": "DIRECT_RESEARCHER_PROVISION",
+      "acquired_at": "2026-04-14T00:00:00Z",
+      "original_filename": "Ndanyi&Ndanyi2005LogooriDictionary_small_Part3.pdf",
+      "provider_contributor_id": null,
+      "provider_name": "Professor Michael R. Marlo",
+      "acquisition_channel": "EMAIL",
+      "acquisition_group_key": "MARLO_SOURCE_PACKAGE_2026_001",
+      "evidence_reference": "PRIVATE_CORRESPONDENCE_REVIEWED_NOT_COMMITTED",
+      "notes": "Physical file receipt provenance only; private email contents are not stored."
+    },
+    {
+      "action": "CREATE",
+      "id": "2b9ee4ae-1851-5174-9258-89162acb5468",
+      "acquisition_key": "ACQ_MARLO001_D1DCF87234C1F27C_6FEE9A156D",
+      "artifact_key": "ART_SHA256_D1DCF87234C1F27CAE0B0010",
+      "acquisition_type": "DIRECT_RESEARCHER_PROVISION",
+      "acquired_at": "2026-04-14T00:00:00Z",
+      "original_filename": "Ndanyi&Ndanyi2005LogooriDictionary_small_Part4.pdf",
+      "provider_contributor_id": null,
+      "provider_name": "Professor Michael R. Marlo",
+      "acquisition_channel": "EMAIL",
+      "acquisition_group_key": "MARLO_SOURCE_PACKAGE_2026_001",
+      "evidence_reference": "PRIVATE_CORRESPONDENCE_REVIEWED_NOT_COMMITTED",
+      "notes": "Physical file receipt provenance only; private email contents are not stored."
+    },
+    {
+      "action": "CREATE",
+      "id": "d301e727-3f8f-5086-9c90-af9727518ad1",
+      "acquisition_key": "ACQ_MARLO001_3DCD2BCA00136ED6_94EE4A8C56",
+      "artifact_key": "ART_SHA256_3DCD2BCA00136ED6FBDAD0B4",
+      "acquisition_type": "DIRECT_RESEARCHER_PROVISION",
+      "acquired_at": "2026-04-14T00:00:00Z",
+      "original_filename": "Ndanyi&Ndanyi2005LogooriDictionary_small_Part5.pdf",
+      "provider_contributor_id": null,
+      "provider_name": "Professor Michael R. Marlo",
+      "acquisition_channel": "EMAIL",
+      "acquisition_group_key": "MARLO_SOURCE_PACKAGE_2026_001",
+      "evidence_reference": "PRIVATE_CORRESPONDENCE_REVIEWED_NOT_COMMITTED",
+      "notes": "Physical file receipt provenance only; private email contents are not stored."
+    },
+    {
+      "action": "CREATE",
+      "id": "1e1601de-575b-5ba6-999d-80fd857c2aba",
+      "acquisition_key": "ACQ_MARLO001_3DCD2BCA00136ED6_8986743E59",
+      "artifact_key": "ART_SHA256_3DCD2BCA00136ED6FBDAD0B4",
+      "acquisition_type": "DIRECT_RESEARCHER_PROVISION",
+      "acquired_at": "2026-04-14T00:00:00Z",
+      "original_filename": "Ndanyi&Ndanyi2005LogooriDictionary_small_Part5 (1).pdf",
+      "provider_contributor_id": null,
+      "provider_name": "Professor Michael R. Marlo",
+      "acquisition_channel": "EMAIL",
+      "acquisition_group_key": "MARLO_SOURCE_PACKAGE_2026_001",
+      "evidence_reference": "PRIVATE_CORRESPONDENCE_REVIEWED_NOT_COMMITTED",
+      "notes": "Physical file receipt provenance only; private email contents are not stored."
+    },
+    {
+      "action": "CREATE",
+      "id": "5537c6ff-479e-5f10-9dce-450a6ef4ebdd",
+      "acquisition_key": "ACQ_MARLO001_727C59A413D1521A_7A2644A7CC",
+      "artifact_key": "ART_SHA256_727C59A413D1521A910A0F46",
+      "acquisition_type": "DIRECT_RESEARCHER_PROVISION",
+      "acquired_at": "2026-04-14T00:00:00Z",
+      "original_filename": "LuyiaDictionary.xlsx",
+      "provider_contributor_id": null,
+      "provider_name": "Professor Michael R. Marlo",
+      "acquisition_channel": "EMAIL",
+      "acquisition_group_key": "MARLO_SOURCE_PACKAGE_2026_001",
+      "evidence_reference": "PRIVATE_CORRESPONDENCE_REVIEWED_NOT_COMMITTED",
+      "notes": "Physical file receipt provenance only; private email contents are not stored."
+    },
+    {
+      "action": "CREATE",
+      "id": "2cb778a3-2094-5e42-9c40-05691042140e",
+      "acquisition_key": "ACQ_MARLO001_6E7E0DE9189AF133_490BA4A8F8",
+      "artifact_key": "ART_SHA256_6E7E0DE9189AF133B3557032",
+      "acquisition_type": "DIRECT_RESEARCHER_PROVISION",
+      "acquired_at": "2026-04-14T00:00:00Z",
+      "original_filename": "Idakho_combined.xlsx",
+      "provider_contributor_id": null,
+      "provider_name": "Professor Michael R. Marlo",
+      "acquisition_channel": "EMAIL",
+      "acquisition_group_key": "MARLO_SOURCE_PACKAGE_2026_001",
+      "evidence_reference": "PRIVATE_CORRESPONDENCE_REVIEWED_NOT_COMMITTED",
+      "notes": "Physical file receipt provenance only; private email contents are not stored."
+    },
+    {
+      "action": "CREATE",
+      "id": "75843b26-d78c-5169-b140-6326f9432fb2",
+      "acquisition_key": "ACQ_MARLO001_0483DE7C6CCDBDCC_9361FE6B17",
+      "artifact_key": "ART_SHA256_0483DE7C6CCDBDCC7206A38D",
+      "acquisition_type": "DIRECT_RESEARCHER_PROVISION",
+      "acquired_at": "2026-04-14T00:00:00Z",
+      "original_filename": "WangaDictionary09012008.pdf",
+      "provider_contributor_id": null,
+      "provider_name": "Professor Michael R. Marlo",
+      "acquisition_channel": "EMAIL",
+      "acquisition_group_key": "MARLO_SOURCE_PACKAGE_2026_001",
+      "evidence_reference": "PRIVATE_CORRESPONDENCE_REVIEWED_NOT_COMMITTED",
+      "notes": "Physical file receipt provenance only; private email contents are not stored."
+    },
+    {
+      "action": "CREATE",
+      "id": "547406fe-19aa-59b6-88f6-b16967882279",
+      "acquisition_key": "ACQ_MARLO001_CEF46056B2CBEB48_B0B3B84443",
+      "artifact_key": "ART_SHA256_CEF46056B2CBEB488C81D6FA",
+      "acquisition_type": "DIRECT_RESEARCHER_PROVISION",
+      "acquired_at": "2026-04-14T00:00:00Z",
+      "original_filename": "Appleby1943dictionary.pdf",
+      "provider_contributor_id": null,
+      "provider_name": "Professor Michael R. Marlo",
+      "acquisition_channel": "EMAIL",
+      "acquisition_group_key": "MARLO_SOURCE_PACKAGE_2026_001",
+      "evidence_reference": "PRIVATE_CORRESPONDENCE_REVIEWED_NOT_COMMITTED",
+      "notes": "Physical file receipt provenance only; private email contents are not stored."
+    },
+    {
+      "action": "CREATE",
+      "id": "d973bfa0-7952-5548-8811-17325af7fc57",
+      "acquisition_key": "ACQ_MARLO001_13A23808A219C74F_ED80CAB6B5",
+      "artifact_key": "ART_SHA256_13A23808A219C74FC284B48C",
+      "acquisition_type": "DIRECT_RESEARCHER_PROVISION",
+      "acquired_at": "2026-04-14T00:00:00Z",
+      "original_filename": "Tura.xlsx",
+      "provider_contributor_id": null,
+      "provider_name": "Professor Michael R. Marlo",
+      "acquisition_channel": "EMAIL",
+      "acquisition_group_key": "MARLO_SOURCE_PACKAGE_2026_001",
+      "evidence_reference": "PRIVATE_CORRESPONDENCE_REVIEWED_NOT_COMMITTED",
+      "notes": "Physical file receipt provenance only; private email contents are not stored."
+    }
+  ],
+  "location_actions": [],
+  "rights_actions": [
+    {
+      "action": "CREATE",
+      "id": "34943f2b-4c7e-5d9e-b96d-23cc34c1437b",
+      "source_key": "APPLEBY_1943_LULUHYA_ENGLISH_VOCABULARY",
+      "version_key": "PUBLICATION_1943_SCAN",
+      "rights_status": "UNKNOWN",
+      "evidence_reference": "MARLO_SOURCE_INTAKE_001",
+      "notes": "Direct provision establishes provenance, not permission or an open license."
+    },
+    {
+      "action": "CREATE",
+      "id": "8124decc-0119-5868-b1ea-7e1b8f8f14fd",
+      "source_key": "FRIENDS_AFRICA_MISSION_1940_LURAGOLI_ENGLISH_VOCABULARY",
+      "version_key": "PUBLICATION_1940_SCAN",
+      "rights_status": "UNKNOWN",
+      "evidence_reference": "MARLO_SOURCE_INTAKE_001",
+      "notes": "Direct provision establishes provenance, not permission or an open license."
+    },
+    {
+      "action": "CREATE",
+      "id": "ca8f2bb3-7e3e-577e-8c4b-c6839e58e5a6",
+      "source_key": "NDANYI_NDANYI_2005_LULOGOOLI_DICTIONARY",
+      "version_key": "PUBLICATION_2005_FIVE_PART_SCAN",
+      "rights_status": "UNKNOWN",
+      "evidence_reference": "MARLO_SOURCE_INTAKE_001",
+      "notes": "Direct provision establishes provenance, not permission or an open license."
+    },
+    {
+      "action": "CREATE",
+      "id": "8a37b624-4e56-5684-9a65-8498911660db",
+      "source_key": "MARLO_LUYIA_COMPARATIVE_DICTIONARY_WORKBOOK",
+      "version_key": "WORKBOOK_MODIFIED_2010_01_24",
+      "rights_status": "UNKNOWN",
+      "evidence_reference": "MARLO_SOURCE_INTAKE_001",
+      "notes": "Direct provision establishes provenance, not permission or an open license."
+    },
+    {
+      "action": "CREATE",
+      "id": "d60a3aa5-ca2e-5958-98bb-fa75bfdb51a6",
+      "source_key": "MARLO_IDAKHO_COMPARATIVE_WORKBOOK",
+      "version_key": "WORKBOOK_MODIFIED_2010_01_24",
+      "rights_status": "UNKNOWN",
+      "evidence_reference": "MARLO_SOURCE_INTAKE_001",
+      "notes": "Direct provision establishes provenance, not permission or an open license."
+    },
+    {
+      "action": "CREATE",
+      "id": "e0b7bbb4-04d1-5702-aac1-c4c16ea4e9ba",
+      "source_key": "MARLO_TURA_LUTURA_COMPARATIVE_WORKBOOK",
+      "version_key": "WORKBOOK_MODIFIED_2010_01_24",
+      "rights_status": "UNKNOWN",
+      "evidence_reference": "MARLO_SOURCE_INTAKE_001",
+      "notes": "Direct provision establishes provenance, not permission or an open license."
+    }
+  ],
+  "policy_actions": [
+    {
+      "action": "CREATE",
+      "id": "7fa43576-09d3-54e6-968c-a3af6fe106c4",
+      "source_key": "APPLEBY_1943_LULUHYA_ENGLISH_VOCABULARY",
+      "version_key": "PUBLICATION_1943_SCAN",
+      "use_scope": "INTERNAL_RESEARCH",
+      "decision": "UNKNOWN",
+      "policy_version": "MARLO_REGISTRATION_001",
+      "notes": "Permission remains unresolved; direct provision is not treated as authorization."
+    },
+    {
+      "action": "CREATE",
+      "id": "c3dd10d1-9c57-5a90-b3a3-353f0e27541c",
+      "source_key": "APPLEBY_1943_LULUHYA_ENGLISH_VOCABULARY",
+      "version_key": "PUBLICATION_1943_SCAN",
+      "use_scope": "HUMAN_REVIEW",
+      "decision": "UNKNOWN",
+      "policy_version": "MARLO_REGISTRATION_001",
+      "notes": "Permission remains unresolved; direct provision is not treated as authorization."
+    },
+    {
+      "action": "CREATE",
+      "id": "5ca93e13-54d0-59ce-9e3d-9cc4447691bb",
+      "source_key": "APPLEBY_1943_LULUHYA_ENGLISH_VOCABULARY",
+      "version_key": "PUBLICATION_1943_SCAN",
+      "use_scope": "REVIEWER_DISPLAY",
+      "decision": "UNKNOWN",
+      "policy_version": "MARLO_REGISTRATION_001",
+      "notes": "Permission remains unresolved; direct provision is not treated as authorization."
+    },
+    {
+      "action": "CREATE",
+      "id": "b5a62da9-51c4-5e10-9e9d-919f60400c66",
+      "source_key": "APPLEBY_1943_LULUHYA_ENGLISH_VOCABULARY",
+      "version_key": "PUBLICATION_1943_SCAN",
+      "use_scope": "PUBLIC_DISPLAY",
+      "decision": "UNKNOWN",
+      "policy_version": "MARLO_REGISTRATION_001",
+      "notes": "Permission remains unresolved; direct provision is not treated as authorization."
+    },
+    {
+      "action": "CREATE",
+      "id": "819ec920-b907-5779-bf69-869b365e2444",
+      "source_key": "APPLEBY_1943_LULUHYA_ENGLISH_VOCABULARY",
+      "version_key": "PUBLICATION_1943_SCAN",
+      "use_scope": "REDISTRIBUTION",
+      "decision": "UNKNOWN",
+      "policy_version": "MARLO_REGISTRATION_001",
+      "notes": "Permission remains unresolved; direct provision is not treated as authorization."
+    },
+    {
+      "action": "CREATE",
+      "id": "7fcfc9bd-4c0e-505a-ae98-63dda29599ab",
+      "source_key": "APPLEBY_1943_LULUHYA_ENGLISH_VOCABULARY",
+      "version_key": "PUBLICATION_1943_SCAN",
+      "use_scope": "MODEL_TRAINING",
+      "decision": "UNKNOWN",
+      "policy_version": "MARLO_REGISTRATION_001",
+      "notes": "Permission remains unresolved; direct provision is not treated as authorization."
+    },
+    {
+      "action": "CREATE",
+      "id": "154ae3cf-363c-5026-b563-5c0e7e786fce",
+      "source_key": "APPLEBY_1943_LULUHYA_ENGLISH_VOCABULARY",
+      "version_key": "PUBLICATION_1943_SCAN",
+      "use_scope": "BENCHMARK_PUBLICATION",
+      "decision": "UNKNOWN",
+      "policy_version": "MARLO_REGISTRATION_001",
+      "notes": "Permission remains unresolved; direct provision is not treated as authorization."
+    },
+    {
+      "action": "CREATE",
+      "id": "5a777b64-c9ba-561d-b558-77264b664b58",
+      "source_key": "APPLEBY_1943_LULUHYA_ENGLISH_VOCABULARY",
+      "version_key": "PUBLICATION_1943_SCAN",
+      "use_scope": "COMMERCIAL_API",
+      "decision": "UNKNOWN",
+      "policy_version": "MARLO_REGISTRATION_001",
+      "notes": "Permission remains unresolved; direct provision is not treated as authorization."
+    },
+    {
+      "action": "CREATE",
+      "id": "a17f1b4e-29a1-5f26-bfe5-d1c4b289e86e",
+      "source_key": "FRIENDS_AFRICA_MISSION_1940_LURAGOLI_ENGLISH_VOCABULARY",
+      "version_key": "PUBLICATION_1940_SCAN",
+      "use_scope": "INTERNAL_RESEARCH",
+      "decision": "UNKNOWN",
+      "policy_version": "MARLO_REGISTRATION_001",
+      "notes": "Permission remains unresolved; direct provision is not treated as authorization."
+    },
+    {
+      "action": "CREATE",
+      "id": "4b5364fc-078e-5977-9cec-520634d918b3",
+      "source_key": "FRIENDS_AFRICA_MISSION_1940_LURAGOLI_ENGLISH_VOCABULARY",
+      "version_key": "PUBLICATION_1940_SCAN",
+      "use_scope": "HUMAN_REVIEW",
+      "decision": "UNKNOWN",
+      "policy_version": "MARLO_REGISTRATION_001",
+      "notes": "Permission remains unresolved; direct provision is not treated as authorization."
+    },
+    {
+      "action": "CREATE",
+      "id": "bb3ca59c-732d-55fd-96aa-2cf986dc387f",
+      "source_key": "FRIENDS_AFRICA_MISSION_1940_LURAGOLI_ENGLISH_VOCABULARY",
+      "version_key": "PUBLICATION_1940_SCAN",
+      "use_scope": "REVIEWER_DISPLAY",
+      "decision": "UNKNOWN",
+      "policy_version": "MARLO_REGISTRATION_001",
+      "notes": "Permission remains unresolved; direct provision is not treated as authorization."
+    },
+    {
+      "action": "CREATE",
+      "id": "f45523aa-1f17-5e6c-b0c6-2fbda1e0facb",
+      "source_key": "FRIENDS_AFRICA_MISSION_1940_LURAGOLI_ENGLISH_VOCABULARY",
+      "version_key": "PUBLICATION_1940_SCAN",
+      "use_scope": "PUBLIC_DISPLAY",
+      "decision": "UNKNOWN",
+      "policy_version": "MARLO_REGISTRATION_001",
+      "notes": "Permission remains unresolved; direct provision is not treated as authorization."
+    },
+    {
+      "action": "CREATE",
+      "id": "61b1c35f-a8c1-5382-b5d4-aa8a93f82476",
+      "source_key": "FRIENDS_AFRICA_MISSION_1940_LURAGOLI_ENGLISH_VOCABULARY",
+      "version_key": "PUBLICATION_1940_SCAN",
+      "use_scope": "REDISTRIBUTION",
+      "decision": "UNKNOWN",
+      "policy_version": "MARLO_REGISTRATION_001",
+      "notes": "Permission remains unresolved; direct provision is not treated as authorization."
+    },
+    {
+      "action": "CREATE",
+      "id": "9620cab1-9d46-501b-8ee9-0ad9e97c8ade",
+      "source_key": "FRIENDS_AFRICA_MISSION_1940_LURAGOLI_ENGLISH_VOCABULARY",
+      "version_key": "PUBLICATION_1940_SCAN",
+      "use_scope": "MODEL_TRAINING",
+      "decision": "UNKNOWN",
+      "policy_version": "MARLO_REGISTRATION_001",
+      "notes": "Permission remains unresolved; direct provision is not treated as authorization."
+    },
+    {
+      "action": "CREATE",
+      "id": "44986636-f98c-5998-81cf-911f892bf07e",
+      "source_key": "FRIENDS_AFRICA_MISSION_1940_LURAGOLI_ENGLISH_VOCABULARY",
+      "version_key": "PUBLICATION_1940_SCAN",
+      "use_scope": "BENCHMARK_PUBLICATION",
+      "decision": "UNKNOWN",
+      "policy_version": "MARLO_REGISTRATION_001",
+      "notes": "Permission remains unresolved; direct provision is not treated as authorization."
+    },
+    {
+      "action": "CREATE",
+      "id": "adbfe107-8539-5dea-a4a0-6dd172bb5f79",
+      "source_key": "FRIENDS_AFRICA_MISSION_1940_LURAGOLI_ENGLISH_VOCABULARY",
+      "version_key": "PUBLICATION_1940_SCAN",
+      "use_scope": "COMMERCIAL_API",
+      "decision": "UNKNOWN",
+      "policy_version": "MARLO_REGISTRATION_001",
+      "notes": "Permission remains unresolved; direct provision is not treated as authorization."
+    },
+    {
+      "action": "CREATE",
+      "id": "15769e25-2894-5f37-bb69-35c4c0bf7007",
+      "source_key": "NDANYI_NDANYI_2005_LULOGOOLI_DICTIONARY",
+      "version_key": "PUBLICATION_2005_FIVE_PART_SCAN",
+      "use_scope": "INTERNAL_RESEARCH",
+      "decision": "UNKNOWN",
+      "policy_version": "MARLO_REGISTRATION_001",
+      "notes": "Permission remains unresolved; direct provision is not treated as authorization."
+    },
+    {
+      "action": "CREATE",
+      "id": "8721b258-582c-5ab7-b5fb-a00f59023820",
+      "source_key": "NDANYI_NDANYI_2005_LULOGOOLI_DICTIONARY",
+      "version_key": "PUBLICATION_2005_FIVE_PART_SCAN",
+      "use_scope": "HUMAN_REVIEW",
+      "decision": "UNKNOWN",
+      "policy_version": "MARLO_REGISTRATION_001",
+      "notes": "Permission remains unresolved; direct provision is not treated as authorization."
+    },
+    {
+      "action": "CREATE",
+      "id": "d13f844f-fcba-5020-ae07-55b9c3affd58",
+      "source_key": "NDANYI_NDANYI_2005_LULOGOOLI_DICTIONARY",
+      "version_key": "PUBLICATION_2005_FIVE_PART_SCAN",
+      "use_scope": "REVIEWER_DISPLAY",
+      "decision": "UNKNOWN",
+      "policy_version": "MARLO_REGISTRATION_001",
+      "notes": "Permission remains unresolved; direct provision is not treated as authorization."
+    },
+    {
+      "action": "CREATE",
+      "id": "34b63077-e696-5b91-807a-b50870bd9f3d",
+      "source_key": "NDANYI_NDANYI_2005_LULOGOOLI_DICTIONARY",
+      "version_key": "PUBLICATION_2005_FIVE_PART_SCAN",
+      "use_scope": "PUBLIC_DISPLAY",
+      "decision": "UNKNOWN",
+      "policy_version": "MARLO_REGISTRATION_001",
+      "notes": "Permission remains unresolved; direct provision is not treated as authorization."
+    },
+    {
+      "action": "CREATE",
+      "id": "59d748fd-ba26-5d1f-9b93-ddf569b5e753",
+      "source_key": "NDANYI_NDANYI_2005_LULOGOOLI_DICTIONARY",
+      "version_key": "PUBLICATION_2005_FIVE_PART_SCAN",
+      "use_scope": "REDISTRIBUTION",
+      "decision": "UNKNOWN",
+      "policy_version": "MARLO_REGISTRATION_001",
+      "notes": "Permission remains unresolved; direct provision is not treated as authorization."
+    },
+    {
+      "action": "CREATE",
+      "id": "b6203411-c24b-5364-97ba-ad0ff862665f",
+      "source_key": "NDANYI_NDANYI_2005_LULOGOOLI_DICTIONARY",
+      "version_key": "PUBLICATION_2005_FIVE_PART_SCAN",
+      "use_scope": "MODEL_TRAINING",
+      "decision": "UNKNOWN",
+      "policy_version": "MARLO_REGISTRATION_001",
+      "notes": "Permission remains unresolved; direct provision is not treated as authorization."
+    },
+    {
+      "action": "CREATE",
+      "id": "478e4eba-a502-5b1b-82c6-5b141e94e549",
+      "source_key": "NDANYI_NDANYI_2005_LULOGOOLI_DICTIONARY",
+      "version_key": "PUBLICATION_2005_FIVE_PART_SCAN",
+      "use_scope": "BENCHMARK_PUBLICATION",
+      "decision": "UNKNOWN",
+      "policy_version": "MARLO_REGISTRATION_001",
+      "notes": "Permission remains unresolved; direct provision is not treated as authorization."
+    },
+    {
+      "action": "CREATE",
+      "id": "8ae4d9eb-951c-5a5b-bc1b-f2ae21aac665",
+      "source_key": "NDANYI_NDANYI_2005_LULOGOOLI_DICTIONARY",
+      "version_key": "PUBLICATION_2005_FIVE_PART_SCAN",
+      "use_scope": "COMMERCIAL_API",
+      "decision": "UNKNOWN",
+      "policy_version": "MARLO_REGISTRATION_001",
+      "notes": "Permission remains unresolved; direct provision is not treated as authorization."
+    },
+    {
+      "action": "CREATE",
+      "id": "db907083-66ab-526c-b83d-a90097047ea7",
+      "source_key": "MARLO_LUYIA_COMPARATIVE_DICTIONARY_WORKBOOK",
+      "version_key": "WORKBOOK_MODIFIED_2010_01_24",
+      "use_scope": "INTERNAL_RESEARCH",
+      "decision": "UNKNOWN",
+      "policy_version": "MARLO_REGISTRATION_001",
+      "notes": "Permission remains unresolved; direct provision is not treated as authorization."
+    },
+    {
+      "action": "CREATE",
+      "id": "47ee9972-91c8-5cb1-a425-fea4aa87f6df",
+      "source_key": "MARLO_LUYIA_COMPARATIVE_DICTIONARY_WORKBOOK",
+      "version_key": "WORKBOOK_MODIFIED_2010_01_24",
+      "use_scope": "HUMAN_REVIEW",
+      "decision": "UNKNOWN",
+      "policy_version": "MARLO_REGISTRATION_001",
+      "notes": "Permission remains unresolved; direct provision is not treated as authorization."
+    },
+    {
+      "action": "CREATE",
+      "id": "f2af5dbc-4fbc-5290-8493-138795b2e455",
+      "source_key": "MARLO_LUYIA_COMPARATIVE_DICTIONARY_WORKBOOK",
+      "version_key": "WORKBOOK_MODIFIED_2010_01_24",
+      "use_scope": "REVIEWER_DISPLAY",
+      "decision": "UNKNOWN",
+      "policy_version": "MARLO_REGISTRATION_001",
+      "notes": "Permission remains unresolved; direct provision is not treated as authorization."
+    },
+    {
+      "action": "CREATE",
+      "id": "43dc3447-c384-5a67-8f4a-c2c42ca2dc30",
+      "source_key": "MARLO_LUYIA_COMPARATIVE_DICTIONARY_WORKBOOK",
+      "version_key": "WORKBOOK_MODIFIED_2010_01_24",
+      "use_scope": "PUBLIC_DISPLAY",
+      "decision": "UNKNOWN",
+      "policy_version": "MARLO_REGISTRATION_001",
+      "notes": "Permission remains unresolved; direct provision is not treated as authorization."
+    },
+    {
+      "action": "CREATE",
+      "id": "ca91a728-d9cb-59a2-b9f2-aa7c78f5796c",
+      "source_key": "MARLO_LUYIA_COMPARATIVE_DICTIONARY_WORKBOOK",
+      "version_key": "WORKBOOK_MODIFIED_2010_01_24",
+      "use_scope": "REDISTRIBUTION",
+      "decision": "UNKNOWN",
+      "policy_version": "MARLO_REGISTRATION_001",
+      "notes": "Permission remains unresolved; direct provision is not treated as authorization."
+    },
+    {
+      "action": "CREATE",
+      "id": "fdf3a658-1e4b-5346-95f9-fca213cd6d45",
+      "source_key": "MARLO_LUYIA_COMPARATIVE_DICTIONARY_WORKBOOK",
+      "version_key": "WORKBOOK_MODIFIED_2010_01_24",
+      "use_scope": "MODEL_TRAINING",
+      "decision": "UNKNOWN",
+      "policy_version": "MARLO_REGISTRATION_001",
+      "notes": "Permission remains unresolved; direct provision is not treated as authorization."
+    },
+    {
+      "action": "CREATE",
+      "id": "4bee2a01-ad95-58df-aeec-4d68f438d87d",
+      "source_key": "MARLO_LUYIA_COMPARATIVE_DICTIONARY_WORKBOOK",
+      "version_key": "WORKBOOK_MODIFIED_2010_01_24",
+      "use_scope": "BENCHMARK_PUBLICATION",
+      "decision": "UNKNOWN",
+      "policy_version": "MARLO_REGISTRATION_001",
+      "notes": "Permission remains unresolved; direct provision is not treated as authorization."
+    },
+    {
+      "action": "CREATE",
+      "id": "5f8d5156-a3fe-5132-8501-1d4f5a4ed4ad",
+      "source_key": "MARLO_LUYIA_COMPARATIVE_DICTIONARY_WORKBOOK",
+      "version_key": "WORKBOOK_MODIFIED_2010_01_24",
+      "use_scope": "COMMERCIAL_API",
+      "decision": "UNKNOWN",
+      "policy_version": "MARLO_REGISTRATION_001",
+      "notes": "Permission remains unresolved; direct provision is not treated as authorization."
+    },
+    {
+      "action": "CREATE",
+      "id": "e5917fbe-3614-5c6d-8557-8f57af75edd6",
+      "source_key": "MARLO_IDAKHO_COMPARATIVE_WORKBOOK",
+      "version_key": "WORKBOOK_MODIFIED_2010_01_24",
+      "use_scope": "INTERNAL_RESEARCH",
+      "decision": "UNKNOWN",
+      "policy_version": "MARLO_REGISTRATION_001",
+      "notes": "Permission remains unresolved; direct provision is not treated as authorization."
+    },
+    {
+      "action": "CREATE",
+      "id": "15714c96-2a06-553f-8fe5-b94a015e2b21",
+      "source_key": "MARLO_IDAKHO_COMPARATIVE_WORKBOOK",
+      "version_key": "WORKBOOK_MODIFIED_2010_01_24",
+      "use_scope": "HUMAN_REVIEW",
+      "decision": "UNKNOWN",
+      "policy_version": "MARLO_REGISTRATION_001",
+      "notes": "Permission remains unresolved; direct provision is not treated as authorization."
+    },
+    {
+      "action": "CREATE",
+      "id": "834babbc-3763-50c8-b575-65560e54f58d",
+      "source_key": "MARLO_IDAKHO_COMPARATIVE_WORKBOOK",
+      "version_key": "WORKBOOK_MODIFIED_2010_01_24",
+      "use_scope": "REVIEWER_DISPLAY",
+      "decision": "UNKNOWN",
+      "policy_version": "MARLO_REGISTRATION_001",
+      "notes": "Permission remains unresolved; direct provision is not treated as authorization."
+    },
+    {
+      "action": "CREATE",
+      "id": "078d0e3a-37a1-5d48-a52c-f1e7228c2903",
+      "source_key": "MARLO_IDAKHO_COMPARATIVE_WORKBOOK",
+      "version_key": "WORKBOOK_MODIFIED_2010_01_24",
+      "use_scope": "PUBLIC_DISPLAY",
+      "decision": "UNKNOWN",
+      "policy_version": "MARLO_REGISTRATION_001",
+      "notes": "Permission remains unresolved; direct provision is not treated as authorization."
+    },
+    {
+      "action": "CREATE",
+      "id": "31af72c2-5308-523c-b3c1-b694fb820328",
+      "source_key": "MARLO_IDAKHO_COMPARATIVE_WORKBOOK",
+      "version_key": "WORKBOOK_MODIFIED_2010_01_24",
+      "use_scope": "REDISTRIBUTION",
+      "decision": "UNKNOWN",
+      "policy_version": "MARLO_REGISTRATION_001",
+      "notes": "Permission remains unresolved; direct provision is not treated as authorization."
+    },
+    {
+      "action": "CREATE",
+      "id": "9ae2d1d9-8eac-5355-822f-ce7d47242cb4",
+      "source_key": "MARLO_IDAKHO_COMPARATIVE_WORKBOOK",
+      "version_key": "WORKBOOK_MODIFIED_2010_01_24",
+      "use_scope": "MODEL_TRAINING",
+      "decision": "UNKNOWN",
+      "policy_version": "MARLO_REGISTRATION_001",
+      "notes": "Permission remains unresolved; direct provision is not treated as authorization."
+    },
+    {
+      "action": "CREATE",
+      "id": "374045b2-34e6-5564-bbd8-6008557ef79d",
+      "source_key": "MARLO_IDAKHO_COMPARATIVE_WORKBOOK",
+      "version_key": "WORKBOOK_MODIFIED_2010_01_24",
+      "use_scope": "BENCHMARK_PUBLICATION",
+      "decision": "UNKNOWN",
+      "policy_version": "MARLO_REGISTRATION_001",
+      "notes": "Permission remains unresolved; direct provision is not treated as authorization."
+    },
+    {
+      "action": "CREATE",
+      "id": "642ba5dd-cede-598c-bf9a-73e251094986",
+      "source_key": "MARLO_IDAKHO_COMPARATIVE_WORKBOOK",
+      "version_key": "WORKBOOK_MODIFIED_2010_01_24",
+      "use_scope": "COMMERCIAL_API",
+      "decision": "UNKNOWN",
+      "policy_version": "MARLO_REGISTRATION_001",
+      "notes": "Permission remains unresolved; direct provision is not treated as authorization."
+    },
+    {
+      "action": "CREATE",
+      "id": "725ee3f5-6035-5d61-83c7-0abbda7ea129",
+      "source_key": "MARLO_TURA_LUTURA_COMPARATIVE_WORKBOOK",
+      "version_key": "WORKBOOK_MODIFIED_2010_01_24",
+      "use_scope": "INTERNAL_RESEARCH",
+      "decision": "UNKNOWN",
+      "policy_version": "MARLO_REGISTRATION_001",
+      "notes": "Permission remains unresolved; direct provision is not treated as authorization."
+    },
+    {
+      "action": "CREATE",
+      "id": "c4723015-2806-5777-8c29-8d8750f6a470",
+      "source_key": "MARLO_TURA_LUTURA_COMPARATIVE_WORKBOOK",
+      "version_key": "WORKBOOK_MODIFIED_2010_01_24",
+      "use_scope": "HUMAN_REVIEW",
+      "decision": "UNKNOWN",
+      "policy_version": "MARLO_REGISTRATION_001",
+      "notes": "Permission remains unresolved; direct provision is not treated as authorization."
+    },
+    {
+      "action": "CREATE",
+      "id": "14df64ba-42ae-5f67-ae97-015366aeb205",
+      "source_key": "MARLO_TURA_LUTURA_COMPARATIVE_WORKBOOK",
+      "version_key": "WORKBOOK_MODIFIED_2010_01_24",
+      "use_scope": "REVIEWER_DISPLAY",
+      "decision": "UNKNOWN",
+      "policy_version": "MARLO_REGISTRATION_001",
+      "notes": "Permission remains unresolved; direct provision is not treated as authorization."
+    },
+    {
+      "action": "CREATE",
+      "id": "e2a51d31-0268-531b-8f09-9d1a0470e0fc",
+      "source_key": "MARLO_TURA_LUTURA_COMPARATIVE_WORKBOOK",
+      "version_key": "WORKBOOK_MODIFIED_2010_01_24",
+      "use_scope": "PUBLIC_DISPLAY",
+      "decision": "UNKNOWN",
+      "policy_version": "MARLO_REGISTRATION_001",
+      "notes": "Permission remains unresolved; direct provision is not treated as authorization."
+    },
+    {
+      "action": "CREATE",
+      "id": "88eb34db-cdc5-5c56-836d-c64b50d69682",
+      "source_key": "MARLO_TURA_LUTURA_COMPARATIVE_WORKBOOK",
+      "version_key": "WORKBOOK_MODIFIED_2010_01_24",
+      "use_scope": "REDISTRIBUTION",
+      "decision": "UNKNOWN",
+      "policy_version": "MARLO_REGISTRATION_001",
+      "notes": "Permission remains unresolved; direct provision is not treated as authorization."
+    },
+    {
+      "action": "CREATE",
+      "id": "891e712b-6e9a-5efc-906f-f96126146c69",
+      "source_key": "MARLO_TURA_LUTURA_COMPARATIVE_WORKBOOK",
+      "version_key": "WORKBOOK_MODIFIED_2010_01_24",
+      "use_scope": "MODEL_TRAINING",
+      "decision": "UNKNOWN",
+      "policy_version": "MARLO_REGISTRATION_001",
+      "notes": "Permission remains unresolved; direct provision is not treated as authorization."
+    },
+    {
+      "action": "CREATE",
+      "id": "73fc06d1-3455-54d5-9fc3-4d31a79e2456",
+      "source_key": "MARLO_TURA_LUTURA_COMPARATIVE_WORKBOOK",
+      "version_key": "WORKBOOK_MODIFIED_2010_01_24",
+      "use_scope": "BENCHMARK_PUBLICATION",
+      "decision": "UNKNOWN",
+      "policy_version": "MARLO_REGISTRATION_001",
+      "notes": "Permission remains unresolved; direct provision is not treated as authorization."
+    },
+    {
+      "action": "CREATE",
+      "id": "10d175aa-723b-5385-b473-78011b0a1095",
+      "source_key": "MARLO_TURA_LUTURA_COMPARATIVE_WORKBOOK",
+      "version_key": "WORKBOOK_MODIFIED_2010_01_24",
+      "use_scope": "COMMERCIAL_API",
+      "decision": "UNKNOWN",
+      "policy_version": "MARLO_REGISTRATION_001",
+      "notes": "Permission remains unresolved; direct provision is not treated as authorization."
+    }
+  ],
+  "artifact_set_actions": [
+    {
+      "action": "CREATE",
+      "id": "9740d207-3ce4-531a-9154-94c7b180d8a7",
+      "artifact_set_key": "ASET_NDANYI_NDANYI_2005_MULTIPART_001",
+      "source_key": "NDANYI_NDANYI_2005_LULOGOOLI_DICTIONARY",
+      "version_key": "PUBLICATION_2005_FIVE_PART_SCAN",
+      "set_type": "MULTIPART_DOCUMENT",
+      "label": "Ndanyi & Ndanyi 2005 five-part scan",
+      "notes": "One ordered representation of a single intellectual work; duplicate Part 5 is acquisition provenance only."
+    }
+  ],
+  "artifact_set_member_actions": [
+    {
+      "action": "CREATE",
+      "id": "dcad9e48-16c6-5283-898b-24142c976259",
+      "artifact_set_key": "ASET_NDANYI_NDANYI_2005_MULTIPART_001",
+      "source_key": "NDANYI_NDANYI_2005_LULOGOOLI_DICTIONARY",
+      "artifact_key": "ART_SHA256_FFF3D3D949A5D6C0ECC8D465",
+      "sequence_number": 1,
+      "component_label": "Part 1"
+    },
+    {
+      "action": "CREATE",
+      "id": "77792751-b3aa-5b48-81d3-a34316608685",
+      "artifact_set_key": "ASET_NDANYI_NDANYI_2005_MULTIPART_001",
+      "source_key": "NDANYI_NDANYI_2005_LULOGOOLI_DICTIONARY",
+      "artifact_key": "ART_SHA256_8BEDFDBC9A3CD8D207D19D5A",
+      "sequence_number": 2,
+      "component_label": "Part 2"
+    },
+    {
+      "action": "CREATE",
+      "id": "ce529a73-77cc-570c-9f32-63cd2ef95f5f",
+      "artifact_set_key": "ASET_NDANYI_NDANYI_2005_MULTIPART_001",
+      "source_key": "NDANYI_NDANYI_2005_LULOGOOLI_DICTIONARY",
+      "artifact_key": "ART_SHA256_0CF31B00FFDD353D436AE394",
+      "sequence_number": 3,
+      "component_label": "Part 3"
+    },
+    {
+      "action": "CREATE",
+      "id": "70cacd41-c506-5ef5-9eaf-f4562b6b6d4c",
+      "artifact_set_key": "ASET_NDANYI_NDANYI_2005_MULTIPART_001",
+      "source_key": "NDANYI_NDANYI_2005_LULOGOOLI_DICTIONARY",
+      "artifact_key": "ART_SHA256_D1DCF87234C1F27CAE0B0010",
+      "sequence_number": 4,
+      "component_label": "Part 4"
+    },
+    {
+      "action": "CREATE",
+      "id": "0a89149a-3e10-5923-8f80-eea3dc3f736f",
+      "artifact_set_key": "ASET_NDANYI_NDANYI_2005_MULTIPART_001",
+      "source_key": "NDANYI_NDANYI_2005_LULOGOOLI_DICTIONARY",
+      "artifact_key": "ART_SHA256_3DCD2BCA00136ED6FBDAD0B4",
+      "sequence_number": 5,
+      "component_label": "Part 5"
+    }
+  ],
+  "contact_event_actions": [
+    {
+      "action": "DEFER",
+      "event_key": "CONTACT_MARLO_PACKAGE_2026_04_14",
+      "date": "2026-04-14",
+      "kind": "MATERIAL_PROVISION"
+    },
+    {
+      "action": "DEFER",
+      "event_key": "CONTACT_MARLO_PACKAGE_2026_09_25",
+      "date": "2026-09-25",
+      "kind": "COLLABORATION_CONTACT"
+    },
+    {
+      "action": "DEFER",
+      "event_key": "CONTACT_MARLO_PACKAGE_2026_09_27",
+      "date": "2026-09-27",
+      "kind": "PROJECT_REPLY"
+    }
+  ],
+  "dialect_labels": [
+    "Luragoli",
+    "Logoori",
+    "Lulogooli",
+    "Lutura",
+    "Tura",
+    "Wanga",
+    "Luwanga",
+    "Bukusu",
+    "Lubukusu",
+    "Idakho",
+    "Idakho_1",
+    "Idakho_2",
+    "Kisa",
+    "Tsotso",
+    "Appleby",
+    "Appleby 1943",
+    "Hanga",
+    "Luluhya"
+  ],
+  "dialect_mapping_actions": [],
+  "unresolved_questions": [
+    "What is the intended distinction between Idakho_1 and Idakho_2?",
+    "How should Tura/Lutura be classified relative to the Luhya varieties represented in Tafsiri?",
+    "Do aligned rows in the comparative workbooks assert lexical correspondence only, or a stronger analytical relationship?",
+    "Are the five Ndanyi & Ndanyi files the complete ordered scan of the 2005 work?",
+    "May Project Tafsiri retain and process these files for internal research and human review?",
+    "May Project Tafsiri create and retain derived structured datasets with full provenance?",
+    "May source excerpts be displayed to authorized reviewers or published in benchmarks and research outputs?",
+    "Which materials may be publicly displayed or redistributed?",
+    "Which materials may be used for model training?",
+    "Which materials may support an eventual commercial or API service?",
+    "Do the supplied Bukusu and Wanga binaries differ substantively from the previously reconciled binaries, or only by export/encoding?",
+    "Which durable portable private-archive references should be registered for these artifacts?",
+    "Should Professor Michael R. Marlo receive a contributor identity through a separately governed onboarding step?",
+    "How should package-level correspondence be represented without duplicating source-specific contact events?"
+  ],
+  "safety": {
+    "import_batches": 0,
+    "source_entries": 0,
+    "lexical_or_canonical_records": 0,
+    "database_writes_in_dry_run": 0
+  },
+  "semantic_digest": "309bf88061db30cdd3fcc1e48c49c00ac4fa464db97aea969710cf4f7802a863"
+}
