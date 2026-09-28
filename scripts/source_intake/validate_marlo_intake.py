@@ -90,10 +90,27 @@ def validate(manifest: dict[str, Any], verify_local_files: bool = False) -> list
         if decision not in USE_DECISIONS:
             errors.append(f"{scope}: unsupported rights decision {decision}")
 
-    expected_missing = {"WangaDictionary09012008.pdf", "Appleby1943dictionary.pdf", "Tura.xlsx"}
-    recorded_missing = {item.get("original_filename") for item in artifacts if item.get("availability") == "MISSING_FROM_CURRENT_ARTIFACTS"}
-    if recorded_missing != expected_missing:
-        errors.append("missing artifact set does not match the intake request")
+    if len(artifacts) != 13:
+        errors.append("the completed intake must contain 13 physical files")
+    if any(item.get("availability") != "PRESENT" for item in artifacts):
+        errors.append("all 13 expected source artifacts must be present")
+    if len({item.get("sha256") for item in artifacts}) != 12:
+        errors.append("the completed intake must contain 12 unique artifact checksums")
+    expected_checksums = {
+        "WangaDictionary09012008.pdf": "0483de7c6ccdbdcc7206a38dd39e2d74f01908010e1bf7a1b197959f76c1311d",
+        "Appleby1943dictionary.pdf": "cef46056b2cbeb488c81d6fa8793d349b00c6f8be98ef577f949a0f0c0e9f6ba",
+        "Tura.xlsx": "13a23808a219c74fc284b48c264f17c068f23f7e8d64667e754c599a70f98445",
+    }
+    by_name = {item.get("original_filename"): item for item in artifacts}
+    for name, checksum in expected_checksums.items():
+        if by_name.get(name, {}).get("sha256") != checksum:
+            errors.append(f"{name}: checksum does not match the independently observed value")
+    tura = by_name.get("Tura.xlsx", {})
+    sheet_counts = {sheet.get("name"): sheet.get("meaningful_data_rows") for sheet in tura.get("sheets", [])}
+    if sheet_counts != {"AllData": 4575, "cuts": 910, "Sheet1": 0}:
+        errors.append("Tura workbook structure does not match the inspected artifact")
+    if manifest.get("package_counts", {}).get("received_physical_files") != 13:
+        errors.append("package count must record all 13 received files")
     return errors
 
 

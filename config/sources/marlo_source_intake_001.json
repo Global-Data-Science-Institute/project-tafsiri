@@ -1,23 +1,27 @@
 {
   "intake_key": "MARLO_SOURCE_INTAKE_001",
-  "status": "INCOMPLETE_INPUT_PACKAGE",
+  "status": "COMPLETE_AUDIT_READY_FOR_REVIEW",
   "database_writes": 0,
   "provider": {
     "name": "Professor Michael R. Marlo",
     "email": "marlom@missouri.edu",
-    "acquisition_type": ["DIRECT_RESEARCHER_CONTACT", "DIRECT_SOURCE_PROVISION"],
-    "acquisition_date": null,
-    "notes": "The provider directly supplied linguistic resources for possible collaboration. File delivery is provenance and does not establish unrestricted copyright permission."
+    "acquisition_type": [
+      "DIRECT_RESEARCHER_CONTACT",
+      "DIRECT_SOURCE_PROVISION"
+    ],
+    "acquisition_date": "2026-04-14",
+    "notes": "The provider directly supplied linguistic resources for possible collaboration. File delivery is provenance and does not establish unrestricted copyright permission.",
+    "provenance_evidence": "PRIVATE_CORRESPONDENCE_REVIEWED_NOT_COMMITTED"
   },
   "inventory_root": "artifacts",
   "checksum_algorithm": "SHA-256",
   "artifact_defaults": {
     "acquisition_channel": "DIRECTLY_PROVIDED_BY_RESEARCHER",
-    "acquisition_date": null,
+    "acquisition_date": "2026-04-14",
     "provider": "Professor Michael R. Marlo"
   },
   "artifact_model_recommendation": "DESIGN_SOURCE_ARTIFACTS_MIGRATION",
-  "artifact_model_rationale": "The package contains one five-component scanned work, an exact duplicate component, multiple workbooks, a new binary of an existing source version, and future imports that may use different parsers. Artifact identity and acquisition must remain distinct from import execution.",
+  "artifact_model_rationale": "The complete package includes an exact duplicate, newly supplied binaries for existing versions, one five-component scanned work, a standalone historical PDF, three structured workbooks with multiple sheets, and artifacts that may be reused in later import executions. Artifact identity and acquisition must remain distinct from import execution.",
   "artifacts": [
     {
       "artifact_key": "MARLO001_BUKUSU_DICTIONARY_2008_PDF",
@@ -31,9 +35,16 @@
       "source_version_key": "DRAFT_2008_09_01",
       "source_classification": "EXISTING_SOURCE_EXISTING_VERSION_NEW_BINARY_ARTIFACT",
       "title": "Bukusu-English dictionary",
-      "authors_or_editors": ["Michael Marlo", "Adrian Sifuna", "Aggrey Wasike"],
+      "authors_or_editors": [
+        "Michael Marlo",
+        "Adrian Sifuna",
+        "Aggrey Wasike"
+      ],
       "apparent_date": "2008-09-01",
-      "source_reported_labels": ["Bukusu", "Lubukusu"],
+      "source_reported_labels": [
+        "Bukusu",
+        "Lubukusu"
+      ],
       "rights_status": "PUBLICLY_ACCESSIBLE_CITED",
       "parser_readiness": "PARTIAL",
       "notes": "Same title, editors, draft date, and 107-page extent as the registered version, but this 816378-byte binary differs from the previously reconciled 857700-byte binary with SHA-256 34426921c2cf2f6dd61a738a343fdda4b2d74f5c479b7c7c4bbd6cb677f49b82. Reuse the source/version; preserve this as a separately acquired artifact if an artifact entity is approved."
@@ -53,7 +64,9 @@
       "authors_or_editors": [],
       "publisher_or_institution": "Friends Africa Mission Press",
       "apparent_date": "1940",
-      "source_reported_labels": ["Luragoli"],
+      "source_reported_labels": [
+        "Luragoli"
+      ],
       "rights_status": "UNKNOWN",
       "parser_readiness": "READY_WITH_OCR",
       "notes": "Historical vocabulary with explicit spelling, root-ordering, pronunciation, and Kiswahili-borrowing notes. The artifact does not identify an individual author in inspected front matter. Preserve its historical spelling."
@@ -70,10 +83,15 @@
       "source_key": "NDANYI_NDANYI_2005_LULOGOOLI_DICTIONARY",
       "source_version_key": "PUBLICATION_2005_FIVE_PART_SCAN",
       "source_classification": "NEW_INTELLECTUAL_WORK_COMPONENT",
-      "title": "Amang\u2019ana go Lulimi lwo Lulogooli",
-      "authors_or_editors": ["Elisha Ugaada Ndanyi", "Joseph Olindo Ndanyi"],
+      "title": "Amang’ana go Lulimi lwo Lulogooli",
+      "authors_or_editors": [
+        "Elisha Ugaada Ndanyi",
+        "Joseph Olindo Ndanyi"
+      ],
       "apparent_date": "2005",
-      "source_reported_labels": ["Lulogooli"],
+      "source_reported_labels": [
+        "Lulogooli"
+      ],
       "rights_status": "UNKNOWN",
       "parser_readiness": "READY_WITH_OCR",
       "notes": "Front cover, title, publication information, and first component of one scanned work; ISBN 9966-7090-0-2."
@@ -90,7 +108,9 @@
       "source_key": "NDANYI_NDANYI_2005_LULOGOOLI_DICTIONARY",
       "source_version_key": "PUBLICATION_2005_FIVE_PART_SCAN",
       "source_classification": "NEW_INTELLECTUAL_WORK_COMPONENT",
-      "source_reported_labels": ["Lulogooli"],
+      "source_reported_labels": [
+        "Lulogooli"
+      ],
       "rights_status": "UNKNOWN",
       "parser_readiness": "READY_WITH_OCR"
     },
@@ -106,7 +126,9 @@
       "source_key": "NDANYI_NDANYI_2005_LULOGOOLI_DICTIONARY",
       "source_version_key": "PUBLICATION_2005_FIVE_PART_SCAN",
       "source_classification": "NEW_INTELLECTUAL_WORK_COMPONENT",
-      "source_reported_labels": ["Lulogooli"],
+      "source_reported_labels": [
+        "Lulogooli"
+      ],
       "rights_status": "UNKNOWN",
       "parser_readiness": "READY_WITH_OCR"
     },
@@ -122,7 +144,9 @@
       "source_key": "NDANYI_NDANYI_2005_LULOGOOLI_DICTIONARY",
       "source_version_key": "PUBLICATION_2005_FIVE_PART_SCAN",
       "source_classification": "NEW_INTELLECTUAL_WORK_COMPONENT",
-      "source_reported_labels": ["Lulogooli"],
+      "source_reported_labels": [
+        "Lulogooli"
+      ],
       "rights_status": "UNKNOWN",
       "parser_readiness": "READY_WITH_OCR"
     },
@@ -138,7 +162,9 @@
       "source_key": "NDANYI_NDANYI_2005_LULOGOOLI_DICTIONARY",
       "source_version_key": "PUBLICATION_2005_FIVE_PART_SCAN",
       "source_classification": "NEW_INTELLECTUAL_WORK_COMPONENT",
-      "source_reported_labels": ["Lulogooli"],
+      "source_reported_labels": [
+        "Lulogooli"
+      ],
       "rights_status": "UNKNOWN",
       "parser_readiness": "READY_WITH_OCR"
     },
@@ -169,7 +195,13 @@
       "source_classification": "NEW_INTELLECTUAL_DATASET",
       "workbook_creator": "Michael R. Marlo",
       "workbook_last_modified_by": "Jacinta B. G. Marlo",
-      "source_reported_labels": ["Appleby", "Kisa", "Tsotso", "Wanga", "Bukusu"],
+      "source_reported_labels": [
+        "Appleby",
+        "Kisa",
+        "Tsotso",
+        "Wanga",
+        "Bukusu"
+      ],
       "rights_status": "UNKNOWN",
       "parser_readiness": "READY",
       "sheets": [
@@ -180,12 +212,40 @@
           "max_column": 14,
           "meaningful_data_rows": 5152,
           "blank_data_rows": 0,
-          "headers": ["ID", "Headword", "Appleby", "Kisa", "Tsotso", "Wanga", "POS", "Class", "Gloss", "Variants_Phon", "Variants_Morph", "See also", "Borrowing", "Bukusu"],
+          "headers": [
+            "ID",
+            "Headword",
+            "Appleby",
+            "Kisa",
+            "Tsotso",
+            "Wanga",
+            "POS",
+            "Class",
+            "Gloss",
+            "Variants_Phon",
+            "Variants_Morph",
+            "See also",
+            "Borrowing",
+            "Bukusu"
+          ],
           "formula_cells": 5152,
           "merged_range_count": 0,
           "comment_count": 0
         },
-        {"name": "Notes", "state": "visible", "max_row": 3, "max_column": 1, "meaningful_data_rows": 2, "blank_data_rows": 0, "headers": ["Notes"], "formula_cells": 0, "merged_range_count": 0, "comment_count": 0}
+        {
+          "name": "Notes",
+          "state": "visible",
+          "max_row": 3,
+          "max_column": 1,
+          "meaningful_data_rows": 2,
+          "blank_data_rows": 0,
+          "headers": [
+            "Notes"
+          ],
+          "formula_cells": 0,
+          "merged_range_count": 0,
+          "comment_count": 0
+        }
       ],
       "notes": "Aligned forms are source-provided cross-variety correspondences, not canonical same-sense assertions. Headword is formula-derived from Kisa, Tsotso, and Wanga columns; the Bukusu column is empty in all 5152 data rows."
     },
@@ -201,7 +261,12 @@
       "source_classification": "NEW_INTELLECTUAL_DATASET",
       "workbook_creator": "Michael R. Marlo",
       "workbook_last_modified_by": "Jacinta B. G. Marlo",
-      "source_reported_labels": ["Appleby 1943", "Luwanga", "Idakho_1", "Idakho_2"],
+      "source_reported_labels": [
+        "Appleby 1943",
+        "Luwanga",
+        "Idakho_1",
+        "Idakho_2"
+      ],
       "rights_status": "UNKNOWN",
       "parser_readiness": "PARTIAL",
       "sheets": [
@@ -212,13 +277,45 @@
           "max_column": 9,
           "meaningful_data_rows": 4626,
           "blank_data_rows": 5,
-          "headers": ["ID", "Appleby 1943", "Luwanga", "Idakho_1", "Idakho_2", "POS", "Gloss", null, null],
+          "headers": [
+            "ID",
+            "Appleby 1943",
+            "Luwanga",
+            "Idakho_1",
+            "Idakho_2",
+            "POS",
+            "Gloss",
+            null,
+            null
+          ],
           "formula_cells": 0,
           "merged_range_count": 0,
           "comment_count": 0
         },
-        {"name": "Sheet2", "state": "visible", "max_row": 1, "max_column": 1, "meaningful_data_rows": 0, "blank_data_rows": 0, "headers": [], "formula_cells": 0, "merged_range_count": 0, "comment_count": 0},
-        {"name": "Sheet3", "state": "visible", "max_row": 1, "max_column": 1, "meaningful_data_rows": 0, "blank_data_rows": 0, "headers": [], "formula_cells": 0, "merged_range_count": 0, "comment_count": 0}
+        {
+          "name": "Sheet2",
+          "state": "visible",
+          "max_row": 1,
+          "max_column": 1,
+          "meaningful_data_rows": 0,
+          "blank_data_rows": 0,
+          "headers": [],
+          "formula_cells": 0,
+          "merged_range_count": 0,
+          "comment_count": 0
+        },
+        {
+          "name": "Sheet3",
+          "state": "visible",
+          "max_row": 1,
+          "max_column": 1,
+          "meaningful_data_rows": 0,
+          "blank_data_rows": 0,
+          "headers": [],
+          "formula_cells": 0,
+          "merged_range_count": 0,
+          "comment_count": 0
+        }
       ],
       "metadata_status": "METADATA_CLARIFICATION_REQUIRED",
       "notes": "Idakho_1 and Idakho_2 are preserved as distinct source columns. Their intended distinction is not stated by workbook metadata."
@@ -226,46 +323,175 @@
     {
       "artifact_key": "MARLO001_WANGA_DICTIONARY_2008_PDF",
       "original_filename": "WangaDictionary09012008.pdf",
-      "availability": "MISSING_FROM_CURRENT_ARTIFACTS",
+      "availability": "PRESENT",
       "media_type": "application/pdf",
       "source_key": "WANGA_ENGLISH_DICTIONARY_2008",
       "source_version_key": "PRELIMINARY_DRAFT_2008",
-      "source_classification": "EXISTING_SOURCE_MATCH_REQUIRES_ARTIFACT",
+      "source_classification": "EXISTING_SOURCE_SAME_VERSION_DIFFERENT_BINARY",
       "rights_status": "PUBLICLY_ACCESSIBLE_CITED",
-      "parser_readiness": "NOT_READY"
+      "parser_readiness": "PARTIAL",
+      "byte_size": 560154,
+      "sha256": "0483de7c6ccdbdcc7206a38dd39e2d74f01908010e1bf7a1b197959f76c1311d",
+      "page_count": 77,
+      "title": "Wanga-English Dictionary",
+      "authors_or_editors": [
+        "Alfred Anangwe",
+        "Michael R. Marlo"
+      ],
+      "apparent_date": "2008-09-01",
+      "source_reported_labels": [
+        "Wanga"
+      ],
+      "notes": "Draft dated 2008-03-02 and reformatted 2008-09-01. It is semantically the registered preliminary 2008 work/version, but differs from the previously reconciled 395256-byte artifact with SHA-256 848eff65d09a352feb85ba80439bbfd0107a69dcfbccf8a835670dce1ef6888f. The source states that Appleby 1943 was electronically prepared and retranslated into Wanga by Alfred Anangwe in 2006, then entered and edited in 2008."
     },
     {
       "artifact_key": "MARLO001_APPLEBY_1943_PDF",
       "original_filename": "Appleby1943dictionary.pdf",
-      "availability": "MISSING_FROM_CURRENT_ARTIFACTS",
+      "availability": "PRESENT",
       "media_type": "application/pdf",
       "source_key": "APPLEBY_1943_LULUHYA_ENGLISH_VOCABULARY",
-      "source_classification": "CANDIDATE_NEW_HISTORICAL_WORK_REQUIRES_ARTIFACT",
-      "source_reported_labels": ["Luluhya", "Hanga"],
+      "source_classification": "NEW_HISTORICAL_INTELLECTUAL_WORK",
+      "source_reported_labels": [
+        "Luluhya",
+        "Hanga"
+      ],
       "rights_status": "UNKNOWN",
-      "parser_readiness": "NOT_READY"
+      "parser_readiness": "PARTIAL",
+      "byte_size": 2782492,
+      "sha256": "cef46056b2cbeb488c81d6fa8793d349b00c6f8be98ef577f949a0f0c0e9f6ba",
+      "page_count": 123,
+      "source_version_key": "PUBLICATION_1943_SCAN",
+      "title": "A Luluhya-English Vocabulary",
+      "authors_or_editors": [
+        "L. L. Appleby"
+      ],
+      "publisher_or_institution": "C. M. S., Maseno, Kenya",
+      "apparent_date": "1943-06",
+      "notes": "The author calls the edition tentative and incomplete. It contains few words outside the Hanga group while using broader Luhya orthography. The source explicitly warns that long-vowel, i/y, and u/w spelling was unsettled. Historical orthography and scope must be preserved."
     },
     {
       "artifact_key": "MARLO001_TURA_WORKBOOK",
       "original_filename": "Tura.xlsx",
-      "availability": "MISSING_FROM_CURRENT_ARTIFACTS",
+      "availability": "PRESENT",
       "media_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-      "source_key": null,
-      "source_classification": "IDENTITY_REQUIRES_ARTIFACT",
-      "source_reported_labels": ["Tura", "Lutura"],
+      "source_key": "MARLO_TURA_LUTURA_COMPARATIVE_WORKBOOK",
+      "source_classification": "NEW_INTELLECTUAL_DATASET",
+      "source_reported_labels": [
+        "Appleby 1943",
+        "Luwanga",
+        "Lutura",
+        "Tura",
+        "Anangwe 2008"
+      ],
       "rights_status": "UNKNOWN",
-      "parser_readiness": "NOT_READY",
-      "dialect_mapping_status": "DIALECT_MAPPING_REQUIRES_EXPERT_CONFIRMATION"
+      "parser_readiness": "READY",
+      "dialect_mapping_status": "EXPERT_CONFIRMATION_REQUIRED",
+      "byte_size": 321698,
+      "sha256": "13a23808a219c74fc284b48c264f17c068f23f7e8d64667e754c599a70f98445",
+      "source_version_key": "WORKBOOK_MODIFIED_2010_01_24",
+      "workbook_creator": "Jacinta",
+      "workbook_last_modified_by": "Jacinta B. G. Marlo",
+      "sheets": [
+        {
+          "name": "AllData",
+          "state": "visible",
+          "max_row": 4577,
+          "max_column": 6,
+          "meaningful_data_rows": 4575,
+          "blank_data_rows": 1,
+          "headers": [
+            "Appleby 1943",
+            "Luwanga",
+            "Lutura",
+            "POS",
+            "Gloss",
+            null
+          ],
+          "formula_cells": 0,
+          "merged_range_count": 0,
+          "comment_count": 0
+        },
+        {
+          "name": "cuts",
+          "state": "visible",
+          "max_row": 911,
+          "max_column": 5,
+          "meaningful_data_rows": 910,
+          "blank_data_rows": 0,
+          "headers": [
+            "Appleby 1943",
+            "Anangwe 2008",
+            "POS",
+            "Gloss",
+            null
+          ],
+          "formula_cells": 0,
+          "merged_range_count": 0,
+          "comment_count": 0
+        },
+        {
+          "name": "Sheet1",
+          "state": "visible",
+          "max_row": 1,
+          "max_column": 1,
+          "meaningful_data_rows": 0,
+          "blank_data_rows": 0,
+          "headers": [],
+          "formula_cells": 0,
+          "merged_range_count": 0,
+          "comment_count": 0
+        }
+      ],
+      "metadata_status": "METADATA_CLARIFICATION_REQUIRED",
+      "notes": "AllData aligns Appleby 1943, Luwanga, and Lutura with POS and gloss fields. The cuts sheet contains 910 Appleby rows with POS/gloss fields and an Anangwe 2008 header whose data cells are empty. No workbook metadata or notes resolve the linguistic identity of Tura/Lutura."
     }
   ],
   "source_identities": [
-    {"source_key": "LUBUKUSU_ENGLISH_DICTIONARY_2008", "classification": "EXISTING", "new_source_version": false, "recommended_action": "UPDATE_ACQUISITION_PROVENANCE_AND_LATER_ATTACH_NEW_ARTIFACT_BINARY"},
-    {"source_key": "WANGA_ENGLISH_DICTIONARY_2008", "classification": "EXISTING_UNVERIFIED_PACKAGE_MATCH", "new_source_version": false, "recommended_action": "WAIT_FOR_MISSING_ARTIFACT"},
-    {"source_key": "FRIENDS_AFRICA_MISSION_1940_LURAGOLI_ENGLISH_VOCABULARY", "classification": "NEW", "new_source_version": true},
-    {"source_key": "NDANYI_NDANYI_2005_LULOGOOLI_DICTIONARY", "classification": "NEW", "new_source_version": true, "unique_component_count": 5, "total_component_pages": 141},
-    {"source_key": "MARLO_LUYIA_COMPARATIVE_DICTIONARY_WORKBOOK", "classification": "NEW", "new_source_version": true},
-    {"source_key": "MARLO_IDAKHO_COMPARATIVE_WORKBOOK", "classification": "NEW", "new_source_version": true},
-    {"source_key": "APPLEBY_1943_LULUHYA_ENGLISH_VOCABULARY", "classification": "CANDIDATE_NEW_MISSING_ARTIFACT", "new_source_version": null}
+    {
+      "source_key": "LUBUKUSU_ENGLISH_DICTIONARY_2008",
+      "classification": "EXISTING",
+      "new_source_version": false,
+      "recommended_action": "UPDATE_ACQUISITION_PROVENANCE_AND_LATER_ATTACH_NEW_ARTIFACT_BINARY"
+    },
+    {
+      "source_key": "WANGA_ENGLISH_DICTIONARY_2008",
+      "classification": "EXISTING",
+      "new_source_version": false,
+      "artifact_identity": "SAME_VERSION_DIFFERENT_BINARY",
+      "recommended_action": "UPDATE_ACQUISITION_PROVENANCE_AND_LATER_ATTACH_NEW_ARTIFACT_BINARY"
+    },
+    {
+      "source_key": "APPLEBY_1943_LULUHYA_ENGLISH_VOCABULARY",
+      "classification": "NEW",
+      "new_source_version": true
+    },
+    {
+      "source_key": "FRIENDS_AFRICA_MISSION_1940_LURAGOLI_ENGLISH_VOCABULARY",
+      "classification": "NEW",
+      "new_source_version": true
+    },
+    {
+      "source_key": "NDANYI_NDANYI_2005_LULOGOOLI_DICTIONARY",
+      "classification": "NEW",
+      "new_source_version": true,
+      "unique_component_count": 5,
+      "total_component_pages": 141
+    },
+    {
+      "source_key": "MARLO_LUYIA_COMPARATIVE_DICTIONARY_WORKBOOK",
+      "classification": "NEW",
+      "new_source_version": true
+    },
+    {
+      "source_key": "MARLO_IDAKHO_COMPARATIVE_WORKBOOK",
+      "classification": "NEW",
+      "new_source_version": true
+    },
+    {
+      "source_key": "MARLO_TURA_LUTURA_COMPARATIVE_WORKBOOK",
+      "classification": "NEW",
+      "new_source_version": true
+    }
   ],
   "rights_and_use_policy": {
     "default_for_new_directly_provided_material": "UNKNOWN",
@@ -284,50 +510,186 @@
   },
   "rights_evidence_by_source": {
     "LUBUKUSU_ENGLISH_DICTIONARY_2008": "Existing registry assessment: publicly accessible cited draft; no open-license evidence. Direct provision does not broaden permitted uses.",
-    "WANGA_ENGLISH_DICTIONARY_2008": "Existing registry assessment: publicly accessible cited draft; supplied artifact is missing, so identity cannot be verified. Direct provision does not broaden permitted uses.",
-    "NEW_DIRECTLY_PROVIDED_MATERIALS": "File delivery and collaboration correspondence establish provenance only; no explicit license or use permission was retained."
+    "WANGA_ENGLISH_DICTIONARY_2008": "Existing registry assessment: publicly accessible cited draft; no open-license evidence. The directly supplied same-version binary does not broaden permitted uses.",
+    "NEW_DIRECTLY_PROVIDED_MATERIALS": "File delivery and collaboration correspondence establish provenance only; no explicit license or use permission was retained.",
+    "APPLEBY_1943_LULUHYA_ENGLISH_VOCABULARY": "The artifact contains publication and authorship evidence but no explicit open license. Direct provision does not establish redistribution or training permission."
   },
   "contact_event_proposal": {
-    "contact_date": null,
+    "materials_shared_date": "2026-04-14",
+    "contact_date": "2026-09-25",
+    "project_reply_date": "2026-09-27",
     "contact_method": "EMAIL",
     "contact_target": "Professor Michael R. Marlo",
-    "response_status": "MORE_INFORMATION_REQUESTED",
-    "summary": "Professor Marlo contacted Dr. Moody Amakobe, expressed interest in Project Tafsiri collaboration, directly supplied linguistic source materials, and invited further discussion.",
+    "response_status": "COLLABORATION_DISCUSSION_INVITED",
+    "summary": "Professor Marlo directly shared linguistic source materials, later contacted Dr. Moody Amakobe regarding shared Luhya research interests, and invited further discussion.",
+    "evidence_handling": "PRIVATE_CORRESPONDENCE_REVIEWED_NOT_COMMITTED",
     "database_write_status": "PROPOSED_ONLY"
   },
   "locator_conventions": {
     "spreadsheet": "artifact:{artifact_key}/sheet:{sheet_name}/row:{one_based_row}/column:{column_name}",
     "pdf": "artifact:{artifact_key}/part:{component_sequence}/pdf-page:{one_based_pdf_page}/printed-page:{printed_page_or_unknown}/entry:{sequence_on_page}"
   },
-  "raw_labels": ["Luragoli", "Logoori", "Lulogooli", "Lutura", "Tura", "Wanga", "Luwanga", "Bukusu", "Lubukusu", "Idakho", "Idakho_1", "Idakho_2", "Kisa", "Tsotso", "Appleby", "Appleby 1943", "Hanga", "Luluhya"],
+  "raw_labels": [
+    "Luragoli",
+    "Logoori",
+    "Lulogooli",
+    "Lutura",
+    "Tura",
+    "Wanga",
+    "Luwanga",
+    "Bukusu",
+    "Lubukusu",
+    "Idakho",
+    "Idakho_1",
+    "Idakho_2",
+    "Kisa",
+    "Tsotso",
+    "Appleby",
+    "Appleby 1943",
+    "Hanga",
+    "Luluhya"
+  ],
   "candidate_dialect_mappings": [
-    {"raw_label": "Bukusu", "candidate": "Bukusu", "status": "EXISTING_VERIFIED_CONTEXT"},
-    {"raw_label": "Lubukusu", "candidate": "Bukusu", "status": "EXISTING_VERIFIED_CONTEXT"},
-    {"raw_label": "Wanga", "candidate": "Luwanga", "status": "EXISTING_IN_REVIEW_ASSERTION"},
-    {"raw_label": "Luwanga", "candidate": "Luwanga", "status": "EXISTING_VERIFIED_CONTEXT"},
-    {"raw_label": "Idakho", "candidate": "Idakho", "status": "CANDIDATE_REQUIRES_INTAKE_REVIEW"},
-    {"raw_label": "Luragoli", "candidate": "Maragoli", "status": "CANDIDATE_REQUIRES_EXPERT_CONFIRMATION"},
-    {"raw_label": "Logoori", "candidate": "Maragoli", "status": "CANDIDATE_REQUIRES_EXPERT_CONFIRMATION"},
-    {"raw_label": "Lulogooli", "candidate": "Maragoli", "status": "CANDIDATE_REQUIRES_EXPERT_CONFIRMATION"},
-    {"raw_label": "Tura", "candidate": null, "status": "DIALECT_MAPPING_REQUIRES_EXPERT_CONFIRMATION"},
-    {"raw_label": "Lutura", "candidate": null, "status": "DIALECT_MAPPING_REQUIRES_EXPERT_CONFIRMATION"}
+    {
+      "raw_label": "Bukusu",
+      "candidate": "Bukusu",
+      "status": "EXISTING_VERIFIED_CONTEXT"
+    },
+    {
+      "raw_label": "Lubukusu",
+      "candidate": "Bukusu",
+      "status": "EXISTING_VERIFIED_CONTEXT"
+    },
+    {
+      "raw_label": "Wanga",
+      "candidate": "Luwanga",
+      "status": "EXISTING_IN_REVIEW_ASSERTION"
+    },
+    {
+      "raw_label": "Luwanga",
+      "candidate": "Luwanga",
+      "status": "EXISTING_VERIFIED_CONTEXT"
+    },
+    {
+      "raw_label": "Idakho",
+      "candidate": "Idakho",
+      "status": "CANDIDATE_REQUIRES_INTAKE_REVIEW"
+    },
+    {
+      "raw_label": "Luragoli",
+      "candidate": "Maragoli",
+      "status": "CANDIDATE_REQUIRES_EXPERT_CONFIRMATION"
+    },
+    {
+      "raw_label": "Logoori",
+      "candidate": "Maragoli",
+      "status": "CANDIDATE_REQUIRES_EXPERT_CONFIRMATION"
+    },
+    {
+      "raw_label": "Lulogooli",
+      "candidate": "Maragoli",
+      "status": "CANDIDATE_REQUIRES_EXPERT_CONFIRMATION"
+    },
+    {
+      "raw_label": "Tura",
+      "candidate": null,
+      "status": "EXPERT_CONFIRMATION_REQUIRED"
+    },
+    {
+      "raw_label": "Lutura",
+      "candidate": null,
+      "status": "EXPERT_CONFIRMATION_REQUIRED"
+    }
   ],
   "unresolved_questions": [
-    "What is the exact date of the direct email exchange?",
-    "Please provide WangaDictionary09012008.pdf, Appleby1943dictionary.pdf, and Tura.xlsx, which are absent from the current artifacts directory.",
     "What is the intended distinction between Idakho_1 and Idakho_2?",
     "How should Tura/Lutura be classified relative to the Luhya varieties represented in Tafsiri?",
-    "Does each aligned workbook row assert correspondence only, or a stronger analytical relationship?",
+    "Do aligned rows in the comparative workbooks assert lexical correspondence only, or a stronger analytical relationship?",
     "Are the five Ndanyi & Ndanyi files the complete ordered scan of the 2005 work?",
-    "May Project Tafsiri retain these files in a private research archive?",
-    "Which materials and uses are approved for internal research, human review, reviewer display, public display, redistribution, model training, benchmark publication, and commercial APIs?",
-    "May short source excerpts be displayed to authorized reviewers with citation?",
-    "Does the supplied Bukusu PDF differ substantively from the previously reconciled binary, or is it a different encoding/export of the same draft?"
+    "May Project Tafsiri retain and process these files for internal research and human review?",
+    "May Project Tafsiri create and retain derived structured datasets with full provenance?",
+    "May source excerpts be displayed to authorized reviewers or published in benchmarks and research outputs?",
+    "Which materials may be publicly displayed or redistributed?",
+    "Which materials may be used for model training?",
+    "Which materials may support an eventual commercial or API service?",
+    "Do the supplied Bukusu and Wanga binaries differ substantively from the previously reconciled binaries, or only by export/encoding?"
   ],
   "security": {
     "commit_original_artifacts": false,
     "commit_private_correspondence": false,
     "private_archive_recommended": true,
-    "repository_safe_outputs": ["manifest", "checksums", "metadata", "parser configuration", "reproducibility documentation"]
+    "repository_safe_outputs": [
+      "manifest",
+      "checksums",
+      "metadata",
+      "parser configuration",
+      "reproducibility documentation"
+    ]
+  },
+  "package_counts": {
+    "expected_physical_files": 13,
+    "received_physical_files": 13,
+    "unique_artifacts_by_sha256": 12,
+    "duplicate_artifacts": 1,
+    "pdf_files": 10,
+    "workbooks": 3,
+    "existing_intellectual_works": 2,
+    "new_intellectual_works": 6
+  },
+  "source_lineage": [
+    {
+      "from": "APPLEBY_1943_LULUHYA_ENGLISH_VOCABULARY",
+      "to": "WANGA_ENGLISH_DICTIONARY_2008",
+      "relationship": "RETRANSLATED_FROM",
+      "certainty": "CONFIRMED_BY_WANGA_FRONT_MATTER",
+      "notes": "Electronic Appleby wordlist retranslated into Wanga by Alfred Anangwe in 2006 and edited in 2008."
+    },
+    {
+      "from": "APPLEBY_1943_LULUHYA_ENGLISH_VOCABULARY",
+      "to": "MARLO_LUYIA_COMPARATIVE_DICTIONARY_WORKBOOK",
+      "relationship": "ALIGNS_WITH",
+      "certainty": "WORKBOOK_COLUMN_EVIDENCE"
+    },
+    {
+      "from": "WANGA_ENGLISH_DICTIONARY_2008",
+      "to": "MARLO_LUYIA_COMPARATIVE_DICTIONARY_WORKBOOK",
+      "relationship": "ALIGNS_WITH",
+      "certainty": "WORKBOOK_COLUMN_EVIDENCE"
+    },
+    {
+      "from": "APPLEBY_1943_LULUHYA_ENGLISH_VOCABULARY",
+      "to": "MARLO_IDAKHO_COMPARATIVE_WORKBOOK",
+      "relationship": "ALIGNS_WITH",
+      "certainty": "WORKBOOK_COLUMN_EVIDENCE"
+    },
+    {
+      "from": "WANGA_ENGLISH_DICTIONARY_2008",
+      "to": "MARLO_IDAKHO_COMPARATIVE_WORKBOOK",
+      "relationship": "ALIGNS_WITH",
+      "certainty": "LUWANGA_COLUMN_EVIDENCE"
+    },
+    {
+      "from": "APPLEBY_1943_LULUHYA_ENGLISH_VOCABULARY",
+      "to": "MARLO_TURA_LUTURA_COMPARATIVE_WORKBOOK",
+      "relationship": "ALIGNS_WITH",
+      "certainty": "WORKBOOK_COLUMN_EVIDENCE"
+    },
+    {
+      "from": "WANGA_ENGLISH_DICTIONARY_2008",
+      "to": "MARLO_TURA_LUTURA_COMPARATIVE_WORKBOOK",
+      "relationship": "ALIGNS_WITH",
+      "certainty": "LUWANGA_AND_ANANGWE_COLUMN_EVIDENCE"
+    }
+  ],
+  "comparative_workbook_assessment": {
+    "common_template": true,
+    "shared_patterns": [
+      "Appleby lexical anchor",
+      "Luwanga/Wanga comparison",
+      "variety-specific forms",
+      "POS",
+      "English gloss"
+    ],
+    "interpretation_limit": "Rows are source-provided comparative alignments, not canonical synonym or same-sense assertions."
   }
 }
