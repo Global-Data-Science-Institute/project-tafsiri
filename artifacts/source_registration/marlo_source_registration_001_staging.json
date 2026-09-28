@@ -1,0 +1,234 @@
+﻿{
+    "registration_key":  "MARLO_SOURCE_REGISTRATION_001",
+    "environment":  "staging",
+    "project_ref":  "gfhdwmqefotkljrltfnx",
+    "execution_timestamp_utc":  "2026-09-28T06:04:55.9478251Z",
+    "transaction_result":  {
+                               "status":  "COMMITTED",
+                               "atomic":  true,
+                               "statement_type":  "PostgreSQL DO transaction",
+                               "advisory_lock":  true,
+                               "rollback_on_error":  true
+                           },
+    "plan_digest":  "309bf88061db30cdd3fcc1e48c49c00ac4fa464db97aea969710cf4f7802a863",
+    "pre_write_plan":  {
+                           "CREATE":  109,
+                           "REUSE":  4,
+                           "CONFLICT":  0
+                       },
+    "baseline":  {
+                     "sources":  53,
+                     "source_versions":  53,
+                     "current_rights":  53,
+                     "current_policies":  424,
+                     "source_artifacts":  0,
+                     "source_version_artifacts":  0,
+                     "source_artifact_acquisitions":  0,
+                     "source_artifact_locations":  0,
+                     "source_artifact_sets":  0,
+                     "source_artifact_set_members":  0,
+                     "source_import_batches":  0,
+                     "source_entries":  0
+                 },
+    "persisted_counts":  {
+                             "sources":  59,
+                             "source_versions":  59,
+                             "current_rights":  59,
+                             "current_policies":  472,
+                             "source_artifacts":  12,
+                             "source_version_artifacts":  12,
+                             "preferred_version_artifacts":  7,
+                             "source_artifact_acquisitions":  13,
+                             "source_artifact_locations":  0,
+                             "source_artifact_sets":  1,
+                             "source_artifact_set_members":  5,
+                             "source_contact_events":  0,
+                             "source_import_batches":  0,
+                             "source_entries":  0
+                         },
+    "post_write_idempotency":  {
+                                   "CREATE":  0,
+                                   "REUSE":  113,
+                                   "CONFLICT":  0,
+                                   "digest":  "309bf88061db30cdd3fcc1e48c49c00ac4fa464db97aea969710cf4f7802a863"
+                               },
+    "persisted_semantic_verification":  {
+                                            "digest":  "309bf88061db30cdd3fcc1e48c49c00ac4fa464db97aea969710cf4f7802a863",
+                                            "method":  "All 113 manifest identities resolved as REUSE with zero semantic conflicts",
+                                            "field_by_field_equal":  true
+                                        },
+    "source_keys":  [
+                        "LUBUKUSU_ENGLISH_DICTIONARY_2008",
+                        "WANGA_ENGLISH_DICTIONARY_2008",
+                        "APPLEBY_1943_LULUHYA_ENGLISH_VOCABULARY",
+                        "FRIENDS_AFRICA_MISSION_1940_LURAGOLI_ENGLISH_VOCABULARY",
+                        "NDANYI_NDANYI_2005_LULOGOOLI_DICTIONARY",
+                        "MARLO_LUYIA_COMPARATIVE_DICTIONARY_WORKBOOK",
+                        "MARLO_IDAKHO_COMPARATIVE_WORKBOOK",
+                        "MARLO_TURA_LUTURA_COMPARATIVE_WORKBOOK"
+                    ],
+    "version_keys":  [
+                         {
+                             "source_key":  "LUBUKUSU_ENGLISH_DICTIONARY_2008",
+                             "version_key":  "DRAFT_2008_09_01"
+                         },
+                         {
+                             "source_key":  "WANGA_ENGLISH_DICTIONARY_2008",
+                             "version_key":  "PRELIMINARY_DRAFT_2008"
+                         },
+                         {
+                             "source_key":  "APPLEBY_1943_LULUHYA_ENGLISH_VOCABULARY",
+                             "version_key":  "PUBLICATION_1943_SCAN"
+                         },
+                         {
+                             "source_key":  "FRIENDS_AFRICA_MISSION_1940_LURAGOLI_ENGLISH_VOCABULARY",
+                             "version_key":  "PUBLICATION_1940_SCAN"
+                         },
+                         {
+                             "source_key":  "NDANYI_NDANYI_2005_LULOGOOLI_DICTIONARY",
+                             "version_key":  "PUBLICATION_2005_FIVE_PART_SCAN"
+                         },
+                         {
+                             "source_key":  "MARLO_LUYIA_COMPARATIVE_DICTIONARY_WORKBOOK",
+                             "version_key":  "WORKBOOK_MODIFIED_2010_01_24"
+                         },
+                         {
+                             "source_key":  "MARLO_IDAKHO_COMPARATIVE_WORKBOOK",
+                             "version_key":  "WORKBOOK_MODIFIED_2010_01_24"
+                         },
+                         {
+                             "source_key":  "MARLO_TURA_LUTURA_COMPARATIVE_WORKBOOK",
+                             "version_key":  "WORKBOOK_MODIFIED_2010_01_24"
+                         }
+                     ],
+    "artifact_keys":  [
+                          "ART_SHA256_17049B6F0EEB5ACEE8A05347",
+                          "ART_SHA256_BFEF4E5C916BDA08E76E876F",
+                          "ART_SHA256_FFF3D3D949A5D6C0ECC8D465",
+                          "ART_SHA256_8BEDFDBC9A3CD8D207D19D5A",
+                          "ART_SHA256_0CF31B00FFDD353D436AE394",
+                          "ART_SHA256_D1DCF87234C1F27CAE0B0010",
+                          "ART_SHA256_3DCD2BCA00136ED6FBDAD0B4",
+                          "ART_SHA256_727C59A413D1521A910A0F46",
+                          "ART_SHA256_6E7E0DE9189AF133B3557032",
+                          "ART_SHA256_0483DE7C6CCDBDCC7206A38D",
+                          "ART_SHA256_CEF46056B2CBEB488C81D6FA",
+                          "ART_SHA256_13A23808A219C74FC284B48C"
+                      ],
+    "acquisition_keys":  [
+                             "ACQ_MARLO001_17049B6F0EEB5ACE_975D85E2F8",
+                             "ACQ_MARLO001_BFEF4E5C916BDA08_48F177716F",
+                             "ACQ_MARLO001_FFF3D3D949A5D6C0_D6A52716EF",
+                             "ACQ_MARLO001_8BEDFDBC9A3CD8D2_F052A020B3",
+                             "ACQ_MARLO001_0CF31B00FFDD353D_F87925B802",
+                             "ACQ_MARLO001_D1DCF87234C1F27C_6FEE9A156D",
+                             "ACQ_MARLO001_3DCD2BCA00136ED6_94EE4A8C56",
+                             "ACQ_MARLO001_3DCD2BCA00136ED6_8986743E59",
+                             "ACQ_MARLO001_727C59A413D1521A_7A2644A7CC",
+                             "ACQ_MARLO001_6E7E0DE9189AF133_490BA4A8F8",
+                             "ACQ_MARLO001_0483DE7C6CCDBDCC_9361FE6B17",
+                             "ACQ_MARLO001_CEF46056B2CBEB48_B0B3B84443",
+                             "ACQ_MARLO001_13A23808A219C74F_ED80CAB6B5"
+                         ],
+    "sha256_integrity":  {
+                             "manifest_files_verified":  13,
+                             "unique_artifacts":  12,
+                             "persisted_sha256_rows":  12,
+                             "valid_sha256_format_rows":  12
+                         },
+    "rights_summary":  {
+                           "created":  6,
+                           "status_UNKNOWN":  6,
+                           "status_OPEN_LICENSE":  0,
+                           "current_total":  59,
+                           "existing_rows_preserved":  true
+                       },
+    "policy_summary":  {
+                           "created":  48,
+                           "decision_UNKNOWN":  48,
+                           "decision_ALLOWED":  0,
+                           "current_total":  472,
+                           "scopes":  8
+                       },
+    "artifact_set":  {
+                         "artifact_set_key":  "ASET_NDANYI_NDANYI_2005_MULTIPART_001",
+                         "set_type":  "MULTIPART_DOCUMENT",
+                         "members":  [
+                                         {
+                                             "sequence_number":  1,
+                                             "artifact_key":  "ART_SHA256_FFF3D3D949A5D6C0ECC8D465",
+                                             "component_label":  "Part 1"
+                                         },
+                                         {
+                                             "sequence_number":  2,
+                                             "artifact_key":  "ART_SHA256_8BEDFDBC9A3CD8D207D19D5A",
+                                             "component_label":  "Part 2"
+                                         },
+                                         {
+                                             "sequence_number":  3,
+                                             "artifact_key":  "ART_SHA256_0CF31B00FFDD353D436AE394",
+                                             "component_label":  "Part 3"
+                                         },
+                                         {
+                                             "sequence_number":  4,
+                                             "artifact_key":  "ART_SHA256_D1DCF87234C1F27CAE0B0010",
+                                             "component_label":  "Part 4"
+                                         },
+                                         {
+                                             "sequence_number":  5,
+                                             "artifact_key":  "ART_SHA256_3DCD2BCA00136ED6FBDAD0B4",
+                                             "component_label":  "Part 5"
+                                         }
+                                     ],
+                         "duplicate_part_5":  {
+                                                  "artifacts":  1,
+                                                  "acquisitions":  2,
+                                                  "set_members":  1
+                                              }
+                     },
+    "invariant_counts":  {
+                             "linguistic_evidence":  110,
+                             "linguistic_rules":  4,
+                             "provisional_rules":  4,
+                             "concepts":  0,
+                             "concept_terms":  0,
+                             "dictionary_entries":  5,
+                             "translations":  0,
+                             "verb_forms":  0,
+                             "evaluation_studies":  1,
+                             "evaluation_items":  5,
+                             "reviewers":  4,
+                             "assignments":  9,
+                             "annotations":  2,
+                             "adjudications":  0
+                         },
+    "production_unchanged_verification":  {
+                                              "project_ref":  "ydkookidvipqrwuilqeu",
+                                              "verified_after_execution":  true,
+                                              "writes":  0,
+                                              "sources":  53,
+                                              "source_versions":  53,
+                                              "current_rights":  53,
+                                              "current_policies":  424,
+                                              "source_artifacts":  0,
+                                              "source_version_artifacts":  0,
+                                              "source_artifact_acquisitions":  0,
+                                              "source_artifact_locations":  0,
+                                              "source_artifact_sets":  0,
+                                              "source_artifact_set_members":  0,
+                                              "source_import_batches":  0,
+                                              "source_entries":  0,
+                                              "linguistic_evidence":  110,
+                                              "linguistic_rules":  4,
+                                              "provisional_rules":  4
+                                          },
+    "deferred":  {
+                     "locations":  true,
+                     "contact_events":  true,
+                     "dialect_mappings":  true,
+                     "imports":  true,
+                     "source_entries":  true,
+                     "canonical_changes":  true,
+                     "private_correspondence_included":  false
+                 }
+}
