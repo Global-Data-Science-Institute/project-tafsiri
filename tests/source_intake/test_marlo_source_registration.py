@@ -45,7 +45,10 @@ def empty_remote_state(manifest: dict) -> dict:
 
 
 def test_manifest_validates_expected_registration_counts() -> None:
-    counts = registration.validate_manifest(load_manifest(), verify_files=True)
+    # Source binaries are intentionally ignored and absent from CI; their local
+    # byte sizes and SHA-256 values are verified by the utility's default CLI
+    # validation before a live dry run.
+    counts = registration.validate_manifest(load_manifest(), verify_files=False)
     assert counts == {
         "sources_create": 6, "sources_reuse": 2, "versions_create": 6, "versions_reuse": 2,
         "artifacts": 12, "associations": 12, "acquisitions": 13, "rights": 6,
