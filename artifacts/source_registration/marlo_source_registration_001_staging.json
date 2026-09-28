@@ -230,5 +230,13 @@
                      "source_entries":  true,
                      "canonical_changes":  true,
                      "private_correspondence_included":  false
-                 }
+                 },
+    "advisor_gate":  {
+                         "status":  "PASS",
+                         "security_new_error_warn":  0,
+                         "performance_new_warn_error":  0,
+                         "artifact_layer_notices":  "INFO_ONLY",
+                         "historical_findings":  "UNCHANGED",
+                         "verified_by":  "HUMAN_SUPABASE_DASHBOARD_REVIEW"
+                     }
 }

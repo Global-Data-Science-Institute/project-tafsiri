@@ -67,3 +67,5 @@ Six new rights rows and 48 new use-policy rows were created. Every new rights st
 Production project `ydkookidvipqrwuilqeu` remained read-only and retained its pre-registration baseline. Registration created no artifact locations, contact events, import batches, source entries, dialect assertions, concepts, concept terms, dictionary entries, translations, linguistic evidence, linguistic rules, or promotions. The four existing canonical rules remain `PROVISIONAL`.
 
 Tura/Lutura, Luragoli/Logoori/Lulogooli, and the intended distinction between `Idakho_1` and `Idakho_2` remain unresolved. Permission and durable archive-location questions also remain unresolved. The machine-readable staging execution record is `artifacts/source_registration/marlo_source_registration_001_staging.json`; it contains no private correspondence.
+
+The post-registration Supabase Security and Performance Advisor gate passed. No new Security `ERROR`/`WARN` or Performance `WARN`/`ERROR` finding was attributable to Migration 010 or the Marlo registration. Artifact-layer notices were informational only, and historical findings were unchanged.
