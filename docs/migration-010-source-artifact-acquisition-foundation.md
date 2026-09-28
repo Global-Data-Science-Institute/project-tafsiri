@@ -40,3 +40,11 @@ All six tables enable RLS and grant no privileges to `PUBLIC`, `anon`, or `authe
 `tests/database/source_artifact_foundation_smoke.sql` runs in a transaction and rolls back all fixtures. It verifies checksum format and uniqueness, immutable identity fields, alternate binaries, duplicate acquisitions and filenames, provider validation, locations, multipart ordering, batch/version consistency, rights independence, RLS, privileges, and helper-function security.
 
 Migration 010 inserts no source, version, artifact, acquisition, location, set, import, entry, rights, evidence, lexical, reviewer, or canonical-rule data.
+
+## Deployment verification
+
+Migration 010 was deployed to Project Tafsiri Staging (`gfhdwmqefotkljrltfnx`) and Project Tafsiri Production (`ydkookidvipqrwuilqeu`) on 2026-09-27. Each remote migration history contains `20260928015644` exactly once, and a final production dry run reports the database is current with no pending migrations.
+
+Post-deployment verification found all six artifact tables empty and all existing import batches unlinked. No Marlo source or artifact was registered, no historical import was backfilled, and no rights or use-policy row changed. Both environments retain 53 sources, 53 source versions, 53 source rights rows, 424 source use policies, 110 linguistic evidence rows, and four `PROVISIONAL` canonical rules. Reviewer, evaluation, Auth, dictionary, translation, and concept aggregates matched their respective pre-deployment baselines.
+
+Live catalog checks confirmed the required constraints, partial unique indexes, triggers, RLS settings, table privileges, and helper-function execution restrictions. Local and remote database lint reported no schema errors. Supabase advisors reported no Migration 010 warnings or errors; unrelated historical findings were left unchanged. The Supabase CLI was restored to the staging project after production verification.

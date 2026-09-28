@@ -1,10 +1,18 @@
 # Repository and staging deployment handoff
 
-Updated 2026-09-24. The authoritative GitHub repository is `https://github.com/Global-Data-Science-Institute/project-tafsiri`. Repository modernization and database migrations through Migration 009 are merged into `main` and synchronized to `staging`. The safety tag `pre-main-modernization-2026-09` identifies the exact pre-modernization commit; the earlier consolidation tag remains part of repository history.
+Updated 2026-09-27. The authoritative GitHub repository is `https://github.com/Global-Data-Science-Institute/project-tafsiri`. Repository modernization and database migrations through Migration 010 are merged into `main` and synchronized to `staging`. The safety tag `pre-main-modernization-2026-09` identifies the exact pre-modernization commit; the earlier consolidation tag remains part of repository history.
 
 The repository is a monorepo. The existing Vercel project `tafsiri-reviewer-portal` (`prj_Mp6Yodv1AKR8Q4g1l33wrKMEfTrS`, team `team_2CQfpCVGFxaAvjkGZjPvl9pJ`) is connected to `Global-Data-Science-Institute/project-tafsiri`. Root Directory is `apps/reviewer-portal`; framework is Next.js. This project is dedicated to the **staging** portal. The Vercel API confirms its Production Branch is `staging`.
 
-Supabase CLI identifies `gfhdwmqefotkljrltfnx` as **Project Tafsiri Staging** and `ydkookidvipqrwuilqeu` as a separate **Project Tafsiri** production project. Both databases are aligned through Migration 009, `20260924035424_create_canonical_linguistic_rule_governance.sql`. The local portal `.env.local` points to the staging project ref; it is excluded from Git. Six Vercel Production environment variables were set from that verified staging configuration before the Git-triggered deployment. Both the public Supabase URL and privileged key were previously checked against staging Auth. `SUPABASE_SECRET_KEY` is server-only, `TAFSIRI_INVITATION_MODE` is `mock`, and `NEXT_PUBLIC_APP_URL` is `https://tafsiri-reviewer-portal-staging.vercel.app`.
+Supabase CLI identifies `gfhdwmqefotkljrltfnx` as **Project Tafsiri Staging** and `ydkookidvipqrwuilqeu` as a separate **Project Tafsiri** production project. Both databases are aligned through Migration 010, `20260928015644_create_source_artifact_foundation.sql`. The local portal `.env.local` points to the staging project ref; it is excluded from Git. Six Vercel Production environment variables were set from that verified staging configuration before the Git-triggered deployment. Both the public Supabase URL and privileged key were previously checked against staging Auth. `SUPABASE_SECRET_KEY` is server-only, `TAFSIRI_INVITATION_MODE` is `mock`, and `NEXT_PUBLIC_APP_URL` is `https://tafsiri-reviewer-portal-staging.vercel.app`.
+
+## Migration 010 deployment verification
+
+Migration 010 was deployed to staging and production on 2026-09-27 from the migration merged into `main` at `170cb8d38baff9e69cbc5619d2ed3d39db9df428`. Both migration histories contain `20260928015644` exactly once, and the final production dry run reports no pending migrations, seeds, or roles. The Supabase CLI link was restored to staging.
+
+Each environment contains the six source-artifact foundation tables with row-level security enabled, no client policies or privileges, and administrative access for `service_role`. The two trigger functions are `SECURITY INVOKER`, use an empty `search_path`, and deny execution to `PUBLIC`, `anon`, and `authenticated`. Database lint reports no schema errors, and Migration 010 introduced no advisor warnings or errors.
+
+Deployment created zero artifact, association, acquisition, location, set, or set-member rows. It created no Marlo records and performed no historical import backfill. Both environments retain zero source import batches. Existing totals remained unchanged at 53 sources, 53 source versions, 53 source rights rows, 424 source use policies, 110 linguistic evidence rows, and four `PROVISIONAL` canonical rules. Reviewer, evaluation, Auth, dictionary, translation, and concept counts also remained unchanged within each environment.
 
 ## Migration 009 deployment verification
 
