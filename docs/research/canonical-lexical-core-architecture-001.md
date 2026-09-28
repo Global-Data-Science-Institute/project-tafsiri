@@ -1,7 +1,8 @@
 # Tafsiri Canonical Lexical Core Architecture 001
 
-**Status:** Approved architecture proposal for SQL design review  
-**Database effect:** None  
+**Status:** Approved architecture proposal for SQL design review
+
+**Database effect:** None
 **Migration 011:** Not created
 
 ## 1. Executive summary
