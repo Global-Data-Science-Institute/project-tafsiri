@@ -1,0 +1,148 @@
+﻿{
+    "registration_key":  "MARLO_SOURCE_REGISTRATION_001",
+    "environment":  "production",
+    "project_ref":  "ydkookidvipqrwuilqeu",
+    "human_review_key":  "TAFSIRI_MARLO_SOURCE_REGISTRATION_REVIEW_001",
+    "plan_digest":  "309bf88061db30cdd3fcc1e48c49c00ac4fa464db97aea969710cf4f7802a863",
+    "transaction_timestamp_utc":  "2026-09-28T19:11:00.7051531Z",
+    "transaction_result":  {
+                               "status":  "COMMITTED",
+                               "atomic":  true,
+                               "statement_type":  "PostgreSQL DO transaction",
+                               "advisory_lock":  true,
+                               "rollback_on_error":  true
+                           },
+    "pre_write_counts":  {
+                             "sources":  53,
+                             "source_versions":  53,
+                             "current_rights":  53,
+                             "current_policies":  424,
+                             "source_artifacts":  0,
+                             "source_version_artifacts":  0,
+                             "source_artifact_acquisitions":  0,
+                             "source_artifact_locations":  0,
+                             "source_artifact_sets":  0,
+                             "source_artifact_set_members":  0,
+                             "source_import_batches":  0,
+                             "source_entries":  0,
+                             "linguistic_evidence":  110,
+                             "linguistic_rules":  4,
+                             "provisional_rules":  4
+                         },
+    "pre_write_plan":  {
+                           "CREATE":  109,
+                           "REUSE":  4,
+                           "CONFLICT":  0
+                       },
+    "persisted_counts":  {
+                             "sources":  59,
+                             "source_versions":  59,
+                             "current_rights":  59,
+                             "current_policies":  472,
+                             "source_artifacts":  12,
+                             "source_version_artifacts":  12,
+                             "preferred_version_artifacts":  7,
+                             "source_artifact_acquisitions":  13,
+                             "source_artifact_locations":  0,
+                             "source_artifact_sets":  1,
+                             "source_artifact_set_members":  5,
+                             "source_contact_events":  0,
+                             "source_import_batches":  0,
+                             "source_entries":  0
+                         },
+    "post_write_idempotency":  {
+                                   "CREATE":  0,
+                                   "REUSE":  113,
+                                   "CONFLICT":  0
+                               },
+    "semantic_digest":  "309bf88061db30cdd3fcc1e48c49c00ac4fa464db97aea969710cf4f7802a863",
+    "staging_production_parity":  {
+                                      "status":  "PASS",
+                                      "environment_specific_ids_and_timestamps_ignored":  true,
+                                      "matched_identity_count":  113,
+                                      "conflicts":  0,
+                                      "source_keys":  true,
+                                      "source_types":  true,
+                                      "version_keys":  true,
+                                      "artifact_keys":  true,
+                                      "sha256":  true,
+                                      "byte_sizes":  true,
+                                      "associations":  true,
+                                      "preferred_decisions":  true,
+                                      "acquisition_keys":  true,
+                                      "filenames":  true,
+                                      "provider":  true,
+                                      "acquisition_group":  true,
+                                      "rights":  true,
+                                      "policy_scopes_and_decisions":  true,
+                                      "artifact_set_and_ordering":  true
+                                  },
+    "rights_summary":  {
+                           "created":  6,
+                           "UNKNOWN":  6,
+                           "OPEN_LICENSE":  0,
+                           "existing_preserved":  true
+                       },
+    "policy_summary":  {
+                           "created":  48,
+                           "UNKNOWN":  48,
+                           "ALLOWED":  0
+                       },
+    "sha256_integrity":  {
+                             "physical_files_validated":  13,
+                             "unique_artifacts":  12,
+                             "persisted_sha256_rows":  12
+                         },
+    "duplicate_part_5":  {
+                             "artifacts":  1,
+                             "acquisitions":  2,
+                             "set_members":  1
+                         },
+    "artifact_set":  {
+                         "key":  "ASET_NDANYI_NDANYI_2005_MULTIPART_001",
+                         "sequence":  [
+                                          1,
+                                          2,
+                                          3,
+                                          4,
+                                          5
+                                      ]
+                     },
+    "invariants":  {
+                       "linguistic_evidence":  110,
+                       "linguistic_rules":  4,
+                       "provisional_rules":  4,
+                       "concepts":  0,
+                       "concept_terms":  0,
+                       "dictionary_entries":  3837,
+                       "translations":  23400,
+                       "evaluation_studies":  1,
+                       "evaluation_items":  150,
+                       "reviewers":  0,
+                       "assignments":  0,
+                       "annotations":  0,
+                       "adjudications":  0
+                   },
+    "advisor_result":  {
+                           "status":  "PASS",
+                           "security_new_error_warn":  0,
+                           "performance_new_warn_error":  0,
+                           "artifact_layer_notices":  "INFO_ONLY",
+                           "historical_findings":  "UNCHANGED_OUT_OF_SCOPE",
+                           "verified_by":  "HUMAN_SUPABASE_DASHBOARD_REVIEW"
+                       },
+    "unresolved_rights_questions":  [
+                                        "model training permission",
+                                        "redistribution permission",
+                                        "public display permission",
+                                        "commercial API permission",
+                                        "durable archive locations"
+                                    ],
+    "unresolved_linguistic_questions":  [
+                                            "Tura/Lutura mapping",
+                                            "Luragoli/Logoori/Lulogooli mapping",
+                                            "Idakho_1 and Idakho_2 distinction",
+                                            "workbook row semantics"
+                                        ],
+    "private_correspondence_included":  false
+}

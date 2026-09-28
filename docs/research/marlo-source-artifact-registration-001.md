@@ -69,3 +69,17 @@ Production project `ydkookidvipqrwuilqeu` remained read-only and retained its pr
 Tura/Lutura, Luragoli/Logoori/Lulogooli, and the intended distinction between `Idakho_1` and `Idakho_2` remain unresolved. Permission and durable archive-location questions also remain unresolved. The machine-readable staging execution record is `artifacts/source_registration/marlo_source_registration_001_staging.json`; it contains no private correspondence.
 
 The post-registration Supabase Security and Performance Advisor gate passed. No new Security `ERROR`/`WARN` or Performance `WARN`/`ERROR` finding was attributable to Migration 010 or the Marlo registration. Artifact-layer notices were informational only, and historical findings were unchanged.
+
+## Production registration
+
+**PRODUCTION REGISTRATION COMPLETE — 2026-09-28**
+
+Following human review by Dr. Moody Amakobe, the approved registration was replicated atomically to production project `ydkookidvipqrwuilqeu`. The pre-write plan was 109 `CREATE`, four `REUSE`, and zero `CONFLICT`; the immediate post-write plan was zero `CREATE`, 113 `REUSE`, and zero `CONFLICT`. Both used the approved semantic digest `309bf88061db30cdd3fcc1e48c49c00ac4fa464db97aea969710cf4f7802a863` and match the normalized staging registration.
+
+Production now contains the same 12 artifact identities, 12 version-artifact associations, 13 acquisitions, and ordered five-member Ndanyi artifact set as staging. Six rights rows and 48 use-policy rows were added, all `UNKNOWN`. No open license or allowed-use decision was inferred from direct provision.
+
+This is provenance and artifact registration only. It performed no lexical import and created no source entries, canonical lexical data, linguistic evidence, linguistic rules, promotions, runtime behavior, artifact locations, contact events, or dialect assertions. The four existing canonical rules remain `PROVISIONAL`. Tura/Lutura, Luragoli/Logoori/Lulogooli, `Idakho_1`/`Idakho_2`, workbook row semantics, permissions, and durable archive locations remain unresolved.
+
+The human approval record is `artifacts/source_registration/marlo_source_registration_001_human_review.json`. The production execution record is `artifacts/source_registration/marlo_source_registration_001_production.json`. Neither record contains private correspondence.
+
+The production Supabase Security and Performance Advisor gate passed. No new Security `ERROR`/`WARN` or Performance `WARN`/`ERROR` finding was attributable to the registration or Migration 010 artifact layer. Artifact-layer findings were informational only; unchanged historical production findings remain outside this registration scope.
