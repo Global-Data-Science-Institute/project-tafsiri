@@ -6,7 +6,11 @@ This document records the zero-write registration plan derived from `config/sour
 
 The plan reuses the registered Bukusu and Wanga 2008 intellectual works and versions, proposes six new works and versions, and registers exact file bytes through the Migration 010 artifact layer. It creates no import batch, source entry, lexical record, linguistic rule, dialect mapping, application user, or reviewer authority.
 
-The utility `scripts/source_registry/prepare_marlo_registration.py` defaults to dry-run. Staging execution requires `--execute` and an exact `--confirm-project-ref`. Production additionally requires `--production-approved-registration-001`. Execution also requires a service-role URL and key matching the selected project. No execution mode was used during Registration 001 planning.
+The utility `scripts/source_registry/prepare_marlo_registration.py` defaults to dry-run. Staging execution requires `--execute` and an exact `--confirm-project-ref`. Production additionally requires `--production-approved-registration-001`. No execution mode was used during Registration 001 planning.
+
+Execution sends one PostgreSQL `DO` statement through the trusted, linked Supabase CLI. The statement takes a transaction-scoped advisory lock, resolves every manifest identity, rejects semantic conflicts, and creates missing rows. PostgreSQL commits the complete statement on success and rolls back every row on any failure. It creates no stored function, RPC, grant, or RLS change. Repeating the statement reuses the same identities and creates zero additional rows.
+
+Dry-run remains a separate read-only inspection and planning path. Execution is allowed only for the approved semantic digest shown below. Local database integration tests cover successful execution, a second idempotent execution, mid and late injected failures, semantic conflict rejection, and full rollback.
 
 ## Proposed registration
 

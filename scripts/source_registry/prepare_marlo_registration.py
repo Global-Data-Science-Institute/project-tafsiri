@@ -3,13 +3,9 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
-import os
 import subprocess
 import sys
 import tempfile
-import urllib.error
-import urllib.parse
-import urllib.request
 import uuid
 from collections import Counter
 from pathlib import Path
@@ -20,6 +16,7 @@ INTAKE_PATH = ROOT / "config/sources/marlo_source_intake_001.json"
 MANIFEST_PATH = ROOT / "config/sources/marlo_source_registration_001.json"
 STAGING_REF = "gfhdwmqefotkljrltfnx"
 PRODUCTION_REF = "ydkookidvipqrwuilqeu"
+APPROVED_DIGEST = "309bf88061db30cdd3fcc1e48c49c00ac4fa464db97aea969710cf4f7802a863"
 NAMESPACE = uuid.UUID("65269e23-a33e-4e6d-bf31-f57e6ed88a58")
 USE_SCOPES = (
     "INTERNAL_RESEARCH", "HUMAN_REVIEW", "REVIEWER_DISPLAY", "PUBLIC_DISPLAY",
@@ -355,65 +352,104 @@ def plan(manifest: dict[str, Any], state: dict[str, Any]) -> dict[str, Any]:
     }
 
 
-class RestClient:
-    def __init__(self, url: str, key: str):
-        self.base = url.rstrip("/") + "/rest/v1"; self.headers = {"apikey": key, "Authorization": f"Bearer {key}"}
-    def insert(self, table: str, row: dict[str, Any]) -> None:
-        data = json.dumps(row, ensure_ascii=False).encode("utf-8")
-        request = urllib.request.Request(f"{self.base}/{table}", data=data, method="POST", headers={**self.headers, "Content-Type": "application/json", "Prefer": "return=minimal"})
-        try:
-            with urllib.request.urlopen(request): pass
-        except urllib.error.HTTPError as exc:
-            raise RegistrationError(f"insert {table} failed: {exc.read().decode('utf-8','replace')}") from exc
+def _sql_literal(value: Any) -> str:
+    if value is None: return "NULL"
+    if isinstance(value, bool): return "true" if value else "false"
+    if isinstance(value, (int, float)): return str(value)
+    return "'" + str(value).replace("'", "''") + "'"
 
 
-def execute(manifest: dict[str, Any], state: dict[str, Any], client: RestClient) -> None:
-    planned = plan(manifest, state)
-    if planned["conflicts"]: raise RegistrationError("execution refused because conflicts exist")
-    sources = {row["source_key"]: row["id"] for row in state["sources"]}
-    for item in manifest["source_actions"]:
-        if item["source_key"] not in sources:
-            row = {k: v for k, v in item.items() if k not in {"action"} and v is not None}; client.insert("sources", row); sources[item["source_key"]] = item["id"]
-    versions = {(row["source_key"], row["version_key"]): row["id"] for row in state["versions"]}
-    for item in manifest["version_actions"]:
-        key = (item["source_key"], item["version_key"])
-        if key not in versions:
-            row = {k: v for k, v in item.items() if k not in {"action", "source_key"} and v is not None}; row["source_id"] = sources[item["source_key"]]; client.insert("source_versions", row); versions[key] = item["id"]
-    artifacts = {row["checksum"]: row["id"] for row in state["artifacts"]}
-    artifact_keys = {}
-    for item in manifest["artifact_actions"]:
-        if item["checksum"] not in artifacts:
-            row = {k: v for k, v in item.items() if k != "action" and v is not None}; client.insert("source_artifacts", row); artifacts[item["checksum"]] = item["id"]
-        artifact_keys[item["artifact_key"]] = artifacts[item["checksum"]]
-    existing_assoc = {(r["source_key"],r["version_key"],r["artifact_key"]) for r in state["associations"]}
-    for item in manifest["association_actions"]:
-        key=(item["source_key"],item["version_key"],item["artifact_key"])
-        if key not in existing_assoc:
-            client.insert("source_version_artifacts", {"id":item["id"],"source_version_id":versions[key[:2]],"source_artifact_id":artifact_keys[item["artifact_key"]],"artifact_role":item["artifact_role"],"is_preferred":item["is_preferred"],"notes":item["notes"]})
-    existing_acq={r["acquisition_key"] for r in state["acquisitions"]}
-    for item in manifest["acquisition_actions"]:
-        if item["acquisition_key"] not in existing_acq:
-            row={k:v for k,v in item.items() if k not in {"action","artifact_key"} and v is not None}; row["source_artifact_id"]=artifact_keys[item["artifact_key"]]; client.insert("source_artifact_acquisitions",row)
-    existing_rights={(r["source_key"],r["version_key"]) for r in state["rights"]}
-    for item in manifest["rights_actions"]:
-        key=(item["source_key"],item["version_key"])
-        if key not in existing_rights:
-            client.insert("source_rights", {"id":item["id"],"source_version_id":versions[key],"rights_status":item["rights_status"],"evidence_reference":item["evidence_reference"],"notes":item["notes"]})
-    existing_policies={(r["source_key"],r["version_key"],r["use_scope"]) for r in state["policies"]}
-    for item in manifest["policy_actions"]:
-        key=(item["source_key"],item["version_key"],item["use_scope"])
-        if key not in existing_policies:
-            client.insert("source_use_policies", {"id":item["id"],"source_version_id":versions[key[:2]],"use_scope":item["use_scope"],"decision":item["decision"],"policy_version":item["policy_version"],"notes":item["notes"]})
-    sets={r["artifact_set_key"]:r["id"] for r in state["sets"]}
-    for item in manifest["artifact_set_actions"]:
-        if item["artifact_set_key"] not in sets:
-            client.insert("source_artifact_sets", {"id":item["id"],"artifact_set_key":item["artifact_set_key"],"source_version_id":versions[(item["source_key"],item["version_key"])],"set_type":item["set_type"],"label":item["label"],"notes":item["notes"]}); sets[item["artifact_set_key"]]=item["id"]
-    existing_members={(r["artifact_set_key"],r["sequence_number"]) for r in state["members"]}
-    for item in manifest["artifact_set_member_actions"]:
-        key=(item["artifact_set_key"],item["sequence_number"])
-        if key not in existing_members:
-            source_key=next(s["source_key"] for s in manifest["artifact_set_actions"] if s["artifact_set_key"]==item["artifact_set_key"]); version_key=next(s["version_key"] for s in manifest["artifact_set_actions"] if s["artifact_set_key"]==item["artifact_set_key"])
-            client.insert("source_artifact_set_members", {"id":item["id"],"artifact_set_id":sets[item["artifact_set_key"]],"source_version_id":versions[(source_key,version_key)],"source_artifact_id":artifact_keys[item["artifact_key"]],"sequence_number":item["sequence_number"],"component_label":item["component_label"]})
+def execution_sql(manifest: dict[str, Any], failure_point: str | None = None) -> str:
+    """Build one transaction-scoped statement; any exception rolls back every row."""
+    if manifest.get("semantic_digest") != APPROVED_DIGEST:
+        raise RegistrationError("execution requires the approved semantic digest")
+    if failure_point not in (None, "mid", "late"):
+        raise RegistrationError("unknown injected failure point")
+    payload = json.dumps(manifest, ensure_ascii=False, separators=(",", ":")).replace("'", "''")
+    fail_mid = "RAISE EXCEPTION 'INJECTED MID FAILURE';" if failure_point == "mid" else ""
+    fail_late = "RAISE EXCEPTION 'INJECTED LATE FAILURE';" if failure_point == "late" else ""
+    # All identity checks and writes run inside this single DO statement. The advisory
+    # lock also prevents two copies of this registration racing each other.
+    return f"""DO $registration$
+DECLARE m jsonb := '{payload}'::jsonb; r jsonb; sid uuid; vid uuid; aid uuid; setid uuid;
+BEGIN
+  PERFORM pg_advisory_xact_lock(hashtext('MARLO_SOURCE_REGISTRATION_001'));
+  IF NOT EXISTS (SELECT 1 FROM supabase_migrations.schema_migrations WHERE version='20260928015644') THEN RAISE EXCEPTION 'CONFLICT: Migration 010 is absent'; END IF;
+  -- Validate every mandatory reuse before the first insert.
+  FOR r IN SELECT * FROM jsonb_array_elements(m->'source_actions') WHERE value->>'action'='REUSE' LOOP
+    IF NOT EXISTS (SELECT 1 FROM public.sources WHERE source_key=r->>'source_key' AND source_type IS NOT DISTINCT FROM r->>'source_type' AND title IS NOT DISTINCT FROM r->>'title') THEN RAISE EXCEPTION 'CONFLICT: required source % is absent or differs',r->>'source_key'; END IF;
+  END LOOP;
+  FOR r IN SELECT * FROM jsonb_array_elements(m->'version_actions') WHERE value->>'action'='REUSE' LOOP
+    IF NOT EXISTS (SELECT 1 FROM public.source_versions v JOIN public.sources s ON s.id=v.source_id WHERE s.source_key=r->>'source_key' AND v.version_key=r->>'version_key' AND v.checksum IS NULL AND v.checksum_algorithm IS NULL) THEN RAISE EXCEPTION 'CONFLICT: required version % is absent or differs',r->>'version_key'; END IF;
+  END LOOP;
+  FOR r IN SELECT * FROM jsonb_array_elements(m->'source_actions') LOOP
+    SELECT id INTO sid FROM public.sources WHERE source_key=r->>'source_key';
+    IF sid IS NULL THEN
+      IF r->>'action'='REUSE' THEN RAISE EXCEPTION 'CONFLICT: required source % is absent',r->>'source_key'; END IF;
+      INSERT INTO public.sources(id,source_key,source_type,title,authors_or_contributors,publisher_or_institution,publication_year,citation,notes)
+      VALUES ((r->>'id')::uuid,r->>'source_key',r->>'source_type',r->>'title',r->>'authors_or_contributors',r->>'publisher_or_institution',(r->>'publication_year')::int,r->>'citation',r->>'notes');
+    ELSIF NOT EXISTS (SELECT 1 FROM public.sources WHERE id=sid AND source_type IS NOT DISTINCT FROM r->>'source_type' AND title IS NOT DISTINCT FROM r->>'title') THEN RAISE EXCEPTION 'CONFLICT: source % differs',r->>'source_key'; END IF;
+  END LOOP;
+  FOR r IN SELECT * FROM jsonb_array_elements(m->'version_actions') LOOP
+    SELECT s.id INTO sid FROM public.sources s WHERE s.source_key=r->>'source_key';
+    SELECT v.id INTO vid FROM public.source_versions v WHERE v.source_id=sid AND v.version_key=r->>'version_key';
+    IF vid IS NULL THEN
+      IF r->>'action'='REUSE' THEN RAISE EXCEPTION 'CONFLICT: required version % is absent',r->>'version_key'; END IF;
+      INSERT INTO public.source_versions(id,source_id,version_key,notes) VALUES ((r->>'id')::uuid,sid,r->>'version_key',r->>'notes');
+    ELSIF NOT EXISTS (SELECT 1 FROM public.source_versions WHERE id=vid AND checksum IS NULL AND checksum_algorithm IS NULL) THEN RAISE EXCEPTION 'CONFLICT: version % differs',r->>'version_key'; END IF;
+  END LOOP;
+  FOR r IN SELECT * FROM jsonb_array_elements(m->'artifact_actions') LOOP
+    SELECT id INTO aid FROM public.source_artifacts WHERE checksum_algorithm=r->>'checksum_algorithm' AND checksum=r->>'checksum';
+    IF aid IS NULL THEN INSERT INTO public.source_artifacts(id,artifact_key,checksum_algorithm,checksum,byte_size,media_type,artifact_kind,artifact_status,page_count,workbook_sheet_count,notes)
+      VALUES ((r->>'id')::uuid,r->>'artifact_key',r->>'checksum_algorithm',r->>'checksum',(r->>'byte_size')::bigint,r->>'media_type',r->>'artifact_kind',r->>'artifact_status',(r->>'page_count')::int,(r->>'workbook_sheet_count')::int,r->>'notes');
+    ELSIF NOT EXISTS (SELECT 1 FROM public.source_artifacts WHERE id=aid AND artifact_key=r->>'artifact_key' AND byte_size=(r->>'byte_size')::bigint AND media_type=r->>'media_type' AND artifact_kind=r->>'artifact_kind' AND artifact_status=r->>'artifact_status') THEN RAISE EXCEPTION 'CONFLICT: artifact % differs',r->>'artifact_key'; END IF;
+  END LOOP;
+  {fail_mid}
+  FOR r IN SELECT * FROM jsonb_array_elements(m->'association_actions') LOOP
+    SELECT v.id INTO vid FROM public.source_versions v JOIN public.sources s ON s.id=v.source_id WHERE s.source_key=r->>'source_key' AND v.version_key=r->>'version_key';
+    SELECT id INTO aid FROM public.source_artifacts WHERE artifact_key=r->>'artifact_key';
+    IF NOT EXISTS (SELECT 1 FROM public.source_version_artifacts WHERE source_version_id=vid AND source_artifact_id=aid) THEN INSERT INTO public.source_version_artifacts(id,source_version_id,source_artifact_id,artifact_role,is_preferred,notes) VALUES ((r->>'id')::uuid,vid,aid,r->>'artifact_role',(r->>'is_preferred')::boolean,r->>'notes');
+    ELSIF NOT EXISTS (SELECT 1 FROM public.source_version_artifacts WHERE source_version_id=vid AND source_artifact_id=aid AND artifact_role=r->>'artifact_role' AND is_preferred=(r->>'is_preferred')::boolean) THEN RAISE EXCEPTION 'CONFLICT: association differs'; END IF;
+  END LOOP;
+  FOR r IN SELECT * FROM jsonb_array_elements(m->'acquisition_actions') LOOP
+    SELECT id INTO aid FROM public.source_artifacts WHERE artifact_key=r->>'artifact_key';
+    IF NOT EXISTS (SELECT 1 FROM public.source_artifact_acquisitions WHERE acquisition_key=r->>'acquisition_key') THEN INSERT INTO public.source_artifact_acquisitions(id,source_artifact_id,acquisition_key,acquisition_type,acquired_at,original_filename,provider_name,acquisition_channel,acquisition_group_key,evidence_reference,notes) VALUES ((r->>'id')::uuid,aid,r->>'acquisition_key',r->>'acquisition_type',(r->>'acquired_at')::timestamptz,r->>'original_filename',r->>'provider_name',r->>'acquisition_channel',r->>'acquisition_group_key',r->>'evidence_reference',r->>'notes');
+    ELSIF NOT EXISTS (SELECT 1 FROM public.source_artifact_acquisitions WHERE acquisition_key=r->>'acquisition_key' AND source_artifact_id=aid AND acquisition_type=r->>'acquisition_type' AND original_filename=r->>'original_filename' AND provider_name=r->>'provider_name' AND acquisition_channel=r->>'acquisition_channel' AND acquisition_group_key=r->>'acquisition_group_key') THEN RAISE EXCEPTION 'CONFLICT: acquisition % differs',r->>'acquisition_key'; END IF;
+  END LOOP;
+  FOR r IN SELECT * FROM jsonb_array_elements(m->'rights_actions') LOOP
+    SELECT v.id INTO vid FROM public.source_versions v JOIN public.sources s ON s.id=v.source_id WHERE s.source_key=r->>'source_key' AND v.version_key=r->>'version_key';
+    IF NOT EXISTS (SELECT 1 FROM public.source_rights WHERE source_version_id=vid AND superseded_at IS NULL) THEN INSERT INTO public.source_rights(id,source_version_id,rights_status,evidence_reference,notes) VALUES ((r->>'id')::uuid,vid,r->>'rights_status',r->>'evidence_reference',r->>'notes');
+    ELSIF NOT EXISTS (SELECT 1 FROM public.source_rights WHERE source_version_id=vid AND superseded_at IS NULL AND rights_status=r->>'rights_status') THEN RAISE EXCEPTION 'CONFLICT: rights differ'; END IF;
+  END LOOP;
+  FOR r IN SELECT * FROM jsonb_array_elements(m->'policy_actions') LOOP
+    SELECT v.id INTO vid FROM public.source_versions v JOIN public.sources s ON s.id=v.source_id WHERE s.source_key=r->>'source_key' AND v.version_key=r->>'version_key';
+    IF NOT EXISTS (SELECT 1 FROM public.source_use_policies WHERE source_version_id=vid AND use_scope=r->>'use_scope' AND superseded_at IS NULL) THEN INSERT INTO public.source_use_policies(id,source_version_id,use_scope,decision,policy_version,notes) VALUES ((r->>'id')::uuid,vid,r->>'use_scope',r->>'decision',r->>'policy_version',r->>'notes');
+    ELSIF NOT EXISTS (SELECT 1 FROM public.source_use_policies WHERE source_version_id=vid AND use_scope=r->>'use_scope' AND superseded_at IS NULL AND decision=r->>'decision' AND policy_version=r->>'policy_version') THEN RAISE EXCEPTION 'CONFLICT: policy differs'; END IF;
+  END LOOP;
+  FOR r IN SELECT * FROM jsonb_array_elements(m->'artifact_set_actions') LOOP
+    SELECT v.id INTO vid FROM public.source_versions v JOIN public.sources s ON s.id=v.source_id WHERE s.source_key=r->>'source_key' AND v.version_key=r->>'version_key';
+    SELECT id INTO setid FROM public.source_artifact_sets WHERE artifact_set_key=r->>'artifact_set_key';
+    IF setid IS NULL THEN INSERT INTO public.source_artifact_sets(id,artifact_set_key,source_version_id,set_type,label,notes) VALUES ((r->>'id')::uuid,r->>'artifact_set_key',vid,r->>'set_type',r->>'label',r->>'notes');
+    ELSIF NOT EXISTS (SELECT 1 FROM public.source_artifact_sets WHERE id=setid AND source_version_id=vid AND set_type=r->>'set_type' AND label=r->>'label') THEN RAISE EXCEPTION 'CONFLICT: artifact set differs'; END IF;
+  END LOOP;
+  FOR r IN SELECT * FROM jsonb_array_elements(m->'artifact_set_member_actions') LOOP
+    SELECT s.id,s.source_version_id INTO setid,vid FROM public.source_artifact_sets s WHERE s.artifact_set_key=r->>'artifact_set_key'; SELECT id INTO aid FROM public.source_artifacts WHERE artifact_key=r->>'artifact_key';
+    IF NOT EXISTS (SELECT 1 FROM public.source_artifact_set_members WHERE artifact_set_id=setid AND sequence_number=(r->>'sequence_number')::int) THEN INSERT INTO public.source_artifact_set_members(id,artifact_set_id,source_version_id,source_artifact_id,sequence_number,component_label) VALUES ((r->>'id')::uuid,setid,vid,aid,(r->>'sequence_number')::int,r->>'component_label');
+    ELSIF NOT EXISTS (SELECT 1 FROM public.source_artifact_set_members WHERE artifact_set_id=setid AND sequence_number=(r->>'sequence_number')::int AND source_artifact_id=aid AND component_label=r->>'component_label') THEN RAISE EXCEPTION 'CONFLICT: set member differs'; END IF;
+  END LOOP;
+  {fail_late}
+END $registration$;"""
+
+
+def cli_execute(project_ref: str, sql: str) -> None:
+    cli = ROOT / "node_modules/.bin/supabase.cmd"
+    if not cli.exists(): raise RegistrationError("local Supabase CLI is unavailable")
+    with tempfile.NamedTemporaryFile("w", suffix=".sql", encoding="utf-8", delete=False, dir=ROOT) as handle:
+        handle.write(sql); path = Path(handle.name)
+    try:
+        result = subprocess.run([str(cli), "db", "query", "--linked", "--project-ref", project_ref, "--file", str(path)], cwd=ROOT, text=True, capture_output=True, encoding="utf-8", check=False)
+    finally: path.unlink(missing_ok=True)
+    if result.returncode: raise RegistrationError("\n".join(x.strip() for x in (result.stderr,result.stdout) if x.strip()))
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -437,9 +473,8 @@ def main(argv: list[str] | None = None) -> int:
     if not args.execute: return 0
     if args.confirm_project_ref != args.project_ref: raise RegistrationError("--execute requires matching --confirm-project-ref")
     if args.project_ref == PRODUCTION_REF and not args.production_approved_registration_001: raise RegistrationError("production execution requires --production-approved-registration-001")
-    url=os.environ.get("SUPABASE_URL"); key=os.environ.get("SUPABASE_SERVICE_ROLE_KEY")
-    if not url or not key or args.project_ref not in url: raise RegistrationError("matching SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY are required for execution")
-    execute(manifest,state,RestClient(url,key)); print(json.dumps({"status":"EXECUTED","project_ref":args.project_ref},sort_keys=True)); return 0
+    cli_execute(args.project_ref, execution_sql(manifest))
+    print(json.dumps({"status":"EXECUTED","project_ref":args.project_ref,"semantic_digest":APPROVED_DIGEST},sort_keys=True)); return 0
 
 
 if __name__ == "__main__":

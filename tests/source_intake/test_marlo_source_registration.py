@@ -139,7 +139,7 @@ def test_default_cli_path_is_dry_run_and_performs_no_write(monkeypatch: pytest.M
     manifest = load_manifest()
     monkeypatch.setattr(registration, "validate_manifest", lambda value: {})
     monkeypatch.setattr(registration, "cli_query", lambda project_ref, sql: empty_remote_state(manifest))
-    monkeypatch.setattr(registration, "execute", lambda *args, **kwargs: pytest.fail("default dry-run attempted execution"))
+    monkeypatch.setattr(registration, "cli_execute", lambda *args, **kwargs: pytest.fail("default dry-run attempted execution"))
     assert registration.main([]) == 0
     payload = json.loads(capsys.readouterr().out)
     assert payload["status"] == "DRY_RUN"
@@ -155,3 +155,29 @@ def test_production_execution_requires_explicit_approval(monkeypatch: pytest.Mon
             "--project-ref", registration.PRODUCTION_REF, "--execute",
             "--confirm-project-ref", registration.PRODUCTION_REF,
         ])
+
+
+def test_execution_is_one_atomic_statement_with_approved_digest() -> None:
+    sql = registration.execution_sql(load_manifest())
+    assert sql.startswith("DO $registration$")
+    assert sql.rstrip().endswith("$registration$;")
+    assert "pg_advisory_xact_lock" in sql
+    assert "SECURITY DEFINER" not in sql
+    assert "CREATE FUNCTION" not in sql
+    assert "GRANT " not in sql
+    assert load_manifest()["semantic_digest"] == registration.APPROVED_DIGEST
+
+
+def test_execute_requires_exact_project_confirmation(monkeypatch: pytest.MonkeyPatch) -> None:
+    manifest = load_manifest()
+    monkeypatch.setattr(registration, "validate_manifest", lambda value: {})
+    monkeypatch.setattr(registration, "cli_query", lambda project_ref, sql: empty_remote_state(manifest))
+    with pytest.raises(registration.RegistrationError, match="matching --confirm-project-ref"):
+        registration.main(["--execute"])
+
+
+def test_sequential_rest_execution_path_is_absent() -> None:
+    source = Path(registration.__file__).read_text(encoding="utf-8")
+    assert "urllib.request" not in source
+    assert "class RestClient" not in source
+    assert ".insert(\"sources\"" not in source
