@@ -137,6 +137,7 @@ def test_dry_run_plan_is_idempotent_and_has_no_import_or_entry_actions() -> None
 
 def test_default_cli_path_is_dry_run_and_performs_no_write(monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]) -> None:
     manifest = load_manifest()
+    monkeypatch.setattr(registration, "validate_manifest", lambda value: {})
     monkeypatch.setattr(registration, "cli_query", lambda project_ref, sql: empty_remote_state(manifest))
     monkeypatch.setattr(registration, "execute", lambda *args, **kwargs: pytest.fail("default dry-run attempted execution"))
     assert registration.main([]) == 0
@@ -147,6 +148,7 @@ def test_default_cli_path_is_dry_run_and_performs_no_write(monkeypatch: pytest.M
 
 def test_production_execution_requires_explicit_approval(monkeypatch: pytest.MonkeyPatch) -> None:
     manifest = load_manifest()
+    monkeypatch.setattr(registration, "validate_manifest", lambda value: {})
     monkeypatch.setattr(registration, "cli_query", lambda project_ref, sql: empty_remote_state(manifest))
     with pytest.raises(registration.RegistrationError, match="production execution requires"):
         registration.main([
