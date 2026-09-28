@@ -10,6 +10,7 @@ This directory documents the repository's current architecture, research control
 - [Cultural guidelines](cultural_guidelines.md)
 - [Source Registration 001](source-registration-001.md)
 - [Import Reconciliation 001](import-reconciliation-001.md)
+- [Canonical Lexical Core Architecture 001](research/canonical-lexical-core-architecture-001.md)
 
 ## Operations
 
