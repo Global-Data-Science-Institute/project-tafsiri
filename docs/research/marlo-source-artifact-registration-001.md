@@ -53,3 +53,19 @@ Staging and production each resolve to 109 `CREATE`, four `REUSE`, and zero `CON
 `309bf88061db30cdd3fcc1e48c49c00ac4fa464db97aea969710cf4f7802a863`
 
 No database write was executed.
+
+## Staging registration
+
+**STAGING REGISTRATION COMPLETE — 2026-09-28**
+
+The approved registration was executed against staging project `gfhdwmqefotkljrltfnx` through the trusted atomic SQL path. The pre-write plan was 109 `CREATE`, four `REUSE`, and zero `CONFLICT`, with semantic digest `309bf88061db30cdd3fcc1e48c49c00ac4fa464db97aea969710cf4f7802a863`. The transaction committed successfully. Its immediate post-write plan was zero `CREATE`, 113 `REUSE`, and zero `CONFLICT`, with the same digest.
+
+Staging now contains 59 sources, 59 versions, 12 artifacts, 12 version-artifact associations, 13 acquisitions, one artifact set, and five ordered set members. The duplicate Ndanyi Part 5 remains one artifact represented by two acquisition records and one set member. Seven associations are preferred representations; none of the five Ndanyi components is individually preferred.
+
+Six new rights rows and 48 new use-policy rows were created. Every new rights status and policy decision is `UNKNOWN`; no `OPEN_LICENSE` right or `ALLOWED` policy was inferred. The existing Bukusu and Wanga sources, versions, rights, and policies were reused without modification.
+
+Production project `ydkookidvipqrwuilqeu` remained read-only and retained its pre-registration baseline. Registration created no artifact locations, contact events, import batches, source entries, dialect assertions, concepts, concept terms, dictionary entries, translations, linguistic evidence, linguistic rules, or promotions. The four existing canonical rules remain `PROVISIONAL`.
+
+Tura/Lutura, Luragoli/Logoori/Lulogooli, and the intended distinction between `Idakho_1` and `Idakho_2` remain unresolved. Permission and durable archive-location questions also remain unresolved. The machine-readable staging execution record is `artifacts/source_registration/marlo_source_registration_001_staging.json`; it contains no private correspondence.
+
+The post-registration Supabase Security and Performance Advisor gate passed. No new Security `ERROR`/`WARN` or Performance `WARN`/`ERROR` finding was attributable to Migration 010 or the Marlo registration. Artifact-layer notices were informational only, and historical findings were unchanged.
