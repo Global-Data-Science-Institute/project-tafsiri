@@ -19,4 +19,3 @@ Reject direct privileged research queries, research-only asset serving, automati
 A research-only checkpoint cannot deploy; tenant access is isolated; a revoked commercial artifact cannot be restored by rollback.
 
 See the [architecture amendment](../../research/multilingual-architecture-amendment-001.md), [audit](../../research/multilingual-readiness-audit-001.md) and [validation matrix](../../research/multilingual-compatibility-validation-001.md).
-

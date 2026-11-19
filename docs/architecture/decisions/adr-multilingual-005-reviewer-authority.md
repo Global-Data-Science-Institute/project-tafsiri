@@ -19,4 +19,3 @@ Reject language-family inheritance, browser-only filtering and automatic grants 
 An assigned Luwanga reviewer cannot access another-language item by UUID. Revocation is enforced on reads/writes, and Stage A stays blinded.
 
 See the [architecture amendment](../../research/multilingual-architecture-amendment-001.md), [audit](../../research/multilingual-readiness-audit-001.md) and [validation matrix](../../research/multilingual-compatibility-validation-001.md). Next: [ADR-MULTI-006](adr-multilingual-006-model-dataset-governance.md).
-

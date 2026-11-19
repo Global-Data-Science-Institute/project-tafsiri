@@ -19,4 +19,3 @@ Reject automatic training export from imported/reviewed data and premature produ
 Unknown/expired training permission blocks export; evaluation artifacts remain held out; a model without scope-specific validation cannot be released for that scope.
 
 See the [architecture amendment](../../research/multilingual-architecture-amendment-001.md), [audit](../../research/multilingual-readiness-audit-001.md) and [validation matrix](../../research/multilingual-compatibility-validation-001.md). Next: [ADR-MULTI-007](adr-multilingual-007-research-commercial-boundary.md).
-

@@ -19,4 +19,3 @@ Reject a pipeline or database fork per language. Preserve frozen Pipeline 001 co
 A second hypothetical language must traverse the same source-entry, evidence and approval boundaries; unsupported profiles fail closed.
 
 See the [architecture amendment](../../research/multilingual-architecture-amendment-001.md), [audit](../../research/multilingual-readiness-audit-001.md) and [validation matrix](../../research/multilingual-compatibility-validation-001.md). Next: [ADR-MULTI-002](adr-multilingual-002-language-variety-identity.md).
-

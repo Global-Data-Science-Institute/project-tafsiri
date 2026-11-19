@@ -19,4 +19,3 @@ Reject a replacement registry and a mandatory universal parent tree. Classificat
 A parent-ambiguous variety can retain evidence and its own lexemes; conflicting classifications coexist without rewriting existing Luhya IDs.
 
 See the [architecture amendment](../../research/multilingual-architecture-amendment-001.md), [audit](../../research/multilingual-readiness-audit-001.md) and [validation matrix](../../research/multilingual-compatibility-validation-001.md). Next: [ADR-MULTI-003](adr-multilingual-003-dialect-knowledge.md).
-

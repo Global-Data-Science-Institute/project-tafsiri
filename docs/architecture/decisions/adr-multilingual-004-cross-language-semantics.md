@@ -19,4 +19,3 @@ Reject English-as-universal-semantics and automatic translation equivalence. One
 Two senses sharing a concept do not automatically generate a translation pair or training example; partial/uncertain relationships remain unapproved.
 
 See the [architecture amendment](../../research/multilingual-architecture-amendment-001.md), [audit](../../research/multilingual-readiness-audit-001.md) and [validation matrix](../../research/multilingual-compatibility-validation-001.md). Next: [ADR-MULTI-005](adr-multilingual-005-reviewer-authority.md).
-
