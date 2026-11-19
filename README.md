@@ -1,10 +1,12 @@
 # Project Tafsiri
 
-> **Dialect-aware language research and AI infrastructure for the Luhya language family.**
+> **Multilingual African-language research and AI infrastructure, with Luhya as the first reference implementation.**
 
 [![Tafsiri CI](https://github.com/Global-Data-Science-Institute/project-tafsiri/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/Global-Data-Science-Institute/project-tafsiri/actions/workflows/ci.yml)
 
 Project Tafsiri is an initiative of the [Global Data Science Institute](https://www.gdsi.institute/) building trustworthy language resources, research workflows, and future AI infrastructure for Luhya varieties.
+
+The [Multilingual Architecture Amendment 001](docs/research/multilingual-architecture-amendment-001.md) defines how additional African languages and documented varieties can use the same governed pipeline. Luhya remains the primary research focus. This design introduces no additional translation capability, trained model or commercial service; see the [readiness audit](docs/research/multilingual-readiness-audit-001.md) and [validation report](docs/research/multilingual-compatibility-validation-001.md).
 
 Its long-term directions are **English ↔ Luhya dialects**, **Swahili ↔ Luhya dialects**, and **dialect ↔ dialect**. These translation systems are goals. The repository currently provides governed research infrastructure: provenance, exact artifact identity, rights records, linguistic evidence, human review, canonical governance, evaluation, and the Reviewer Portal. A public translation runtime and production translation model have not been released.
 

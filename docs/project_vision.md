@@ -1,6 +1,6 @@
 # Project Tafsiri vision
 
-Project Tafsiri builds trustworthy language resources and tools for English-Luhya and Swahili-Luhya work, with each Luhya variety represented as a first-class dialect.
+Project Tafsiri builds trustworthy multilingual African-language research and AI infrastructure. Luhya remains the first reference implementation and primary research focus, including English-Luhya and Swahili-Luhya work, with each Luhya variety represented as a first-class linguistic identity.
 
 ## Principles
 
@@ -18,3 +18,9 @@ The current architecture supports a canonical lexical core, source provenance, c
 ## Measures of progress
 
 Progress is measured through traceable sources, independent human review, dialect coverage, reproducible evaluation, data safety, and reliable operation of the review workflow.
+
+## Multilingual design direction
+
+The [Multilingual Architecture Amendment 001](research/multilingual-architecture-amendment-001.md) extends the existing research pipeline and Reviewer Portal through language-aware scope and governance. It preserves `Lexeme → Form → Sense → Concept`, distinct varieties, provenance and separate human approval gates. Registry membership does not establish translation support.
+
+The future [Model Lab](research/tafsiri-model-lab-architecture-001.md) begins with approved Luwanga resources. [Tafsiri Cloud](architecture/tafsiri-cloud-commercial-architecture-001.md) is a separate future commercial boundary consuming cleared, approved model artifacts. Neither production training nor commercial serving is introduced by these specifications. See the [language onboarding process](language_inclusion_framework.md) and [compatibility report](research/multilingual-compatibility-validation-001.md).
