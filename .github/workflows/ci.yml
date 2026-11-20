@@ -4,9 +4,33 @@ on:
   push:
     branches: [main, staging, 'chore/**']
   pull_request:
-    branches: [main, staging, 'feature/tafsiri-migration-011-lexical-core', 'feature/tafsiri-luwanga-lexical-pilot-001']
+    branches: [main, staging, 'feature/tafsiri-migration-011-lexical-core', 'feature/tafsiri-luwanga-lexical-pilot-001', 'feature/tafsiri-complete-platform-architecture']
 
 jobs:
+  studio:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: npm ci
+      - run: npm ci
+        working-directory: apps/reviewer-portal
+      - run: python tests/studio/prepare_local.py
+      - run: npx supabase start --workdir .studio-local > /tmp/studio-start.log 2>&1
+      - run: npx playwright install --with-deps chromium
+        working-directory: apps/reviewer-portal
+      - run: python tests/studio/database_checks.py
+      - run: npx playwright test --config playwright.studio.config.ts
+        working-directory: apps/reviewer-portal
+      - run: npx playwright test --config playwright.studio-reviewer.config.ts
+        working-directory: apps/reviewer-portal
+      - if: always()
+        run: npx supabase stop --workdir .studio-local --no-backup
   portal:
     runs-on: ubuntu-latest
     defaults:
