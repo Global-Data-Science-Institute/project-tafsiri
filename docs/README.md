@@ -39,6 +39,17 @@ Decision records:
 
 The original lexical architecture and SQL proposal remain historical records. Read the multilingual amendment and SQL review before implementing Migration 011. No new language support, migration deployment, training run or commercial service is implied by these documents.
 
+## Luwanga lexical pilot 001 (preparation only)
+
+- [Protocol](research/pilots/luwanga-lexical-pilot-protocol-001.md)
+- [Readiness and resource eligibility](research/pilots/luwanga-lexical-pilot-readiness-001.md)
+- [Private evidence packet and manifest specification](research/pilots/luwanga-lexical-evidence-manifest-spec-001.md)
+- [Reviewer qualification template](research/pilots/luwanga-reviewer-qualification-packet-001.md)
+- [Legacy security triage and hardening plan](security/legacy-advisor-triage-001.md)
+- [Executed checks and limitations](research/pilots/luwanga-lexical-pilot-validation-001.md)
+
+The pilot is blocked by dependencies/security and by rights, provenance and qualification gaps. No real-data promotion is authorized.
+
 ## Operations
 
 - [Repository and staging deployment](repository-deployment.md)
