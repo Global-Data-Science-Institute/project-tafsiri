@@ -40,3 +40,8 @@ Semantic constraints include: exactly one train/dev/test split each for training
 ## Compatibility and contract verification
 
 Producer/consumer suites must reject unknown versions, duplicate JSON keys, extra fields, malformed digests, invalid enums and scope ambiguities; verify current reference/rights state separately. Test conflicting idempotency bodies, stale worker fencing, cross-project/tenant IDs, altered manifests and revoked approvals. Contract fixtures use synthetic identifiers/text, never invented Luhya presented as real data. Consumer compatibility and denied-path tests precede rollout; architecture schema validation alone proves no runtime behavior.
+
+## Data Studio amendment
+
+[Collection and annotation contracts](tafsiri-data-studio-contracts-001.md) add versioned private collection commands, language proposals, original representations, independent consent assertions, upload quarantine, AI suggestion provenance and blocked registration packets. Studio owns collection origin; existing source/evidence/canonical contracts remain authoritative after authorized handoff. Acceptance for intake is not verification. No API creates an approved language, reviewer task, canonical record or training permission automatically.
+

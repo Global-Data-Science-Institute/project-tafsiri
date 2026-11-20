@@ -54,3 +54,8 @@ Back up metadata, immutable object manifests, approval/audit histories and encry
 Restore into an isolated environment, verify object checksums and FK/lineage consistency, replay revocations/key denials, reconcile in-flight jobs and usage, then obtain operator release before routing. Rehearse restore and credential rotation; backups containing deleted data expire under the approved schedule and cannot reintroduce it into active use.
 
 CI stages: documentation/schema compatibility; application tests; isolated migration replay and authorization tests; worker fixture jobs; signed artifact provenance; synthetic integration; independent security/release approval. Build once, promote immutable artifacts through environments. Database roll-forward/recovery plans accompany each additive migration; no destructive rollback or automatic production migration on app startup. Deployment remains a separately authorized milestone.
+
+## Data Studio module
+
+The MVP adds isolated /studio and /api/studio routes within apps/reviewer-portal, reusing Next.js/TypeScript/Supabase while preserving all reviewer routes. A private data_studio schema and private quarantine bucket separate contributions from research and reviewer records. App enablement is default-off and database membership is separately provisioned; no default authority is seeded. Authenticated RPCs enforce scope without a service-role bridge. Offline deterministic assistance requires no external credentials. Future parsers/scanners run in constrained workers; external provider credentials, processing consent and region/retention policies are separately reviewed. No offline cache or collection deployment is introduced by the design.
+

@@ -51,3 +51,8 @@ Executed checks: local Markdown link/fragment existence and balanced fences; JSO
 These checks validate documentation and contract structure only. Requirements elsewhere are future acceptance tests, not claimed passing runtime coverage. No application, migration, training or serving behavior is implemented by this series, and no application/database tests were rerun for this documentation-only change.
 
 All ten requested architecture deliverables are linked from the reference document. Two machine-readable contract files supplement the catalog. The branch is stacked on PR #26; prior PRs and hosted data remain unchanged.
+
+## Data Studio amendment review
+
+Data Studio corrects the assumption that a language must already have a corpus: a private proposed-language collection project can start with zero data. It is a collection/intake module, not a replacement research pipeline, registry or Reviewer Portal. Unapproved labels remain proposals. The AI assistant is replaceable and outputs only MACHINE_GENERATED/UNVERIFIED suggestions with evidence provenance. Source registration and qualified review remain independent gated handoffs. Collection volume never implies dataset/model readiness. The synthetic implementation report must distinguish tested contributor/admin capability from deferred external AI, scanner, source-registration and reviewer integrations. Real collection, hosted migrations and deployment remain unauthorized.
+

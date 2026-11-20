@@ -22,7 +22,8 @@ Repository base: `e939479ad6a63ef9ad628f26e92fc9dd0ff43461`. GitHub inspection c
 
 ```mermaid
 flowchart LR
-  C[Communities and source custodians] --> R[Research Core]
+  C[Communities and source custodians] --> DS[Data Studio collection and intake]
+  DS --> R[Research Core]
   V[Qualified reviewers] --> P[Existing Reviewer Portal]
   P --> R
   A[Researchers and PhD collaborators] --> R
@@ -40,6 +41,10 @@ flowchart LR
 ```mermaid
 flowchart TB
   subgraph Research_Core
+    DS[Data Studio private contributions] --> AI[Controlled AI proposals]
+    AI --> IQ[Administrative intake queue]
+    DS --> IQ
+    IQ -->|Approved registration packet only| S
     I[Existing identities plus registry metadata] --> E[Source and evidence scope]
     S[Sources versions artifacts imports] --> E
     E --> H[Existing portal and human verification]
@@ -72,7 +77,9 @@ Research owns original provenance, evidence, canonical decisions and export auth
 
 ```mermaid
 flowchart LR
-  P[Source lineage and preserved machine origin] --> H[Human evidence verification]
+  DS[New language proposal and collection without a corpus] --> I[Data Studio intake acceptance]
+  I --> P[Existing source registration and lineage]
+  P --> H[Human evidence verification]
   H --> C[Separate canonical decision]
   C --> E[Private exporter checks intended-use rights]
   E --> S[Immutable splits and leakage report]
@@ -101,6 +108,8 @@ flowchart LR
 These arrows require explicit decisions, not automatic state progression. Denials preserve history. Commercial eligibility is the intersection of current rights, evaluation scope, production approval and tenant/region policy. The catalog cannot turn registry membership or family relationships into capability claims. Customer feedback returns only through consented governed intake; model output never automatically becomes verified training data.
 
 ## Blueprint navigation
+
+Data Studio is a first-class Research Core collection component. A language needs neither a preexisting corpus nor an approved registry identity to begin a private proposed-language collection project. Proposal processing permits collection only; registry approval is independent. Data Studio owns contribution origin, draft history, consent assertions, quarantine uploads and unverified AI suggestions. It prepares the existing source/artifact/import/evidence contracts; it does not duplicate their authoritative registries. See [Data Studio technical architecture](tafsiri-data-studio-technical-architecture-001.md), [AI assistance](tafsiri-ai-research-assistant-001.md), and [collection contracts](tafsiri-data-studio-contracts-001.md). The new module's implementation/validation report governs its actual capability; all downstream training/commercial services remain planned.
 
 | Design | Authority |
 |---|---|
