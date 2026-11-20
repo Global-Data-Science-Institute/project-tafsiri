@@ -36,7 +36,7 @@ jobs:
         with:
           python-version: '3.12'
       - run: python -m pip install pytest
-      - run: python -m pytest tests/candidate_generation tests/evaluation tests/linguistic_rules tests/source_intake tests/source_registry tests/source_reconciliation -q
+      - run: python -m pytest tests -q
 
   database:
     runs-on: ubuntu-latest
@@ -72,8 +72,20 @@ jobs:
           python tests/database/run_lexical_core_concurrency_tests.py
       - name: Test atomic Marlo registration
         run: python tests/database/run_marlo_registration_atomic_tests.py
+      - name: Validate governed lexical promotion in a disposable database
+        shell: bash
+        run: |
+          promotion_image=$(docker inspect --format '{{.Config.Image}}' supabase_db_project-tafsiri)
+          docker run -d --name tafsiri-m012-validation-db -e POSTGRES_PASSWORD=tafsiri-local-fixture-only "$promotion_image"
+          for attempt in {1..60}; do
+            if docker exec tafsiri-m012-validation-db pg_isready -h 127.0.0.1 -U postgres; then break; fi
+            sleep 1
+          done
+          python tests/database/run_lexical_promotion_tests.py
       - run: npx supabase db lint --local --level error
       - if: always()
         run: docker rm -f tafsiri-m011-validation-db || true
+      - if: always()
+        run: docker rm -f tafsiri-m012-validation-db || true
       - if: always()
         run: npx supabase stop --no-backup

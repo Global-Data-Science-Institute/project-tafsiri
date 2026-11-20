@@ -104,6 +104,8 @@ Lexeme → Form → Sense → Concept
 
 A dictionary row is an attestation, not automatically a canonical word. The model supports homographs, multiple senses, dialect-specific and historical forms, variants, source attestations, concepts, disputed analyses, and explicit verification state. Migration 011's empty foundation is implemented and validated locally, pending review; it has not been deployed. See the [implementation report](docs/research/migration-011-implementation-report-001.md) and [deployment gates](docs/research/migration-011-deployment-readiness-001.md).
 
+The separate [canonical lexical promotion workflow](docs/research/canonical-lexical-promotion-architecture-001.md) adds private proposals, exact scoped qualifications, independent approval, evidence snapshots and atomic execution through a dry-run-first CLI. Migration 012 hardens service-role writes to the lexical foundation. It remains a local-tested implementation for review, with no hosted deployment or real-data promotion. See its [validation report](docs/research/canonical-lexical-promotion-validation-001.md).
+
 ## Verified project state
 
 The production state verified after Migration 010 and Marlo Source & Artifact Registration 001 is:

@@ -78,6 +78,8 @@ The [Model Lab](research/tafsiri-model-lab-architecture-001.md) is the future ex
 
 ## Technology and verification status
 
+The [canonical lexical promotion implementation](research/canonical-lexical-promotion-architecture-001.md) extends the same source/evidence pipeline with private proposal, authority, audit and output records. Dedicated individual database logins and independent scoped approvals gate writes to Migration 011's canonical tables. A dry-run-first Python/psql interface reuses PostgreSQL constraints and irreversible seals; no new portal or training/serving path is added. Migration 012 is pending independent review and has not been deployed to a hosted database. Its [validation report](research/canonical-lexical-promotion-validation-001.md) records synthetic results and remaining pilot gates.
+
 The repository uses PostgreSQL/Supabase, pgvector in the legacy knowledge schema, Next.js, React, TypeScript, Python, Supabase Auth, Row-Level Security, GitHub Actions, Vercel, and SHA-256 artifact addressing.
 
 CI runs portal type checking, lint, tests, and build; Python regressions; a clean local Supabase migration reset; SQL smoke/security tests; atomic registration integration tests; and database lint. Governed operations additionally record dry-run plans, semantic digests, environment guards, idempotency, parity, advisors, and execution artifacts.

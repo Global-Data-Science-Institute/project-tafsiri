@@ -223,7 +223,9 @@ DO $$ DECLARE t text; r text; p text; BEGIN
       END LOOP;
     END LOOP;
     FOREACH p IN ARRAY ARRAY['SELECT','INSERT','UPDATE'] LOOP
-      PERFORM pg_temp.ok('SQL-10 service '||p||' '||t,has_table_privilege('service_role','public.'||t,p));
+      PERFORM pg_temp.ok('SQL-10 service '||p||' '||t,
+        has_table_privilege('service_role','public.'||t,p) =
+        (p='SELECT' OR to_regnamespace('lexical_governance') IS NULL));
     END LOOP;
     PERFORM pg_temp.ok('SQL-10 no service deletion '||t,NOT has_table_privilege('service_role','public.'||t,'DELETE') AND NOT has_table_privilege('service_role','public.'||t,'TRUNCATE'));
     PERFORM pg_temp.fails('SQL-10 owner truncate guard '||t,format('TRUNCATE public.%I CASCADE',t),'23514');
@@ -244,7 +246,8 @@ SELECT pg_temp.fails('SQL-10 reviewer RPC',$q$SELECT public.tafsiri_guard_lexica
 RESET ROLE;
 SET LOCAL ROLE service_role;
 SELECT pg_temp.fails('SQL-10 service cannot delete',$q$DELETE FROM public.lexeme_forms$q$,'42501');
-SELECT pg_temp.fails('SQL-10 service cannot bypass seal',$q$UPDATE public.lexeme_forms SET representation_text='bypass' WHERE id=pg_temp.id(100)$q$,'23514');
+SELECT pg_temp.fails('SQL-10 service cannot bypass seal',$q$UPDATE public.lexeme_forms SET representation_text='bypass' WHERE id=pg_temp.id(100)$q$,
+  CASE WHEN to_regnamespace('lexical_governance') IS NULL THEN '23514' ELSE '42501' END);
 RESET ROLE;
 SELECT pg_temp.ok('SQL-10 no new definer functions',NOT EXISTS(SELECT 1 FROM pg_proc WHERE proname IN ('tafsiri_guard_lexical_record','tafsiri_lock_lexical_successor','tafsiri_check_lexical_successor') AND prosecdef));
 SELECT pg_temp.ok('SQL-10 no views on new canonical tables',NOT EXISTS(
