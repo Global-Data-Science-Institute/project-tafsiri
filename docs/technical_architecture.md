@@ -2,6 +2,8 @@
 
 Project Tafsiri is a monorepo for dialect-aware research, source governance, human review, canonical knowledge, and future language technology. PostgreSQL/Supabase is the schema authority; applied migrations, constraints, policies, and grants define the deployed model.
 
+For the current integrated blueprint and explicit deployed/unmerged/planned status, start with the [platform reference architecture](architecture/tafsiri-platform-reference-architecture-001.md). The component history below remains background; migrations 011–013 are implemented on the dependency branches but are not hosted, and Model Lab/Cloud remain planned.
+
 ## Architectural boundaries
 
 The system separates source and rights governance, artifact and import lineage, located evidence, human review and canonical promotion, and derived datasets/models/runtime. No layer automatically promotes content into the next.

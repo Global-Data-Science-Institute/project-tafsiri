@@ -2,6 +2,20 @@
 
 This directory documents the repository's current architecture, research controls, and deployment procedures.
 
+## Complete platform blueprint (architecture for review)
+
+Start with the [authoritative reference architecture](architecture/tafsiri-platform-reference-architecture-001.md), which distinguishes deployed foundations, implemented-but-unmerged changes and planned services. This series integrates the earlier ADRs and implementation reports; it does not activate Model Lab or Tafsiri Cloud.
+
+- [Multilingual Reviewer Portal](architecture/tafsiri-multilingual-reviewer-architecture-001.md)
+- [Model Lab technical architecture](architecture/tafsiri-model-lab-technical-architecture-001.md)
+- [Cloud technical architecture](architecture/tafsiri-cloud-technical-architecture-001.md)
+- [Model release and commercial handoff](architecture/tafsiri-model-release-and-commercial-handoff-001.md)
+- [Infrastructure](architecture/tafsiri-infrastructure-architecture-001.md)
+- [Platform security](architecture/tafsiri-platform-security-architecture-001.md)
+- [API and data contracts](architecture/tafsiri-api-and-data-contracts-001.md)
+- [Implementation roadmap](architecture/tafsiri-platform-implementation-roadmap-001.md)
+- [Architecture consistency review](architecture/tafsiri-architecture-consistency-review-001.md)
+
 ## Architecture and governance
 
 - [Technical architecture](technical_architecture.md)
