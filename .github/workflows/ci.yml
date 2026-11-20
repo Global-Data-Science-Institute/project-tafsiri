@@ -4,7 +4,7 @@ on:
   push:
     branches: [main, staging, 'chore/**']
   pull_request:
-    branches: [main, staging, 'feature/tafsiri-migration-011-lexical-core']
+    branches: [main, staging, 'feature/tafsiri-migration-011-lexical-core', 'feature/tafsiri-luwanga-lexical-pilot-001']
 
 jobs:
   portal:
@@ -82,10 +82,18 @@ jobs:
             sleep 1
           done
           python tests/database/run_lexical_promotion_tests.py
+      - name: Validate multilingual registry and pipeline foundation
+        shell: bash
+        run: |
+          registry_image=$(docker inspect --format '{{.Config.Image}}' supabase_db_project-tafsiri)
+          docker run -d --name tafsiri-m013-validation-db -e POSTGRES_PASSWORD=tafsiri-local-fixture-only "$registry_image"
+          python tests/database/run_multilingual_foundation_tests.py
       - run: npx supabase db lint --local --level error
       - if: always()
         run: docker rm -f tafsiri-m011-validation-db || true
       - if: always()
         run: docker rm -f tafsiri-m012-validation-db || true
+      - if: always()
+        run: docker rm -f tafsiri-m013-validation-db || true
       - if: always()
         run: npx supabase stop --no-backup

@@ -1,0 +1,34 @@
+{
+  "contract_version": 1,
+  "key": "SYNTHETIC_LANGUAGE_B",
+  "version": 1,
+  "source": {
+    "kind": "language",
+    "id": "00000000-0000-0000-0000-00000001fbe4"
+  },
+  "target": {
+    "kind": "language",
+    "id": "00000000-0000-0000-0000-00000001fbd2"
+  },
+  "adapter": "SOURCE_ENTRY_SNAPSHOT_V1",
+  "orthography": {
+    "id": "00000000-0000-0000-0000-00000001fbd3",
+    "version": "SYNTHETIC-v1"
+  },
+  "normalization": "PRESERVE",
+  "tokenization": "NONE",
+  "morphology": "NONE",
+  "features": "CONSERVATIVE_V1",
+  "source_versions": [
+    "00000000-0000-0000-0000-00000001fbd4"
+  ],
+  "artifacts": [
+    "00000000-0000-0000-0000-00000001fbd5"
+  ],
+  "rights_policy_reference": "SYNTHETIC-NOT-A-PERMISSION",
+  "review_protocol": "SYNTHETIC-REVIEW-v1",
+  "evaluation": {
+    "protocol": "SYNTHETIC-EVAL-v1",
+    "split": "SYNTHETIC"
+  }
+}

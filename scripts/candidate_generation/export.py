@@ -46,6 +46,9 @@ def export_all(output_dir: Path, candidates: list[Candidate], summary: dict, ove
             handle.write(json.dumps(candidate.to_dict(), ensure_ascii=False, sort_keys=True) + "\n")
     with (output_dir / OUTPUT_NAMES[1]).open("w", encoding="utf-8", newline="") as handle:
         fields = ["dictionary_entry_id", "concept_id", "proposed_concept_key", "proposed_definition_en", "mapping_source", "confidence", "mapping_status", "evidence"]
+        if summary['metadata']['evidence_schema_version'] == 'pipeline-scoped-evidence-v1':
+            fields = ['source_entry_id', 'proposed_gloss', 'concept_id', 'proposed_concept_key',
+                      'mapping_source', 'confidence', 'mapping_status', 'evidence']
         writer = csv.DictWriter(handle, fieldnames=fields); writer.writeheader()
         for candidate in candidates:
             row = candidate.to_dict(); row["evidence"] = json.dumps(row["evidence"], ensure_ascii=False, sort_keys=True)

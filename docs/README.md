@@ -50,6 +50,14 @@ The original lexical architecture and SQL proposal remain historical records. Re
 
 The pilot is blocked by dependencies/security and by rights, provenance and qualification gaps. No real-data promotion is authorized.
 
+## Multilingual platform foundation (implementation, not deployed)
+
+- [Registry, evidence and internal interfaces](research/multilingual-platform-foundation-001.md)
+- [Versioned pipeline configuration](research/multilingual-pipeline-configuration-001.md)
+- [Reviewer Portal next integration contract](research/multilingual-reviewer-integration-contract-001.md)
+- [Security-hardening priorities](security/multilingual-foundation-hardening-plan-001.md)
+- [Executed validation](research/multilingual-platform-validation-001.md)
+
 ## Operations
 
 - [Repository and staging deployment](repository-deployment.md)

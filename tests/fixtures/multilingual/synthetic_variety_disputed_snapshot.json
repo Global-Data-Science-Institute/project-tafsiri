@@ -1,0 +1,29 @@
+{
+  "contract_version": 1,
+  "records": [
+    {
+      "source_id": "00000000-0000-0000-0000-00000001fbd6",
+      "source_version_id": "00000000-0000-0000-0000-00000001fbd4",
+      "artifact_id": "00000000-0000-0000-0000-00000001fbd5",
+      "artifact_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "import_batch_id": "00000000-0000-0000-0000-00000001fbd7",
+      "source_entry_id": "00000000-0000-0000-0000-00000001fbd8",
+      "source_locator": "SYNTHETIC:row:1",
+      "original_form": "SYNTHETIC_FORM",
+      "original_gloss": "SYNTHETIC_MEANING_A",
+      "headword_scope": {
+        "kind": "variety",
+        "id": "00000000-0000-0000-0000-00000001fbe6"
+      },
+      "gloss_scope": {
+        "kind": "language",
+        "id": "00000000-0000-0000-0000-00000001fbd2"
+      },
+      "scope_assertion_ids": [
+        "00000000-0000-0000-0000-00000001fbd9"
+      ],
+      "rights_policy_reference": "SYNTHETIC-NOT-A-PERMISSION",
+      "synthetic": true
+    }
+  ]
+}
