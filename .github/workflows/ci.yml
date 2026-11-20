@@ -4,7 +4,7 @@ on:
   push:
     branches: [main, staging, 'chore/**']
   pull_request:
-    branches: [main, staging]
+    branches: [main, staging, 'feature/tafsiri-migration-011-lexical-core']
 
 jobs:
   portal:
