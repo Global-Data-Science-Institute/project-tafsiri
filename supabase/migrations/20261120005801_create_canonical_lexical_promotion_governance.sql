@@ -27,6 +27,8 @@ CREATE TABLE lexical_governance.principals (
 CREATE TABLE lexical_governance.authorities (
   id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
   contributor_role_id uuid NOT NULL REFERENCES public.contributor_roles(id),
+  contributor_id uuid NOT NULL REFERENCES public.contributors(id),
+  role_snapshot jsonb NOT NULL,
   language_id uuid REFERENCES public.languages(id),
   dialect_id uuid REFERENCES public.dialects(id),
   operation_keys text[] NOT NULL CHECK (cardinality(operation_keys)>0),
@@ -39,8 +41,22 @@ CREATE TABLE lexical_governance.authorities (
   CHECK (num_nonnulls(language_id,dialect_id)=1)
 );
 CREATE INDEX lexical_authority_role_idx ON lexical_governance.authorities(contributor_role_id);
+CREATE INDEX lexical_authority_contributor_idx ON lexical_governance.authorities(contributor_id);
 CREATE INDEX lexical_authority_language_idx ON lexical_governance.authorities(language_id);
 CREATE INDEX lexical_authority_dialect_idx ON lexical_governance.authorities(dialect_id);
+CREATE FUNCTION lexical_governance.bind_authority() RETURNS trigger
+LANGUAGE plpgsql SET search_path='' AS $$
+DECLARE r public.contributor_roles;
+BEGIN
+  SELECT * INTO STRICT r FROM public.contributor_roles WHERE id=NEW.contributor_role_id FOR SHARE;
+  IF NOT EXISTS(SELECT 1 FROM public.contributor_role_types WHERE id=r.role_type_id AND role_type_key='CANONICAL_APPROVER' AND is_active)
+     OR r.revoked_at IS NOT NULL THEN RAISE EXCEPTION 'qualification requires an active canonical approver role'; END IF;
+  NEW.contributor_id:=r.contributor_id;
+  NEW.role_snapshot:=to_jsonb(r);
+  RETURN NEW;
+END $$;
+CREATE TRIGGER authority_identity BEFORE INSERT ON lexical_governance.authorities
+FOR EACH ROW EXECUTE FUNCTION lexical_governance.bind_authority();
 CREATE TABLE lexical_governance.proposals (
   id uuid PRIMARY KEY,
   idempotency_key text NOT NULL UNIQUE CHECK (btrim(idempotency_key)<>''),
@@ -284,7 +300,12 @@ BEGIN
     SELECT to_jsonb(q)||jsonb_build_object('role',to_jsonb(r),'role_type',to_jsonb(t)) INTO g
     FROM lexical_governance.authorities q JOIN public.contributor_roles r ON r.id=q.contributor_role_id
     JOIN public.contributor_role_types t ON t.id=r.role_type_id
-    WHERE r.contributor_id=a AND t.role_type_key='CANONICAL_APPROVER' AND t.is_active
+    WHERE q.contributor_id=a AND r.contributor_id=q.contributor_id AND t.role_type_key='CANONICAL_APPROVER' AND t.is_active
+      AND r.role_type_id=(q.role_snapshot->>'role_type_id')::uuid
+      AND r.dialect_id IS NOT DISTINCT FROM (q.role_snapshot->>'dialect_id')::uuid
+      AND r.domain IS NOT DISTINCT FROM q.role_snapshot->>'domain'
+      AND (q.role_snapshot->>'valid_from')::timestamptz<=clock_timestamp()
+      AND ((q.role_snapshot->>'valid_until') IS NULL OR (q.role_snapshot->>'valid_until')::timestamptz>clock_timestamp())
       AND r.revoked_at IS NULL AND r.valid_from<=clock_timestamp() AND (r.valid_until IS NULL OR r.valid_until>clock_timestamp())
       AND (r.dialect_id IS NULL OR r.dialect_id=p.dialect_id) AND (r.domain IS NULL OR r.domain='LEXICAL')
       AND q.language_id IS NOT DISTINCT FROM p.language_id AND q.dialect_id IS NOT DISTINCT FROM p.dialect_id

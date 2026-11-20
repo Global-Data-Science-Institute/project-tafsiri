@@ -21,7 +21,7 @@ No staging/production database write, database deployment, real-data backfill, m
 - [CLI transaction/quoting tests](../../tests/lexical_promotion/test_cli.py).
 - Updated [CI](../../.github/workflows/ci.yml), documentation indexes, and the existing 011 security test's version-aware service-write expectations.
 
-The migration adds five private governance tables, one private schema, one inert researcher group role, ten private functions and one invoker-only public concept-boundary trigger function. No canonical table is duplicated. All thirteen 011 tables remain; service INSERT/UPDATE is revoked across all thirteen. Eleven existing lexical tables have supported policy-001 operations. Global concept revision/creation and form-normalization workflows are explicitly deferred and inaccessible through the new API.
+The migration adds five private governance tables, one private schema, one inert researcher group role, eleven private functions and one invoker-only public concept-boundary trigger function. No canonical table is duplicated. All thirteen 011 tables remain; service INSERT/UPDATE is revoked across all thirteen. Eleven existing lexical tables have supported policy-001 operations. Global concept revision/creation and form-normalization workflows are explicitly deferred and inaccessible through the new API.
 
 ## Local environment and reproducibility
 
@@ -35,7 +35,7 @@ The installed project CLI is 2.114.0. The migration was generated using its `mig
 
 | Check | Actual result |
 |---|---|
-| New database harness | **101 named checks passed**; includes seven post-012 regression-suite completion checks |
+| New database harness | **102 named checks passed**; includes seven post-012 regression-suite completion checks |
 | Migration replay | Eleven historical files, then 011 and 012 successfully applied to a fresh isolated database |
 | Migration 012 failure atomicity | Deliberate late failure removed the entire new schema and group role; subsequent clean application passed |
 | Migration 011 rollback/compatibility | Existing failure injection, explicit rollback and legacy-data/schema/privilege checks passed |
@@ -51,12 +51,14 @@ The installed project CLI is 2.114.0. The migration was generated using its `mig
 
 CI now runs all discovered Python tests, preserving the existing portal/database jobs and adding a fresh-container promotion test step. The PR's GitHub checks provide the separate hosted-runner replay result; local results above do not imply a hosted database deployment.
 
+Running the previously omitted evidence tests on Linux exposed five failures caused by historical byte checksums: three reviewed evidence files were hashed with CRLF, while a Linux checkout produced LF. Each recorded hash was verified against the CRLF reconstruction of its unchanged Git blob. Three exact `.gitattributes` rules now preserve those reviewed bytes on every OS; no evidence text, historical Git blob, frozen evaluation file or recorded checksum was changed, and no checksum assertion was weakened.
+
 ## What the synthetic checks establish
 
 The valid Luwanga-scope fixture is explicitly invented software data. Additional cases establish:
 
 - Exact dialect and language authority, operation-specific permission checks, independent approval, finite qualification validity, revocation and existing research-role checks. A dialect qualification cannot authorize its parent language. A separate language qualification succeeds only after independent provisioning.
-- No anonymous/authenticated/service invocation, no direct researcher table access, no caller-forged login identity, no self-expansion of authority, and no direct service canonical write/adoption. Private outputs and audit narratives stay inaccessible to ordinary users. A caller-owned deferred-trigger trap cannot execute under the definer's privileges.
+- No anonymous/authenticated/service invocation, no direct researcher table access, no caller-forged login identity, no self-expansion of authority, and no direct service canonical write/adoption. Reassigning a legacy contributor-role row cannot transfer the private qualification: its contributor and original role identity/validity are frozen at issuance. Private outputs and audit narratives stay inaccessible to ordinary users. A caller-owned deferred-trigger trap cannot execute under the definer's privileges.
 - Required current human verification, exact entry/evidence/artifact lineage, registered artifact status, known source rights, explicit research/review use permissions, literal source-label resolution and compatible primary evidence scope. Revoking rights/authority or changing the reviewed evidence invalidates execution.
 - Retained conflicting attestations and recorded contradiction assessment; omitted known contrary evidence fails submission. Historical and borrowed forms retain their supplied spelling. A missing-equivalent fixture preserves `ORIGINAL_TECHNICAL_TERM`; the engine generates no translation or vocabulary.
 - Identical strings remain distinct lexical identities, including in two independently authorized varieties. Multiple senses coexist. A revised meaning creates a new sealed revision and an expected-state pointer change while preserving the old meaning. A competing stale revision rolls back its newly inserted row. Governed dialect assertions and lexical/form relationships execute; cross-scope relationships fail closed.

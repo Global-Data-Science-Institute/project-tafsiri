@@ -133,10 +133,11 @@ def denied(p, action, fragment, user="m012_proposer"):
         assert r['planned_operations']==p['operations'] and r['evidence']==p['evidence'], 'failed dry run must still report the proposed plan'
 
 
-def transactional_command(p, setup, action="execute"):
+def transactional_command(p, setup, action="execute", user="m012_proposer"):
     # Owner changes are fixture-only and rolled back. SET SESSION AUTHORIZATION
     # here lets the test exercise the immutable login identity under that setup.
-    statement = ("BEGIN;" + setup + "SET SESSION AUTHORIZATION m012_proposer;"
+    assert user in ('m012_proposer','m012_approver','m012_stranger')
+    statement = ("BEGIN;" + setup + f"SET SESSION AUTHORIZATION {user};"
                  + f"SELECT lexical_governance.command('{p['id']}',{q(action)}); ROLLBACK;")
     return json.loads(sql(statement, "supabase_admin"))
 
@@ -263,6 +264,8 @@ def revision_checks():
 
 def authority_and_scope_checks():
     p=proposal(22000); create(p); approve(p)
+    r=transactional_command(p,f"UPDATE public.contributor_roles SET contributor_id='{ident(3)}' WHERE id='{ident(7)}';",'inspect','m012_stranger')
+    check('mutable contributor role cannot reassign private qualification',r.get('ok') is False and 'scoped authority' in str(r))
     expired=f"UPDATE lexical_governance.authorities SET revoked_at=now() WHERE id='{ident(8)}'; INSERT INTO lexical_governance.authorities(contributor_role_id,dialect_id,operation_keys,competence_reference,valid_from,valid_until) SELECT contributor_role_id,dialect_id,operation_keys,'SYNTHETIC EXPIRED',now()-interval '2 days',now()-interval '1 day' FROM lexical_governance.authorities WHERE id='{ident(8)}';"
     r=transactional_command(p,expired)
     check('expired competence qualification denied',not r['ok'] and 'scoped authority' in str(r))
