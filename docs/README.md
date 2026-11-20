@@ -14,6 +14,8 @@ This directory documents the repository's current architecture, research control
 - [Migration 011 Canonical Lexical Core SQL Design 001](research/migration-011-canonical-lexical-core-sql-design-001.md)
 - [Migration 011 implementation and validation](research/migration-011-implementation-report-001.md)
 - [Migration 011 deployment-readiness checklist](research/migration-011-deployment-readiness-001.md)
+- [Canonical lexical promotion and governance](research/canonical-lexical-promotion-architecture-001.md)
+- [Canonical lexical promotion validation](research/canonical-lexical-promotion-validation-001.md)
 
 ## Multilingual architecture expansion (design only)
 

@@ -1,0 +1,5 @@
+# These three historical evidence files were approved with CRLF byte hashes.
+# Preserve those exact reviewed bytes on every OS; do not regenerate the hashes.
+artifacts/linguistic_evidence/extraction_001_manifest.json text eol=crlf
+artifacts/linguistic_evidence/extraction_001_review.csv text eol=crlf
+artifacts/linguistic_evidence/extraction_001_review_completed.csv text eol=crlf
