@@ -1,0 +1,1224 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Tafsiri planned platform contracts v1",
+  "description": "Architecture-only definitions. Each consumer validates the named $defs entry plus catalog semantic rules. This does not replace implemented 012/013 contracts.",
+  "$defs": {
+    "Scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "id"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "language",
+            "variety"
+          ]
+        },
+        "id": {
+          "type": "string",
+          "format": "uuid"
+        }
+      }
+    },
+    "Artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sha256",
+        "size_bytes",
+        "format"
+      ],
+      "properties": {
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "size_bytes": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "format": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "Approval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "decision_id",
+        "authority_ref",
+        "policy_version",
+        "subject_sha256",
+        "issued_at",
+        "expires_at"
+      ],
+      "properties": {
+        "decision_id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "authority_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "policy_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "subject_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "issued_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "expires_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "Direction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source",
+        "target",
+        "source_orthography",
+        "target_orthography"
+      ],
+      "properties": {
+        "source": {
+          "$ref": "#/$defs/Scope"
+        },
+        "target": {
+          "$ref": "#/$defs/Scope"
+        },
+        "source_orthography": {
+          "type": "string",
+          "minLength": 1
+        },
+        "target_orthography": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "Lineage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_version_id",
+        "artifact_sha256",
+        "source_entry_id",
+        "evidence_ids",
+        "canonical_revision_ids",
+        "human_decision_refs",
+        "rights_refs",
+        "consent_refs",
+        "record_sha256"
+      ],
+      "properties": {
+        "source_version_id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "artifact_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "source_entry_id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "evidence_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "minItems": 1
+        },
+        "canonical_revision_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "human_decision_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "rights_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "consent_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "record_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      }
+    },
+    "Split": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "index_artifact",
+        "record_count",
+        "grouping_policy"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "enum": [
+            "train",
+            "dev",
+            "test"
+          ]
+        },
+        "index_artifact": {
+          "$ref": "#/$defs/Artifact"
+        },
+        "record_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "grouping_policy": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "DatasetManifest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract_version",
+        "dataset_id",
+        "version",
+        "project_id",
+        "created_at",
+        "intended_use",
+        "directions",
+        "content",
+        "lineage",
+        "splits",
+        "leakage_report_sha256",
+        "code_commit",
+        "configuration_sha256",
+        "transformations",
+        "approval",
+        "revocation_ref"
+      ],
+      "properties": {
+        "contract_version": {
+          "const": 1
+        },
+        "dataset_id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "version": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "project_id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "intended_use": {
+          "type": "string",
+          "enum": [
+            "MODEL_TRAINING",
+            "MODEL_EVALUATION"
+          ]
+        },
+        "directions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Direction"
+          },
+          "minItems": 1
+        },
+        "content": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Artifact"
+          },
+          "minItems": 1
+        },
+        "lineage": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Lineage"
+          },
+          "minItems": 1
+        },
+        "splits": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Split"
+          },
+          "minItems": 1
+        },
+        "leakage_report_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "code_commit": {
+          "type": "string",
+          "minLength": 1
+        },
+        "configuration_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "transformations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "approval": {
+          "$ref": "#/$defs/Approval"
+        },
+        "revocation_ref": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "TrainingJob": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract_version",
+        "job_id",
+        "project_id",
+        "experiment_id",
+        "dataset_manifest_hashes",
+        "base_model_sha256",
+        "tokenizer_sha256",
+        "container_sha256",
+        "code_commit",
+        "configuration_sha256",
+        "hyperparameters",
+        "seed",
+        "resource_class",
+        "max_seconds",
+        "budget_minor_units",
+        "budget_currency",
+        "resume_checkpoint",
+        "authorization_ref",
+        "idempotency_key"
+      ],
+      "properties": {
+        "contract_version": {
+          "const": 1
+        },
+        "job_id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "project_id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "experiment_id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "dataset_manifest_hashes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "minItems": 1
+        },
+        "base_model_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "tokenizer_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "container_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "code_commit": {
+          "type": "string",
+          "minLength": 1
+        },
+        "configuration_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "hyperparameters": {
+          "type": "object",
+          "additionalProperties": {
+            "type": [
+              "string",
+              "number",
+              "boolean"
+            ]
+          }
+        },
+        "seed": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "resource_class": {
+          "type": "string",
+          "minLength": 1
+        },
+        "max_seconds": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "budget_minor_units": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "budget_currency": {
+          "type": "string",
+          "pattern": "^[A-Z]{3}$"
+        },
+        "resume_checkpoint": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Artifact"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "authorization_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "idempotency_key": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "Metric": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "value",
+        "unit",
+        "sample_count",
+        "implementation_version"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "value": {
+          "type": "number"
+        },
+        "unit": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sample_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "implementation_version": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "ExperimentResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract_version",
+        "run_id",
+        "job_id",
+        "attempt",
+        "fencing_token",
+        "state",
+        "reproducibility_manifest_sha256",
+        "artifacts",
+        "metrics",
+        "resource_usage_sha256",
+        "log_manifest_sha256",
+        "failure_code"
+      ],
+      "properties": {
+        "contract_version": {
+          "const": 1
+        },
+        "run_id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "job_id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "attempt": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "fencing_token": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "state": {
+          "type": "string",
+          "enum": [
+            "SUCCEEDED",
+            "FAILED",
+            "CANCELLED"
+          ]
+        },
+        "reproducibility_manifest_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "artifacts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Artifact"
+          }
+        },
+        "metrics": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Metric"
+          }
+        },
+        "resource_usage_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "log_manifest_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "failure_code": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "EvaluationReport": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract_version",
+        "report_id",
+        "model_artifact_sha256",
+        "benchmark_manifest_sha256",
+        "protocol_version",
+        "directions",
+        "metrics",
+        "human_review_manifest_sha256",
+        "error_analysis_sha256",
+        "limitations",
+        "decision",
+        "approval"
+      ],
+      "properties": {
+        "contract_version": {
+          "const": 1
+        },
+        "report_id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "model_artifact_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "benchmark_manifest_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "protocol_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "directions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Direction"
+          },
+          "minItems": 1
+        },
+        "metrics": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Metric"
+          },
+          "minItems": 1
+        },
+        "human_review_manifest_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "error_analysis_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "decision": {
+          "type": "string",
+          "enum": [
+            "PASS",
+            "FAIL",
+            "INSUFFICIENT_EVIDENCE"
+          ]
+        },
+        "approval": {
+          "$ref": "#/$defs/Approval"
+        }
+      }
+    },
+    "ModelRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract_version",
+        "model_id",
+        "version",
+        "project_id",
+        "run_id",
+        "base_model_sha256",
+        "dataset_manifest_hashes",
+        "artifacts",
+        "tokenizer_sha256",
+        "evaluation_report_hashes",
+        "license_refs",
+        "model_card_sha256",
+        "state",
+        "revocation_ref"
+      ],
+      "properties": {
+        "contract_version": {
+          "const": 1
+        },
+        "model_id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "project_id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "run_id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "base_model_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "dataset_manifest_hashes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "minItems": 1
+        },
+        "artifacts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Artifact"
+          },
+          "minItems": 1
+        },
+        "tokenizer_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "evaluation_report_hashes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          }
+        },
+        "license_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "model_card_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "state": {
+          "type": "string",
+          "enum": [
+            "EXPERIMENTAL",
+            "EVALUATED_RESEARCH",
+            "RESEARCH_RELEASE_APPROVED"
+          ]
+        },
+        "revocation_ref": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "CommercialRelease": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract_version",
+        "release_id",
+        "model_version",
+        "artifacts",
+        "runtime_image_sha256",
+        "tokenizer_sha256",
+        "dependency_hashes",
+        "dataset_manifest_hashes",
+        "evaluation_report_hashes",
+        "model_card_sha256",
+        "directions",
+        "regions",
+        "permitted_uses",
+        "license_refs",
+        "research_approval",
+        "commercial_clearance",
+        "production_approval",
+        "issued_at",
+        "expires_at",
+        "revocation_ref",
+        "eligibility_lease_ref"
+      ],
+      "properties": {
+        "contract_version": {
+          "const": 1
+        },
+        "release_id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "model_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "artifacts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Artifact"
+          },
+          "minItems": 1
+        },
+        "runtime_image_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "tokenizer_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "dependency_hashes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "minItems": 1
+        },
+        "dataset_manifest_hashes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "minItems": 1
+        },
+        "evaluation_report_hashes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "minItems": 1
+        },
+        "model_card_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "directions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Direction"
+          },
+          "minItems": 1
+        },
+        "regions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "permitted_uses": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "license_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "research_approval": {
+          "$ref": "#/$defs/Approval"
+        },
+        "commercial_clearance": {
+          "$ref": "#/$defs/Approval"
+        },
+        "production_approval": {
+          "$ref": "#/$defs/Approval"
+        },
+        "issued_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "expires_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "revocation_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "eligibility_lease_ref": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "SignatureEnvelope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract_version",
+        "release_id",
+        "payload_sha256",
+        "serialization_version",
+        "issuer",
+        "key_id",
+        "algorithm",
+        "issued_at",
+        "expires_at",
+        "signature"
+      ],
+      "properties": {
+        "contract_version": {
+          "const": 1
+        },
+        "release_id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "payload_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "serialization_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "issuer": {
+          "type": "string",
+          "minLength": 1
+        },
+        "key_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "algorithm": {
+          "type": "string",
+          "minLength": 1
+        },
+        "issued_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "expires_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "signature": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "TranslationRequest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source",
+        "target",
+        "source_orthography",
+        "target_orthography",
+        "text",
+        "model_version",
+        "retention"
+      ],
+      "properties": {
+        "source": {
+          "$ref": "#/$defs/Scope"
+        },
+        "target": {
+          "$ref": "#/$defs/Scope"
+        },
+        "source_orthography": {
+          "type": "string",
+          "minLength": 1
+        },
+        "target_orthography": {
+          "type": "string",
+          "minLength": 1
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 20000
+        },
+        "model_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "retention": {
+          "type": "string",
+          "enum": [
+            "none",
+            "tenant_policy"
+          ]
+        }
+      }
+    },
+    "TranslationResponse": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "request_id",
+        "source",
+        "target",
+        "model_version",
+        "release_id",
+        "outcome",
+        "text",
+        "reason_code"
+      ],
+      "properties": {
+        "request_id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "source": {
+          "$ref": "#/$defs/Scope"
+        },
+        "target": {
+          "$ref": "#/$defs/Scope"
+        },
+        "model_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "release_id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "outcome": {
+          "type": "string",
+          "enum": [
+            "translated",
+            "uncertain"
+          ]
+        },
+        "text": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason_code": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "outcome": {
+                "const": "translated"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "text": {
+                "type": "string",
+                "minLength": 1
+              },
+              "reason_code": {
+                "type": "null"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "text": {
+                "type": "null"
+              },
+              "reason_code": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "UsageEvent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract_version",
+        "event_id",
+        "tenant_id",
+        "request_id",
+        "release_id",
+        "occurred_at",
+        "meter_policy_version",
+        "unit",
+        "quantity",
+        "billable",
+        "outcome",
+        "deduplication_key"
+      ],
+      "properties": {
+        "contract_version": {
+          "const": 1
+        },
+        "event_id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "tenant_id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "request_id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "release_id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "occurred_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "meter_policy_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "unit": {
+          "const": "unicode_scalar"
+        },
+        "quantity": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "billable": {
+          "type": "boolean"
+        },
+        "outcome": {
+          "type": "string",
+          "enum": [
+            "translated",
+            "uncertain",
+            "failed",
+            "cancelled"
+          ]
+        },
+        "deduplication_key": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "BillingEvent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract_version",
+        "event_id",
+        "tenant_id",
+        "usage_event_ids",
+        "plan_version",
+        "period_start",
+        "period_end",
+        "provider_ref",
+        "type",
+        "currency",
+        "amount_minor_units",
+        "idempotency_key"
+      ],
+      "properties": {
+        "contract_version": {
+          "const": 1
+        },
+        "event_id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "tenant_id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "usage_event_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "minItems": 1
+        },
+        "plan_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "period_start": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "period_end": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "provider_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "USAGE_REPORTED",
+            "INVOICE_RECONCILED",
+            "ADJUSTMENT"
+          ]
+        },
+        "currency": {
+          "type": "string",
+          "pattern": "^[A-Z]{3}$"
+        },
+        "amount_minor_units": {
+          "type": "integer"
+        },
+        "idempotency_key": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "Error": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "request_id",
+        "code",
+        "message",
+        "retryable"
+      ],
+      "properties": {
+        "request_id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "code": {
+          "type": "string",
+          "minLength": 1
+        },
+        "message": {
+          "type": "string",
+          "minLength": 1
+        },
+        "retryable": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

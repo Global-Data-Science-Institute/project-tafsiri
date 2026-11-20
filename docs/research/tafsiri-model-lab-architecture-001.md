@@ -1,5 +1,7 @@
 # Tafsiri Model Lab architecture 001
 
+Integration note: this document retains the foundational governance decisions. The [Model Lab technical architecture](../architecture/tafsiri-model-lab-technical-architecture-001.md) completes its implementation blueprint within the [platform reference architecture](../architecture/tafsiri-platform-reference-architecture-001.md). All Model Lab services remain planned.
+
 Date: 2026-11-19. Status: future research design. No training pipeline, production model, experiment result or training authorization is created.
 
 ## Purpose and dependencies

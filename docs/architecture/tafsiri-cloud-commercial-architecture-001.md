@@ -1,5 +1,7 @@
 # Tafsiri Cloud commercial architecture 001
 
+Integration note: this document retains the foundational commercial boundary. The [Cloud technical architecture](tafsiri-cloud-technical-architecture-001.md) and [release lifecycle](tafsiri-model-release-and-commercial-handoff-001.md) complete its technical contracts within the [platform reference architecture](tafsiri-platform-reference-architecture-001.md). All Cloud services remain planned.
+
 Date: 2026-11-19. Status: future-facing architecture and interface contracts only. No public translation API, serving model, billing integration, tenant or deployment is implemented by this work.
 
 ## Boundary and topology
