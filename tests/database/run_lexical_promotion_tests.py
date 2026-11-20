@@ -389,7 +389,7 @@ def concurrency_checks():
     check("unsupported isolation fails closed", "READ COMMITTED" in error)
 
 
-def main():
+def main(after_migration=None):
     deadline=time.monotonic()+60
     while subprocess.run(['docker','exec',CONTAINER,'pg_isready','-h','127.0.0.1','-U','postgres'],capture_output=True).returncode:
         if time.monotonic()>deadline: raise RuntimeError('disposable database did not become ready')
@@ -401,6 +401,8 @@ def main():
     sql("BEGIN;" + ddl + "SELECT 1/0; COMMIT;", success=False)
     check("012 migration failure rolls back schema and role", sql("SELECT to_regnamespace('lexical_governance') IS NULL AND NOT EXISTS(SELECT 1 FROM pg_roles WHERE rolname='tafsiri_lexical_researcher');") == "t")
     sql("BEGIN;" + ddl + "COMMIT;")
+    if after_migration is not None:
+        after_migration()
     # Existing suites run against the hardened 011+012 schema, before fixtures.
     for path in sorted((ROOT / "tests/database").glob("*smoke.sql")):
         sql(path.read_text(encoding="utf-8"))
