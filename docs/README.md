@@ -74,6 +74,12 @@ The pilot is blocked by dependencies/security and by rights, provenance and qual
 
 ## Operations
 
+- [Institutional Data Studio local setup and acceptance walkthrough](research/institutional-data-studio-setup-001.md)
+- [Institutional Data Studio validation and launch gates](research/institutional-data-studio-validation-001.md)
+- [Data Studio technical architecture](architecture/tafsiri-data-studio-technical-architecture-001.md)
+- [Collection API and governance contracts](architecture/tafsiri-data-studio-contracts-001.md)
+- [AI Research Assistant](architecture/tafsiri-ai-research-assistant-001.md)
+
 - [Repository and staging deployment](repository-deployment.md)
 - [Repository cleanup record](repository-cleanup-2026-09.md)
 

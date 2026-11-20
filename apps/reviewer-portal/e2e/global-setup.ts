@@ -1,8 +1,8 @@
-import { execSync } from "node:child_process";
-import path from "node:path";
+import { resetLocalDatabase } from "./local-reset";
+
 import { adminClient, credentials, ids } from "./fixtures";
 export default async function setup(){
- const root=path.resolve(__dirname,"../../..");execSync("npx.cmd supabase db reset",{cwd:root,stdio:"inherit"});const sb=adminClient(),users:Record<string,string>={};
+ resetLocalDatabase();const sb=adminClient(),users:Record<string,string>={};
  for(const[key,value]of Object.entries(credentials)){const{data,error}=await sb.auth.admin.createUser({email:value.email,password:value.password,email_confirm:true,app_metadata:key==="admin"?{tafsiri_role:"research_admin"}:{}});if(error)throw error;users[key]=data.user.id}
  const must=async(p:PromiseLike<{error:any}>)=>{const{error}=await p;if(error)throw error};
  await must(sb.from("languages").insert({id:ids.language,name:"Test Luhya",iso_code:"z99"}));

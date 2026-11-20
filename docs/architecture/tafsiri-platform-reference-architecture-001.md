@@ -16,6 +16,7 @@ Repository base: `e939479ad6a63ef9ad628f26e92fc9dd0ff43461`. GitHub inspection c
 | Lexical promotion | [012 governance](../research/canonical-lexical-promotion-architecture-001.md), PR #24, implemented/unmerged and not hosted | Individual principals and exact authorities require separate provisioning |
 | Luwanga lexical pilot | PR #25 preparation documents | No real lexical promotion; provenance, rights and qualifications blocked |
 | Registry/profile pipeline | [013 foundation](../research/multilingual-platform-foundation-001.md), PR #26, implemented/unmerged and not hosted | Synthetic profile CLI only; no private real-data exporter |
+| Institutional Data Studio | [Local setup and boundaries](../research/institutional-data-studio-setup-001.md), additive private intake migration and isolated Next.js module | Synthetic organization/project collection; optional provider transport, no live external call; registration/reviewer handoff explicitly pending |
 | Dataset preparation, Model Lab, release publisher, Cloud | Planned in this series | No working training, billing, public translation or serving service |
 
 ## System context
@@ -110,6 +111,8 @@ These arrows require explicit decisions, not automatic state progression. Denial
 ## Blueprint navigation
 
 Data Studio is a first-class Research Core collection component. A language needs neither a preexisting corpus nor an approved registry identity to begin a private proposed-language collection project. Proposal processing permits collection only; registry approval is independent. Data Studio owns contribution origin, draft history, consent assertions, quarantine uploads and unverified AI suggestions. It prepares the existing source/artifact/import/evidence contracts; it does not duplicate their authoritative registries. See [Data Studio technical architecture](tafsiri-data-studio-technical-architecture-001.md), [AI assistance](tafsiri-ai-research-assistant-001.md), and [collection contracts](tafsiri-data-studio-contracts-001.md). The new module's implementation/validation report governs its actual capability; all downstream training/commercial services remain planned.
+
+Institutional organizations own projects and campaigns, not language identities. Organization administrators and project PIs govern exact memberships and revocable cross-institution collaboration. GDSI onboarding authority exposes partner profile metadata only; it does not authorize private project content. The institutional MVP is a research tenancy boundary, separate from the planned commercial Cloud tenancy.
 
 | Design | Authority |
 |---|---|

@@ -1,5 +1,6 @@
 // @vitest-environment jsdom
 import "@testing-library/jest-dom/vitest";
+import { StrictMode } from "react";
 import { act, cleanup, fireEvent, render, screen } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 const mocks=vi.hoisted(()=>({submitStageA:vi.fn()}));
@@ -9,6 +10,12 @@ import StageAForm from "./stage-a-form";
 const initial={decision:"",label:"",definition:"",notes:""};
 const response=()=>new Response(JSON.stringify({savedAt:"2026-08-13T12:00:00Z"}),{status:200,headers:{"content-type":"application/json"}});
 describe("Stage A autosave",()=>{
+ it("reports persisted drafts after Strict Mode effect replay",async()=>{
+  render(<StrictMode><StageAForm assignmentId="a" initial={initial}/></StrictMode>);
+  fireEvent.click(screen.getByLabelText(/One clear meaning/));
+  await act(async()=>vi.advanceTimersByTimeAsync(800));
+  expect(screen.getByRole("status")).toHaveTextContent("Saved at");
+ });
  beforeEach(()=>{vi.useFakeTimers();mocks.submitStageA.mockReset();global.fetch=vi.fn(async()=>response())});
  afterEach(()=>{cleanup();vi.useRealTimers()});
  it("debounces rapid edits and reports only confirmed saving",async()=>{

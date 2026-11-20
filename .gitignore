@@ -14,6 +14,7 @@ dist/
 *.pem
 supabase/.temp/
 supabase/.branches/
+.studio-local/
 
 # Test and Python runtime output
 .pytest_cache/
