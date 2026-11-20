@@ -17,7 +17,7 @@ The system separates source and rights governance, artifact and import lineage, 
 | 009 | Canonical linguistic rules, revisions, evidence links, dialect scope, promotions, outputs, and bounded authority |
 | 010 | Source artifacts, acquisitions, locations, associations, sets, members, and artifact-aware import lineage |
 
-The Canonical Lexical Core is the next architecture milestone. Migration 011 does not yet exist.
+The Canonical Lexical Core is the next deployment milestone. Migration 011's empty foundation is implemented and locally validated, with no staging or production deployment. The [implementation report](research/migration-011-implementation-report-001.md) records its reconciliation with the [multilingual SQL design review](research/migration-011-multilingual-sql-design-001.md). Read-only staging inspection during the architecture audit on 2026-11-19 confirmed migration history through 010; earlier production counts below are historical observations.
 
 ## Source and artifact lineage
 
@@ -68,7 +68,15 @@ Database changes are new versioned files under `supabase/migrations/`. Applied m
 - Registration and promotion tools default to validation or dry-run and write atomically.
 - Source receipt, review, or canonical status never grants client access automatically.
 
-## Technology and verification
+## Multilingual extension direction (2026-11-19)
+
+The [architecture amendment](research/multilingual-architecture-amendment-001.md) reuses the existing `languages`, `dialects`, source/evidence structures and review pipeline. Proposed metadata adds evidence-backed classification, orthography and lifecycle without replacing identities or forcing every variety to have one uncontested parent. Lexical scope, definition language and normalization policy are explicit; identical strings do not imply equivalence.
+
+The [seven ADRs](architecture/decisions/adr-multilingual-001-single-pipeline.md) record pipeline reuse, language/variety identity, dialect preservation, semantic relationships, reviewer authority, dataset/model governance and commercial separation. [Reviewer Portal design](research/multilingual-reviewer-portal-design-001.md) preserves existing HE001 access and blinded stages while specifying future scoped qualifications. No portal or database permissions change in this architecture phase.
+
+The [Model Lab](research/tafsiri-model-lab-architecture-001.md) is the future experiment layer of the same pipeline. [Tafsiri Cloud](architecture/tafsiri-cloud-commercial-architecture-001.md) receives only cleared, versioned release artifacts through a separate operational boundary. It receives no privileged research database access. Both remain designs, not operational services.
+
+## Technology and verification status
 
 The repository uses PostgreSQL/Supabase, pgvector in the legacy knowledge schema, Next.js, React, TypeScript, Python, Supabase Auth, Row-Level Security, GitHub Actions, Vercel, and SHA-256 artifact addressing.
 

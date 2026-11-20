@@ -58,8 +58,22 @@ jobs:
           docker exec -i supabase_db_project-tafsiri psql -U postgres -d postgres -v ON_ERROR_STOP=1 < tests/database/scholarly_book_source_type_smoke.sql
           docker exec -i supabase_db_project-tafsiri psql -U postgres -d postgres -v ON_ERROR_STOP=1 < tests/database/canonical_linguistic_rule_governance_smoke.sql
           docker exec -i supabase_db_project-tafsiri psql -U postgres -d postgres -v ON_ERROR_STOP=1 < tests/database/source_artifact_foundation_smoke.sql
+          docker exec -i supabase_db_project-tafsiri psql -U postgres -d postgres -v ON_ERROR_STOP=1 < tests/database/canonical_lexical_core_smoke.sql
+      - name: Rehearse lexical migration failure, compatibility, and concurrent writes
+        shell: bash
+        run: |
+          lexical_image=$(docker inspect --format '{{.Config.Image}}' supabase_db_project-tafsiri)
+          docker run -d --name tafsiri-m011-validation-db -e POSTGRES_PASSWORD=tafsiri-local-fixture-only "$lexical_image"
+          for attempt in {1..60}; do
+            if docker exec tafsiri-m011-validation-db pg_isready -h 127.0.0.1 -U postgres; then break; fi
+            sleep 1
+          done
+          python tests/database/run_lexical_core_replay_tests.py
+          python tests/database/run_lexical_core_concurrency_tests.py
       - name: Test atomic Marlo registration
         run: python tests/database/run_marlo_registration_atomic_tests.py
       - run: npx supabase db lint --local --level error
+      - if: always()
+        run: docker rm -f tafsiri-m011-validation-db || true
       - if: always()
         run: npx supabase stop --no-backup
