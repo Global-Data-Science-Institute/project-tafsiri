@@ -17,7 +17,7 @@ The system separates source and rights governance, artifact and import lineage, 
 | 009 | Canonical linguistic rules, revisions, evidence links, dialect scope, promotions, outputs, and bounded authority |
 | 010 | Source artifacts, acquisitions, locations, associations, sets, members, and artifact-aware import lineage |
 
-The Canonical Lexical Core is the next architecture milestone. Migration 011 has an existing SQL design but no migration file. The [multilingual SQL design review](research/migration-011-multilingual-sql-design-001.md) amends the historical design before implementation. Read-only staging inspection on 2026-11-19 confirmed migration history through 010; earlier production counts below are historical observations.
+The Canonical Lexical Core is the next deployment milestone. Migration 011's empty foundation is implemented and locally validated, with no staging or production deployment. The [implementation report](research/migration-011-implementation-report-001.md) records its reconciliation with the [multilingual SQL design review](research/migration-011-multilingual-sql-design-001.md). Read-only staging inspection during the architecture audit on 2026-11-19 confirmed migration history through 010; earlier production counts below are historical observations.
 
 ## Source and artifact lineage
 

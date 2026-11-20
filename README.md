@@ -102,7 +102,7 @@ The next major architecture milestone is:
 Lexeme → Form → Sense → Concept
 ```
 
-A dictionary row is an attestation, not automatically a canonical word. The planned model supports homographs, multiple senses, dialect-specific and historical forms, variants, source attestations, concepts, disputed analyses, and explicit verification state. Migration 011 does not yet exist.
+A dictionary row is an attestation, not automatically a canonical word. The model supports homographs, multiple senses, dialect-specific and historical forms, variants, source attestations, concepts, disputed analyses, and explicit verification state. Migration 011's empty foundation is implemented and validated locally, pending review; it has not been deployed. See the [implementation report](docs/research/migration-011-implementation-report-001.md) and [deployment gates](docs/research/migration-011-deployment-readiness-001.md).
 
 ## Verified project state
 
