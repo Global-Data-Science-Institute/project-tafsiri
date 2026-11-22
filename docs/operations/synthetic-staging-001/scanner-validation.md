@@ -19,9 +19,9 @@ Official `clamav/clamav:stable` pulls failed twice with Docker registry CDN EOF 
 | Real engine 6 MiB file limit on 7 MiB synthetic file, alert-exceeds-max | Exit 1, quarantinable detection |
 | Auth + Storage + DB worker integration | PENDING read denied; clean -> CLEAN/read allowed; EICAR -> INFECTED/read denied; hash mismatch -> ERROR/read denied |
 
-Runtime container: network `none`, read-only filesystem, repository read-only mount, no credentials, all capabilities dropped, no-new-privileges, 4 GiB memory, 2 CPUs, 64 PIDs, 256 MiB noexec/nosuid tmpfs. Cgroup readings are in the JSON. These prove configured bounds and observed file/timeout enforcement, not an exhaustive decompression-bomb/OOM load test. The scanner process runs as container root with dropped capabilities in this local harness; a production image must additionally use a dedicated non-root UID and be retested.
+Runtime container: network `none`, read-only filesystem, repository read-only mount, no credentials injected through environment/stdin, all capabilities dropped, no-new-privileges, 4 GiB memory, 2 CPUs, 64 PIDs, 256 MiB noexec/nosuid tmpfs. Cgroup readings are in the JSON. These prove configured bounds and observed file/timeout enforcement, not an exhaustive decompression-bomb/OOM load test. The initial repository mount also made ignored workspace files potentially readable; it was broader than necessary and does not prove filesystem secret isolation. Only generated synthetic bytes were scanned. The reproduction below restricts mounts to two source files. The scanner process runs as container root with dropped capabilities in this local harness; a production image must additionally use a dedicated non-root UID and be retested.
 
-The worker integration runs `scanOne` on the host using local-only credentials and invokes the same adapter inside the network-disabled container. Only synthetic bytes cross stdin; the container receives no Supabase keys. It is not a deployed worker or proof of hosted networking. It handles an existing pending local backlog with a maximum of 25 claims. The test leaves synthetic fixtures for the guarded Reviewer Portal reset to remove.
+The worker integration runs `scanOne` on the host using local-only credentials and invokes the same adapter inside the network-disabled container. Only synthetic bytes cross stdin; no Supabase keys are passed by the harness. The broader original mount limitation above still applies. It is not a deployed worker or proof of hosted networking. It handles an existing pending local backlog with a maximum of 25 claims. The test leaves synthetic fixtures for the guarded Reviewer Portal reset to remove.
 
 ## Reproduction (local only)
 
@@ -31,7 +31,7 @@ From repository root, with Docker, installed project dependencies and isolated S
 gh release download clamav-1.4.7 --repo Cisco-Talos/clamav --pattern clamav-1.4.7.linux.x86_64.deb --dir .studio-local
 docker build --file tests/studio/Dockerfile.clamav --tag tafsiri-clamav-preflight:repro .studio-local
 $repo = (Get-Location).Path
-docker run -d --name tafsiri-clamav-runtime-001 --network none --read-only --tmpfs /tmp:rw,noexec,nosuid,size=256m --memory 4g --cpus 2 --pids-limit 64 --cap-drop ALL --security-opt no-new-privileges --mount "type=bind,source=$repo,target=/work,readonly" tafsiri-clamav-preflight:repro
+docker run -d --name tafsiri-clamav-runtime-001 --network none --read-only --tmpfs /tmp:rw,noexec,nosuid,size=256m --memory 4g --cpus 2 --pids-limit 64 --cap-drop ALL --security-opt no-new-privileges --mount "type=bind,source=$repo/tests/studio/clamav_preflight.mjs,target=/work/tests/studio/clamav_preflight.mjs,readonly" --mount "type=bind,source=$repo/apps/reviewer-portal/src/lib/studio/scanner.mjs,target=/work/apps/reviewer-portal/src/lib/studio/scanner.mjs,readonly" tafsiri-clamav-preflight:repro
 docker exec tafsiri-clamav-runtime-001 node /work/tests/studio/clamav_preflight.mjs
 node tests/studio/clamav_database.mjs
 docker exec tafsiri-clamav-runtime-001 cat /tmp/clamav-results.json

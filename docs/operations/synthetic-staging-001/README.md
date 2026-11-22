@@ -28,4 +28,4 @@ The proposed infrastructure and bounded approval request are concrete, but **not
 - Sixteen ordered migration checksums verified against canonical Git blobs and normalized local files.
 - PR #29's research/portal/database/Studio jobs were green. This packet's draft PR reruns the full CI suite, including lexical replay/concurrency, governed promotion and multilingual registry tests. Consult its exact check results rather than treating baseline CI as current evidence.
 
-Local artifacts containing synthetic Auth sessions, database dumps or file bodies remain ignored under `.studio-local`; only metadata results are committed. Disposable scanner containers have no hosted credentials. The signatures and downloaded package are local test artifacts, not a deployed service.
+Local artifacts containing synthetic Auth sessions, database dumps or file bodies remain ignored under `.studio-local`; only metadata results are committed. No hosted credentials were injected into the scanner; the initial workspace mount was broader than necessary, as disclosed in the scanner report. The signatures and downloaded package are local test artifacts, not a deployed service.
