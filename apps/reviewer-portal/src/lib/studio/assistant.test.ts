@@ -11,6 +11,41 @@ const input = {
   duplicate_count: 1,
 };
 describe("Studio assistant boundary", () => {
+  it("fails closed on provider throttling, refusal, truncated output and transport errors", async () => {
+    const config = {
+      externalEnabled: true,
+      key: "synthetic",
+      model: "synthetic",
+    };
+    for (const response of [
+      new Response("provider error", { status: 429 }),
+      Response.json({ status: "incomplete", output: [] }),
+      Response.json({
+        status: "completed",
+        output: [
+          { content: [{ type: "refusal", refusal: "synthetic refusal" }] },
+        ],
+      }),
+      new Response("not json"),
+    ]) {
+      await expect(
+        runAssistant(
+          "openai",
+          input,
+          config,
+          vi.fn().mockResolvedValue(response),
+        ),
+      ).rejects.toThrow();
+    }
+    await expect(
+      runAssistant(
+        "openai",
+        input,
+        config,
+        vi.fn().mockRejectedValue(new Error("timeout")),
+      ),
+    ).rejects.toThrow("timeout");
+  });
   it("preserves original evidence and reports uncertainty and missing fields", () => {
     const before = JSON.stringify(input);
     const output = mockAssist(input);
@@ -35,22 +70,18 @@ describe("Studio assistant boundary", () => {
   });
   it("uses bounded nonstored structured Responses requests and literal candidates", async () => {
     const output = mockAssist(input);
-    const transport = vi
-      .fn()
-      .mockResolvedValue(
-        new Response(
-          JSON.stringify({
-            status: "completed",
-            output: [
-              {
-                content: [
-                  { type: "output_text", text: JSON.stringify(output) },
-                ],
-              },
-            ],
-          }),
-        ),
-      );
+    const transport = vi.fn().mockResolvedValue(
+      new Response(
+        JSON.stringify({
+          status: "completed",
+          output: [
+            {
+              content: [{ type: "output_text", text: JSON.stringify(output) }],
+            },
+          ],
+        }),
+      ),
+    );
     await runAssistant(
       "openai",
       input,
@@ -67,28 +98,26 @@ describe("Studio assistant boundary", () => {
     expect(body.text.format.type).toBe("json_schema");
   });
   it("rejects invented candidates and malformed/refused output", async () => {
-    const transport = vi
-      .fn()
-      .mockResolvedValue(
-        new Response(
-          JSON.stringify({
-            status: "completed",
-            output: [
-              {
-                content: [
-                  {
-                    type: "output_text",
-                    text: JSON.stringify({
-                      ...mockAssist(input),
-                      candidates: ["invented lexical answer"],
-                    }),
-                  },
-                ],
-              },
-            ],
-          }),
-        ),
-      );
+    const transport = vi.fn().mockResolvedValue(
+      new Response(
+        JSON.stringify({
+          status: "completed",
+          output: [
+            {
+              content: [
+                {
+                  type: "output_text",
+                  text: JSON.stringify({
+                    ...mockAssist(input),
+                    candidates: ["invented lexical answer"],
+                  }),
+                },
+              ],
+            },
+          ],
+        }),
+      ),
+    );
     await expect(
       runAssistant(
         "openai",

@@ -43,6 +43,7 @@ type Upload = Row & {
   mime: string;
   state: string;
   size_bytes: number;
+  scan_state: string;
 };
 type Run = Row & {
   contribution_id: string;
@@ -72,11 +73,24 @@ type State = {
   uploads: Upload[];
   ai_runs: Run[];
   handoffs: (Row & { contribution_id: string; state: string })[];
+  deletions: {
+    contribution_id: string;
+    state: string;
+    eligible_at: string;
+    hold: boolean;
+  }[];
+  deliveries: {
+    id: string;
+    invitation_id: string;
+    state: string;
+    created_at: string;
+  }[];
   invitations: (Row & {
     email: string;
     project_id: string | null;
     revoked: boolean;
     accepted_by: string | null;
+    expires_at: string;
   })[];
   members: {
     project_id: string;
@@ -193,6 +207,8 @@ export default function Studio({ invitation }: { invitation: string }) {
     [org, setOrg] = useState(""),
     [project, setProject] = useState(""),
     [inviteLink, setInviteLink] = useState("");
+  const [inviteId, setInviteId] = useState("");
+  const [sending, setSending] = useState(false);
   const [campaign, setCampaign] = useState(""),
     [editing, setEditing] = useState<string | null>(null);
   const load = useCallback(async () => {
@@ -247,10 +263,12 @@ export default function Studio({ invitation }: { invitation: string }) {
       setMessage(`${result.message} (${result.error})`);
       throw new Error(result.error);
     }
-    if (result.token)
+    if (result.token) {
+      setInviteId(String(result.id));
       setInviteLink(
         `${location.origin}/studio?invite=${encodeURIComponent(result.token)}`,
       );
+    }
     setMessage(
       "Saved. Collection acceptance is separate from linguistic verification.",
     );
@@ -260,6 +278,38 @@ export default function Studio({ invitation }: { invitation: string }) {
   const safeCommand = (op: string, data: Record<string, unknown>) => {
     void command(op, data).catch(() => {});
   };
+  async function sendInvitation(id: string) {
+    setSending(true);
+    try {
+      const response = await fetch("/api/studio/invitations", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id, request_id: crypto.randomUUID() }),
+      });
+      const result = await response.json();
+      if (!response.ok)
+        throw new Error(
+          result.message ??
+            "Delivery failed. Retry explicitly; any previous link may have expired.",
+        );
+      setInviteId(id);
+      setInviteLink(result.previewLink ?? "");
+      setMessage(
+        result.state === "MOCK_SENT"
+          ? "Mock invitation prepared. No email was sent. Share the synthetic preview link for testing."
+          : `Invitation delivery: ${result.state}. Previous links have been replaced.`,
+      );
+      await load();
+    } catch (error) {
+      setMessage(
+        error instanceof Error
+          ? error.message
+          : "Invitation delivery failed. Please retry.",
+      );
+    } finally {
+      setSending(false);
+    }
+  }
   const selectedOrg = org || state?.organizations[0]?.id || "";
   const orgAdmin = state?.organizations.some(
     (o) => o.id === selectedOrg && o.role === "admin",
@@ -298,6 +348,8 @@ export default function Studio({ invitation }: { invitation: string }) {
             onClick={async () => {
               await createBrowserSupabase().auth.signOut();
               setState(null);
+              setInviteLink("");
+              setInviteId("");
               setAuth(true);
             }}
           >
@@ -335,6 +387,11 @@ export default function Studio({ invitation }: { invitation: string }) {
           </p>
           <Field label="Email" name="email" type="email" required />
           <Field label="Password" name="password" type="password" required />
+          <p>
+            <a href="/auth/forgot-password">Recover your account password</a>.
+            After recovery, return to this research workspace. Access still
+            requires an active invitation or membership.
+          </p>
           <details>
             <summary>New here?</summary>
             <p>
@@ -457,6 +514,17 @@ export default function Studio({ invitation }: { invitation: string }) {
                 value={inviteLink}
                 onFocus={(e) => e.target.select()}
               />
+              {inviteId && (
+                <button
+                  className="secondary"
+                  disabled={sending}
+                  onClick={() => void sendInvitation(inviteId)}
+                >
+                  {sending
+                    ? "Preparing delivery…"
+                    : "Send invitation through configured provider"}
+                </button>
+              )}
               <button className="secondary" onClick={() => setInviteLink("")}>
                 Dismiss private link
               </button>
@@ -907,8 +975,14 @@ export default function Studio({ invitation }: { invitation: string }) {
                       .map((m) => (
                         <article key={m.user_id}>
                           <p>
-                            {m.user_id} · {m.role} ·{" "}
-                            {m.active ? "Active" : "Revoked"}
+                            {m.email ||
+                              state.invitations.find(
+                                (i) => i.accepted_by === m.user_id,
+                              )?.email ||
+                              (m.user_id === state.user_id
+                                ? "You"
+                                : `Member ${m.user_id.slice(0, 8)}`)}{" "}
+                            · {m.role} · {m.active ? "Active" : "Revoked"}
                           </p>
                           {m.active && m.user_id !== state.user_id && (
                             <button
@@ -936,8 +1010,14 @@ export default function Studio({ invitation }: { invitation: string }) {
                     .map((m) => (
                       <article key={m.user_id}>
                         <p>
-                          {m.user_id} · {m.role} ·{" "}
-                          {m.active ? "Active" : "Revoked"}
+                          {m.email ||
+                            state.invitations.find(
+                              (i) => i.accepted_by === m.user_id,
+                            )?.email ||
+                            (m.user_id === state.user_id
+                              ? "You"
+                              : `Member ${m.user_id.slice(0, 8)}`)}{" "}
+                          · {m.role} · {m.active ? "Active" : "Revoked"}
                         </p>
                         {m.active && m.user_id !== state.user_id && (
                           <button
@@ -958,6 +1038,12 @@ export default function Studio({ invitation }: { invitation: string }) {
               )}
               <section className="studio-card">
                 <h3>Invitations</h3>
+                {!state.invitations.length && (
+                  <p>
+                    No invitations yet. Invite a project collaborator or another
+                    organization administrator above.
+                  </p>
+                )}
                 {state.invitations.map((i) => (
                   <article key={i.id}>
                     <p>
@@ -968,6 +1054,26 @@ export default function Studio({ invitation }: { invitation: string }) {
                           ? "Accepted"
                           : "Pending"}
                     </p>
+                    <p>Expires {new Date(i.expires_at).toLocaleString()}</p>
+                    {state.deliveries
+                      .filter((d) => d.invitation_id === i.id)
+                      .slice(-3)
+                      .map((d) => (
+                        <p key={d.id}>
+                          Delivery: {d.state.replaceAll("_", " ")}
+                        </p>
+                      ))}
+                    {!i.revoked && !i.accepted_by && (
+                      <button
+                        className="secondary"
+                        disabled={sending}
+                        onClick={() => void sendInvitation(i.id)}
+                      >
+                        {sending
+                          ? "Preparing delivery…"
+                          : "Send or resend invitation"}
+                      </button>
+                    )}
                     {!i.revoked && !i.accepted_by && (
                       <button
                         className="secondary"
@@ -1209,6 +1315,13 @@ function ContributionCard({
     [busy, setBusy] = useState(false);
   const own = item.owner_id === state.user_id,
     editable = ["DRAFT", "NEEDS_CLARIFICATION"].includes(item.status);
+  const retentionAdmin = state.projects.some(
+    (p) =>
+      p.role === "pi" &&
+      state.campaigns.some(
+        (c) => c.id === item.campaign_id && c.project_id === p.id,
+      ),
+  );
   async function act(operation: string, extra = {}) {
     setBusy(true);
     try {
@@ -1229,6 +1342,12 @@ function ContributionCard({
       <h3>{item.content.text?.slice(0, 100) || "Untitled draft"}</h3>
       <p className="studio-preserve">{item.content.text}</p>
       <small>Revision {item.revision} · Unverified contribution</small>
+      <p>
+        Original contributor material ·{" "}
+        {item.status === "ACCEPTED_FOR_RESEARCH_INTAKE"
+          ? "Accepted for research intake; linguistic verification is still pending."
+          : "Awaiting human review; no canonical approval."}
+      </p>
       <details>
         <summary>Provenance and permissions</summary>
         <p>Source: {item.content.source || "Not supplied"}</p>
@@ -1273,12 +1392,76 @@ function ContributionCard({
         .filter((x) => x.contribution_id === item.id)
         .map((x) => (
           <p key={x.id}>
-            {x.mime} · {x.size_bytes} bytes · Quarantined{" "}
-            {item.status !== "WITHDRAWN" && (
-              <a href={`/api/studio/upload?id=${x.id}`}>Download original</a>
-            )}
+            {x.mime} · {x.size_bytes} bytes ·{" "}
+            {x.scan_state === "MOCK_CLEAN"
+              ? "Synthetic mock scan only"
+              : x.scan_state.replaceAll("_", " ")}{" "}
+            {item.status !== "WITHDRAWN" &&
+              ["CLEAN", "MOCK_CLEAN"].includes(x.scan_state) && (
+                <a href={`/api/studio/upload?id=${x.id}`}>Download original</a>
+              )}
           </p>
         ))}
+      {item.status === "WITHDRAWN" && (
+        <div className="warning">
+          <p>
+            Access to files and new AI processing has ended. Deletion requires a
+            request, a seven-day hold, and PI approval. Audit identifiers and
+            consent records remain.
+          </p>
+          {own &&
+            !state.deletions.some((d) => d.contribution_id === item.id) && (
+              <button
+                disabled={busy}
+                onClick={() => void act("request_deletion")}
+              >
+                Request retained-data deletion
+              </button>
+            )}
+          {state.deletions
+            .filter((d) => d.contribution_id === item.id)
+            .map((d) => (
+              <div key={d.contribution_id}>
+                <p>
+                  Deletion: {d.state} · Eligible{" "}
+                  {new Date(d.eligible_at).toLocaleDateString()} ·{" "}
+                  {d.hold ? "On hold" : "No additional hold"}
+                </p>
+                {retentionAdmin && d.state === "PENDING" && (
+                  <button
+                    disabled={busy || d.hold}
+                    onClick={() => void act("approve_deletion")}
+                  >
+                    PI: approve deletion
+                  </button>
+                )}
+                {retentionAdmin &&
+                  ["PENDING", "APPROVED"].includes(d.state) && (
+                    <button
+                      disabled={busy || !reason.trim()}
+                      onClick={() =>
+                        void act("retention_hold", { hold: !d.hold })
+                      }
+                    >
+                      {d.hold
+                        ? "Release retention hold"
+                        : "Place retention hold"}
+                    </button>
+                  )}
+              </div>
+            ))}
+          {retentionAdmin && (
+            <label>
+              Retention decision reason
+              <input
+                value={reason}
+                onChange={(e) => setReason(e.target.value)}
+                maxLength={2000}
+              />
+            </label>
+          )}
+        </div>
+      )}
       {item.status !== "WITHDRAWN" && (
         <>
           <label>

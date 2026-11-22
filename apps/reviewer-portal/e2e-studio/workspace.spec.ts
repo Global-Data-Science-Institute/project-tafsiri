@@ -289,6 +289,22 @@ test("two institutions: onboarding, collection, isolated uploads, AI, triage and
   await card
     .getByRole("button", { name: "Upload to private quarantine" })
     .click();
+  await expect(card.getByText(/PENDING/)).toBeVisible();
+  const pendingUpload = (await state(contributor)).uploads[0];
+  expect(
+    (
+      await contributor.request.get(`/api/studio/upload?id=${pendingUpload.id}`)
+    ).status(),
+  ).toBe(403);
+  execFileSync(
+    process.execPath,
+    ["scripts/studio-worker.mjs", "scan", "--local"],
+    { stdio: "pipe" },
+  );
+  await contributor.reload();
+  await contributor
+    .getByRole("button", { name: "intake", exact: true })
+    .click();
   await expect(
     card.getByRole("link", { name: "Download original" }),
   ).toBeVisible();

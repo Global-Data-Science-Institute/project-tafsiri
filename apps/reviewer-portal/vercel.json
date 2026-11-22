@@ -2,7 +2,8 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "git": {
     "deploymentEnabled": {
-      "feature/tafsiri-data-studio": false
+      "feature/tafsiri-data-studio": false,
+      "feature/tafsiri-partner-rc-001": false
     }
   }
 }

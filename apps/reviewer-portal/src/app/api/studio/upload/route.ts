@@ -39,6 +39,18 @@ export async function POST(request: Request) {
         upsert: false,
       });
     if (uploadError) {
+      if (data.replayed) {
+        const receipt = await sb.rpc("studio_command", {
+          operation: "upload_receipt",
+          payload: { id: upload.id },
+          request_id: crypto.randomUUID(),
+        });
+        if (!receipt.error && receipt.data?.present)
+          return Response.json(
+            { id: upload.id, state: "QUARANTINED" },
+            { headers: { "Cache-Control": "no-store" } },
+          );
+      }
       // A retry may find the original object. Confirm integrity rather than overwriting it.
       const existing = await sb.storage
         .from("studio-quarantine")
