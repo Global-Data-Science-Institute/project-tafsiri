@@ -3,7 +3,8 @@
   "git": {
     "deploymentEnabled": {
       "feature/tafsiri-data-studio": false,
-      "feature/tafsiri-partner-rc-001": false
+      "feature/tafsiri-partner-rc-001": false,
+      "feature/tafsiri-synthetic-staging-validation-001": false
     }
   }
 }

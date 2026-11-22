@@ -74,6 +74,7 @@ The pilot is blocked by dependencies/security and by rights, provenance and qual
 
 ## Operations
 
+- [Synthetic staging validation 001: security findings, actual scanner evidence and approval plan](operations/synthetic-staging-001/README.md)
 - [Partner RC 001 validation and deployment decision](research/partner-release-validation-001.md)
 - [Partner onboarding guide](research/partner-onboarding-guide-001.md)
 - [Synthetic staging, scanning, retention and recovery runbook](operations/partner-release-runbook-001.md)
