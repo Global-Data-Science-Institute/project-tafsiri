@@ -74,6 +74,9 @@ The pilot is blocked by dependencies/security and by rights, provenance and qual
 
 ## Operations
 
+- [Partner RC 001 validation and deployment decision](research/partner-release-validation-001.md)
+- [Partner onboarding guide](research/partner-onboarding-guide-001.md)
+- [Synthetic staging, scanning, retention and recovery runbook](operations/partner-release-runbook-001.md)
 - [Institutional Data Studio local setup and acceptance walkthrough](research/institutional-data-studio-setup-001.md)
 - [Institutional Data Studio validation and launch gates](research/institutional-data-studio-validation-001.md)
 - [Data Studio technical architecture](architecture/tafsiri-data-studio-technical-architecture-001.md)

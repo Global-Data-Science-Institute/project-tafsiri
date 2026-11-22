@@ -4,7 +4,7 @@ on:
   push:
     branches: [main, staging, 'chore/**']
   pull_request:
-    branches: [main, staging, 'feature/tafsiri-migration-011-lexical-core', 'feature/tafsiri-luwanga-lexical-pilot-001', 'feature/tafsiri-complete-platform-architecture']
+    branches: [main, staging, 'feature/tafsiri-migration-011-lexical-core', 'feature/tafsiri-luwanga-lexical-pilot-001', 'feature/tafsiri-complete-platform-architecture', 'feature/tafsiri-data-studio']
 
 jobs:
   studio:
@@ -26,6 +26,9 @@ jobs:
         working-directory: apps/reviewer-portal
       - run: python tests/studio/database_checks.py
       - run: npx playwright test --config playwright.studio.config.ts
+        working-directory: apps/reviewer-portal
+      - run: python tests/studio/backup_restore.py
+      - run: node scripts/studio-storage-restore.mjs
         working-directory: apps/reviewer-portal
       - run: npx playwright test --config playwright.studio-reviewer.config.ts
         working-directory: apps/reviewer-portal

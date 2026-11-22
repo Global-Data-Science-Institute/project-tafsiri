@@ -47,3 +47,7 @@ The anonymous admin-API regression disables redirect following so it checks the 
 See [local setup and walkthrough](institutional-data-studio-setup-001.md) for repeatable commands, synthetic accounts and operator boundaries.
 
 Local completion state: **PARTNER PLATFORM MVP — READY FOR INDEPENDENT ACCEPTANCE TESTING**. This is not production approval; the gates above remain mandatory before authentic partner material is collected.
+
+## Subsequent release candidate
+
+This is the historical PR #28 baseline report. [Partner RC 001 validation](partner-release-validation-001.md) records the later scanning, retention, invitation, session-revocation and operational changes and their remaining gates.
