@@ -1,0 +1,121 @@
+{
+  "at": "2026-11-22T23:05:38.949Z",
+  "engine": "ClamAV 1.4.7/28191/Sun Nov 22 06:27:13 2026",
+  "signature_metadata": "File: /var/lib/clamav/daily.cvd\nBuild time: 22 Nov 2026 06:27 +0000\nVersion: 28191\nSignatures: 355844\nFunctionality level: 90\nBuilder: svc.clamav-publisher\nMD5: 1d4d7d2e1e18262bbf3b0c0efe482c68\nDigital signature: pjxsCx5A2dOLjtbGjmIOQAC45mzLIDp+UjQzHbms9FYAGeh6p002xlizVqkSU3VNPCu3saxpbqPRrllv1PC/chC0HLL6WESWYdhMaVZUbQGqDP7lCUH+mweLnstylCiUXwK/EtrDmgyGBasnyWAkYp8nuN2HVm3OPfoRqz8l7Cb\nVerification OK.\n",
+  "limits": {
+    "memory_bytes": "4294967296\n",
+    "cpus": "200000 100000\n",
+    "pids": "64\n"
+  },
+  "results": [
+    {
+      "name": "clean-text",
+      "expected": "CLEAN",
+      "verdict": "CLEAN",
+      "version": "ClamAV 1.4.7/28191/Sun Nov 22 06:27:13 2026",
+      "elapsed_ms": 5930
+    },
+    {
+      "name": "clean-pdf",
+      "expected": "CLEAN",
+      "verdict": "CLEAN",
+      "version": "ClamAV 1.4.7/28191/Sun Nov 22 06:27:13 2026",
+      "elapsed_ms": 6256
+    },
+    {
+      "name": "clean-wav",
+      "expected": "CLEAN",
+      "verdict": "CLEAN",
+      "version": "ClamAV 1.4.7/28191/Sun Nov 22 06:27:13 2026",
+      "elapsed_ms": 5564
+    },
+    {
+      "name": "eicar",
+      "expected": "INFECTED",
+      "verdict": "INFECTED",
+      "version": "ClamAV 1.4.7/28191/Sun Nov 22 06:27:13 2026",
+      "elapsed_ms": 5412
+    },
+    {
+      "name": "unsupported",
+      "expected": "INFECTED",
+      "verdict": "INFECTED",
+      "version": "format-policy-1",
+      "elapsed_ms": 1
+    },
+    {
+      "name": "malformed-magic",
+      "expected": "INFECTED",
+      "verdict": "INFECTED",
+      "version": "format-policy-1",
+      "elapsed_ms": 0
+    },
+    {
+      "name": "active-pdf",
+      "expected": "INFECTED",
+      "verdict": "INFECTED",
+      "version": "format-policy-1",
+      "elapsed_ms": 0
+    },
+    {
+      "name": "encrypted-pdf",
+      "expected": "INFECTED",
+      "verdict": "INFECTED",
+      "version": "format-policy-1",
+      "elapsed_ms": 0
+    },
+    {
+      "name": "oversized",
+      "expected": "ERROR",
+      "verdict": "ERROR",
+      "version": "format-1",
+      "elapsed_ms": 0
+    },
+    {
+      "name": "structurally-invalid-pdf",
+      "expected": null,
+      "verdict": "CLEAN",
+      "version": "ClamAV 1.4.7/28191/Sun Nov 22 06:27:13 2026",
+      "elapsed_ms": 5674
+    },
+    {
+      "name": "structurally-invalid-wav",
+      "expected": null,
+      "verdict": "CLEAN",
+      "version": "ClamAV 1.4.7/28191/Sun Nov 22 06:27:13 2026",
+      "elapsed_ms": 5353
+    },
+    {
+      "name": "stale-signatures",
+      "expected": "ERROR",
+      "verdict": "ERROR",
+      "reason": "Scanner signatures are missing or stale",
+      "elapsed_ms": 1
+    },
+    {
+      "name": "missing-engine",
+      "expected": "ERROR",
+      "verdict": "ERROR",
+      "reason": "spawn /nonexistent/clamscan ENOENT",
+      "elapsed_ms": 2
+    },
+    {
+      "name": "real-engine-timeout",
+      "expected": "ERROR",
+      "verdict": "ERROR",
+      "version": "ClamAV 1.4.7/28191/Sun Nov 22 06:27:13 2026",
+      "elapsed_ms": 5
+    },
+    {
+      "name": "production-timeout-45s",
+      "expected": "ERROR",
+      "verdict": "ERROR",
+      "version": "ClamAV 1.4.7/28191/Sun Nov 22 06:27:13 2026",
+      "elapsed_ms": 45011
+    },
+    {
+      "name": "engine-file-limit-6MiB",
+      "exit_code": 1
+    }
+  ]
+}

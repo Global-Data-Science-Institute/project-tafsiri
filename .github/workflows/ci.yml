@@ -4,7 +4,7 @@ on:
   push:
     branches: [main, staging, 'chore/**']
   pull_request:
-    branches: [main, staging, 'feature/tafsiri-migration-011-lexical-core', 'feature/tafsiri-luwanga-lexical-pilot-001', 'feature/tafsiri-complete-platform-architecture', 'feature/tafsiri-data-studio']
+    branches: [main, staging, 'feature/tafsiri-migration-011-lexical-core', 'feature/tafsiri-luwanga-lexical-pilot-001', 'feature/tafsiri-complete-platform-architecture', 'feature/tafsiri-data-studio', 'feature/tafsiri-partner-rc-001']
 
 jobs:
   studio:
@@ -21,6 +21,7 @@ jobs:
       - run: npm ci
         working-directory: apps/reviewer-portal
       - run: python tests/studio/prepare_local.py
+      - run: python tests/studio/staging_manifest.py
       - run: npx supabase start --workdir .studio-local > /tmp/studio-start.log 2>&1
       - run: npx playwright install --with-deps chromium
         working-directory: apps/reviewer-portal

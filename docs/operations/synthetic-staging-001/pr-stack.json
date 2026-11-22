@@ -1,0 +1,258 @@
+[
+  {
+    "baseRefName": "staging",
+    "baseRefOid": "199a63530e447db169ba4e39c61da5239f52dcf1",
+    "headRefName": "feature/tafsiri-multilingual-architecture",
+    "headRefOid": "a5b45af45b9279a197c9080e6648fc64adf4dde8",
+    "isDraft": true,
+    "mergeable": "MERGEABLE",
+    "number": 22,
+    "state": "OPEN",
+    "ci": [
+      {
+        "name": "portal",
+        "result": "SUCCESS",
+        "url": "https://github.com/Global-Data-Science-Institute/project-tafsiri/actions/runs/44641667635/job/135973973445"
+      },
+      {
+        "name": "research",
+        "result": "SUCCESS",
+        "url": "https://github.com/Global-Data-Science-Institute/project-tafsiri/actions/runs/44641667635/job/135973973918"
+      },
+      {
+        "name": "database",
+        "result": "SUCCESS",
+        "url": "https://github.com/Global-Data-Science-Institute/project-tafsiri/actions/runs/44641667635/job/135973973965"
+      },
+      {
+        "name": "Vercel",
+        "result": "SUCCESS",
+        "url": "https://vercel.com/proff-amakobes-projects/tafsiri-reviewer-portal/QS6P7wReb2ezimodWgFfGvu25uer"
+      },
+      {
+        "name": "Vercel Preview Comments",
+        "result": "SUCCESS",
+        "url": "https://vercel.com/github"
+      }
+    ]
+  },
+  {
+    "baseRefName": "staging",
+    "baseRefOid": "199a63530e447db169ba4e39c61da5239f52dcf1",
+    "headRefName": "feature/tafsiri-migration-011-lexical-core",
+    "headRefOid": "b700283b03937185c091bad7edf3d22183660e09",
+    "isDraft": true,
+    "mergeable": "MERGEABLE",
+    "number": 23,
+    "state": "OPEN",
+    "ci": [
+      {
+        "name": "portal",
+        "result": "SUCCESS",
+        "url": "https://github.com/Global-Data-Science-Institute/project-tafsiri/actions/runs/44646716101/job/135991056703"
+      },
+      {
+        "name": "research",
+        "result": "SUCCESS",
+        "url": "https://github.com/Global-Data-Science-Institute/project-tafsiri/actions/runs/44646716101/job/135991056276"
+      },
+      {
+        "name": "database",
+        "result": "SUCCESS",
+        "url": "https://github.com/Global-Data-Science-Institute/project-tafsiri/actions/runs/44646716101/job/135991056468"
+      },
+      {
+        "name": "Vercel",
+        "result": "SUCCESS",
+        "url": "https://vercel.com/proff-amakobes-projects/tafsiri-reviewer-portal/Eh33Bu4CxMNP37sMfbQFRmXKagtP"
+      },
+      {
+        "name": "Vercel Preview Comments",
+        "result": "SUCCESS",
+        "url": "https://vercel.com/github"
+      }
+    ]
+  },
+  {
+    "baseRefName": "feature/tafsiri-migration-011-lexical-core",
+    "baseRefOid": "b700283b03937185c091bad7edf3d22183660e09",
+    "headRefName": "feature/tafsiri-canonical-lexical-promotion",
+    "headRefOid": "fa986c88c80b027826c72478183c833fc28b7c09",
+    "isDraft": true,
+    "mergeable": "MERGEABLE",
+    "number": 24,
+    "state": "OPEN",
+    "ci": [
+      {
+        "name": "portal",
+        "result": "SUCCESS",
+        "url": "https://github.com/Global-Data-Science-Institute/project-tafsiri/actions/runs/44654099330/job/136015977587"
+      },
+      {
+        "name": "research",
+        "result": "SUCCESS",
+        "url": "https://github.com/Global-Data-Science-Institute/project-tafsiri/actions/runs/44654099330/job/136015978219"
+      },
+      {
+        "name": "database",
+        "result": "SUCCESS",
+        "url": "https://github.com/Global-Data-Science-Institute/project-tafsiri/actions/runs/44654099330/job/136015978128"
+      },
+      {
+        "name": "Vercel",
+        "result": "SUCCESS",
+        "url": "https://vercel.com/proff-amakobes-projects/tafsiri-reviewer-portal/BKDfZHwFtSBmJjoyCtcjU8bN37D7"
+      },
+      {
+        "name": "Vercel Preview Comments",
+        "result": "SUCCESS",
+        "url": "https://vercel.com/github"
+      }
+    ]
+  },
+  {
+    "baseRefName": "feature/tafsiri-canonical-lexical-promotion",
+    "baseRefOid": "fa986c88c80b027826c72478183c833fc28b7c09",
+    "headRefName": "feature/tafsiri-luwanga-lexical-pilot-001",
+    "headRefOid": "646ef40c1d87950668af23c5691052538084f2e3",
+    "isDraft": true,
+    "mergeable": "MERGEABLE",
+    "number": 25,
+    "state": "OPEN",
+    "ci": [
+      {
+        "name": "Vercel",
+        "result": "SUCCESS",
+        "url": "https://vercel.com/proff-amakobes-projects/tafsiri-reviewer-portal/GvnNg4dSBkPBeYMizPBTKHBiQG7D"
+      },
+      {
+        "name": "Vercel Preview Comments",
+        "result": "SUCCESS",
+        "url": "https://vercel.com/github"
+      }
+    ]
+  },
+  {
+    "baseRefName": "feature/tafsiri-luwanga-lexical-pilot-001",
+    "baseRefOid": "646ef40c1d87950668af23c5691052538084f2e3",
+    "headRefName": "feature/tafsiri-multilingual-platform-foundation",
+    "headRefOid": "e939479ad6a63ef9ad628f26e92fc9dd0ff43461",
+    "isDraft": true,
+    "mergeable": "MERGEABLE",
+    "number": 26,
+    "state": "OPEN",
+    "ci": [
+      {
+        "name": "portal",
+        "result": "SUCCESS",
+        "url": "https://github.com/Global-Data-Science-Institute/project-tafsiri/actions/runs/44661225436/job/136039682416"
+      },
+      {
+        "name": "research",
+        "result": "SUCCESS",
+        "url": "https://github.com/Global-Data-Science-Institute/project-tafsiri/actions/runs/44661225436/job/136039682203"
+      },
+      {
+        "name": "database",
+        "result": "SUCCESS",
+        "url": "https://github.com/Global-Data-Science-Institute/project-tafsiri/actions/runs/44661225436/job/136039682576"
+      },
+      {
+        "name": "Vercel",
+        "result": "SUCCESS",
+        "url": "https://vercel.com/proff-amakobes-projects/tafsiri-reviewer-portal/B7N2vG4AGQXWwL2Cq11itbqAbayh"
+      },
+      {
+        "name": "Vercel Preview Comments",
+        "result": "SUCCESS",
+        "url": "https://vercel.com/github"
+      }
+    ]
+  },
+  {
+    "baseRefName": "feature/tafsiri-multilingual-platform-foundation",
+    "baseRefOid": "e939479ad6a63ef9ad628f26e92fc9dd0ff43461",
+    "headRefName": "feature/tafsiri-complete-platform-architecture",
+    "headRefOid": "4c3253f54d5fb2a10c3370f196ae1315eb0200c4",
+    "isDraft": true,
+    "mergeable": "MERGEABLE",
+    "number": 27,
+    "state": "OPEN",
+    "ci": [
+      {
+        "name": "Vercel",
+        "result": "SUCCESS",
+        "url": "https://vercel.com/proff-amakobes-projects/tafsiri-reviewer-portal/Bf4dV1MF3SGWSoR9FsaX2tpAv39Z"
+      },
+      {
+        "name": "Vercel Preview Comments",
+        "result": "SUCCESS",
+        "url": "https://vercel.com/github"
+      }
+    ]
+  },
+  {
+    "baseRefName": "feature/tafsiri-complete-platform-architecture",
+    "baseRefOid": "4c3253f54d5fb2a10c3370f196ae1315eb0200c4",
+    "headRefName": "feature/tafsiri-data-studio",
+    "headRefOid": "83f0b3312bedeeafcf3a5bac18b5aa62455a80a0",
+    "isDraft": true,
+    "mergeable": "MERGEABLE",
+    "number": 28,
+    "state": "OPEN",
+    "ci": [
+      {
+        "name": "studio",
+        "result": "SUCCESS",
+        "url": "https://github.com/Global-Data-Science-Institute/project-tafsiri/actions/runs/44673410264/job/136079445741"
+      },
+      {
+        "name": "portal",
+        "result": "SUCCESS",
+        "url": "https://github.com/Global-Data-Science-Institute/project-tafsiri/actions/runs/44673410264/job/136079446060"
+      },
+      {
+        "name": "research",
+        "result": "SUCCESS",
+        "url": "https://github.com/Global-Data-Science-Institute/project-tafsiri/actions/runs/44673410264/job/136079446029"
+      },
+      {
+        "name": "database",
+        "result": "SUCCESS",
+        "url": "https://github.com/Global-Data-Science-Institute/project-tafsiri/actions/runs/44673410264/job/136079446265"
+      }
+    ]
+  },
+  {
+    "baseRefName": "feature/tafsiri-data-studio",
+    "baseRefOid": "83f0b3312bedeeafcf3a5bac18b5aa62455a80a0",
+    "headRefName": "feature/tafsiri-partner-rc-001",
+    "headRefOid": "1d796289ba9077aa3f194fcb285bb6bf64b0580d",
+    "isDraft": true,
+    "mergeable": "MERGEABLE",
+    "number": 29,
+    "state": "OPEN",
+    "ci": [
+      {
+        "name": "studio",
+        "result": "SUCCESS",
+        "url": "https://github.com/Global-Data-Science-Institute/project-tafsiri/actions/runs/44999808368/job/137138638440"
+      },
+      {
+        "name": "portal",
+        "result": "SUCCESS",
+        "url": "https://github.com/Global-Data-Science-Institute/project-tafsiri/actions/runs/44999808368/job/137138638444"
+      },
+      {
+        "name": "research",
+        "result": "SUCCESS",
+        "url": "https://github.com/Global-Data-Science-Institute/project-tafsiri/actions/runs/44999808368/job/137138638265"
+      },
+      {
+        "name": "database",
+        "result": "SUCCESS",
+        "url": "https://github.com/Global-Data-Science-Institute/project-tafsiri/actions/runs/44999808368/job/137138638424"
+      }
+    ]
+  }
+]
