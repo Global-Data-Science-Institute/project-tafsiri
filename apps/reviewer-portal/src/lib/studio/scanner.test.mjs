@@ -1,8 +1,6 @@
 import { describe, it, expect, vi } from "vitest";
-import { mkdtemp, writeFile, rm } from "node:fs/promises";
-import { tmpdir } from "node:os";
-import path from "node:path";
 import { scanBytes, scanOne, purgeOne } from "./scanner.mjs";
+import * as signatures from "./signatures.mjs";
 const bytes = new TextEncoder().encode("SYNTHETIC plain evidence");
 describe("quarantine admission", () => {
   it("labels mock results and refuses mock use for nonsynthetic data", async () => {
@@ -41,43 +39,27 @@ describe("quarantine admission", () => {
             synthetic: true,
           })
         ).verdict,
-      ).toBe("INFECTED");
+      ).toBe("ERROR");
   });
-  it("maps engine infection and failure distinctly and requires fresh signatures", async () => {
-    const dir = await mkdtemp(path.join(tmpdir(), "tafsiri-scan-test-"));
+  it("fails closed on missing signatures even with a configured engine", async () => {
+    const result = await scanBytes(bytes, "text/plain", { provider: "clamav", binary: "/missing", database: "/missing", sigtool: "/missing", maxSignatureAgeHours: 48 });
+    expect(result.verdict).toBe("ERROR");
+    expect(result.code).toBe("SIGNATURE_VERIFICATION_FAILURE");
+  });
+  it("preserves engine exit mappings after independently verified signatures", async () => {
+    const verification = vi.spyOn(signatures, "verifySignatures").mockResolvedValue({
+      database: "/synthetic-signatures", engine: "1.4.7", updateStatus: "VERIFIED",
+      signatures: [{ name: "daily.cvd", version: 1, build: "2026-11-22T00:00:00.000Z" }],
+    });
     try {
-      const config = {
-        provider: "clamav",
-        binary: path.join(dir, "clamscan"),
-        database: dir,
-      };
-      await expect(scanBytes(bytes, "text/plain", config)).rejects.toThrow(
-        "signatures",
-      );
-      await writeFile(
-        path.join(dir, "daily.cvd"),
-        "SYNTHETIC signature fixture",
-      );
-      for (const [code, verdict] of [
-        [0, "CLEAN"],
-        [1, "INFECTED"],
-        [2, "ERROR"],
-      ]) {
-        const runner = vi
-          .fn()
-          .mockResolvedValueOnce({ stdout: "ClamAV synthetic/fixture" });
-        if (code) runner.mockRejectedValueOnce({ code });
-        else runner.mockResolvedValueOnce({ stdout: "OK" });
-        expect(
-          (await scanBytes(bytes, "text/plain", config, runner)).verdict,
-        ).toBe(verdict);
-        expect(runner.mock.calls[1][1]).toContain("--alert-exceeds-max=yes");
+      for (const [code, verdict, internal] of [[0,"CLEAN","ADMITTED"],[1,"INFECTED","MALWARE_DETECTED"],[2,"ERROR","SCANNER_UNAVAILABLE"]]) {
+        const runner = vi.fn(async () => { if (code) throw { code }; return { stdout: "OK" }; });
+        const result = await scanBytes(bytes,"text/plain",{provider:"clamav",binary:"/synthetic-engine"},runner);
+        expect(result.verdict).toBe(verdict); expect(result.code).toBe(internal);
+        expect(runner.mock.calls[0][1]).toContain("--alert-exceeds-max=yes");
+        expect(runner.mock.calls[0][2].timeout).toBe(45000);
       }
-    } finally {
-      if (path.dirname(path.resolve(dir)) !== path.resolve(tmpdir()))
-        throw new Error("Unexpected temp path");
-      await rm(dir, { recursive: true, force: true });
-    }
+    } finally { verification.mockRestore(); }
   });
   it("records scan error after storage failure without admitting a file", async () => {
     const rpc = vi

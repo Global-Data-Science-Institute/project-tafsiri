@@ -96,6 +96,7 @@ test("two institutions: onboarding, collection, isolated uploads, AI, triage and
   await login(a, "a");
   await login(b, "b");
   await login(contributor, "contributor");
+  expect((await a.request.get("/studio")).headers()["referrer-policy"]).toBe("no-referrer");
   await g.getByRole("button", { name: "GDSI oversight", exact: true }).click();
   const onboard = section(g, "Invite a partner institution");
   await onboard

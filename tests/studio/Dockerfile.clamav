@@ -1,9 +1,10 @@
 # Disposable local validation image, never a deployment artifact.
 FROM python:3.12-slim@sha256:2f17fc044b579bab302c2e8054d3a686e2cb9a83de48e70534b94cd8ebbe06a9
-RUN apt-get update && apt-get install -y --no-install-recommends clamav clamav-freshclam nodejs
+RUN apt-get update && apt-get install -y --no-install-recommends clamav clamav-freshclam nodejs qpdf ffmpeg
 COPY clamav-1.4.7.linux.x86_64.deb /tmp/clamav.deb
 RUN echo '3bbb8ac72e9f9238d51ec6d52d8c34ab78967061ce6d15908fcbe4c4fb2bea3a  /tmp/clamav.deb' | sha256sum -c - && dpkg-deb -x /tmp/clamav.deb /opt/clamav147
 ENV LD_LIBRARY_PATH=/opt/clamav147/usr/local/lib
 # Signatures are deliberately refreshed, not fabricated or retimestamped.
 RUN /opt/clamav147/usr/local/bin/freshclam --config-file=/etc/clamav/freshclam.conf --stdout && /opt/clamav147/usr/local/bin/sigtool --info /var/lib/clamav/daily.cvd && /opt/clamav147/usr/local/bin/clamscan --version --database=/var/lib/clamav
+USER 65532:65532
 CMD ["sleep", "7200"]

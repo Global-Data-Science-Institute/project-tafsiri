@@ -1,5 +1,7 @@
 # Security review preparation
 
+Historical PR #30 evidence is preserved below. See the [security remediation report](remediation-001.md) and [new scanner results](remediation-scanner-results.json) for the corrected candidate. Original adverse observations are not reclassified.
+
 Scope: PR #29 application, migrations 015/RC, Storage policies, provider adapters and current read-only hosted metadata. Reviewer: implementing coding agent; independent human acceptance **pending**. The intended independent reviewer should reproduce the harnesses, review the linked source locations and sign each disposition with commit, date and evidence. Automated checks are evidence, not approval.
 
 ## Control map

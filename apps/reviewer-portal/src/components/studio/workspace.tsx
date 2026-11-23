@@ -1710,6 +1710,7 @@ function UploadControl({
   return (
     <fieldset>
       <legend>Private document or audio · up to 5 MB</legend>
+      <p>Text, PDF and PCM WAV files require validation before access. WebM recordings can be stored in quarantine but are not yet eligible for access or processing.</p>
       <label>
         Upload original file
         <input

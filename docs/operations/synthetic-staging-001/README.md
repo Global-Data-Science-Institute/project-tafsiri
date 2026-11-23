@@ -1,8 +1,10 @@
 # Synthetic staging validation 001
 
-Decision, 2026-11-22: **BLOCKED — SYNTHETIC STAGING PREFLIGHT**.
+Historical PR #30 decision, 2026-11-22: **BLOCKED — SYNTHETIC STAGING PREFLIGHT**.
 
-This packet prepares independent review of [PR #29](https://github.com/Global-Data-Science-Institute/project-tafsiri/pull/29), commit `1d796289ba9077aa3f194fcb285bb6bf64b0580d`. It does not authorize provisioning, migrations on hosted systems, deployment, email, onboarding, or authentic data. This work changes validation harnesses and documentation, plus CI targeting and the new branch's automatic-deployment guard. Application code and migrations are unchanged. No independent human security assessment has occurred.
+**Current remediation recommendation:** [READY FOR INDEPENDENT SYNTHETIC STAGING SECURITY REVIEW](remediation-001.md). The sections below preserve the original failed preflight; the remediation report records the corrected code, new migration, tests and remaining deployment gates.
+
+This original packet prepares independent review of [PR #29](https://github.com/Global-Data-Science-Institute/project-tafsiri/pull/29), commit `1d796289ba9077aa3f194fcb285bb6bf64b0580d`. It does not authorize provisioning, migrations on hosted systems, deployment, email, onboarding, or authentic data. This work changes validation harnesses and documentation, plus CI targeting and the new branch's automatic-deployment guard. Application code and migrations are unchanged. No independent human security assessment has occurred.
 
 - [Security-review preparation and findings](security-review.md)
 - [Actual ClamAV results and reproduction](scanner-validation.md), [machine-readable observations](clamav-results.json)

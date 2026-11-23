@@ -1,0 +1,241 @@
+{
+  "at": "2026-11-22T23:56:55.554Z",
+  "metadata": {
+    "database": "/var/lib/clamav",
+    "engine": "1.4.7",
+    "signatures": [
+      {
+        "name": "main.cvd",
+        "version": 63,
+        "build": "2025-12-16T23:18:22.000Z",
+        "functionality": 90
+      },
+      {
+        "name": "daily.cvd",
+        "version": 28191,
+        "build": "2026-11-22T06:27:13.000Z",
+        "functionality": 90
+      },
+      {
+        "name": "bytecode.cvd",
+        "version": 339,
+        "build": "2025-09-11T12:29:19.000Z",
+        "functionality": 90
+      }
+    ],
+    "updateStatus": "VERIFIED"
+  },
+  "qpdf": "qpdf version 12.2.0\nRun qpdf --copyright to see copyright and license information.",
+  "updater": "interruption preserved old generation; successful atomic switch; restart verified",
+  "results": [
+    {
+      "name": "clean-text",
+      "verdict": "CLEAN",
+      "code": "ADMITTED",
+      "elapsed_ms": 6348
+    },
+    {
+      "name": "valid-pdf",
+      "verdict": "CLEAN",
+      "code": "ADMITTED",
+      "elapsed_ms": 6192
+    },
+    {
+      "name": "valid-wav",
+      "verdict": "CLEAN",
+      "code": "ADMITTED",
+      "elapsed_ms": 6907
+    },
+    {
+      "name": "original-invalid-pdf",
+      "verdict": "ERROR",
+      "code": "INVALID_FORMAT",
+      "elapsed_ms": 6
+    },
+    {
+      "name": "original-invalid-wav",
+      "verdict": "ERROR",
+      "code": "INVALID_FORMAT",
+      "elapsed_ms": 1
+    },
+    {
+      "name": "truncated-pdf",
+      "verdict": "ERROR",
+      "code": "INVALID_FORMAT",
+      "elapsed_ms": 5
+    },
+    {
+      "name": "encoded-active-pdf",
+      "verdict": "ERROR",
+      "code": "UNSUPPORTED_FORMAT",
+      "elapsed_ms": 13
+    },
+    {
+      "name": "indirect-action",
+      "verdict": "ERROR",
+      "code": "UNSUPPORTED_FORMAT",
+      "elapsed_ms": 10
+    },
+    {
+      "name": "encrypted-pdf",
+      "verdict": "ERROR",
+      "code": "UNSUPPORTED_FORMAT",
+      "elapsed_ms": 18
+    },
+    {
+      "name": "unsupported-wave-encoding",
+      "verdict": "ERROR",
+      "code": "UNSUPPORTED_FORMAT",
+      "elapsed_ms": 2
+    },
+    {
+      "name": "wav-chunk-overrun",
+      "verdict": "ERROR",
+      "code": "INVALID_FORMAT",
+      "elapsed_ms": 1
+    },
+    {
+      "name": "wav-byte-rate",
+      "verdict": "ERROR",
+      "code": "INVALID_FORMAT",
+      "elapsed_ms": 2
+    },
+    {
+      "name": "wav-duration",
+      "verdict": "ERROR",
+      "code": "INVALID_FORMAT",
+      "elapsed_ms": 4
+    },
+    {
+      "name": "webm-magic-only",
+      "verdict": "ERROR",
+      "code": "UNSUPPORTED_FORMAT",
+      "elapsed_ms": 1
+    },
+    {
+      "name": "valid-webm-unsupported",
+      "verdict": "ERROR",
+      "code": "UNSUPPORTED_FORMAT",
+      "elapsed_ms": 1
+    },
+    {
+      "name": "oversized",
+      "verdict": "ERROR",
+      "code": "PROCESSING_LIMIT",
+      "elapsed_ms": 0
+    },
+    {
+      "name": "eicar",
+      "verdict": "INFECTED",
+      "code": "MALWARE_DETECTED",
+      "elapsed_ms": 7116
+    },
+    {
+      "name": "engine-file-limit-6MiB",
+      "exit_code": 1
+    },
+    {
+      "name": "parser-timeout",
+      "verdict": "ERROR",
+      "code": "PARSER_TIMEOUT",
+      "elapsed_ms": 9960
+    },
+    {
+      "name": "parser-crash",
+      "verdict": "ERROR",
+      "code": "INVALID_FORMAT",
+      "elapsed_ms": 3
+    },
+    {
+      "name": "scanner-timeout",
+      "verdict": "ERROR",
+      "code": "SCANNER_TIMEOUT",
+      "elapsed_ms": 46022
+    },
+    {
+      "name": "missing-engine",
+      "verdict": "ERROR",
+      "code": "SCANNER_UNAVAILABLE",
+      "elapsed_ms": 5
+    },
+    {
+      "name": "old-valid-new-mtime",
+      "verdict": "ERROR",
+      "code": "SIGNATURE_VERIFICATION_FAILURE",
+      "test_clock": "2026-11-24T07:27:13.000Z"
+    },
+    {
+      "name": "forged-header-time",
+      "verdict": "ERROR",
+      "code": "SIGNATURE_VERIFICATION_FAILURE",
+      "elapsed_ms": 823
+    },
+    {
+      "name": "unverifiable-signature",
+      "verdict": "ERROR",
+      "code": "SIGNATURE_VERIFICATION_FAILURE",
+      "elapsed_ms": 872
+    },
+    {
+      "name": "corrupted",
+      "verdict": "ERROR",
+      "code": "SIGNATURE_VERIFICATION_FAILURE",
+      "elapsed_ms": 787
+    },
+    {
+      "name": "missing-db",
+      "verdict": "ERROR",
+      "code": "SIGNATURE_VERIFICATION_FAILURE",
+      "elapsed_ms": 1
+    },
+    {
+      "name": "unsupported-cld",
+      "verdict": "ERROR",
+      "code": "SIGNATURE_VERIFICATION_FAILURE",
+      "elapsed_ms": 2
+    },
+    {
+      "name": "unknown-engine-version",
+      "verdict": "ERROR",
+      "code": "SIGNATURE_VERIFICATION_FAILURE",
+      "elapsed_ms": 1
+    },
+    {
+      "name": "restart-after-atomic-update",
+      "verdict": "CLEAN",
+      "code": "ADMITTED",
+      "elapsed_ms": 7125
+    },
+    {
+      "name": "fresh-worker-process",
+      "verdict": "CLEAN"
+    },
+    {
+      "name": "concurrent-pdf",
+      "verdict": "CLEAN",
+      "code": "ADMITTED",
+      "elapsed_ms": 7286
+    },
+    {
+      "name": "concurrent-wav",
+      "verdict": "CLEAN",
+      "code": "ADMITTED",
+      "elapsed_ms": 7384
+    }
+  ],
+  "runtime": {
+    "image": "sha256:174c09bce0d24a62335772d6742ed0a1ffbb0b267cdf25dd80af62c747a3525b",
+    "uid": 65532,
+    "memory_gib": 6,
+    "cpus": 2,
+    "pids": 64,
+    "tmpfs_gib": 2,
+    "network": "none",
+    "readonly_root": true,
+    "capabilities": "none",
+    "mounts": [
+      "apps/reviewer-portal/src/lib/studio (read-only)",
+      "tests/studio (read-only)"
+    ]
+  }
+}

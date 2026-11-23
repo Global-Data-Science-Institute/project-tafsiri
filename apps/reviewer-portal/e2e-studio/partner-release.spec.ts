@@ -294,24 +294,14 @@ test("RC adversarial authorization, invitation delivery, scan admission, retenti
       })
     ).error,
   ).not.toBeNull();
-  // A public legacy path really is open in this fixture; prove it does not expose private Studio material.
+  // S03 regression: the PR #30 anonymous positive control must now be denied.
   const anonymous = createClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!,
   );
   const legacyMarker = `SYNTHETIC_PUBLIC_${randomUUID()}`;
-  expect(
-    (await anonymous.from("submissions").insert({ luhya_text: legacyMarker }))
-      .error,
-  ).toBeNull();
-  expect(
-    (
-      await anonymous
-        .from("submissions")
-        .select("luhya_text")
-        .eq("luhya_text", legacyMarker)
-    ).data,
-  ).toHaveLength(1);
+  expect((await anonymous.from("submissions").insert({ luhya_text: legacyMarker })).error).not.toBeNull();
+  expect((await anonymous.from("submissions").select("luhya_text")).error).not.toBeNull();
   const legacy = [
     "bible_books",
     "bible_english_verses",

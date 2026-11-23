@@ -10,6 +10,10 @@ MANIFEST = ROOT / 'docs/operations/synthetic-staging-001/migrations.sha256'
 
 def main():
     entries = MANIFEST.read_text(encoding='utf-8').splitlines()
+    candidate = (MANIFEST.parent / 'migrations-remediation.sha256').read_text(encoding='utf-8').splitlines()
+    assert candidate[:len(entries)] == entries, 'Frozen baseline altered'
+    assert [line.split('  ', 1)[1] for line in candidate] == [p.relative_to(ROOT).as_posix() for p in sorted((ROOT/'supabase/migrations').glob('*.sql'))], 'Migration inventory mismatch'
+    entries = candidate
     for entry in entries:
         digest, name = entry.split('  ', 1)
         # HEAD works in shallow CI checkouts; manifest records the frozen baseline bytes.
@@ -17,7 +21,7 @@ def main():
         assert hashlib.sha256(source).hexdigest() == digest, name
         current = (ROOT / name).read_bytes().replace(b'\r\n', b'\n')
         assert hashlib.sha256(current).hexdigest() == digest, f'Working-tree drift: {name}'
-    print(f'PASS {len(entries)} ordered baseline migration checksums (canonical LF bytes)')
+    print(f'PASS {len(entries)} ordered candidate migration checksums (sixteen frozen baseline plus remediation) (canonical LF bytes)')
 
 
 if __name__ == '__main__':
