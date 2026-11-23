@@ -1,12 +1,14 @@
 # Hosted acceptance procedure and operational evidence checklist
 
+Local S01?S03 remediation is documented in [remediation-001.md](remediation-001.md). Require independent review of the exact candidate, new migration and the S04?S07 deployment gates. Real scanning must use verified immutable CVD generations; altered mtimes and signed build expiry are mandatory negative cases.
+
 Future execution only after explicit authorization and closure of synthetic preflight blockers. Operator and independent reviewer must use the exact resource IDs/commit/checksums in the approval ledger. Existing local scripts deliberately reject hosted URLs; **do not remove their safety guards** to run this plan. A hosted harness must be separately reviewed with a fixed new-project allowlist and disabled destructive resets.
 
 ## Fixture and evidence protocol
 
 Use two institutions, `SYNTHETIC University A` and `SYNTHETIC University B`, sharing one approved registry language/variety ID. Do not add synthetic vocabulary to canonical tables. Ten accounts maximum: one expiring GDSI bootstrap operator, A admin/PI/researcher/contributor, B admin/PI/researcher/contributor, and one unrelated denial account. Create accounts through the future authorized Auth operator procedure using reserved `.example` addresses; confirm these test accounts directly, generate unique secrets, and transfer credentials through the approved private channel. No SMTP or invitation email delivery. GDSI may onboard metadata but must not see submissions.
 
-Use unique `SYNTHETIC-<run-id>` markers, UTF-8 text including combining characters, a valid generated blank PDF, PCM WAV silence, and generated WebM silence. Include EICAR, hash mismatch, malformed structure, active/encrypted PDF and unsupported MIME fixtures. Never use real language material, existing datasets, names or microphone recordings. Record SHA-256 and size before upload. Generate any EICAR fixture only within the disposable test environment.
+Use unique `SYNTHETIC-<run-id>` markers, UTF-8 text including combining characters, a valid generated blank PDF, PCM WAV silence, and generated WebM silence as an unsupported-format rejection fixture. Include EICAR, hash mismatch, malformed structure, active/encrypted PDF and unsupported MIME fixtures. Never use real language material, existing datasets, names or microphone recordings. Record SHA-256 and size before upload. Generate any EICAR fixture only within the disposable test environment.
 
 Every case records actor role, operation, expected/actual status, environment IDs, commit, time, sanitized request/receipt ID and reviewer initials. Keep tokens, cookies, credentials and private content out of public artifacts. Screenshots/traces can contain Auth state or private links: keep encrypted and expire them. Stop on any unexpected success across a denied boundary; preserve only minimal incident metadata and disable the candidate.
 
@@ -18,7 +20,7 @@ Every case records actor role, operation, expected/actual status, environment ID
 | H01 Onboarding | GDSI creates A/B invitations; mock delivery previews shared privately; accept using matching confirmed accounts | Wrong-email, expired, revoked, already-used and replaced tokens denied; replay does not resend; no email-provider network call |
 | H02 Projects/campaigns | A/B select same registry ID, create separate projects and configurable campaigns | Same registry identity, separate ownership/content; metadata proposal is not canonical approval |
 | H03 Collaboration | Invite researcher/contributor and explicit cross-institution collaborator to one project; remove project membership, then organization access separately | Only exact authorized project accessible; revoke every explicit project grant needed for full offboarding; last active org administrator protected |
-| H04 Collection | Save/resume original text and upload clean text/PDF/WAV/WebM under 5 MiB | Hashes match bytes; originals unchanged; submit requires fields and independent consent flags; all files unreadable before scan |
+| H04 Collection | Save/resume original text and upload clean text/PDF/PCM WAV under 5 MiB; attempt valid and malformed WebM as unsupported | Hashes match bytes; originals unchanged; submit requires fields and independent consent flags; all files unreadable before scan |
 | H05 Real scanning | Run reviewed production-packaged scanner and stale/failed/updater cases | Clean -> CLEAN, EICAR -> INFECTED, mismatched hash/engine failure -> ERROR; no MOCK_CLEAN accepted as real scan evidence. Malformed/active/encrypted cases meet corrected policy; prove timeout/resource rejection and retry after recovery |
 | H06 Assistance | Run deterministic mock, attempt external provider with UI and direct API | Mock suggestions MACHINE_GENERATED/UNVERIFIED; originals unchanged; external calls blocked globally even if project flag is toggled; direct begin RPC cannot itself transmit data |
 | H07 Triage | Researcher requests clarification, contributor corrects and resubmits; PI accepts another item | Revision conflicts denied; acceptance is intake only; handoff remains PREPARED_BLOCKED; canonical/source/training counts unchanged |
@@ -37,7 +39,7 @@ No automated script may perform hosted H00–H15 under this assignment. The curr
 
 | Control | Local evidence | Still required in future environment |
 |---|---|---|
-| Real scanner/fail-closed transitions | 1.4.7 matrix and actual DB/Storage worker harness | S01/S02 correction, valid WebM/hostile corpus, non-root production packaging, pinned image provenance |
+| Real scanner/fail-closed transitions | 1.4.7 matrix and actual DB/Storage worker harness | Review corrected S01/S02 evidence and unsupported WebM policy; hostile corpus, final production packaging and pinned image provenance |
 | Scheduling | Bounded worker and lease expiry tested; non-overlap schedule specified | Install supervisor/timers; kill/restart worker; prove no overlapping file processing or lost receipts |
 | Queue/alerts | DB receipts and metadata-only logs exist | Add heartbeat/age monitor; inject >threshold backlog, failed scan, stale signature; prove alert receipt and acknowledgement |
 | Auth/invitation recovery | Existing browser suite covers expired/replaced tokens and identity recovery after revocation | Exact redirect allowlist, protected callback, no-email operator recovery and rate-limit tests |

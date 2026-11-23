@@ -1,0 +1,11 @@
+{
+    "levels":  {
+                   "WARN":  18
+               },
+    "environment":  "local isolated Studio",
+    "findings":  {
+                     "multiple_permissive_policies":  14,
+                     "auth_rls_initplan":  3,
+                     "extension_in_public":  1
+                 }
+}

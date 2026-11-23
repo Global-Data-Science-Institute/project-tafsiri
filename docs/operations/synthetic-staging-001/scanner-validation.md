@@ -1,5 +1,7 @@
 # Actual ClamAV local validation
 
+Historical PR #30 evidence is preserved below. See the [security remediation report](remediation-001.md) and [new scanner results](remediation-scanner-results.json) for the corrected candidate. Original adverse observations are not reclassified. The commands below reproduce the historical implementation only at PR #30; use the remediation report and CI scanner job for current source and mounts.
+
 Executed 2026-11-22 against PR #29's unchanged `scanner.mjs`. Engine: **ClamAV 1.4.7**, daily database **28191**, signed build time **2026-11-22 06:27 UTC**. `sigtool --info` reported Verification OK; freshclam downloaded and load-tested daily/main/bytecode databases (28191/63/339). See [recorded JSON](clamav-results.json) for timestamps, timings and exact observations.
 
 Official `clamav/clamav:stable` pulls failed twice with Docker registry CDN EOF errors. The fallback used the already cached Debian-based Python image and Debian packages to obtain updater/runtime dependencies. Debian supplied ClamAV 1.4.6, so the actual scan executable was replaced by the official 1.4.7 package extracted under `/opt/clamav147`. Its GitHub release SHA-256 matched `3bbb8ac72e9f9238d51ec6d52d8c34ab78967061ce6d15908fcbe4c4fb2bea3a`. This verifies the release digest; detached publisher GPG verification was not performed. The library path must point to the same extracted release; using Debian's older libclamav correctly failed the functionality-level check. Production image provenance needs its own signed-image review.

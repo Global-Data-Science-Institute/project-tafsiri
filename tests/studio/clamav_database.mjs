@@ -114,6 +114,8 @@ const item = await command("save", {
   },
 });
 const cases = [
+  { name: "malformed-pdf", text: "%PDF-1.7\n%%EOF", mime: "application/pdf", expected: "ERROR" },
+  { name: "malformed-wav", text: "RIFFxxxxWAVE", mime: "audio/wav", expected: "ERROR" },
   { name: "clean", text: "SYNTHETIC clean bytes", expected: "CLEAN" },
   {
     name: "eicar",
@@ -130,7 +132,7 @@ for (const c of cases) {
   const bytes = Buffer.from(c.text);
   c.upload = await command("upload_intent", {
     id: item.id,
-    mime: "text/plain",
+    mime: c.mime ?? "text/plain",
     size_bytes: bytes.length,
     sha256:
       c.name === "hash-mismatch"
@@ -141,7 +143,7 @@ for (const c of cases) {
     (
       await user.storage
         .from("studio-quarantine")
-        .upload(c.upload.object_path, bytes, { contentType: "text/plain" })
+        .upload(c.upload.object_path, bytes, { contentType: c.mime ?? "text/plain" })
     ).error,
     null,
   );
@@ -163,7 +165,7 @@ const scanner = async (bytes, mime) =>
         "-i",
         "tafsiri-clamav-runtime-001",
         "node",
-        "/work/tests/studio/clamav_preflight.mjs",
+        "/work/tests/studio/remediation-scanner.mjs",
         "--single",
       ],
       {

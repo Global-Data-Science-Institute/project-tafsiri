@@ -46,6 +46,9 @@ const config = {
   synthetic: local,
   binary: process.env.STUDIO_CLAMSCAN_PATH,
   database: process.env.STUDIO_CLAMAV_DATABASE,
+  sigtool: process.env.STUDIO_SIGTOOL_PATH,
+  qpdf: process.env.STUDIO_QPDF_PATH,
+  maxSignatureAgeHours: Number(process.env.STUDIO_SIGNATURE_MAX_AGE_HOURS),
 };
 const mode = process.argv[2];
 if (!["scan", "purge"].includes(mode))

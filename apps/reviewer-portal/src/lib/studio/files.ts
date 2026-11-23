@@ -11,7 +11,7 @@ export function validateUpload(bytes: Uint8Array, mime: string) {
       !head.startsWith("%PDF-") ||
       !new TextDecoder().decode(bytes.slice(-1024)).includes("%%EOF")
     )
-      throw new Error("Invalid PDF structure.");
+      throw new Error("Invalid PDF header or end marker.");
   } else if (mime === "audio/wav") {
     if (!head.startsWith("RIFF") || head.slice(8, 12) !== "WAVE")
       throw new Error("Invalid WAV header.");
@@ -19,5 +19,6 @@ export function validateUpload(bytes: Uint8Array, mime: string) {
     if (![0x1a, 0x45, 0xdf, 0xa3].every((v, i) => bytes[i] === v))
       throw new Error("Invalid WebM header.");
   } else throw new Error("Use UTF-8 text, PDF, WAV or WebM.");
-  // These are format checks, not malware scanning. All files remain quarantined.
+  // Preliminary type identification only. Structural validation and malware
+  // scanning happen in the isolated worker; this function never admits a file.
 }

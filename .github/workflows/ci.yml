@@ -4,9 +4,31 @@ on:
   push:
     branches: [main, staging, 'chore/**']
   pull_request:
-    branches: [main, staging, 'feature/tafsiri-migration-011-lexical-core', 'feature/tafsiri-luwanga-lexical-pilot-001', 'feature/tafsiri-complete-platform-architecture', 'feature/tafsiri-data-studio', 'feature/tafsiri-partner-rc-001']
+    branches: [main, staging, 'feature/tafsiri-migration-011-lexical-core', 'feature/tafsiri-luwanga-lexical-pilot-001', 'feature/tafsiri-complete-platform-architecture', 'feature/tafsiri-data-studio', 'feature/tafsiri-partner-rc-001', 'feature/tafsiri-synthetic-staging-validation-001']
 
 jobs:
+  scanner:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prepare pinned ClamAV package
+        run: |
+          mkdir -p /tmp/tafsiri-clamav-build
+          curl --fail --location --retry 3 https://github.com/Cisco-Talos/clamav/releases/download/clamav-1.4.7/clamav-1.4.7.linux.x86_64.deb --output /tmp/tafsiri-clamav-build/clamav-1.4.7.linux.x86_64.deb
+          echo '3bbb8ac72e9f9238d51ec6d52d8c34ab78967061ce6d15908fcbe4c4fb2bea3a  /tmp/tafsiri-clamav-build/clamav-1.4.7.linux.x86_64.deb' | sha256sum -c -
+      - run: docker build --file tests/studio/Dockerfile.clamav --tag tafsiri-scanner-test /tmp/tafsiri-clamav-build
+      - name: Real scanner and signed update regressions
+        run: |
+          docker run -d --name tafsiri-scanner-test --network none --read-only --cap-drop ALL --security-opt no-new-privileges --memory 6g --cpus 2 --pids-limit 64 --tmpfs /tmp:rw,noexec,nosuid,size=2g --mount "type=bind,source=$PWD/apps/reviewer-portal/src/lib/studio,target=/work/apps/reviewer-portal/src/lib/studio,readonly" --mount "type=bind,source=$PWD/tests/studio,target=/work/tests/studio,readonly" tafsiri-scanner-test
+          docker exec tafsiri-scanner-test node /work/tests/studio/remediation-scanner.mjs
+          docker exec tafsiri-scanner-test cat /tmp/remediation-results.json > /tmp/remediation-results.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: scanner-remediation-evidence
+          path: /tmp/remediation-results.json
+      - if: always()
+        run: docker rm -f tafsiri-scanner-test
   studio:
     runs-on: ubuntu-latest
     steps:
@@ -26,6 +48,9 @@ jobs:
       - run: npx playwright install --with-deps chromium
         working-directory: apps/reviewer-portal
       - run: python tests/studio/database_checks.py
+      - run: python tests/studio/legacy_security.py
+      - run: node tests/studio/legacy_http.mjs
+      - run: npx supabase db advisors --local --workdir .studio-local --type security --level error --fail-on error
       - run: npx playwright test --config playwright.studio.config.ts
         working-directory: apps/reviewer-portal
       - run: python tests/studio/backup_restore.py
